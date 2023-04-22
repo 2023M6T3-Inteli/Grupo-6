@@ -6,20 +6,26 @@
 <table>
 <tr>
 <td>
-<a href= "https://klabin.com.br/"><img src="https://klabin.com.br/o/klabinklabinonline-theme/images/klabin-logo.png" alt="Klabin" border="0" width="100%"></a>
+<a href= "dell.com/pt-br"><img src="./docs/img/img_docs/Dell_Logo.svg.png" alt="DELL" border="0" width="100%"></a>
 </td>
 <td><a href= "https://www.inteli.edu.br/"><img src="../img/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
 </td>
 </tr>
 </table>
 
-. Nome do Projeto: xxxx
-. Nome do Parceiro: xxxx
-. Nome do Grupo: xxxx
-. Integrantes do grupo…
-  aaaaaa
-  bbbbbb
-  cccccc
+. Nome do Projeto: Elaboração de aplicação para dispositivos móveis
+. Nome do Parceiro: DELL <br>
+. Nome do Grupo: Grupo 6 <br>
+. Integrantes do grupo:
+<ul>
+  <li>Alan Rozensztajn Schipper</li>
+  <li>Erik Freundt</li>
+  <li>Felipe Silberberg</li>
+  <li>Mateus Neves</li>
+  <li>Priscila Falcão</li>
+  <li>Sofia Pimazzoni</li>
+  <li>Victor Carvalho</li>
+<ul>
 
 <font size="+12"><center>
 Template do Documento do Projeto
@@ -41,7 +47,7 @@ Solução de otimização de corte de bobinas de papel
     - [Proposta de Valor e Value Proposition Canvas](#proposta-de-valor-e-value-proposition-canvas)
     - [Matriz de Risco](#matriz-de-risco)
     - [Análise financeira do projeto](#análise-financeira-do-projeto)
-    - [Mapeamento do processo](#mapeamento-do-processo)
+  - [Mapeamento do processo](#mapeamento-do-processo)
   - [Descritivo da Solução](#descritivo-da-solução)
     - [Objetivos](#objetivos)
       - [Objetivos gerais](#objetivos-gerais)
@@ -59,7 +65,7 @@ Solução de otimização de corte de bobinas de papel
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
   - [Modelo Conceitual](#modelo-conceitual)
-  - [Modelo Lógico](#modelo-conceitual)
+  - [Modelo Lógico](#modelo-lógico)
 - [Testes de Software](#testes-de-software)
   - [Teste Unitário](#teste-unitário)
   - [Teste de Integração](#teste-de-integração)
@@ -68,7 +74,7 @@ Solução de otimização de corte de bobinas de papel
   - [Teste de Funcionalidade](#teste-de-funcionalidade)
   - [Teste de API](#teste-de-api)
 - [Documentação da API](#documentação-da-api)
-- [Manual do Usuário](#Manual-do-usuário)
+- [Manual do Usuário](#manual-do-usuário)
 - [Referências](#referências)
 - [Apêndice](#apêndice)
 
@@ -103,8 +109,10 @@ Apresenta o Canvas de Proposta de Valor com relação à solução.
 
 
 ### Matriz de Risco
+Também chamada de matriz de probabilidade e impacto, a matriz mapeia os riscos do projeto, sejam eles tanto riscos de ameaças quanto de oportunidades. Por ser uma ferramenta útil para gerenciar os riscos operacionais existentes em um projeto, foi elaborado uma Matriz de Riscos com base na proposta de solução elaborada pelo time de desenvolvimento, que pode ser visualizada na Figura x.
 
-Apresenta a matriz de risco com relação ao projeto.
+
+<img src="./docs/img/img_docs/matriz%20de%20risco.png" alt="Matriz de risco" border="0" width="100%" display="flex" justify-content="center">
 
 
 ### Análise financeira do projeto
