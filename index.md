@@ -6,7 +6,7 @@
 <table>
 <tr>
 <td>
-<a href= "dell.com/pt-br"><img src="./docs/img/img_docs/Dell_Logo.svg.png" alt="DELL" border="0" width="100%"></a>
+<a href= "dell.com/pt-br"><img src="./docs/img/img_docs/Dell_Logo.svg.png" alt="DELL" border="0" width="70%"></a>
 </td>
 <td><a href= "https://www.inteli.edu.br/"><img src="../img/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
 </td>
