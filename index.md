@@ -163,15 +163,16 @@ A seção de requisitos do sistema é atualizada constantemente durante o ciclo 
 ## Requisitos Funcionais
 Sabendo que se define por “Requisitos Funcionais“ aqueles que incluem informações sobre as funcionalidades esperadas do software, além de as restrições e limitações do sistema. São compostos por duas partes: função (que se refere ao que o sistema faz) e comportamento (que refere-se como o sistema faz isso) (VISURE, 2023). Dessa forma, viu-se a necessidade de elencar esses, de acordo com a solução.
 
-01 - 
-02 - 
-03 - 
-04 - 
-05 - 
-06 - 
-08 - 
-09 - 
-10 - 
+01 - Gamificação: A plataforma deve incluir um sistema de recompensas, como badges e rankings, para incentivar o engajamento dos usuários.
+02 - Compartilhamento de conteúdo: Os usuários devem ser capazes de compartilhar facilmente conteúdos (projetos e documentários) com colegas, como, por exemplo, projetos interessantes.
+03 - Relatórios e análises: A plataforma deve oferecer ferramentas para gerar relatórios e análises sobre o uso, engajamento e eficácia dos projetos.
+04 - Autenticação de usuário: A plataforma deve permitir que os usuários se autentiquem usando suas credenciais corporativas, como o login com email da DELL.
+05 - Filtro de conteúdo: A plataforma deve oferecer opções de filtro para ajudar os usuários a encontrar projetos e documentários relevantes, como por exemplo um projeto com uma linguagem especifica como REACT, Javascript.
+06 - Recomendações personalizadas: A plataforma deve fornecer recomendações personalizadas com base no histórico e nas preferências de cada usuário.
+07-Importação/exportação de dados: A plataforma deve permitir que os usuários importem e exportem dados, como conteúdo de projetos e históricos de projetos participados.
+08 - Gerenciamento de moderadores: A plataforma deve permitir que os moderadores aprovem, editem ou excluam conteúdos, bem como gerenciem usuários que violem as políticas da plataforma.
+09 - Avaliação e feedback: Os usuários devem ser poder, avaliar e dar feedback sobre os projetos que participaram na plataforma.
+10 - Notificações: A plataforma deve mandar notificações para os usuários sobre novos conteúdos, projetos e interações relevantes.
 11 - 
 12 - 
 13 - 
@@ -188,15 +189,15 @@ Sabendo que se define por “Requisitos Funcionais“ aqueles que incluem inform
 
 Descreve os recursos necessários para sua execução, os requisitos de segurança e privacidade.
 
-01 - 
-02 - 
-03 - 
-04 - 
-05 - 
-06 -
-07 -
-08 -
-09 -
+01 - Escalabilidade : A aplicação deve ser capaz de lidar com muitos usuários simultâneos sem afetar o seu desempenho.
+02 - Segurança : A plataforma deve garantir a segurança das informações dos usuários e dos conteúdos armazenados, conforme as práticas de segurança e privacidade.
+03 - Disponibilidade : A plataforma deve estar disponível e acessível aos usuários em qualquer momento, garantindo um tempo mínimo de inatividade.
+04 - Integraçao : A plataforma deve ser capaz de se integrar com outros sistemas internos da empresa, como sistemas de gerenciamento de projetos, intranets e aplicativos de comunicação, garantindo assim uma infraestrutura melhor.
+05 - Usabilidade : A interface da plataforma deve ser intuitiva, facil de usar e acessível em dispositivos móveis, como smartphones e tablets, de diversos formatos, garantindo que qualquer usuario consiga utilizar a plataforma.
+06 -Desempenho : A plataforma deve ter um tempo de resposta rápida e com baixa latência para proporcionar uma experiência de usuário agradável,
+07 -Facil manutenção: A plataforma deve ser projetada seguindo boas práticas de desenvolvimento de software, facilitando a manutenção e possíveis futuras atualizações.
+08 -Compatibilidade: A plataforma deve ser compatível com os principais sistemas operacionais móveis, como Android e iOS, e funcionar corretamente em todos os tipos de navegadores web.
+09 -Localização: A plataforma deve oferecer suporte ao inglês e múltiplos idiomas, atendendo as necessidades de uma audiência global.
 10 -
 
 ## Perfis de Usuários 
