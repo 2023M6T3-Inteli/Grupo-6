@@ -1,25 +1,31 @@
 <center>
-![template-documento1](./img/template-documento1.jpg)
+[template-documento1](../img/template-documento1.jpg)
 </center>
 <table>
 <tr>
 <table>
 <tr>
 <td>
-<a href= "https://klabin.com.br/"><img src="https://klabin.com.br/o/klabinklabinonline-theme/images/klabin-logo.png" alt="Klabin" border="0" width="100%"></a>
+<a href= "dell.com/pt-br"><img src="./docs/img/img_docs/Dell_Logo.svg.png" alt="DELL" border="0" width="70%"></a>
 </td>
-<td><a href= "https://www.inteli.edu.br/"><img src="./img/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
+<td><a href= "https://www.inteli.edu.br/"><img src="../img/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
 </td>
 </tr>
 </table>
 
-. Nome do Projeto: xxxx
-. Nome do Parceiro: xxxx
-. Nome do Grupo: xxxx
-. Integrantes do grupo…
-  aaaaaa
-  bbbbbb
-  cccccc
+. Nome do Projeto: Elaboração de aplicação para dispositivos móveis
+. Nome do Parceiro: DELL <br>
+. Nome do Grupo: Grupo 6 <br>
+. Integrantes do grupo:
+<ul>
+  <li>Alan Rozensztajn Schipper</li>
+  <li>Erik Freundt</li>
+  <li>Felipe Silberberg</li>
+  <li>Mateus Neves</li>
+  <li>Priscila Falcão</li>
+  <li>Sofia Pimazzoni</li>
+  <li>Victor Carvalho</li>
+<ul>
 
 <font size="+12"><center>
 Template do Documento do Projeto
@@ -37,18 +43,18 @@ Solução de otimização de corte de bobinas de papel
   - [Parceiro de Negócios](#parceiro-de-negócios)
   - [Problema](#problema)
     - [Análise do Problema](#análise-do-problema)
-    - [Análise da Indústria](#análise-da-indústria)
-    - [Análise do cenário e Matriz SWOT](#análise-do-cenário-e-Matriz-SWOT)
+    - [Matriz de avaliação de valor Oceano Azul](#matriz-de-avaliação-de-valor-oceano-azul)
     - [Proposta de Valor e Value Proposition Canvas](#proposta-de-valor-e-value-proposition-canvas)
     - [Matriz de Risco](#matriz-de-risco)
+    - [Análise financeira do projeto](#análise-financeira-do-projeto)
+  - [Mapeamento do processo](#mapeamento-do-processo)
   - [Descritivo da Solução](#descritivo-da-solução)
     - [Objetivos](#objetivos)
-      - [ObjetivosObjetivos gerais](#objetivos-gerais)
-      - [ObjetivosObjetivos específicos](#objetivos-específicos)
+      - [Objetivos gerais](#objetivos-gerais)
+      - [Objetivos específicos](#objetivos-específicos)
     - [Justificativa](#justificativa)
   - [Partes Interessadas](#partes-interessadas)
 - [Requisitos](#requisitos)
-  - [Mapeamento do processo em alto nível](#mapeamento-do-processo-em-alto-nível)
   - [Requisitos Funcionais](#requisitos-funcionais)
   - [Requisitos não Funcionais](#requisitos-não-funcionais)
   - [Perfis de Usuários](#perfis-de-usuários)
@@ -59,7 +65,7 @@ Solução de otimização de corte de bobinas de papel
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
   - [Modelo Conceitual](#modelo-conceitual)
-  - [Modelo Lógico](#modelo-conceitual)
+  - [Modelo Lógico](#modelo-lógico)
 - [Testes de Software](#testes-de-software)
   - [Teste Unitário](#teste-unitário)
   - [Teste de Integração](#teste-de-integração)
@@ -68,7 +74,7 @@ Solução de otimização de corte de bobinas de papel
   - [Teste de Funcionalidade](#teste-de-funcionalidade)
   - [Teste de API](#teste-de-api)
 - [Documentação da API](#documentação-da-api)
-- [Manual do Usuário](#Manual-do-usuário)
+- [Manual do Usuário](#manual-do-usuário)
 - [Referências](#referências)
 - [Apêndice](#apêndice)
 
@@ -92,14 +98,9 @@ Descrever o problema ou a oportunidade de negócio.
 Nesta seção, serão apresentados os problemas identificados e as necessidades do usuário, bem como uma avaliação da situação atual e as possíveis soluções para cada questão. Além disso, serão identificados os obstáculos e limitações do projeto, a fim de assegurar que todas as preocupações sejam abordadas antes do início da implementação. A Análise do Problema é essencial para garantir que a solução do software seja eficaz e atenda às necessidades dos usuários. É importante que seja realizada uma pesquisa exaustiva e que todas as perspectivas sejam consideradas para garantir que a solução seja bem-sucedida.
 
 
-### Análise da Indústria
+### Matriz de avaliação de valor Oceano Azul
 
-Análise da indústria (Modelo de 5 Forças de Porter) em relação ao cenário da empresa parceira.
-
-
-### Análise do cenário e Matriz SWOT
-
-Apresenta a Matriz SWOT com análise da empresa parceira.
+Definir 8 atributos que são importantes para os clientes e diferenciá-los da concorrência por meio das ações de Reduzir, Eliminar, Aumentar e Criar.
 
 
 ### Proposta de Valor e Value Proposition Canvas
@@ -108,8 +109,20 @@ Apresenta o Canvas de Proposta de Valor com relação à solução.
 
 
 ### Matriz de Risco
+Também chamada de matriz de probabilidade e impacto, a matriz mapeia os riscos do projeto, sejam eles tanto riscos de ameaças quanto de oportunidades. Por ser uma ferramenta útil para gerenciar os riscos operacionais existentes em um projeto, foi elaborado uma Matriz de Riscos com base na proposta de solução elaborada pelo time de desenvolvimento, que pode ser visualizada na Figura x.
 
-Apresenta a matriz de risco com relação ao projeto.
+
+<img src="./docs/img/img_docs/matriz%20de%20risco.png" alt="Matriz de risco" border="0" width="100%" display="flex" justify-content="center">
+
+
+### Análise financeira do projeto
+
+Informar o quanto o parceiro tem projetado para investir no projeto e quais são as projeções de custos e de receitas, relacionadas ao projeto (para o período de um ano), que o parceiro projeta ter.
+
+
+## Mapeamento do processo
+
+Apresentar a modelagem do processo "to be", representando em alto nível o fluxo de trabalho a ser realizado dentro da solução.
 
 
 ## Descritivo da Solução
@@ -119,7 +132,7 @@ Descrição da solução a ser desenvolvida (o que é, quais principais funciona
 
 ### Objetivos
 
-Descrever os objetivos do projeto, objetivos gerais e objetivos específicos. 
+Descrever o objetivo geral e os objetivos específicos.
 
 
 #### Objetivos gerais
@@ -132,9 +145,7 @@ Descrever os objetivos do projeto, objetivos gerais e objetivos específicos.
 
 ### Justificativa
 
-Qual o tipo de arquitetura de nuvem escolhida e sua justificativa
-Como arquitetura de nuvem escolhida deverá ser utilizada
-Quais os benefícios trazidos pela arquitetura de nuvem proposta
+Descrever o tipo de arquitetura escolhida, sua justificativa, como deverá ser utilizada e quais os benefícios que ela proporciona.
 
 
 ## Partes Interessadas 
@@ -149,25 +160,45 @@ Esta seção é importante porque permite que os desenvolvedores entendam claram
 A seção de requisitos do sistema é atualizada constantemente durante o ciclo de desenvolvimento do software, garantindo que todas as necessidades e especificações estejam sempre atualizadas.
 
 
-## Mapeamento do processo em alto nível
-
-Crie um modelo (tipo BPMN/Diagrama de atividades) que represente em alto nível o fluxo de trabalho a ser realizado dentro da solução.
-
-<center>
-![template-documento2](./img/template-documento2.jpg)
-
-Exemplo de Modelo (bpmn/Diagrama de Atividades)
-</center>
-
-
 ## Requisitos Funcionais
-Esta seção da documentação do software fornece uma descrição detalhada dos requisitos do sistema. Ela inclui informações sobre as funcionalidades esperadas do software, as restrições e limitações do sistema e outras especificações relevantes.
+Sabendo que se define por “Requisitos Funcionais“ aqueles que incluem informações sobre as funcionalidades esperadas do software, além de as restrições e limitações do sistema. São compostos por duas partes: função (que se refere ao que o sistema faz) e comportamento (que refere-se como o sistema faz isso) (VISURE, 2023). Dessa forma, viu-se a necessidade de elencar esses, de acordo com a solução.
+
+01 - Gamificação: A plataforma deve incluir um sistema de recompensas, como badges e rankings, para incentivar o engajamento dos usuários. <br>
+02 - Compartilhamento de conteúdo: Os usuários devem ser capazes de compartilhar facilmente conteúdos (projetos e documentários) com colegas, como, por exemplo, projetos interessantes.<br>
+03 - Relatórios e análises: A plataforma deve oferecer ferramentas para gerar relatórios e análises sobre o uso, engajamento e eficácia dos projetos.<br>
+04 - Autenticação de usuário: A plataforma deve permitir que os usuários se autentiquem usando suas credenciais corporativas, como o login com email da DELL.<br>
+05 - Filtro de conteúdo: A plataforma deve oferecer opções de filtro para ajudar os usuários a encontrar projetos e documentários relevantes, como por exemplo um projeto com uma linguagem especifica como REACT, Javascript.<br>
+06 - Recomendações personalizadas: A plataforma deve fornecer recomendações personalizadas com base no histórico e nas preferências de cada usuário.<br>
+07-Importação/exportação de dados: A plataforma deve permitir que os usuários importem e exportem dados, como conteúdo de projetos e históricos de projetos participados.<br>
+08 - Gerenciamento de moderadores: A plataforma deve permitir que os moderadores aprovem, editem ou excluam conteúdos, bem como gerenciem usuários que violem as políticas da plataforma.<br>
+09 - Avaliação e feedback: Os usuários devem ser poder, avaliar e dar feedback sobre os projetos que participaram na plataforma.<br>
+10 - Notificações: A plataforma deve mandar notificações para os usuários sobre novos conteúdos, projetos e interações relevantes.<br>
+11 - <br>
+12 - <br>
+13 - <br>
+14 - <br>
+15 - <br>
+16 - <br>
+17 - <br>
+18 - <br>
+19 - <br>
+20 - 
 
 
 ## Requisitos não Funcionais
 
 Descreve os recursos necessários para sua execução, os requisitos de segurança e privacidade.
 
+01 - Escalabilidade : A aplicação deve ser capaz de lidar com muitos usuários simultâneos sem afetar o seu desempenho.<br>
+02 - Segurança : A plataforma deve garantir a segurança das informações dos usuários e dos conteúdos armazenados, conforme as práticas de segurança e privacidade.<br>
+03 - Disponibilidade : A plataforma deve estar disponível e acessível aos usuários em qualquer momento, garantindo um tempo mínimo de inatividade.<br>
+04 - Integraçao : A plataforma deve ser capaz de se integrar com outros sistemas internos da empresa, como sistemas de gerenciamento de projetos, intranets e aplicativos de comunicação, garantindo assim uma infraestrutura melhor.<br>
+05 - Usabilidade : A interface da plataforma deve ser intuitiva, facil de usar e acessível em dispositivos móveis, como smartphones e tablets, de diversos formatos, garantindo que qualquer usuario consiga utilizar a plataforma.<br>
+06 - Desempenho : A plataforma deve ter um tempo de resposta rápida e com baixa latência para proporcionar uma experiência de usuário agradável.<br>
+07 - Facil manutenção: A plataforma deve ser projetada seguindo boas práticas de desenvolvimento de software, facilitando a manutenção e possíveis futuras atualizações.<br>
+08 - Compatibilidade: A plataforma deve ser compatível com os principais sistemas operacionais móveis, como Android e iOS, e funcionar corretamente em todos os tipos de navegadores web.<br>
+09 - Localização: A plataforma deve oferecer suporte ao inglês e múltiplos idiomas, atendendo as necessidades de uma audiência global.<br>
+10 - Sustentabilidade: A plataforma deve completar as tarefas para qual foi proposta, 
 
 ## Perfis de Usuários 
 
@@ -179,16 +210,9 @@ A seção de perfil de usuário da documentação de software é responsável po
 A seção de casos de uso da documentação de software é uma parte crucial que descreve as funcionalidades 
 do software e como elas serão utilizadas pelos usuários. Aqui, são listados todos os cenários possíveis de uso do software, incluindo as ações que o usuário pode realizar, as interações com o sistema e os resultados esperados. Os casos de uso são descritos em detalhes, incluindo a descrição do objetivo da funcionalidade, as entradas de dados, as ações do usuário e os resultados esperados. Além disso, também são incluídos os critérios de aceitação, que são os padrões que o software precisa atender para ser considerado como funcionando corretamente.
 
-Neste projeto os casos de uso devem ser descritos  no formato de User Stories:
-Como PERFIL, DEVO/POSSO AÇÃO para OBJETIVO
-PERFIL: perfil do usuário que realizará a ação
-DEVO/POSSO: obrigatoriedade da ação
-AÇÃO: o que será realizado
-OBJETIVO: qual a finalidade da ação.
-
 
 <center>
-![template-documento3](./img/template-documento3.jpg)
+[template-documento3](../img/template-documento3.jpg)
 
 Exemplo de Diagrama de Casos de Uso
 </center>
@@ -200,7 +224,7 @@ Atualizar a cada revisão/atualização da arquitetura, mantendo todas as 3 vers
 
 
 <center>
-![template-documento4](./img/template-documento4.jpg)
+[template-documento4](../img/template-documento4.jpg)
 
 Exemplo de Diagrama de Arquitetura
 </center>
@@ -213,17 +237,16 @@ Aborda o design e a funcionalidade da aplicação ou sistema em questão. Ela fo
 
 ## Wireframes
 
-Telas de baixa fidelidade das áreas do usuário, conectados, demonstrando a diagramação e o fluxo de navegação
+Telas de baixa fidelidade das áreas do usuário, conectados, demonstrando a diagramação e o fluxo de navegação.
 
-Exemplos: tela da home, tela de login, etc. Em cada tela colocar: cabeçalho, rodapé, barra lateral, área de conteúdo
+Exemplos: tela da home, tela de login, etc. Em cada tela colocar: cabeçalho, rodapé, barra lateral, área de conteúdo.
 
-Aqui você deve colocar o link para o wireframe ou colocar as imagens geradas na sequência correta do fluxo de navegação
+Aqui você deve colocar o link para o wireframe ou colocar as imagens geradas na sequência correta do fluxo de navegação.
+
 
 ## Design de Interface - Guia de Estilos
 Refere-se ao design visual, cores, tipografia, imagens, logotipos, ou seja, os elementos visuais que compõem o produto.
-Aqu
-i você deve colocar o link para seu documento de guia de estilos
-
+Aqui você deve colocar o link para seu documento de guia de estilos.
 
 
 # Projeto de Banco de Dados
@@ -249,39 +272,38 @@ relacionamentos e tipos de relacionamentos
 O modelo lógico de banco de dados é uma representação abstrata e simplificada dos dados armazenados no sistema. É utilizado para entender como os dados são relacionados e para garantir a integridade e consistência dos dados armazenados. Incluir  uma descrição detalhada das tabelas, campos e relações presentes no modelo lógico de banco de dados. Também serão apresentadas as regras de negócio e as restrições aplicadas aos dados para garantir a integridade e a consistência dos dados armazenados.
 
 
-
 # Testes de Software
 
 
 
 ## Teste Unitário
 
-Link ou imagem da tabela com dados organizados dos testes realizados
+Link ou imagem da tabela com dados organizados dos testes realizados.
 
 
 ## Teste de Integração
 
-Link ou imagem da tabela com dados organizados dos testes realizados
+Link ou imagem da tabela com dados organizados dos testes realizados.
 
 
 ## Teste de Regressão
 
-Link ou imagem da tabela com dados organizados dos testes realizados
+Link ou imagem da tabela com dados organizados dos testes realizados.
 
 
 ## Teste de Usabilidade 
 
-Link ou imagem da tabela com dados organizados dos testes realizados
+Link ou imagem da tabela com dados organizados dos testes realizados.
 
 
 ## Teste de Funcionalidade 
 
-Link ou imagem da tabela com dados organizados dos testes realizados
+Link ou imagem da tabela com dados organizados dos testes realizados.
 
 
 ## Teste de API 
 
-Link ou imagem da tabela com dados organizados dos testes realizados
+Link ou imagem da tabela com dados organizados dos testes realizados.
 
 
 # Documentação da API
@@ -293,14 +315,10 @@ Apresentar a documentação no formato Swagger ou aplicação equivalente com to
 
 Fornecer instruções detalhadas sobre como usar o software corretamente. É uma ferramenta valiosa para ajudar os usuários a compreender as funções do software, instalar o software, configurar as preferências do usuário, entre outras tarefas. O manual do usuário geralmente inclui screenshots, animações e outros recursos visuais para tornar a experiência do usuário mais clara e intuitiva. Além disso, ele também pode incluir informações sobre solução de problemas, dicas e truques, bem como informações de contato para suporte técnico. É importante que a seção de manual do usuário seja atualizada frequentemente para garantir que os usuários tenham acesso à informação mais recente e precisa sobre o software.
 
- 
-
-
-
 
 # Referências
 
-Toda referência citada no texto deverá constar nessa seção, utilizando o padrão de normalização da ABNT - ABNT NBR 10520). As citações devem ser confiáveis e relevantes para o trabalho. São imprescindíveis as citações dos sites de download das ferramentas utilizadas, bem como a citação de algum objeto, música, textura ou outros que não tenham sido produzidos pelo grupo, mas utilizados (mesmo no caso de licenças gratuitas, royalty free ou similares)
+Toda referência citada no texto deverá constar nessa seção, utilizando o padrão de normalização da ABNT - ABNT NBR 10520). As citações devem ser confiáveis e relevantes para o trabalho. São imprescindíveis as citações dos sites de download das ferramentas utilizadas, bem como a citação de algum objeto, música, textura ou outros que não tenham sido produzidos pelo grupo, mas utilizados (mesmo no caso de licenças gratuitas, royalty free ou similares).
 Sugerimos o uso do sistema autor-data para citações.
 
 
