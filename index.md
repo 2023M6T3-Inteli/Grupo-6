@@ -161,13 +161,43 @@ A seção de requisitos do sistema é atualizada constantemente durante o ciclo 
 
 
 ## Requisitos Funcionais
-Esta seção da documentação do software fornece uma descrição detalhada dos requisitos do sistema. Ela inclui informações sobre as funcionalidades esperadas do software, as restrições e limitações do sistema e outras especificações relevantes.
+Sabendo que se define por “Requisitos Funcionais“ aqueles que incluem informações sobre as funcionalidades esperadas do software, além de as restrições e limitações do sistema. São compostos por duas partes: função (que se refere ao que o sistema faz) e comportamento (que refere-se como o sistema faz isso) (VISURE, 2023). Dessa forma, viu-se a necessidade de elencar esses, de acordo com a solução.
+
+01 - 
+02 - 
+03 - 
+04 - 
+05 - 
+06 - 
+08 - 
+09 - 
+10 - 
+11 - 
+12 - 
+13 - 
+14 - 
+15 - 
+16 - 
+17 -
+18 - 
+19 -
+20 - 
 
 
 ## Requisitos não Funcionais
 
 Descreve os recursos necessários para sua execução, os requisitos de segurança e privacidade.
 
+01 - 
+02 - 
+03 - 
+04 - 
+05 - 
+06 -
+07 -
+08 -
+09 -
+10 -
 
 ## Perfis de Usuários 
 
