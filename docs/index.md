@@ -119,7 +119,8 @@ Também chamada de matriz de probabilidade e impacto, a matriz mapeia os riscos 
 
 ### Análise financeira do projeto
 
-Informar o quanto o parceiro tem projetado para investir no projeto e quais são as projeções de custos e de receitas, relacionadas ao projeto (para o período de um ano), que o parceiro projeta ter.
+ Para manter o site em funcionamento e fornecer as ferramentas necessárias, a empresa terá alguns custos contínuos, como hospedagem, desenvolvimento, suporte técnico, atualização e manutenção. Embora o site não seja uma fonte direta de lucro para a Dell, ele é visto como uma despesa operacional para aprimorar a equipe de funcionários e melhorar a eficiência e a produtividade da empresa. É importante investir nesses custos para garantir que o site esteja funcionando corretamente e fornecendo novas ferramentas e recursos aos funcionários.
+
 
 
 ## Mapeamento do processo
