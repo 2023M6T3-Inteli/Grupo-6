@@ -1,23 +1,24 @@
-<center>
-[template-documento1](../img/template-documento1.jpg)
-</center>
 <table>
 <tr>
 <table>
 <tr>
 <td>
-<a href= "dell.com/pt-br"><img src="./docs/img/img_docs/Dell_Logo.svg.png" alt="DELL" border="0" width="70%"></a>
+<a href= "dell.com/pt-br"><img src="../docs/img/img_docs/Dell_Logo.svg.png" alt="DELL" border="0" width="30%"></a>
 </td>
-<td><a href= "https://www.inteli.edu.br/"><img src="../img/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
+<td><a href= "https://www.inteli.edu.br/"><img src="../docs/img/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
 </td>
 </tr>
 </table>
 
-. Nome do Projeto: Elaboração de aplicação para dispositivos móveis
-. Nome do Parceiro: DELL <br>
-. Nome do Grupo: Grupo 6 <br>
-. Integrantes do grupo:
+
+# DOCUMENTAÇÃO OFICIAL
+
 <ul>
+  <li>Nome do Projeto: Elaboração de aplicação para dispositivos móveis</li>
+  <li>Nome do Parceiro: DELL</li>
+  <li>Nome do Grupo: Grupo 6</li>
+  <li>Integrantes do grupo:</li>
+  <ul>
   <li>Alan Rozensztajn Schipper</li>
   <li>Erik Freundt</li>
   <li>Felipe Silberberg</li>
@@ -25,6 +26,7 @@
   <li>Priscila Falcão</li>
   <li>Sofia Pimazzoni</li>
   <li>Victor Carvalho</li>
+  </ul>
 <ul>
 
 <font size="+12"><center>
@@ -112,7 +114,7 @@ Apresenta o Canvas de Proposta de Valor com relação à solução.
 Também chamada de matriz de probabilidade e impacto, a matriz mapeia os riscos do projeto, sejam eles tanto riscos de ameaças quanto de oportunidades. Por ser uma ferramenta útil para gerenciar os riscos operacionais existentes em um projeto, foi elaborado uma Matriz de Riscos com base na proposta de solução elaborada pelo time de desenvolvimento, que pode ser visualizada na Figura x.
 
 
-<img src="./docs/img/img_docs/matriz%20de%20risco.png" alt="Matriz de risco" border="0" width="100%" display="flex" justify-content="center">
+<img src="../docs/img/img_docs/matriz%20de%20risco.png" alt="Matriz de risco" border="0" width="100%" display="flex" justify-content="center">
 
 
 ### Análise financeira do projeto
@@ -168,20 +170,20 @@ Sabendo que se define por “Requisitos Funcionais“ aqueles que incluem inform
 03 - Relatórios e análises: A plataforma deve oferecer ferramentas para gerar relatórios e análises sobre o uso, engajamento e eficácia dos projetos.<br>
 04 - Autenticação de usuário: A plataforma deve permitir que os usuários se autentiquem usando suas credenciais corporativas, como o login com email da DELL.<br>
 05 - Filtro de conteúdo: A plataforma deve oferecer opções de filtro para ajudar os usuários a encontrar projetos e documentários relevantes, como por exemplo um projeto com uma linguagem especifica como REACT, Javascript.<br>
-06 - Recomendações personalizadas: A plataforma deve fornecer recomendações personalizadas com base no histórico e nas preferências de cada usuário.<br>
-07-Importação/exportação de dados: A plataforma deve permitir que os usuários importem e exportem dados, como conteúdo de projetos e históricos de projetos participados.<br>
+06 - Recomendações personalizadas de conteúdo: A plataforma deve fornecer recomendações personalizadas com base no histórico e nas preferências de cada usuário.<br>
+07 - Importação/exportação de dados: A plataforma deve permitir que os usuários importem e exportem dados, como conteúdo de projetos e históricos de projetos participados.<br>
 08 - Gerenciamento de moderadores: A plataforma deve permitir que os moderadores aprovem, editem ou excluam conteúdos, bem como gerenciem usuários que violem as políticas da plataforma.<br>
 09 - Avaliação e feedback: Os usuários devem ser poder, avaliar e dar feedback sobre os projetos que participaram na plataforma.<br>
 10 - Notificações: A plataforma deve mandar notificações para os usuários sobre novos conteúdos, projetos e interações relevantes.<br>
-11 - <br>
-12 - <br>
-13 - <br>
-14 - <br>
-15 - <br>
-16 - <br>
-17 - <br>
-18 - <br>
-19 - <br>
+11 - Ter réplicas em diversas AZ's em cloud: a fim de garantir a disponibilidade da aplicação, essa deve estar alocada em diferentes zonas da AWS.<br>
+12 - Feedbacks instantâneos: para cada interação do usuário com a plataforma, essa deverá conter um feedback durante o uso. <br>
+13 - Os conteúdos devem conter tags: os conteúdo publicados na plataforma devem ser separados pr tags de acordo com o tema abordado, de forma que seja possíel linkar esses com os projetos de mesmo tema.<br>
+14 - Sistema de match: a plataforma deve conter inteligência artificial embutida para que ocorra "match" entre um usuário e um projeto, baseado nos conteúdos consumidos por este usuário.<br>
+15 - Perfil: a aplicação deverá ter a opção de acessar o perfil do usuário, onde será possível visualizar suas soft e hard skills, além de projetos que esse colaborador já tenha participado.<br>
+16 - Barra de pesquisa: a aplicação deve conter uma barra de pesquisa para que seja possível pesquisar por conteúdos específicos, para além dos que foram recomendados.<br>
+17 - Submissão em um projeto: a plataforma deve permitir que o usuário consiga se submeter em um projeto, seja ele recomendado ou não.<br>
+18 - Modo escuro: a aplicação poderá ter modo escuro como opção para os usuários. <br>
+19 - <br> 
 20 - 
 
 
@@ -198,7 +200,7 @@ Descreve os recursos necessários para sua execução, os requisitos de seguran�
 07 - Facil manutenção: A plataforma deve ser projetada seguindo boas práticas de desenvolvimento de software, facilitando a manutenção e possíveis futuras atualizações.<br>
 08 - Compatibilidade: A plataforma deve ser compatível com os principais sistemas operacionais móveis, como Android e iOS, e funcionar corretamente em todos os tipos de navegadores web.<br>
 09 - Localização: A plataforma deve oferecer suporte ao inglês e múltiplos idiomas, atendendo as necessidades de uma audiência global.<br>
-10 - Sustentabilidade: A plataforma deve completar as tarefas para qual foi proposta, 
+10 - Sustentabilidade: A plataforma deve completar todas as tarefas para qual foi proposta, de forma  correta e consistente com o contexto em que foi solicitado.
 
 ## Perfis de Usuários 
 
@@ -232,7 +234,7 @@ Exemplo de Diagrama de Arquitetura
 
 # UX e UI Design
 
-Aborda o design e a funcionalidade da aplicação ou sistema em questão. Ela fornece informações sobre como o software é projetado para ser fácil de usar e intuitivo para os usuários. Nesta seção, deve ser possível encontrar descrições detalhadas sobre as principais características e recursos da interface do usuário, como botões, menus, ícones e outros elementos que são utilizados para facilitar a interação do usuário com o software. Além disso, são fornecidos exemplos de como as funcionalidades do software são acessadas e usadas pelos usuários, incluindo informações sobre os passos necessários para realizar tarefas específicas. Esta seção também aborda as principais preocupações de UX, como acessibilidade, usabilidade, consistência e simplicidade. São apresentados exemplos de como o software é projetado para atender às necessidades dos usuários com diferentes tipos de habilidades e recursos.
+Aborda o design e a funcionalidade da aplicação ou sistema em questão. Ela fornece informações sobre como o software é projetado para ser fácil de usar e intuitivo para os usuários. Nesta seção, deve ser possível encontrar descrições detalhadas sobre as principais características e recursos da interface do usuário, como botões, menus, ícones e outros elementos que são utilizados para facilitar a interação do usuário com o software. Além disso, são fornecidos exemplos de como as funcionalidades do software são acessadas e usadas pelos usuários, incluindo informações sobre os passos necessários para realizar tarefas específicas. Esta seção também aborda as principais preocupações de UX, como acessibilidade, usabilidade, consistência e simplicidade. São apresentados exemplos de como o software é projetado para atender às necessidades dos usuáriaos com diferentes tipos de habilidades e recursos.
 
 
 ## Wireframes
