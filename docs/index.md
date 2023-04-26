@@ -16,7 +16,7 @@
 <ul>
   <li>Nome do Projeto: Elaboração de aplicação para dispositivos móveis</li>
   <li>Nome do Parceiro: DELL</li>
-  <li>Nome do Grupo: Grupo 6</li>
+  <li>Nome do Grupo: Cloudets</li>
   <li>Integrantes do grupo:</li>
   <ul>
   <li>Alan Rozensztajn Schipper</li>
@@ -107,7 +107,9 @@ Definir 8 atributos que são importantes para os clientes e diferenciá-los da c
 
 ### Proposta de Valor e Value Proposition Canvas
 
-Apresenta o Canvas de Proposta de Valor com relação à solução.
+Value Proposition Canvas é um template de negócios que ajuda a entender o valor da sua solução para a empresa, englobando seus pontos fortes e principalmente, como esses ajudam a resolver dores do cliente. É possível visualizar a proposta de valor na imagem a seguir: 
+
+
 
 
 ### Matriz de Risco
@@ -153,7 +155,11 @@ Descrever o tipo de arquitetura escolhida, sua justificativa, como deverá ser u
 
 ## Partes Interessadas 
 
-Descrever os principais stakeholders envolvidos no projeto e seus papéis.
+Dell Technologies: gerar entreteinimento fora do trabalho para seus funcionários a partir do MVP entregue. A empresa deve fornecer suporte por meio de materiais e documentos que explicitem os problemas, as necessidades e as expectativas da interessada com o projeto. Além disso, é esperado que a Dell consiga acompanhar as entregas do projeto a cada sprint, para que possa dar feedbacks aos alunos com relação ao desenvolvimento que está sendo feito, para que os alunos sempre tenham a oportunidade de melhorar a entrega.
+	
+Instituto de Tecnologia e Liderança (INTELI): ter a primeira experiência de continuar um projeto real com a mesma empresa parceira e ver como seus alunos vão ter evoluido. Além disso, espera-se que o orientador possa mediar o contato com a empresa, para que os alunos estejam sempre atualizados sobre as expectativas do projeto, já que isso contriubi para uma entrega de melhor qualidade.
+	
+Alunos responsáveis pelo projeto: interesse em aprender novos conteúdos focados em mobile, que é muito pensado atualmente ao desenvolver uma aplicação, além de se aprofundar mais em Cloud Computing, tópico que está bem requisitado ultimamente. Ademais, os alunos terão a experiência de continuar um projeto passado feito com uma empresa parceira, situação que muitas vezes acontece no mundo coorporativo.
 
 
 # Requisitos
