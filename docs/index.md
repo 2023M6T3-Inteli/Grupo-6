@@ -109,7 +109,7 @@ Definir 8 atributos que são importantes para os clientes e diferenciá-los da c
 
 Value Proposition Canvas é um template de negócios que ajuda a entender o valor da sua solução para a empresa, englobando seus pontos fortes e principalmente, como esses ajudam a resolver dores do cliente. É possível visualizar a proposta de valor na imagem a seguir: 
 
-<img src="../docs/img/img_docs/Screen Shot 2023-04-26 at 16.48.12.png" alt="Value Proposition Canvas" border="0" width="100%" display="flex" justify-content="center">
+<img src="../docs/img/img_docs/value-proposition.png" alt="Value Proposition Canvas" border="0" width="100%" display="flex" justify-content="center">
 
 
 ### Matriz de Risco
