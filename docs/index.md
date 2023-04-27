@@ -102,8 +102,15 @@ Nesta seção, serão apresentados os problemas identificados e as necessidades 
 
 ### Matriz de avaliação de valor Oceano Azul
 
-Definir 8 atributos que são importantes para os clientes e diferenciá-los da concorrência por meio das ações de Reduzir, Eliminar, Aumentar e Criar.
+A matriz de oceano azul é uma ferramenta de análise estratégica que ajuda a identificar oportunidades de mercado inexploradas e a criar novas demandas. Ela é usada para definir a posição competitiva de uma empresa em relação aos concorrentes e criar um plano de ação para diferenciar a oferta da empresa e criar um novo mercado. A matriz ajuda as empresas a encontrar novas oportunidades de crescimento, reduzir a concorrência e aumentar a lucratividade.
 
+<img src="../docs/img/img_docs/oceano-azul.png" alt="Matriz de avaliação de valor Oceano Azul" border="0" width="100%" display="flex" justify-content="center">
+
+Projetos (10): a solução desenvolvida pelo Inteli será a única do mercado a oferecer a oportunidade de participar de projetos, se comparado as plataformas já existentes no mercado.
+
+Analytics (10): mesmo as concorrentes já oferecendo informações de controle (dashboards, dados etc), a solução desenvolvida pelo Inteli oferecerá ferramentas completas de Analytics, que auxiliarão os Product Owners e criadores de conteúdo a terem controle total de dados referentes a projetos e conteúdos, respectivamente.
+
+Experiência do Usuário (10): o mercado oferece soluções que apresentam uma experiência decente como a Udemy. Porém, nenhuma plataforma já existente oferece uma experiência fluida e visualmente atrativa como a desenvolvida pelo Inteli.
 
 ### Proposta de Valor e Value Proposition Canvas
 
