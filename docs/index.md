@@ -250,6 +250,8 @@ do software e como elas serão utilizadas pelos usuários. Aqui, são listados t
 
 1 - Eu, como funcionário da Dell, quero ter conteúdos recomendados de acordo com os meus interesses, com o intuito de otimizar meu tempo.<br>
 2 - Eu, como Product Owner, quero ter acesso à dashboards de dados, a fim de medir a produtividade de meus funcionários e o andamento dos projetos.<br>
+3 - Eu, como funcionário da Dell e Product Owner, quero poder acessar o perfil de outros usuários da plataforma, a fim de visualizar suas informações, bem como suas soft/hard skills e projetos trabalhados.<br>
+4 - Eu, como funcionário da Dell, quero poder buscar por conteúdos específicos para além daqueles recomendados, com objetivo de encontrar materiais sobre assuntos que não necessariamente eu já demonstrei interesse anteriormente.<br>
 
 <center>
 [template-documento3](../img/template-documento3.jpg)
