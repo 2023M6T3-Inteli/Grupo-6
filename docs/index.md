@@ -256,14 +256,10 @@ Exemplo de Diagrama de Casos de Uso
 
 # Arquitetura do Sistema
 
-Atualizar a cada revisão/atualização da arquitetura, mantendo todas as 3 versões no documento..
+Arquitetura do Sistema - Versão 1
+<img src="../docs/img/arquitetura-v1.png" alt="Value Proposition Canvas" border="0" width="100%" display="flex" justify-content="center">
 
 
-<center>
-[template-documento4](../img/template-documento4.jpg)
-
-Exemplo de Diagrama de Arquitetura
-</center>
 
 
 # UX e UI Design
