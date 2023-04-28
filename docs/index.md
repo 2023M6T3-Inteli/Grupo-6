@@ -112,6 +112,16 @@ Analytics (10): mesmo as concorrentes já oferecendo informações de controle (
 
 Experiência do Usuário (10): o mercado oferece soluções que apresentam uma experiência decente como a Udemy. Porém, nenhuma plataforma já existente oferece uma experiência fluida e visualmente atrativa como a desenvolvida pelo Inteli.
 
+Produtividade (10): a solução desenvolvida pelo Inteli proporciona uma navegação limpa, bem como conteúdos de qualidade para o usuário. Ademais, estes atributos, juntamente com a oportunidade de projetos, acarretam em uma maior produtividade por parte do usuário.
+
+Oportunidades (10): na aplicação desenvolvida pelo Inteli, além de aprender através de conteúdos (podcasts, artigos, vídeos etc), os usuários também poderão aplicar o conhecimento adquirido em projetos reais, tendo a oportunidade de aumentar se networking e reputação na empresa.
+
+Personalização (10): algumas soluções existentes no mercado como o site dev.to oferecem uma pequena personalização à experiência do usuário. Todavia, a solução desenvolvida pelo Inteli proporciona tanto conteúdos como projetos baseados na atividade do usuário. Dessa forma, haverá uma otimização de tempo na utilização da plataforma, além do aumento da produtividade e satisfação do cliente.
+
+Receita (0): a plataforma desenvolvida pelo Inteli não terá nenhuma forma de ganhar dinheiro, uma vez que seu obejtivo está ligado, exclusivamente, ao aprendizado e aumento do engajamento de seus funcionários.
+
+IA (10): a solução desenvolvida pelo Inteli contará com a atuação de uma Inteligência Artificial de qualidade no que tange a personalização da experiência do funcionário, analisando seu comportamento enquanto usuário e oferecendo conteúdos e projetos de acordo com seus interesses. Tal tecnologia pode ser encontrada em outras soluções, mas com qualidade inferior. 
+
 ### Proposta de Valor e Value Proposition Canvas
 
 Value Proposition Canvas é um template de negócios que ajuda a entender o valor da sua solução para a empresa, englobando seus pontos fortes e principalmente, como esses ajudam a resolver dores do cliente. É possível visualizar a proposta de valor na imagem a seguir: 
