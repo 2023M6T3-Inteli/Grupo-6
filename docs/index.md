@@ -87,7 +87,15 @@ Solução de otimização de corte de bobinas de papel
 
 ## Parceiro de Negócios
 
-Breve descrição da instituição representada pelo parceiro de negócios, porte, onde atua, área de mercado que atua e posicionamento no mercado.
+Fundada em 1984, a Dell Technologies é uma renomada empresa que atua no ramo tecnológico através da produção e comercialização de produtos e serviços, estando presente em mais de 180 países ao redor do mundo.
+
+Entre os principais produtos/serviços que a empresa oferece, é possível citar servidores, dispositivos de armazenamento, periféricos, softwares e computadores, sendo este a principal fonte de receita da companhia.
+
+Os principais clientes da Dell são empresas, organizações governamentais e instituições de ensino, bem como consumidores finais. Além disso, a empresa atende a uma ampla variedade de setores, incluindo serviços financeiros, saúde, manufatura, varejo, telecomunicações e serviços públicos. Apesar de ser forte no mercado de varejo, sua principal atuação está no segmento corporativo, sendo líder nesta área.
+
+Em junho de 2022, a companhia apresentou resultados financeiros recorde para o primeiro trimestre do ano fiscal de 2023, ao registrar receita de U$26,1 bilhões, o que representa aumento de 16% em relação ao período anterior. Ademais, a empresa gerou resultado operacional recorde para primeiro trimestre de US$ 1,6 bilhão, um aumento de 57%, e recorde de resultado operacional non-GAAP de US$ 2,1 bilhões, um aumento de 21%. O lucro líquido de operações contínuas foi de US$ 1,1 bilhão, aumento de 62%, e o lucro líquido non-GAAP foi de 1,4 bilhão, um aumento de 36%. Os dois foram impulsionados pelo crescimento do resultado operacional e pelas despesas de juros mais baixas devido a saldos de dívida reduzidos. Lucros diluídos por ação foram de US$ 1,37, aumento de 63%, e lucros diluídos por ação non-GAAP foi de US$ 1,84, aumento de 36%.
+
+Com base no resultado financeiro analisado, conclui-se que, mesmo atuando em um mercado competitivo e instável (por estar em constante mudança), a empresa se sobressai aos demais devido aos investimentos em inovação e produtos/serviços de qualidade, além de apresentar gestão eficiente e competente. Dessa maneira, constrói-se um cenário favorável ao desenvolvimento do projeto.
 
 
 ## Problema
