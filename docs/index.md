@@ -261,12 +261,16 @@ Exemplo de Diagrama de Casos de Uso
 
 
 # Arquitetura do Sistema
+	
+A arquitetura de um sistema de software é a estrutura fundamental que define como o sistema é organizado e como seus componentes interagem entre si para atender aos requisitos de software. Ela serve para garantir que o sistema seja escalável, flexível, fácil de manter e extensível ao longo do tempo, permitindo que os desenvolvedores construam um software de alta qualidade que atenda às necessidades dos usuários finais de maneira eficiente. Dessa forma, aqui se encontra a primeira versão da arquitetura do sistema:
+	
+<img src="../docs/img/arquitetura-v1.png" alt="ArquiteturaV1" border="0" width="100%" display="flex" justify-content="center">
 
-Arquitetura do Sistema - Versão 1
-<img src="../docs/img/arquitetura-v1.png" alt="Value Proposition Canvas" border="0" width="100%" display="flex" justify-content="center">
+## Diagrama de sequência do fluxo de dados
 
-
-
+O diagrama de sequência de fluxo de dados é uma ferramenta de modelagem que descreve a interação entre diferentes componentes de um sistema, mostrando a sequência de eventos e as informações que fluem entre eles. Ele é utilizado para ilustrar o fluxo de dados em um sistema, permitindo que os desenvolvedores entendam como o sistema funciona e identifiquem oportunidades para melhorias e otimizações.
+	
+<img src="../docs/img/img_docs/fluxodedados.png" alt="Diagrama de sequência de fluxo de dados" border="0" width="100%" display="flex" justify-content="center">
 
 # UX e UI Design
 
