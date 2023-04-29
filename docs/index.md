@@ -70,8 +70,10 @@ Solução de otimização de corte de bobinas de papel
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
   - [Diagrama de sequência do fluxo de dados](#diagrama-de-sequência-do-fluxo-de-dados)
 - [UX e UI Design](#ux-e-ui-design)
+  - [Benchmark e Revisão de Design System](#benchmark-e-revisão-de-design-system)
   - [Wireframes](#wireframes)
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
+  - [Benchmarking](#benchmarking)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
   - [Modelo Conceitual](#modelo-conceitual)
   - [Modelo Lógico](#modelo-lógico)
@@ -306,6 +308,13 @@ O diagrama de sequência de fluxo de dados é uma ferramenta de modelagem que de
 
 Aborda o design e a funcionalidade da aplicação ou sistema em questão. Ela fornece informações sobre como o software é projetado para ser fácil de usar e intuitivo para os usuários. Nesta seção, deve ser possível encontrar descrições detalhadas sobre as principais características e recursos da interface do usuário, como botões, menus, ícones e outros elementos que são utilizados para facilitar a interação do usuário com o software. Além disso, são fornecidos exemplos de como as funcionalidades do software são acessadas e usadas pelos usuários, incluindo informações sobre os passos necessários para realizar tarefas específicas. Esta seção também aborda as principais preocupações de UX, como acessibilidade, usabilidade, consistência e simplicidade. São apresentados exemplos de como o software é projetado para atender às necessidades dos usuáriaos com diferentes tipos de habilidades e recursos.
 
+## Benchmark e Revisão de Design System
+
+O benchmarking é uma técnica de análise comparativa que permite identificar as melhores práticas em um determinado campo, em relação aos concorrentes ou empresas de referência. No caso de um Design System, o benchmarking pode ser útil para avaliar a eficácia e a qualidade do sistema, além de obter insights sobre como melhorá-lo. Dessa forma foi escolhido pela equipe os design systems da Apple e do Governo Brasileiro.
+Ao fazer um benchmark utilizando 3 Design Systems, sendo um o principal e outros dois para comparação, foi possível perceber que a Dell é uma marca muito forte quando se fala em Design. Começando por um Design unificado, todas as 3 empresas, sendo elas a Dell, Apple e o Governo o possuem, já que utilizam o mesmo padrão em todos seus produtos e componentes. Pensando nisso, as três também possuem um Design universal, com ícones de significado convencional para a sociedade. Porém, apesar disso, os ícones da Dell tem um Design muito rústico, tradicional e quadrado, pouco utilizado hoje em dia e que costuma incomodar os olhos. Além disso, a tipografia da Dell também apresenta essas mesmas características, tanto que esse foi um dos pontos fracos encontrados na empresa. Em contrapartida, a Apple e o Governo do Brasil possuem uma iconografia e tipografia mais arredondados, o que costuma ser mais usado e agrada melhor os olhos. No geral, foi pedido que fosse utilizado o Design System da Dell, mas como foi observado, talvez mudar um pouco a iconografia e a tipografia seja mais agradável para a plataforma, porém isso é algo a se discutir com o cliente. Algo que foi decidido por manter completamente é a paleta de cores. A cor azul que a Dell usa é muito marcante e conhecida no mundo todo.
+
+A tabela a seguir descreve a comparação entre os design systems escolhidos:
+<img src="../docs/img/img_docs/Cloud-ETS.jpg" alt="Comparação de design System" border="0" width="100%" display="flex" justify-content="center">
 
 ## Wireframes
 
@@ -319,7 +328,7 @@ Aqui você deve colocar o link para o wireframe ou colocar as imagens geradas na
 ## Design de Interface - Guia de Estilos
 Refere-se ao design visual, cores, tipografia, imagens, logotipos, ou seja, os elementos visuais que compõem o produto.
 Aqui você deve colocar o link para seu documento de guia de estilos.
-	
+
 
 ## Benchmarking
 
