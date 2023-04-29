@@ -41,6 +41,7 @@ Solução de otimização de corte de bobinas de papel
 
 **Conteúdo**
 
+- [DOCUMENTAÇÃO OFICIAL](#documentação-oficial)
 - [Visão Geral do Projeto](#visão-geral-do-projeto)
   - [Parceiro de Negócios](#parceiro-de-negócios)
   - [Problema](#problema)
@@ -50,6 +51,11 @@ Solução de otimização de corte de bobinas de papel
     - [Matriz de Risco](#matriz-de-risco)
     - [Análise financeira do projeto](#análise-financeira-do-projeto)
   - [Mapeamento do processo](#mapeamento-do-processo)
+    - [Processo 1 - Criar publicação](#processo-1---criar-publicação)
+    - [Processo 2 - Denunciar publicação](#processo-2---denunciar-publicação)
+    - [Processo 3 - Criar projeto](#processo-3---criar-projeto)
+    - [Processo 4 - Inscrever em um projeto](#processo-4---inscrever-em-um-projeto)
+    - [Processo 5 - Gameficação](#processo-5---gameficação)
   - [Descritivo da Solução](#descritivo-da-solução)
     - [Objetivos](#objetivos)
       - [Objetivos gerais](#objetivos-gerais)
@@ -62,6 +68,7 @@ Solução de otimização de corte de bobinas de papel
   - [Perfis de Usuários](#perfis-de-usuários)
   - [Casos de Uso](#casos-de-uso)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
+  - [Diagrama de sequência do fluxo de dados](#diagrama-de-sequência-do-fluxo-de-dados)
 - [UX e UI Design](#ux-e-ui-design)
   - [Wireframes](#wireframes)
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
@@ -152,7 +159,27 @@ Também chamada de matriz de probabilidade e impacto, a matriz mapeia os riscos 
 
 ## Mapeamento do processo
 
-Apresentar a modelagem do processo "to be", representando em alto nível o fluxo de trabalho a ser realizado dentro da solução.
+O mapeamento do processo envolve práticas envolvidas no entendimento, análise e melhoria desses, de forma a estruturar a organizção com base em processos ponta a ponta. Tem-se como objetivos princiais documentar os processos, avaliar padrões e confrmidade, treinar colaboradores,discutir e planejar mudanças e comunicar de forma padronizada. Dessa forma, viu-se a necessidade de criação do mapeamento do mesmo, conforme as figuras a seguir.
+
+### Processo 1 - Criar publicação
+
+<img src="../docs/img/img_docs/criar_pub.png" alt="Criar publicação" border="0" width="100%" display="flex" justify-content="center">
+
+### Processo 2 - Denunciar publicação
+
+<img src="../docs/img/img_docs/denunciar_pub.png" alt="Denunciar publicação" border="0" width="100%" display="flex" justify-content="center">
+
+### Processo 3 - Criar projeto
+
+<img src="../docs/img/img_docs/criar_projeto.png" alt="Criar projeto" border="0" width="100%" display="flex" justify-content="center">
+
+### Processo 4 - Inscrever em um projeto
+
+<img src="../docs/img/img_docs/inscrever_projeto.png" alt="Inscrição em um projeto" border="0" width="100%" display="flex" justify-content="center">
+
+### Processo 5 - Gameficação
+
+<img src="../docs/img/img_docs/gameficacao.png" alt="Gameficação" border="0" width="100%" display="flex" justify-content="center">
 
 
 ## Descritivo da Solução
@@ -215,8 +242,8 @@ Sabendo que se define por “Requisitos Funcionais“ aqueles que incluem inform
 16 - Barra de pesquisa: a aplicação deve conter uma barra de pesquisa para que seja possível pesquisar por conteúdos específicos, para além dos que foram recomendados.<br>
 17 - Submissão em um projeto: a plataforma deve permitir que o usuário consiga se submeter em um projeto, seja ele recomendado ou não.<br>
 18 - Modo escuro: a aplicação poderá ter modo escuro como opção para os usuários. <br>
-19 - <br> 
-20 - 
+19 - Criar projeto: a aplicação permitirá a criação de projetos.<br> 
+20 - Aprovação do gestor: o gestor poderá validar a criação de um projeto.
 
 
 ## Requisitos não Funcionais
