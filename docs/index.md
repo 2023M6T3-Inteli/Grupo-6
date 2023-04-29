@@ -267,7 +267,7 @@ Exemplo de Diagrama de Casos de Uso
 	
 A arquitetura de um sistema de software é a estrutura fundamental que define como o sistema é organizado e como seus componentes interagem entre si para atender aos requisitos de software. Ela serve para garantir que o sistema seja escalável, flexível, fácil de manter e extensível ao longo do tempo, permitindo que os desenvolvedores construam um software de alta qualidade que atenda às necessidades dos usuários finais de maneira eficiente. Dessa forma, aqui se encontra a primeira versão da arquitetura do sistema:
 	
-<img src="../docs/img/arquitetura-v1.png" alt="ArquiteturaV1" border="0" width="100%" display="flex" justify-content="center">
+<img src="../docs/img/arquitetura-v11.jpg" alt="ArquiteturaV1" border="0" width="100%" display="flex" justify-content="center">
 
 ## Diagrama de sequência do fluxo de dados
 
