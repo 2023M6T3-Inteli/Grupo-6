@@ -51,11 +51,6 @@ Solução de otimização de corte de bobinas de papel
     - [Matriz de Risco](#matriz-de-risco)
     - [Análise financeira do projeto](#análise-financeira-do-projeto)
   - [Mapeamento do processo](#mapeamento-do-processo)
-    - [Processo 1 - Criar publicação](#processo-1---criar-publicação)
-    - [Processo 2 - Denunciar publicação](#processo-2---denunciar-publicação)
-    - [Processo 3 - Criar projeto](#processo-3---criar-projeto)
-    - [Processo 4 - Inscrever em um projeto](#processo-4---inscrever-em-um-projeto)
-    - [Processo 5 - Gameficação](#processo-5---gameficação)
   - [Descritivo da Solução](#descritivo-da-solução)
     - [Objetivos](#objetivos)
       - [Objetivos gerais](#objetivos-gerais)
@@ -101,7 +96,7 @@ Entre os principais produtos/serviços que a empresa oferece, é possível citar
 
 Os principais clientes da Dell são empresas, organizações governamentais e instituições de ensino, bem como consumidores finais. Além disso, a empresa atende a uma ampla variedade de setores, incluindo serviços financeiros, saúde, manufatura, varejo, telecomunicações e serviços públicos. Apesar de ser forte no mercado de varejo, sua principal atuação está no segmento corporativo, sendo líder nesta área.
 
-Em junho de 2022, a companhia apresentou resultados financeiros recorde para o primeiro trimestre do ano fiscal de 2023, ao registrar receita de U$26,1 bilhões, o que representa aumento de 16% em relação ao período anterior. Ademais, a empresa gerou resultado operacional recorde para primeiro trimestre de US$ 1,6 bilhão, um aumento de 57%, e recorde de resultado operacional non-GAAP de US$ 2,1 bilhões, um aumento de 21%. O lucro líquido de operações contínuas foi de US$ 1,1 bilhão, aumento de 62%, e o lucro líquido non-GAAP foi de 1,4 bilhão, um aumento de 36%. Os dois foram impulsionados pelo crescimento do resultado operacional e pelas despesas de juros mais baixas devido a saldos de dívida reduzidos. Lucros diluídos por ação foram de US$ 1,37, aumento de 63%, e lucros diluídos por ação non-GAAP foi de US$ 1,84, aumento de 36%.
+Em junho de 2022, a companhia apresentou resultados financeiros recorde para o primeiro trimestre do ano fiscal de 2023, ao registrar receita de US$ 26,1 bilhões, o que representa aumento de 16% em relação ao período anterior. Ademais, a empresa gerou resultado operacional recorde para primeiro trimestre de US$ 1,6 bilhão, um aumento de 57%, e recorde de resultado operacional non-GAAP de US$ 2,1 bilhões, um aumento de 21%. O lucro líquido de operações contínuas foi de US$ 1,1 bilhão, aumento de 62%, e o lucro líquido non-GAAP foi de 1,4 bilhão, um aumento de 36%. Os dois foram impulsionados pelo crescimento do resultado operacional e pelas despesas de juros mais baixas devido a saldos de dívida reduzidos. Lucros diluídos por ação foram de US$ 1,37, aumento de 63%, e lucros diluídos por ação non-GAAP foi de US$ 1,84, aumento de 36%.
 
 Com base no resultado financeiro analisado, conclui-se que, mesmo atuando em um mercado competitivo e instável (por estar em constante mudança), a empresa se sobressai aos demais devido aos investimentos em inovação e produtos/serviços de qualidade, além de apresentar gestão eficiente e competente. Dessa maneira, constrói-se um cenário favorável ao desenvolvimento do projeto.
 
@@ -120,7 +115,12 @@ Nesta seção, serão apresentados os problemas identificados e as necessidades 
 
 A matriz de oceano azul é uma ferramenta de análise estratégica que ajuda a identificar oportunidades de mercado inexploradas e a criar novas demandas. Ela é usada para definir a posição competitiva de uma empresa em relação aos concorrentes e criar um plano de ação para diferenciar a oferta da empresa e criar um novo mercado. A matriz ajuda as empresas a encontrar novas oportunidades de crescimento, reduzir a concorrência e aumentar a lucratividade.
 
+<center> <h3> Gráfico 1 - Matriz Oceano Azul.</h3>  </center> 
 <img src="../docs/img/img_docs/oceano-azul.png" alt="Matriz de avaliação de valor Oceano Azul" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023).</center>
+
+<br>
+<br>
 
 Projetos (10): a solução desenvolvida pelo Inteli será a única do mercado a oferecer a oportunidade de participar de projetos, se comparado as plataformas já existentes no mercado.
 
@@ -142,14 +142,17 @@ IA (10): a solução desenvolvida pelo Inteli contará com a atuação de uma In
 
 Value Proposition Canvas é um template de negócios que ajuda a entender o valor da sua solução para a empresa, englobando seus pontos fortes e principalmente, como esses ajudam a resolver dores do cliente. É possível visualizar a proposta de valor na imagem a seguir: 
 
+<center> <h3> Figura 1 - Value Propostion Canva.</h3>  </center> 
 <img src="../docs/img/img_docs/value-proposition.png" alt="Value Proposition Canvas" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 
 ### Matriz de Risco
 Também chamada de matriz de probabilidade e impacto, a matriz mapeia os riscos do projeto, sejam eles tanto riscos de ameaças quanto de oportunidades. Por ser uma ferramenta útil para gerenciar os riscos operacionais existentes em um projeto, foi elaborado uma Matriz de Riscos com base na proposta de solução elaborada pelo time de desenvolvimento, que pode ser visualizada na Figura x.
 
-
+<center> <h3> Figura 2 - Matriz de risco.</h3>  </center> 
 <img src="../docs/img/img_docs/matriz%20de%20risco.png" alt="Matriz de risco" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 
 ### Análise financeira do projeto
@@ -162,26 +165,25 @@ Também chamada de matriz de probabilidade e impacto, a matriz mapeia os riscos 
 
 O mapeamento do processo envolve práticas envolvidas no entendimento, análise e melhoria desses, de forma a estruturar a organizção com base em processos ponta a ponta. Tem-se como objetivos princiais documentar os processos, avaliar padrões e confrmidade, treinar colaboradores,discutir e planejar mudanças e comunicar de forma padronizada. Dessa forma, viu-se a necessidade de criação do mapeamento do mesmo, conforme as figuras a seguir.
 
-### Processo 1 - Criar publicação
-
+<center> <h3> Diagrama 1 - Processo 1: Criar publicação.</h3>  </center> 
 <img src="../docs/img/img_docs/criar_pub.png" alt="Criar publicação" border="0" width="100%" display="flex" justify-content="center">
-
-### Processo 2 - Denunciar publicação
-
+<center> Fonte: elaborado pelo próprio autor (2023).</center>
+<br>
+<center> <h3> Diagrama 2 - Processo 2: Denunciar publicação.</h3>  </center> 
 <img src="../docs/img/img_docs/denunciar_pub.png" alt="Denunciar publicação" border="0" width="100%" display="flex" justify-content="center">
-
-### Processo 3 - Criar projeto
-
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
+<br>
+<center> <h3> Diagrama  3 - Processo 3: criar projeto.</h3>  </center> 
 <img src="../docs/img/img_docs/criar_projeto.png" alt="Criar projeto" border="0" width="100%" display="flex" justify-content="center">
-
-### Processo 4 - Inscrever em um projeto
-
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
+<br>
+<center> <h3> Diagrama 4 - Processo 4: Inscrever em um projeto.</h3>  </center> 
 <img src="../docs/img/img_docs/inscrever_projeto.png" alt="Inscrição em um projeto" border="0" width="100%" display="flex" justify-content="center">
-
-### Processo 5 - Gameficação
-
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
+<br>
+<center> <h3> Diagrama 5 - Processo 5: Gameficação</h3>  </center> 
 <img src="../docs/img/img_docs/gameficacao.png" alt="Gameficação" border="0" width="100%" display="flex" justify-content="center">
-
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 ## Descritivo da Solução
 
@@ -216,11 +218,7 @@ Alunos responsáveis pelo projeto: interesse em aprender novos conteúdos focado
 
 
 # Requisitos
-
-Esta seção é importante porque permite que os desenvolvedores entendam claramente o que é esperado do software e quais serão as restrições e desafios enfrentados durante o desenvolvimento. Além disso, permite que os usuários finais saibam se o software atende às suas expectativas e se está adequado ao seu ambiente de trabalho.
-
-A seção de requisitos do sistema é atualizada constantemente durante o ciclo de desenvolvimento do software, garantindo que todas as necessidades e especificações estejam sempre atualizadas.
-
+A fim de garantir que todas as necessidades do parceirro fossem atendidas, a equipe desenvolvedora listou os requisitos identificados que a plataforma deveria conter.
 
 ## Requisitos Funcionais
 Sabendo que se define por “Requisitos Funcionais“ aqueles que incluem informações sobre as funcionalidades esperadas do software, além de as restrições e limitações do sistema. São compostos por duas partes: função (que se refere ao que o sistema faz) e comportamento (que refere-se como o sistema faz isso) (VISURE, 2023). Dessa forma, viu-se a necessidade de elencar esses, de acordo com a solução.
@@ -264,17 +262,19 @@ Descreve os recursos necessários para sua execução, os requisitos de seguran�
 
 ## Perfis de Usuários 
 
-Esse projeto apresenta apenas dois usuários:
-	
-Funcionário: qualquer colaborador que trabalha dentro da empresa Dell, independente seu cargo ou posição dentro da empresa, que possua interesse em participar de algum dos processos divulgados e se desafiar a novas tecnologias e competências, ou ainda consumir e publicar conteúdos, como vídeos, podcasts ou até posts.
-	
-Moderador: possui todas as características de um usuário definido como funcionário, mas tem a funcionalidade adicional de aprovar ou não os projetos criados pelos colaboradores e ainda avaliar as denúncias feitas em certos conteúdos.
+A aplicação desenvolvida atende a um grande público, englobando certos perfis de usuários, como os listados a seguir:
 
+<lu>
+<li>Funcionário: qualquer colaborador que trabalha dentro da empresa Dell, independente seu cargo ou posição dentro da empresa, que possua interesse em participar de algum dos processos divulgados e se desafiar a novas tecnologias e competências, ou ainda consumir e publicar conteúdos, como vídeos, podcasts ou até posts.
+<li> Moderador: possui todas as características de um usuário definido como funcionário, mas tem a funcionalidade adicional de aprovar ou não os projetos criados pelos colaboradores e ainda avaliar as denúncias feitas em certos conteúdos.
+<li>Gerente: pessoas quais terão de aprovar a criação de um projeto criado por um colaborador abaixo desse gerente. Além disso, possui outros poeres administrativos, como o encerramento de projetos, auxiliar na seleçãode componentes para um projeto, entre outras funcionalidades. 
+<li>Equipe de manutenção: serão os profissionais irecionados para a manutenção da plataforma, cujo verificarão a saúde da aplicação, correção de possíveis bugs e adição de novas implementações. </li>
+</lu>
+<br>
 
 ## Casos de Uso
 
-A seção de casos de uso da documentação de software é uma parte crucial que descreve as funcionalidades 
-do software e como elas serão utilizadas pelos usuários. Aqui, são listados todos os cenários possíveis de uso do software, incluindo as ações que o usuário pode realizar, as interações com o sistema e os resultados esperados. Os casos de uso são descritos em detalhes, incluindo a descrição do objetivo da funcionalidade, as entradas de dados, as ações do usuário e os resultados esperados. Além disso, também são incluídos os critérios de aceitação, que são os padrões que o software precisa atender para ser considerado como funcionando corretamente.
+Para a descrição dos casos de usos, optou-se pela construção de user stories, na qual serviria de base para a formulação dos casos de uso. Assim, foram feitas como na listagem a seguir, e posteriormente correlacionadas com os respectivos casos de uso, conforme  a Tabela 1. Além disso, para visualização integral dos casos de uso, fez-se um diagrama (Diagrama 6) que reflete os atores e suas ações perante à aplicação desenvolvida.
 
 1 - Eu, como funcionário da Dell, quero ter conteúdos recomendados de acordo com os meus interesses, com o intuito de otimizar meu tempo.<br>
 2 - Eu, como Product Owner, quero ter acesso à dashboards de dados, a fim de medir a produtividade de meus funcionários e o andamento dos projetos.<br>
@@ -282,13 +282,30 @@ do software e como elas serão utilizadas pelos usuários. Aqui, são listados t
 4 - Eu, como funcionário da Dell, quero poder buscar por conteúdos específicos para além daqueles recomendados, com objetivo de encontrar materiais sobre assuntos que não necessariamente eu já demonstrei interesse anteriormente.<br>
 5 - Eu, como funcionário da Dell, quero poder denunciar conteúdos abusivos dentro da plataforma, com objetivo de ter aprovação de administradores para remover aqueles conteúdos e tornar a plataforma mais amigável.<br>
 6 - Eu, como funcionário da Dell, quero ver minha posição no "Ranking", com objetivo de ver a minha colocação diante dos outros funcionários.<br>
+7- <br>
+8 - <br>
+9 - Eu, como funcionário da Dell, quero poder avaliar e dar feedbacks sobre projetos dos quais fiz parte, a fim de evidenciar minhas considerações sobre o processo e possíveis pontos de melhoria.<br>
+10 - Eu, como funcionário da Dell, quero que a plataforma me dê match com projetos associados aos meus interesses, com o intuito de otimizar meu tempo e me ajudar na busca por oportunidades.<br>
+11 - <br>
+12-  <br>
+13 - <br>
+14 - <br>
+15 - Eu, como moderador, posso avaliar um conteúdo caso ele seja denunciado para que não haja conflito entre os usuários da plataforma. <br>
+16 - Eu, como usuário da plataforma, posso acompanhar o andamento da minha inscrição, para saber quando vou começar a trabalhar em um projeto <br>
+17 - Eu, como usuário da plataforma, posso editar as informações do meu perfil, para mantê-lo sempre atualizado. <br>
+18 - Eu, como usuário da plataforma, quero sempre poder visualizar os posts que eu fiz e os projetos criados, para que eu tenha controle do meu engajamento na plataforma. <br>
+19 - Eu, como usuário da plataforma, devo poder editar as informações do meu projeto, para que ele esteja sempre atualizado. <br>
+20 -  Eu, como usuário da plataforma, devo poder excluir um projeto que eu criei, caso aconteça algum imprevisto. <br>
+21 - Eu, como usuário da plataforma, posso denunciar posts de outros usuários, caso eles infrigam alguma regra/lei, para que não haja conflitos na plataforma. <br>
+22 - Eu, como usuário da plataforma, devo receber um feedback se fui aprovado ou não em um projeto, para que eu possa me preparar e me organizar com minhas outras atividades.<br>
 
-
-<center>
-[template-documento3](../img/template-documento3.jpg)
-
-Exemplo de Diagrama de Casos de Uso
-</center>
+<center> Diagrama 6 -Casos de uso.  </center>
+<img src="../docs/img/img_docs/casos_de_uso%20(1).jpg" alt="Casos de uso" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
+<br>
+<center> Tabela 1 - User Stories e Casos de uso.  </center>
+<img src="../docs/img/img_docs/Casos_de_uso.jpg" alt="User stories e casos de uso" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 
 # Arquitetura do Sistema
@@ -296,23 +313,26 @@ Exemplo de Diagrama de Casos de Uso
 A arquitetura de um sistema de software é a estrutura fundamental que define como o sistema é organizado e como seus componentes interagem entre si para atender aos requisitos de software. Ela serve para garantir que o sistema seja escalável, flexível, fácil de manter e extensível ao longo do tempo, permitindo que os desenvolvedores construam um software de alta qualidade que atenda às necessidades dos usuários finais de maneira eficiente. Dessa forma, aqui se encontra a primeira versão da arquitetura do sistema:
 	
 <img src="../docs/img/arquitetura-v11.jpg" alt="ArquiteturaV1" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 ## Diagrama de sequência do fluxo de dados
 
 O diagrama de sequência de fluxo de dados é uma ferramenta de modelagem que descreve a interação entre diferentes componentes de um sistema, mostrando a sequência de eventos e as informações que fluem entre eles. Ele é utilizado para ilustrar o fluxo de dados em um sistema, permitindo que os desenvolvedores entendam como o sistema funciona e identifiquem oportunidades para melhorias e otimizações.
 	
 <img src="../docs/img/img_docs/fluxodedados.png" alt="Diagrama de sequência de fluxo de dados" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 # UX e UI Design
 
 ## Benchmarking e Revisão de Design System
 
-O benchmarking é uma técnica de análise comparativa que permite identificar as melhores práticas em um determinado campo, em relação aos concorrentes ou empresas de referência. No caso de um Design System, o benchmarking pode ser útil para avaliar a eficácia e a qualidade do sistema, além de obter insights sobre como melhorá-lo. Dessa forma foi escolhido pela equipe os design systems da Apple e do Governo Brasileiro.
-<br>
-Ao fazer um benchmark utilizando 3 Design Systems, sendo um o principal e outros dois para comparação, foi possível perceber que a Dell é uma marca muito forte quando se fala em Design. Começando por um Design unificado, todas as 3 empresas, sendo elas a Dell, Apple e o Governo o possuem, já que utilizam o mesmo padrão em todos seus produtos e componentes. Pensando nisso, as três também possuem um Design universal, com ícones de significado convencional para a sociedade. Porém, apesar disso, os ícones da Dell tem um Design muito rústico, tradicional e quadrado, pouco utilizado hoje em dia e que costuma incomodar os olhos. Além disso, a tipografia da Dell também apresenta essas mesmas características, tanto que esse foi um dos pontos fracos encontrados na empresa. Em contrapartida, a Apple e o Governo do Brasil possuem uma iconografia e tipografia mais arredondados, o que costuma ser mais usado e agrada melhor os olhos. No geral, foi pedido que fosse utilizado o Design System da Dell, mas como foi observado, talvez mudar um pouco a iconografia e a tipografia seja mais agradável para a plataforma, porém isso é algo a se discutir com o cliente. Algo que foi decidido por manter completamente é a paleta de cores. A cor azul que a Dell usa é muito marcante e conhecida no mundo todo.
+<p>O benchmarking é uma técnica de análise comparativa que permite identificar as melhores práticas em um determinado campo, em relação aos concorrentes ou empresas de referência. No caso de um Design System, o benchmarking pode ser útil para avaliar a eficácia e a qualidade do sistema, além de obter insights sobre como melhorá-lo. Dessa forma foi escolhido pela equipe os design systems da Apple e do Governo Brasileiro.</p>
+
+<p>Ao fazer um benchmark utilizando 3 Design Systems, sendo um o principal e outros dois para comparação, foi possível perceber que a Dell é uma marca muito forte quando se fala em Design. Começando por um Design unificado, todas as 3 empresas, sendo elas a Dell, Apple e o Governo o possuem, já que utilizam o mesmo padrão em todos seus produtos e componentes. Pensando nisso, as três também possuem um Design universal, com ícones de significado convencional para a sociedade. Porém, apesar disso, os ícones da Dell tem um Design muito rústico, tradicional e quadrado, pouco utilizado hoje em dia e que costuma incomodar os olhos. Além disso, a tipografia da Dell também apresenta essas mesmas características, tanto que esse foi um dos pontos fracos encontrados na empresa. Em contrapartida, a Apple e o Governo do Brasil possuem uma iconografia e tipografia mais arredondados, o que costuma ser mais usado e agrada melhor os olhos. No geral, foi pedido que fosse utilizado o Design System da Dell, mas como foi observado, talvez mudar um pouco a iconografia e a tipografia seja mais agradável para a plataforma, porém isso é algo a se discutir com o cliente. Algo que foi decidido por manter completamente é a paleta de cores. A cor azul que a Dell usa é muito marcante e conhecida no mundo todo.</p>
 
 A tabela a seguir descreve a comparação entre os design systems escolhidos:
 <img src="../docs/img/img_docs/Cloud-ETS.jpg" alt="Comparação de design System" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 ## Wireframes
 
@@ -326,7 +346,8 @@ Aqui você deve colocar o link para o wireframe ou colocar as imagens geradas na
 ## Design de Interface - Guia de Estilos
 Tratando-se de um documento que conttempa as diretrizes de design de uma empresa, garantindo a consistência da interface gráfica, esse apresenta definições de cores, tipografia, iconografia e grids. Dessa forma, seguindo o design system do parceiro, foi proposto o guia de estilos a seguir para a aplicação desenvolvida.
 
-<img src="../docs/img/img_docs/Style%20guide.png" alt="Diagrama de sequência de fluxo de dados" border="0" width="100%" display="flex" justify-content="center">
+<img src="../docs/img/img_docs/Style%20guide.png" alt="Guia de estilos" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 
 # Projeto de Banco de Dados
