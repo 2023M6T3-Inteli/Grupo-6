@@ -62,6 +62,7 @@ Solução de otimização de corte de bobinas de papel
   - [Requisitos não Funcionais](#requisitos-não-funcionais)
   - [Perfis de Usuários](#perfis-de-usuários)
   - [Casos de Uso](#casos-de-uso)
+  - [Matriz de rastreabilidade](#matriz-de-rastreabilidade)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
   - [Diagrama de sequência do fluxo de dados](#diagrama-de-sequência-do-fluxo-de-dados)
 - [UX e UI Design](#ux-e-ui-design)
@@ -103,12 +104,12 @@ Com base no resultado financeiro analisado, conclui-se que, mesmo atuando em um 
 
 ## Problema
 
-Descrever o problema ou a oportunidade de negócio.
-
+A Dell, sendo uma empresa de grande porte, vê a necessidade de criar oportunidades de desenvolvimento e crescimento para os seus colaboradores,assim, tornando-se crucial encontrar novos meios de engajar e desenvolver o crescimento de seus funcionários. Isso porque, com o aumento da competitividade no mercado, as empresas precisam estar constantemente inovando e aprimorando suas práticas e processos. E para que isso aconteça, é necessário que os funcionários estejam engajados e motivados a contribuir com suas ideias e esforços.
+<br>
+Além disso, o desenvolvimento dos funcionários é importante para garantir que a empresa possa contar com profissionais cada vez mais qualificados e capazes de enfrentar os desafios que surgem no dia a dia do trabalho.
 
 ### Análise do Problema
-
-Nesta seção, serão apresentados os problemas identificados e as necessidades do usuário, bem como uma avaliação da situação atual e as possíveis soluções para cada questão. Além disso, serão identificados os obstáculos e limitações do projeto, a fim de assegurar que todas as preocupações sejam abordadas antes do início da implementação. A Análise do Problema é essencial para garantir que a solução do software seja eficaz e atenda às necessidades dos usuários. É importante que seja realizada uma pesquisa exaustiva e que todas as perspectivas sejam consideradas para garantir que a solução seja bem-sucedida.
+Neste sentido, nota-se a demanda por uma solução que gere entretenimento e ainda reflita em um uso fluído e natural, a fim de manter o usuário engajado e ainda conseguir desenvolver novas habilidades. Cabe destacar a importância de ser uma aplicação que se assemelhe a lazer, uma vez que é direcionada para momentos fora do horário de trabalho. Assim, sugere-se uma aplicação que esteja de fácil alcance, como uma aplicação mobile, com interface similar a uma rede social popular.
 
 
 ### Matriz de avaliação de valor Oceano Azul
@@ -307,7 +308,10 @@ Para a descrição dos casos de usos, optou-se pela construção de user stories
 <img src="../docs/img/img_docs/Casos_de_uso.jpg" alt="User stories e casos de uso" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 <br>
-Assim foi possível estabelecer uma matriz de rastreabilidade quanto aos requisitos e aos casos de uso.
+
+## Matriz de rastreabilidade
+Sabendo que o conceito de Matriz de rastreabilidade de requisitos pode ser definido por uma ferramenta que explicita a relação direta dos requisitos entre si ou com os outros componentes do projeto (ARTIA, 2020), e ainda auxilia para identificar alterações no projeto e o que elas afetam, viu-se a necessidade de criação de uma para a corrente solução, conforme taabela 2.
+<br>
 <center> Tabela 2 - Matriz de rastreabilidade.  </center>
 <img src="../docs/img/img_docs/matriz_de_rastreabilidade.png" alt="Matriz de rastreabilidade" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
@@ -425,6 +429,8 @@ Fornecer instruções detalhadas sobre como usar o software corretamente. É uma
 
 Toda referência citada no texto deverá constar nessa seção, utilizando o padrão de normalização da ABNT - ABNT NBR 10520). As citações devem ser confiáveis e relevantes para o trabalho. São imprescindíveis as citações dos sites de download das ferramentas utilizadas, bem como a citação de algum objeto, música, textura ou outros que não tenham sido produzidos pelo grupo, mas utilizados (mesmo no caso de licenças gratuitas, royalty free ou similares).
 Sugerimos o uso do sistema autor-data para citações.
+
+https://artia.com/blog/matriz-de-rastreabilidade/ 01/05/2023
 
 
 # Apêndice 
