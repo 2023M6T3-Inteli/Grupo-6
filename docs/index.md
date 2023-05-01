@@ -293,7 +293,7 @@ Para a descrição dos casos de usos, optou-se pela construção de user stories
 15 - Eu, como moderador, posso avaliar um conteúdo caso ele seja denunciado para que não haja conflito entre os usuários da plataforma. <br>
 16 - Eu, como usuário da plataforma, posso acompanhar o andamento da minha inscrição, para saber quando vou começar a trabalhar em um projeto <br>
 17 - Eu, como usuário da plataforma, posso editar as informações do meu perfil, para mantê-lo sempre atualizado. <br>
-18 - Eu, como usuário da plataforma, quero sempre poder visualizar os posts que eu fiz e os projetos criados, para que eu tenha controle do meu engajamento na plataforma. <br>
+18 - Eu, como usuário da plataforma, quero sempre poder visualizar os posts que eu fiz e os projetos criados, para que eu tenha controle do meu engajamento na plataforma. <brc >
 19 - Eu, como usuário da plataforma, devo poder editar as informações do meu projeto, para que ele esteja sempre atualizado. <br>
 20 -  Eu, como usuário da plataforma, devo poder excluir um projeto que eu criei, caso aconteça algum imprevisto. <br>
 21 - Eu, como usuário da plataforma, posso denunciar posts de outros usuários, caso eles infrigam alguma regra/lei, para que não haja conflitos na plataforma. <br>
@@ -306,7 +306,11 @@ Para a descrição dos casos de usos, optou-se pela construção de user stories
 <center> Tabela 1 - User Stories e Casos de uso.  </center>
 <img src="../docs/img/img_docs/Casos_de_uso.jpg" alt="User stories e casos de uso" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
-
+<br>
+Assim foi possível estabelecer uma matriz de rastreabilidade quanto aos requisitos e aos casos de uso.
+<center> Tabela 2 - Matriz de rastreabilidade.  </center>
+<img src="../docs/img/img_docs/matriz_de_rastreabilidade.png" alt="Matriz de rastreabilidade" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 # Arquitetura do Sistema
 	
