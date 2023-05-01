@@ -52,10 +52,9 @@ Solução de otimização de corte de bobinas de papel
     - [Análise financeira do projeto](#análise-financeira-do-projeto)
   - [Mapeamento do processo](#mapeamento-do-processo)
   - [Descritivo da Solução](#descritivo-da-solução)
-    - [Objetivos](#objetivos)
-      - [Objetivos gerais](#objetivos-gerais)
-      - [Objetivos específicos](#objetivos-específicos)
-    - [Justificativa](#justificativa)
+  - [Objetivos](#objetivos)
+    - [Objetivos gerais](#objetivos-gerais)
+    - [Objetivos específicos](#objetivos-específicos)
   - [Partes Interessadas](#partes-interessadas)
 - [Requisitos](#requisitos)
   - [Requisitos Funcionais](#requisitos-funcionais)
@@ -188,26 +187,22 @@ O mapeamento do processo envolve práticas envolvidas no entendimento, análise 
 
 ## Descritivo da Solução
 
-Descrição da solução a ser desenvolvida (o que é, quais principais funcionalidades, como usar) . Caso ainda não esteja definida a solução na Sprint 1, o faça assim que possível.
+Após a análise cuidadosa do problema em questão, constatou-se a necessidade de desenvolver uma solução que atendesse às demandas dos usuários de forma eficiente e personalizada. Dessa forma, sugeriu-se a criação de uma aplicação mobile, que seria integrada a um sistema em nuvem por meio dos serviços oferecidos pela AWS. A ideia principal seria que essa plataforma fosse semelhante a uma rede social, com recursos como um sistema de recomendação e a possibilidade de compartilhar e consumir diversos conteúdos, tanto personalizados quanto não personalizados para cada usuário.
+<br>
+<br>
+Além disso, a solução proposta também contaria com um mecanismo de "match" de projetos, que seria integrado com a aplicação desenvolvida no módulo anterior (Aplicação web em nuvem - módulo 5). Dessa forma, os projetos criados pela plataforma seriam oferecidos de acordo com o conteúdo que o usuário consumisse. Isso permitiria que os usuários pudessem encontrar facilmente projetos de seu interesse e interagir com outras pessoas que tivessem interesses similares. Além disso, a plataforma também permitiria que os usuários interagissem entre si, por meio de comentários e likes em posts. Para incentivar o maior engajamento dos usuários, ainda seria incluído um sistema de gamificação, que permitiria o rankeamento dos usuários de acordo com sua participação e contribuição na plataforma.
 
 
-### Objetivos
+## Objetivos
 
-Descrever o objetivo geral e os objetivos específicos.
+### Objetivos gerais
+Como objetivo geral do projeto, é fundamental o engajamento dos funcionários na plataforma, para que estes possam desenvolver seus conhecimentos e habilidades de forma dinâmica e prazerosa, sendo um estímulo para o desenvolvimento pessoal e profissional. Espera-se que a solução desenvolvida seja percebida como um mecanismo de entretenimento e não apenas de aprendizado, de modo que os usuários se sintam motivados e incentivados a utilizar a plataforma e, consequentemente, aprimorar suas competências. Assim, a plataforma deverá ser atraente e envolvente, com um design amigável e uma interface intuitiva, de modo que o usuário se sinta à vontade para explorar todas as funcionalidades oferecidas.
+<br>
 
+### Objetivos específicos
+Com uma análise mais detalhada, a solução proposta tem como objetivo específico incentivar o desenvolvimento de novas habilidades nos funcionários, além da criação de novas comunidades. Para isso, espera-se envolver os funcionários em um ambiente de lazer e aprendizado, de forma que o aprendizado de algo novo não se torne um fardo, e ainda permita o compartilhamento de conhecimento entre as equipes. Com essa abordagem, busca-se tornar a solução percebida como algo além de um simples mecanismo de aprendizado, mas sim como um ambiente de entretenimento e desenvolvimento pessoal. É importante destacar que a criação de novas comunidades pode contribuir para a formação de novas ideias e projetos dentro da empresa, promovendo ainda mais o crescimento dos funcionários e da organização como um todo.
 
-#### Objetivos gerais
-
-
-
-#### Objetivos específicos
-
-
-
-### Justificativa
-
-Descrever o tipo de arquitetura escolhida, sua justificativa, como deverá ser utilizada e quais os benefícios que ela proporciona.
-
+<br>
 
 ## Partes Interessadas 
 
