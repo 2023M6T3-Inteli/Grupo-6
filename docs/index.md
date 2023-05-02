@@ -341,13 +341,14 @@ A tabela a seguir descreve a comparação entre os design systems escolhidos:
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 ## Wireframes
+Como o Design foi pensado?
+A princípio, foi pensado em um Design que tornasse a interação do usuário intuitiva, de maneira que sua experiência navegando pelas telas fosse mais fluida. Dessa forma, pensamos em uma “Bottom Navbar”, que é uma barra de navegação na parte inferior da tela, pois pensando em uma aplicação Mobile e na zona do polegar, a grande maioria dos aplicativos de maior referência, como o Spotify e Instagram, por exemplo, utilizam desse tipo de barra de navegação, já que é uma posição confortável para o usuário acessar e de nítida visualização e com isso, essa feature foi implementada em todas as telas.
+Diante disso, na tela inicial, vários ícones acompanhados de texto foram implementados com a intenção de tornar visual a maneira a qual o usuário se encaminhará para as telas de visualização dos posts e repositórios, devidamente filtrados. Além disso, temos um botão de um tom azul mais chamativo, para chamar a atenção do usuário para o botão que o encaminha para a tela com suas recomendações personalizadas. Abaixo disso, têm-se alguns cards, que foram usados para exibir de forma organizada as informações e os posts “em alta” naquele momento.
+Pensando na tela de recomendações de conteúdo, tem um filtro que foi implementado com a intenção de permitir que o usuário selecione de forma flexível e personalizada o tipo de conteúdo que quer consumir. Além disso, foi implementado o mesmo modelo de cards do “Trending now” da página inicial, já que esses cards permitem que o usuário consiga facilmente passar o olho e identificar as informações principais daquele projeto.
+A respeito da tela de Ranking, foi pensado em vários cards que representam a colocação dos usuários do maior para o menor, optou-se pelo uso de cards ao invés de um texto solto na tela, pois esses cards vão permitir que o usuário se encaminhe para a tela de perfil daquele que clicou, e essas caixas trazem a percepção de algo clicável, diferente de um texto solto na tela. Na tela de FAQ, foi feito algo parecido, mas ao invés de ser somente o card, é um dropdown, que mostra a resposta para aquela pergunta quando o usuário clica nele, assim, o usuário pode ver a resposta para a dúvida que tem, caso essa dúvida esteja entre as mais frequentes.
+Por fim, pensando na tela de perfil, temos um ícone circular para a foto do usuário, seguindo o padrão da grande maioria dos aplicativos e redes sociais, de forma que o usuário fique confortável em estar usando algo que já conhece e ao lado do ícone, o nome e papel do usuário para que complemente a foto do mesmo. Além disso, têm campos que estarão exibindo as formas de contatar aquele usuário, feito em formato de texto para que a pessoa possa apenas visualizar e copiar, caso tenha interesse. A parte das skills foi feita em forma de tags, como pedido pelo parceiro de projetos e ao fim da página, temos um histórico de atividades com o mesmo modelo de cards de posts citados anteriores.
 
-Telas de baixa fidelidade das áreas do usuário, conectados, demonstrando a diagramação e o fluxo de navegação.
-
-Exemplos: tela da home, tela de login, etc. Em cada tela colocar: cabeçalho, rodapé, barra lateral, área de conteúdo.
-
-Aqui você deve colocar o link para o wireframe ou colocar as imagens geradas na sequência correta do fluxo de navegação.
-
+As telas navegáveis estão disponíveis em:<https://www.figma.com/file/L15EchWiFZtJNPthyBNJnb/Dell-M6?node-id=45%3A131&t=Hnbg2GhO5hYhYhxq-1>.
 
 ## Design de Interface - Guia de Estilos
 Tratando-se de um documento que conttempa as diretrizes de design de uma empresa, garantindo a consistência da interface gráfica, esse apresenta definições de cores, tipografia, iconografia e grids. Dessa forma, seguindo o design system do parceiro, foi proposto o guia de estilos a seguir para a aplicação desenvolvida.
