@@ -159,6 +159,9 @@ Também chamada de matriz de probabilidade e impacto, a matriz mapeia os riscos 
 
  Para manter o site em funcionamento e fornecer as ferramentas necessárias, a empresa terá alguns custos contínuos, como hospedagem, desenvolvimento, suporte técnico, atualização e manutenção. Embora o site não seja uma fonte direta de lucro para a Dell, ele é visto como uma despesa operacional para aprimorar a equipe de funcionários e melhorar a eficiência e a produtividade da empresa. É importante investir nesses custos para garantir que o site esteja funcionando corretamente e fornecendo novas ferramentas e recursos aos funcionários.
 
+<center> <h3> Tabela 2 - Análise financeira do projeto.</h3>  </center> 
+<img src="../docs/img/img_docs/analise_financeira.png" alt="Análise financeira" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 
 ## Mapeamento do processo
