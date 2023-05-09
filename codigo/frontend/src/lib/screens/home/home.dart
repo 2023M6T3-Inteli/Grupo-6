@@ -12,6 +12,7 @@ class Home extends StatelessWidget {
 
   BottomNavigationBar buildNavigationBar() {
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
         BottomNavigationBarItem(
