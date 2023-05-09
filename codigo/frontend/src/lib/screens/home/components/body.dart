@@ -30,24 +30,23 @@ class Body extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-            padding: const EdgeInsets.only(bottom: 15),
-            child: GridView.count(
-              crossAxisCount: 2,
-              children: List.generate(2, (index) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 15),
-                  child: Container(
-                    height: 90,
-                    width: 90,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white,
-                        border: Border.all(color: Colors.blue, width: 2)),
-                  ),
-                );
-              }),
-            )),
+        GridView.count(
+          crossAxisCount: 3,
+          scrollDirection: Axis.vertical,
+          children: List.generate(2, (index) {
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 15),
+              child: Container(
+                height: 90,
+                width: 90,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2)),
+              ),
+            );
+          }),
+        ),
         //         for (int i = 0; i < 2; i++)
         // Padding(
         //   padding: const EdgeInsets.only(bottom: 15),
