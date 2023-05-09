@@ -7,26 +7,60 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(children: [
-        Container(
-          width: 325,
-          height: 24,
-          decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 228, 225, 225),
-              borderRadius: BorderRadius.all(Radius.circular(8)),
-              boxShadow: [
-                BoxShadow(
-                  color: Color(0x33000000),
-                  offset: Offset(4, 2),
-                  blurRadius: 4,
-                  spreadRadius: 0,
-                )
-              ]),
-          child: const TextField(
-            style: TextStyle(fontSize: 12),
-            decoration: InputDecoration(
-                border: InputBorder.none, prefixIcon: Icon(Icons.search)),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          child: Container(
+            width: 325,
+            height: 24,
+            decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 228, 225, 225),
+                borderRadius: BorderRadius.all(Radius.circular(8)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0x33000000),
+                    offset: Offset(4, 2),
+                    blurRadius: 4,
+                    spreadRadius: 0,
+                  )
+                ]),
+            child: const TextField(
+              style: TextStyle(fontSize: 12),
+              decoration: InputDecoration(
+                  border: InputBorder.none, prefixIcon: Icon(Icons.search)),
+            ),
           ),
         ),
+        Padding(
+            padding: const EdgeInsets.only(bottom: 15),
+            child: GridView.count(
+              crossAxisCount: 2,
+              children: List.generate(2, (index) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: Container(
+                    height: 90,
+                    width: 90,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                        border: Border.all(color: Colors.blue, width: 2)),
+                  ),
+                );
+              }),
+            )),
+        //         for (int i = 0; i < 2; i++)
+        // Padding(
+        //   padding: const EdgeInsets.only(bottom: 15),
+        //   child: Container(
+        //     // margin: const EdgeInsets.all(100),
+        //     height: 90,
+        //     width: 90,
+        //     decoration: BoxDecoration(
+        //         shape: BoxShape.circle,
+        //         color: Colors.white,
+        //         border: Border.all(color: Colors.blue, width: 2)),
+        //   ),
+        // ),
         SizedBox(
           width: 328,
           height: 47,
@@ -54,10 +88,13 @@ class Body extends StatelessWidget {
                 )),
           ),
         ),
-        const Text(
-          "Trending Now",
-          style: TextStyle(
-            fontSize: 24,
+        const Padding(
+          padding: EdgeInsets.only(top: 30),
+          child: Text(
+            "Trending Now",
+            style: TextStyle(
+              fontSize: 24,
+            ),
           ),
         ),
         for (int i = 0; i < 3; i++)
@@ -78,7 +115,7 @@ class Body extends StatelessWidget {
                         padding: EdgeInsets.only(left: 12, top: 12, right: 6),
                         child: CircleAvatar(
                           backgroundImage:
-                              AssetImage("src/assets/images/Avatar.jpeg"),
+                              AssetImage("../assets/images/Avatar.jpeg"),
                           radius: 25,
                         ),
                       ),
@@ -100,6 +137,7 @@ class Body extends StatelessWidget {
                     ],
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Padding(
                         padding: EdgeInsets.only(top: 10),
@@ -108,6 +146,7 @@ class Body extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 16,
+                            fontWeight: FontWeight.bold,
                             color: Color.fromARGB(255, 3, 52, 92),
                           ),
                         ),
@@ -115,20 +154,26 @@ class Body extends StatelessWidget {
                     ],
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
-                      SizedBox(
-                        height: 20,
-                        width: 55,
-                        child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 231, 231, 231),
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            // borderColor: Color.fromARGB(255, 3, 52, 92),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: SizedBox(
+                          height: 20,
+                          width: 55,
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 231, 231, 231),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                              // borderColor: Color.fromARGB(255, 3, 52, 92),
+                            ),
+                            child: Text("Automation",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 120, 190, 247),
+                                    fontSize: 7)),
                           ),
-                          child: Text("Automation",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 120, 190, 247),
-                                  fontSize: 5)),
                         ),
                       )
                     ],
