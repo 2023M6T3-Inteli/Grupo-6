@@ -1,8 +1,6 @@
 import "package:flutter/material.dart";
 import "package:src/screens/home/components/post_card.dart";
 
-import "circles.dart";
-
 class Body extends StatelessWidget {
   const Body({super.key});
 
@@ -11,7 +9,7 @@ class Body extends StatelessWidget {
     return Center(
       child: Column(children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20),
+          padding: const EdgeInsets.symmetric(vertical: 25),
           child: Container(
             width: 325,
             height: 24,
@@ -35,37 +33,124 @@ class Body extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [Circle(), Circle(), Circle()],
+          children: [
+            Padding(
+              padding: EdgeInsets.only(bottom: 15, left: 15, right: 15),
+              child: Container(
+                height: 90,
+                width: 90,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2)),
+                child: const Icon(Icons.insert_drive_file_outlined,
+                    size: 40, color: Colors.blue),
+              ),
+            ),
+            // Text("Projects"),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
+              child: Container(
+                  height: 90,
+                  width: 90,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      border: Border.all(color: Colors.blue, width: 2)),
+                  child: const Icon(Icons.volume_up_outlined,
+                      size: 40, color: Colors.blue)),
+            ),
+            // Text("Podcasts"),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
+              child: Container(
+                height: 90,
+                width: 90,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2)),
+                child: const Icon(Icons.wifi_outlined,
+                    size: 40, color: Colors.blue),
+              ),
+            ),
+            // Text("Posts")
+          ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [Circle(), Circle(), Circle()],
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
+              child: Container(
+                height: 90,
+                width: 90,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2)),
+                child: const Icon(Icons.play_circle_outline_outlined,
+                    size: 40, color: Colors.blue),
+              ),
+            ),
+            // Text("Videos"),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
+              child: Container(
+                height: 90,
+                width: 90,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2)),
+                child: const Icon(Icons.folder_open_outlined,
+                    size: 40, color: Colors.blue),
+              ),
+            ),
+            // Text("Repository"),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
+              child: Container(
+                height: 90,
+                width: 90,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2)),
+                child: const Icon(Icons.add_circle_outline_outlined,
+                    size: 40, color: Colors.blue),
+              ),
+            )
+          ],
         ),
-        SizedBox(
-          width: 328,
-          height: 47,
-          child: DecoratedBox(
-            decoration: const BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Colors.blue, Color.fromARGB(255, 0, 195, 255)],
-                )),
-            child: ElevatedButton(
-                onPressed: null,
-                child: Row(
-                  children: const [
-                    Text(
-                      'Recommended for you',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                      textAlign: TextAlign.left,
-                    ),
-                    SizedBox(width: 70),
-                    Icon(Icons.arrow_forward, color: Colors.white),
-                  ],
-                )),
+        Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: SizedBox(
+            width: 328,
+            height: 47,
+            child: DecoratedBox(
+              decoration: const BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [Colors.blue, Color.fromARGB(255, 0, 195, 255)],
+                  )),
+              child: ElevatedButton(
+                  onPressed: null,
+                  child: Row(
+                    children: const [
+                      Text(
+                        'Recommended for you',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        textAlign: TextAlign.left,
+                      ),
+                      SizedBox(width: 70),
+                      Icon(Icons.arrow_forward, color: Colors.white),
+                    ],
+                  )),
+            ),
           ),
         ),
         const Padding(
@@ -77,7 +162,7 @@ class Body extends StatelessWidget {
             ),
           ),
         ),
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
           // ESSE AQUI É O CARD QUE ESTÁ SENDO PUXADO DO COMPONENTE post_card.dart
           // PARA USÁ-LO, É SÓ IMPORTAR NA LINHA 1 O ARQUIVO post_card.dart
           postCardBuilder(),
