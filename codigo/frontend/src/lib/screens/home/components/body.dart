@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 import "package:src/screens/home/components/post_card.dart";
 
+import "circles.dart";
+
 class Body extends StatelessWidget {
   const Body({super.key});
 
@@ -33,94 +35,23 @@ class Body extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(bottom: 15, left: 15, right: 15),
-              child: Container(
-                height: 90,
-                width: 90,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2)),
-                child: const Icon(Icons.insert_drive_file_outlined,
-                    size: 40, color: Colors.blue),
-              ),
-            ),
+          children: const [
+            Circle(icon: Icons.insert_drive_file_outlined),
             // Text("Projects"),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
-              child: Container(
-                  height: 90,
-                  width: 90,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      border: Border.all(color: Colors.blue, width: 2)),
-                  child: const Icon(Icons.volume_up_outlined,
-                      size: 40, color: Colors.blue)),
-            ),
+            Circle(icon: Icons.volume_up_outlined),
             // Text("Podcasts"),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
-              child: Container(
-                height: 90,
-                width: 90,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2)),
-                child: const Icon(Icons.wifi_outlined,
-                    size: 40, color: Colors.blue),
-              ),
-            ),
+            Circle(icon: Icons.wifi_outlined),
             // Text("Posts")
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
-              child: Container(
-                height: 90,
-                width: 90,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2)),
-                child: const Icon(Icons.play_circle_outline_outlined,
-                    size: 40, color: Colors.blue),
-              ),
-            ),
+          children: const [
+            Circle(icon: Icons.play_circle_outline),
             // Text("Videos"),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
-              child: Container(
-                height: 90,
-                width: 90,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2)),
-                child: const Icon(Icons.folder_open_outlined,
-                    size: 40, color: Colors.blue),
-              ),
-            ),
+            Circle(icon: Icons.folder_open_outlined),
             // Text("Repository"),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
-              child: Container(
-                height: 90,
-                width: 90,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2)),
-                child: const Icon(Icons.add_circle_outline_outlined,
-                    size: 40, color: Colors.blue),
-              ),
-            )
+            Circle(icon: Icons.add_circle_outline_outlined)
           ],
         ),
         Padding(
