@@ -27,7 +27,7 @@ class Interest extends StatelessWidget {
           children: <Widget>[
             Align(
               alignment: Alignment.topRight,
-              child: Image.asset('/Users/alanrozensztajnschipper/Documents/GitHub/Grupo-6/codigo/frontend/src/assets/images/Background.png'),
+              child: Image.asset('../../../assets/images/Background.png'),
             ),
             Center(
               child: Padding(
