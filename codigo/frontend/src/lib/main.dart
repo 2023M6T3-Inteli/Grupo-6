@@ -4,6 +4,7 @@ import 'package:src/screens/home/recommendation.dart';
 import 'package:src/screens/recommendation/recommendation.dart';
 import 'package:src/screens/login/login.dart';
 import 'package:src/screens/post/post.dart';
+import 'package:src/sreens/submitProject/info_project.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/login': (context) => const Login(),
           '/home': (context) => const Home(),
+          
         });
   }
 }
