@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:src/screens/home/home.dart';
+import 'package:src/screens/interest/interest.dart';
+import 'package:src/screens/home/recommendation.dart';
+import 'package:src/screens/recommendation/recommendation.dart';
 import 'package:src/screens/login/login.dart';
-import
+import 'package:src/screens/post/post.dart';
+
 void main() {
   runApp(const MyApp());
 }
