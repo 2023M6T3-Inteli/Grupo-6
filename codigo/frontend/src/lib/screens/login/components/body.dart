@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({super.key});
+
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  String email = "";
+  String password = "";
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +54,13 @@ class Body extends StatelessWidget {
                           spreadRadius: 0,
                         )
                       ]),
-                  child: const TextField(
+                  child: TextField(
+                    onChanged: (text) {
+                      email = text;
+                    },
                     keyboardType: TextInputType.emailAddress,
-                    style: TextStyle(fontSize: 12),
-                    decoration: InputDecoration(
+                    style: const TextStyle(fontSize: 12),
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                     ),
                   ),
@@ -76,29 +87,44 @@ class Body extends StatelessWidget {
                         spreadRadius: 0,
                       )
                     ]),
-                child: const TextField(
+                child: TextField(
+                  onChanged: (text) {
+                    password = text;
+                    print(text);
+                  },
                   obscureText: true,
-                  style: TextStyle(fontSize: 12),
-                  decoration: InputDecoration(
+                  style: const TextStyle(fontSize: 12),
+                  decoration: const InputDecoration(
                     border: InputBorder.none,
                   ),
                 ),
               )
             ],
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
             child: SizedBox(
               width: 137,
               height: 47,
               child: DecoratedBox(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.all(Radius.circular(5)),
                 ),
                 child: ElevatedButton(
-                  onPressed: null,
-                  child: Text('LOGIN', style: TextStyle(color: Colors.white)),
+                  onPressed: () {
+                    if (email == "test user" && password == "123456") {
+                      Navigator.of(context).pushReplacementNamed("/home");
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Email ou senha incorretos!'),
+                        ),
+                      );
+                    }
+                  },
+                  child: const Text('LOGIN',
+                      style: TextStyle(color: Colors.white)),
                 ),
               ),
             ),
