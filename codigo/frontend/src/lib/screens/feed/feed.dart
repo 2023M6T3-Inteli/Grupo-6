@@ -161,7 +161,7 @@ class _FeedState extends State<Feed> {
             )),
             Expanded(child: Container()),
             popUp(),
-            buildNavigationBar(),
+            //buildNavigationBar(),
           ],
         ),
       ),
