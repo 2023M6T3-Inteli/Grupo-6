@@ -47,10 +47,10 @@ class _FeedState extends State<Feed> {
                       )
                     ],
                   ),
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8),
                     child: Row(
-                      children:[
+                      children: const [
                         Icon(Icons.search, size: 16, color: Colors.black),
                         SizedBox(width: 16),
                         Expanded(
@@ -128,8 +128,8 @@ class _FeedState extends State<Feed> {
                         width: 2,
                       ),
                     ),
-                    child: const Row(
-                      children:[
+                    child: Row(
+                      children:const[
                         Icon(
                           Icons.close_rounded,
                           color: Colors.blue,
