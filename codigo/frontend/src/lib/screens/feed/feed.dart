@@ -1,7 +1,6 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:src/screens/home/components/body.dart';
 import "package:src/screens/home/components/post_card.dart";
+import 'package:src/screens/popup/popup.dart';
 
 class Feed extends StatefulWidget {
   const Feed({Key? key}) : super(key: key);
@@ -48,10 +47,10 @@ class _FeedState extends State<Feed> {
                       )
                     ],
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8),
                     child: Row(
-                      children: const [
+                      children:[
                         Icon(Icons.search, size: 16, color: Colors.black),
                         SizedBox(width: 16),
                         Expanded(
@@ -129,8 +128,8 @@ class _FeedState extends State<Feed> {
                         width: 2,
                       ),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children:[
                         Icon(
                           Icons.close_rounded,
                           color: Colors.blue,
@@ -161,6 +160,7 @@ class _FeedState extends State<Feed> {
               ],
             )),
             Expanded(child: Container()),
+            popUp(),
             buildNavigationBar(),
           ],
         ),
