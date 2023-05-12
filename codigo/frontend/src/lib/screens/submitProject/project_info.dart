@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:project_info/components/attribute.dart';
-import 'package:project_info/components/tags.dart';
-import 'package:project_info/components/info_attribute.dart';
+import 'components/attribute.dart';
+import 'components/info_attribute.dart';
+import 'components/tags.dart';
 
-class TextFieldAppWidget extends StatelessWidget {
-  const TextFieldAppWidget({super.key});
+class ProjectInfo extends StatelessWidget {
+  const ProjectInfo({super.key});
   @override
   Widget build(BuildContext context) {
     return Material(
