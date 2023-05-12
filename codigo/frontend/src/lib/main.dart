@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:src/screens/interest/interest.dart';
-import 'package:src/screens/home/recommendation.dart';
+import 'package:src/screens/home/home.dart';
 import 'package:src/screens/recommendation/recommendation.dart';
 import 'package:src/screens/login/login.dart';
 import 'package:src/screens/post/post.dart';
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColorLight: Colors.white,
         ),
-        home: const Login(),
-        initialRoute: '/feed',
+        // home: const Login(),
+        initialRoute: '/login',
         routes: {
           '/login': (context) => const Login(),
           '/home': (context) => const Home(),
