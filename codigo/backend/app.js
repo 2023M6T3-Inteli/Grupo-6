@@ -39,6 +39,7 @@ app.get('/feed', (req, res) => {
     res.json(
         {"publiName": "Machine Larning for medicine", 
         "publiDate": "03/09/2023",
+        "link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley",
         "skills": {
             "skill1": "Python",
             "skill2": "AI",
