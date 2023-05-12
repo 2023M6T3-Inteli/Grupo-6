@@ -24,7 +24,9 @@ class _FeedState extends State<Feed> {
               child: IconButton(
                 icon: const Icon(Icons.arrow_back,
                     color: Color.fromARGB(255, 99, 99, 99)),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed("/home");
+                },
               ),
             ),
             const SizedBox(height: 8),
@@ -129,7 +131,7 @@ class _FeedState extends State<Feed> {
                       ),
                     ),
                     child: Row(
-                      children:const[
+                      children: const [
                         Icon(
                           Icons.close_rounded,
                           color: Colors.blue,

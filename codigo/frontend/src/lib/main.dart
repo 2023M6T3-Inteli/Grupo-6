@@ -4,7 +4,7 @@ import 'package:src/screens/home/recommendation.dart';
 import 'package:src/screens/recommendation/recommendation.dart';
 import 'package:src/screens/login/login.dart';
 import 'package:src/screens/post/post.dart';
-import 'package:src/sreens/submitProject/info_project.dart';
+import 'package:src/screens/submitProject/project_info.dart';
 import 'package:src/screens/feed/feed.dart';
 
 void main() {
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColorLight: Colors.white,
         ),
-        //home: const Login(),
+        home: const Login(),
         initialRoute: '/feed',
         routes: {
           '/login': (context) => const Login(),
@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
           '/post': (context) => const Post(),
           '/interest': (context) => Interest(),
           '/recommendation': (context) => Recommendation(),
+          'project_info': (context) => const ProjectInfo(),
         });
   }
 }
