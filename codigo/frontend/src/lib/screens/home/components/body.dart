@@ -69,7 +69,9 @@ class Body extends StatelessWidget {
                     colors: [Colors.blue, Color.fromARGB(255, 0, 195, 255)],
                   )),
               child: ElevatedButton(
-                  onPressed: null,
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed("/feed");
+                  },
                   child: Row(
                     children: const [
                       Text(
