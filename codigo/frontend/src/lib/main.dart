@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:src/screens/interest/interest.dart';
 import 'package:src/screens/home/recommendation.dart';
+import 'package:src/screens/post_visu/post_visu.dart';
+import 'package:src/screens/profile/profile.dart';
 import 'package:src/screens/recommendation/recommendation.dart';
 import 'package:src/screens/login/login.dart';
 import 'package:src/screens/post/post.dart';
@@ -22,8 +24,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColorLight: Colors.white,
         ),
-        home: const Login(),
-        initialRoute: '/feed',
+        home: const Profile(),
+        initialRoute: '/profile',
         routes: {
           '/login': (context) => const Login(),
           '/home': (context) => const Home(),
@@ -31,7 +33,8 @@ class MyApp extends StatelessWidget {
           '/post': (context) => const Post(),
           '/interest': (context) => Interest(),
           '/recommendation': (context) => Recommendation(),
-          'project_info': (context) => const ProjectInfo(),
+          '/project_info': (context) => const ProjectInfo(),
+          '/profile': (context) => const Profile()
         });
   }
 }

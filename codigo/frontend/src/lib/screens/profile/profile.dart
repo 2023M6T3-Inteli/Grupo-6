@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:src/screens/login/components/body.dart';
+import 'package:src/screens/profile/components/body.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -8,7 +8,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: buildNavigationBar(),
-      body: const Body(),
+      body: const SingleChildScrollView(child: Body()),
     );
   }
 
