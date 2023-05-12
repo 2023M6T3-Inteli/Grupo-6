@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColorLight: Colors.white,
         ),
-        home: const Profile(),
-        initialRoute: '/profile',
+        home: const PostView(),
+        initialRoute: '/post_view',
         routes: {
           '/login': (context) => const Login(),
           '/home': (context) => const Home(),
@@ -34,7 +34,8 @@ class MyApp extends StatelessWidget {
           '/interest': (context) => Interest(),
           '/recommendation': (context) => Recommendation(),
           '/project_info': (context) => const ProjectInfo(),
-          '/profile': (context) => const Profile()
+          '/profile': (context) => const Profile(),
+          '/post_view': (context) => const PostView(),
         });
   }
 }

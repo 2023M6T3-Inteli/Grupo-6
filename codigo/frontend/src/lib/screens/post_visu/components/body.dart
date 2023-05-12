@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:src/screens/post_visu/components/tag.dart";
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -34,78 +35,83 @@ class Body extends StatelessWidget {
 
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 70),
-              child: SizedBox(
-                height: 33,
-                width: 91,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 245, 246, 247),
-                    borderRadius: const BorderRadius.all(Radius.circular(20)),
-                    border: Border.all(width: 2.0, color: const Color.fromARGB(255, 49, 162, 227)),
-                    // borderColor: Color.fromARGB(255, 3, 52, 92),
-                  ),
-                  child: const Center(
-                    child: Text("Python",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 49, 162, 227),
-                            fontSize: 13)),
-                  ),
-                ),
-              ),
-            ),
+          children: const [
+            Tag(text: "Python"),
+            Tag(text: "Automation"),
+            Tag(text: "AI"),
+          ]
+          // children: [
+          //   Padding(
+          //     padding: const EdgeInsets.only(top: 70),
+          //     child: SizedBox(
+          //       height: 33,
+          //       width: 91,
+          //       child: DecoratedBox(
+          //         decoration: BoxDecoration(
+          //           color: const Color.fromARGB(255, 245, 246, 247),
+          //           borderRadius: const BorderRadius.all(Radius.circular(20)),
+          //           border: Border.all(width: 2.0, color: const Color.fromARGB(255, 49, 162, 227)),
+          //           // borderColor: Color.fromARGB(255, 3, 52, 92),
+          //         ),
+          //         child: const Center(
+          //           child: Text("Python",
+          //               textAlign: TextAlign.center,
+          //               style: TextStyle(
+          //                   color: Color.fromARGB(255, 49, 162, 227),
+          //                   fontSize: 13)),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
 
-            Padding(
-              padding: const EdgeInsets.only(top: 70),
-              child: SizedBox(
-                height: 33,
-                width: 91,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 245, 246, 247),
-                    borderRadius: const BorderRadius.all(Radius.circular(20)),
-                    border: Border.all(width: 2.0, color: const Color.fromARGB(255, 49, 162, 227)),
-                    // borderColor: Color.fromARGB(255, 3, 52, 92),
-                  ),
-                  child: const Center(
-                    child: Text("Automation",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 49, 162, 227),
-                            fontSize: 13)),
-                  ),
-                ),
-              ),
-            ),
+          //   Padding(
+          //     padding: const EdgeInsets.only(top: 70),
+          //     child: SizedBox(
+          //       height: 33,
+          //       width: 91,
+          //       child: DecoratedBox(
+          //         decoration: BoxDecoration(
+          //           color: const Color.fromARGB(255, 245, 246, 247),
+          //           borderRadius: const BorderRadius.all(Radius.circular(20)),
+          //           border: Border.all(width: 2.0, color: const Color.fromARGB(255, 49, 162, 227)),
+          //           // borderColor: Color.fromARGB(255, 3, 52, 92),
+          //         ),
+          //         child: const Center(
+          //           child: Text("Automation",
+          //               textAlign: TextAlign.center,
+          //               style: TextStyle(
+          //                   color: Color.fromARGB(255, 49, 162, 227),
+          //                   fontSize: 13)),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
 
-            Padding(
-              padding: const EdgeInsets.only(top: 70),
-              child: SizedBox(
-                height: 33,
-                width: 91,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 245, 246, 247),
-                    borderRadius: const BorderRadius.all(Radius.circular(20)),
-                    // borderColor: Color.fromARGB(255, 3, 52, 92),
-                    // border: Border.all(width: 2.0, color: Color.fromARGB(255, 49, 162, 227)),
-                    border: Border.all(width: 2.0, color: const Color.fromARGB(255, 49, 162, 227)),
-                  ),
-                  child: const Center(
-                    child: Text("AI",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 49, 162, 227),
-                            fontSize: 13)),
-                  ),
-                ),
-              ),
-            ),
+          //   Padding(
+          //     padding: const EdgeInsets.only(top: 70),
+          //     child: SizedBox(
+          //       height: 33,
+          //       width: 91,
+          //       child: DecoratedBox(
+          //         decoration: BoxDecoration(
+          //           color: const Color.fromARGB(255, 245, 246, 247),
+          //           borderRadius: const BorderRadius.all(Radius.circular(20)),
+          //           // borderColor: Color.fromARGB(255, 3, 52, 92),
+          //           // border: Border.all(width: 2.0, color: Color.fromARGB(255, 49, 162, 227)),
+          //           border: Border.all(width: 2.0, color: const Color.fromARGB(255, 49, 162, 227)),
+          //         ),
+          //         child: const Center(
+          //           child: Text("AI",
+          //               textAlign: TextAlign.center,
+          //               style: TextStyle(
+          //                   color: Color.fromARGB(255, 49, 162, 227),
+          //                   fontSize: 13)),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
 
-          ],
+          // ],
         ),
 
         Row(
