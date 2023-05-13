@@ -34,7 +34,7 @@ class Body extends StatelessWidget {
                 backgroundColor: Color.fromARGB(255, 0, 42, 88),
                 radius: 53,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/margot.png'),
+                  backgroundImage: AssetImage('assets/images/Avatar2.png'),
                   radius: 50,
                 ),
               ),
@@ -90,13 +90,13 @@ class Body extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: const [
             ProfileBadge(
-                backgroundImage: AssetImage('assets/images/badge.jpeg')),
+                backgroundImage: AssetImage('assets/images/Badge.jpeg')),
             ProfileBadge(
-                backgroundImage: AssetImage('assets/images/badge.jpeg')),
+                backgroundImage: AssetImage('assets/images/Badge.jpeg')),
             ProfileBadge(
-                backgroundImage: AssetImage('assets/images/badge.jpeg')),
+                backgroundImage: AssetImage('assets/images/Badge.jpeg')),
             ProfileBadge(
-                backgroundImage: AssetImage('assets/images/badge.jpeg')),
+                backgroundImage: AssetImage('assets/images/Badge.jpeg')),
           ],
         ),
         Row(
