@@ -62,6 +62,8 @@ flutter:
     - assets/images/CloudETS.png
     - assets/images/DellLogo.png
     - assets/images/Avatar.jpeg
+    - assets/images/badge.jpeg
+    - assets/images/margot.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

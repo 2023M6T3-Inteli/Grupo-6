@@ -23,6 +23,36 @@ app.get('/project/python', (req, res) => {
         "Question": "Why would you like to participate in the project?", "Technologies": "Python, AI, Database"});
 })
 
+app.post('/login', (req, res) => {
+    const {username, password} = req.body;
+
+    if (username === 'admin' && password === 'senha') {
+        res.send('Login bem-sucedido!');
+      } else {
+        res.send('Nome de usuário ou senha inválidos!');
+        }
+})
+
+app.get('/feed', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.json(
+        {"publiName": "Machine Larning for medicine", 
+        "publiDate": "03/09/2023",
+        "link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley",
+        "skills": {
+            "skill1": "Python",
+            "skill2": "AI",
+            "skill3": "Automation"
+        },
+        "Profile":{
+            "name": "Sofia Pimazzoni",
+            "photo": "sofia.png",
+        }
+        });
+})
+
+
 app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
   });
