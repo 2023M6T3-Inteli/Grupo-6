@@ -3,6 +3,7 @@ import 'package:src/screens/interest/interest.dart';
 import 'package:src/screens/home/home.dart';
 import 'package:src/screens/post_visu/post_visu.dart';
 import 'package:src/screens/profile/profile.dart';
+import 'package:src/screens/ranking/ranking.dart';
 import 'package:src/screens/recommendation/recommendation.dart';
 import 'package:src/screens/login/login.dart';
 import 'package:src/screens/post/post.dart';
@@ -14,7 +15,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
           '/project_info': (context) => const ProjectInfo(),
           '/profile': (context) => const Profile(),
           '/post_view': (context) => const PostView(),
+          '/ranking': (context) => const Ranking(),
         });
   }
 }

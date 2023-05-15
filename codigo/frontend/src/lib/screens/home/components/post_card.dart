@@ -17,7 +17,7 @@ Padding postCardBuilder() {
               const Padding(
                 padding: EdgeInsets.only(left: 12, top: 12, right: 6),
                 child: CircleAvatar(
-                  backgroundImage: AssetImage("../assets/images/Avatar.jpeg"),
+                  backgroundImage: AssetImage("assets/images/Avatar.jpeg"),
                   radius: 25,
                 ),
               ),
