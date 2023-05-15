@@ -7,8 +7,8 @@ class ProjectInfo extends StatelessWidget {
   const ProjectInfo({super.key});
   @override
   Widget build(BuildContext context) {
-    return Material(
-        child: Center(
+    return Scaffold(
+        body: Center(
             child: SizedBox(
       width: 320.0,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
