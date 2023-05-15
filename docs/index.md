@@ -63,6 +63,10 @@ Solução de otimização de corte de bobinas de papel
   - [Casos de Uso](#casos-de-uso)
   - [Matriz de rastreabilidade](#matriz-de-rastreabilidade)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
+  - [Versão 1 - Arquitetura do sistema](#versão-1---arquitetura-do-sistema)
+  - [Versão 2 - Arquitetura do sistema](#versão-2---arquitetura-do-sistema)
+  - [Arquitetura de mensageria](#arquitetura-de-mensageria)
+  - [Benefícios e desantagens da arquitetura](#benefícios-e-desantagens-da-arquitetura)
   - [Diagrama de sequência do fluxo de dados](#diagrama-de-sequência-do-fluxo-de-dados)
 - [UX e UI Design](#ux-e-ui-design)
   - [Benchmarking e Revisão de Design System](#benchmarking-e-revisão-de-design-system)
@@ -314,12 +318,49 @@ Sabendo que o conceito de Matriz de rastreabilidade de requisitos pode ser defin
 <img src="../docs/img/img_docs/matriz_de_rastreabilidade.png" alt="Matriz de rastreabilidade" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
+<br>
+
 # Arquitetura do Sistema
 	
 A arquitetura de um sistema de software é a estrutura fundamental que define como o sistema é organizado e como seus componentes interagem entre si para atender aos requisitos de software. Ela serve para garantir que o sistema seja escalável, flexível, fácil de manter e extensível ao longo do tempo, permitindo que os desenvolvedores construam um software de alta qualidade que atenda às necessidades dos usuários finais de maneira eficiente. Dessa forma, aqui se encontra a primeira versão da arquitetura do sistema:
-	
+
+## Versão 1 - Arquitetura do sistema
 <img src="../docs/img/arquitetura-v11.jpg" alt="ArquiteturaV1" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
+<br>
+<p>Pensando em uma melhor perormance da aplicação desenvolvida, foram feitas alterações na arquitetura principal do sistema. Sabendo a demanada de escalabilidade e seguraça, foi introdzido à arquitetura o mecanismo de mensageria. Esse consiste em um sistema distribuído que se comunica por meio de mensagens, ou seja, eventos, sendo essas mensagens gerenciadas por um Message Broker (servidor ou módulo de mensagens). O processo ocorre de forma assíncrona, não precisando assimaguarar pela resposta da primeira requisição para conttinuar a execução do sistema.</p>
+<br>
+Dessa forma foi escolhido a tecnologia Kafka para a implementação do sistema de mensageria na arquitetura. Sabendo que a tecnologiacarrega como características principais a escalabilidade, permitindo a integração de sistemas heterogêneos, tolerância a falhas, por ser um software distribuído, projetado para funcionar em um ambiente de luster com múltiplos nós, e alta performance, além de ser uma tecnologia open source, o que a torna mais acessível.
+## Versão 2 - Arquitetura do sistema
+<img src="../docs/img/img_docs/arquitetura_v2.jpg" alt="ArquiteturaV1" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
+<br>
+
+## Arquitetura de mensageria
+Assim, foi constituido a arquitetura de mensageria, onde é especificado as requisições tomadas por parte do front-end e como o sistema reage a elas, ou seja, quais tipos de requisições especificamente são feitos, os dados e seus tipos que são  inseridos e as possíveis reespostas que o sistema pode dar de acorrdo ocm a requisição dada, conforme é possível verificar na figura abaixo.
+<img src="../docs/img/img_docs/arquitetura_mensageria.png" alt="Arquitetura de mensageria" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
+Nota do grupo desenvolvedor: <br>
+<img src="../docs/img/img_docs/observações.png" alt="Observações sobre a arquitetura" border="0" width="30%" display="flex" justify-content="center">
+
+## Benefícios e desantagens da arquitetura
+<p>A aplicação dessa arquitetura traz consigo vantagens e desvantagens. Podem ser citadas como vantagens: 
+<lu>
+<li> Escalabilidade: a arquitetura possui um desacoplamento de aplicação, que facilita o processo de escalabilidade, principalmente na modalidade horizontal, uma vez que permite o acréscimo de recursos em funcionalidades específicas. Além disso, com o sistema de mensageria, a multi clusterzação do sistema não seria um problema, ima vez que teria um único ponto de contato entre o frontend e o backend.
+<li> Tolerância a falhas: também com desacoplamento de aplicação seria proporcionado proteção e segurança, uma vez que a falha em um componente não afetaria o funcionamento dos demais, em efeito cascata.
+<li> Alta performance: outro fator afetado pelo desacoplamento da aplicação e o banco de dados é a redução da carga de conexão, melhorando a performance do sistema.
+<li> Integração de sistemas heterogêneos: a arquitetura usada permite que a solução desenvolvida seja integrada a diversos outros sistemas, como o próprio sistema coorporativo da empresa parceira, por exemplo.
+<li> Tecnologia open source: as tecnologias usadas para o sistema de mensageria proposto na xarquitetura são open source, o que reduz os custos de implementação e manutenção do sistema.
+</lu></p>
+<p>Em contraposição, também são vistos alguns dificultadores na aplicação dessa arquitetura. São eles: </p>
+<lu> 
+<li> Complexidade de implementação: a arquitetura proposta pode se tornar complexa, dependendo da dimensão que esta ganhar, o que dificulta a implementação e manutenção do sistema.
+<li> Aumento da auditoria da aplicação: por se tratar de componentes altamente distribuídos e heterogêneos, a auditoria pode gerar um grande volume de dados, que precisam ser armazenados e processados, aumentando assim a complexidade da arquitetura e os custos operacionais.
+<li> Necessidade de uma reestruturação da experiência do usuário: por se tratar de um sistema assíncrono, as respostas as requisições não serão imediatas. Dessa forma, será necessário reestruturação da experiência do usuário, para que este não se sinta prejudicado com a demora nas respostas.
+<li> Aumento do número de componentes: a arquitetura ganha maior quantidade de componentes, uma vez que há a necessidade de um servidor de mensageria.
+</lu>
+
+<br>
 
 ## Diagrama de sequência do fluxo de dados
 
@@ -353,7 +394,7 @@ As telas navegáveis estão disponíveis em:<https://www.figma.com/file/L15EchWi
 ## Design de Interface - Guia de Estilos
 Tratando-se de um documento que conttempa as diretrizes de design de uma empresa, garantindo a consistência da interface gráfica, esse apresenta definições de cores, tipografia, iconografia e grids. Dessa forma, seguindo o design system do parceiro, foi proposto o guia de estilos a seguir para a aplicação desenvolvida.
 
-<img src="../docs/img/img_docs/Style%20guide.png" alt="Guia de estilos" border="0" width="100%" display="flex" justify-content="center">
+<img src="../docs/img/img_docs/Style_guide_v2.png" alt="Guia de estilos" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 
@@ -430,6 +471,8 @@ Toda referência citada no texto deverá constar nessa seção, utilizando o pad
 Sugerimos o uso do sistema autor-data para citações.
 
 https://artia.com/blog/matriz-de-rastreabilidade/ 01/05/2023
+
+https://antlia.com.br/artigos/servicos-de-mensageria/#:~:text=Mensageria%20%C3%A9%20um%20conceito%20definido,servidor%2Fm%C3%B3dulo%20de%20mensagens  12/05/2023
 
 
 # Apêndice 
