@@ -1,51 +1,54 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
-import { PrismaService } from '../prisma.service';
+import { PrismaService } from 'src/prisma.service';
 
 @Injectable()
 export class PostService {
   constructor(private prisma: PrismaService) {}
-  // src/articles/articles.service.ts
 
-// @Injectable()
-// export class ArticlesService {
-//   constructor(private prisma: PrismaService) {}
+  async create(createPostDto: CreatePostDto) {
+    const newPost = await this.prisma.post.create({})
 
-//   create(createArticleDto: CreateArticleDto) {
-//     return 'This action adds a new article';
-//   }
-
-//   findDrafts() {
-//     return this.prisma.article.findMany({ where: { published: false } });
-//   }
-
-//   // ...
-
-// }
-  create(createPostDto: CreatePostDto) {
-
-
-    return 'This action adds a new post';
+    return newPost; 
   }
 
-  findAll() {
-    return `This action returns all post`;
+  async findAll() {
+    const post = await this.prisma.post.findMany({})
+
+    return post;
   }
 
-  findById(id: number) {
-    return `This action returns a #${id} post`;
+  async findById(id: number) {
+    const post = await this.prisma.post.findUnique({
+      where: { id: id },
+    })
+
+    return post;
   }
 
-  findByTitle(title: string) {
-    return `This action returns a #${title} post`;
+  async findByTitle(title: string) {
+    const post = await this.prisma.post.findUnique({
+      where: { title: title },
+    })
+
+    return post;
   }
 
-  update(id: number, updatePostDto: UpdatePostDto) {
-    return `This action updates a #${id} post`;
+  async update(id: number, updatePostDto: UpdatePostDto) {
+    const post = await this.prisma.post.update({
+      where: { id: id },
+      data: updatePostDto,
+    })
+
+    return post;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} post`;
+  async delete(id: number) {
+    const post = await this.prisma.post.delete({
+      where: { id: id },
+    })
+
+    return post;
   }
 }
