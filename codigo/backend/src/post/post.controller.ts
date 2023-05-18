@@ -7,10 +7,10 @@ import { UpdatePostDto } from './dto/update-post.dto';
 export class PostController {
   constructor(private readonly postService: PostService) {}
 
-  @Post()
-  create(@Body() createPostDto: CreatePostDto) {
-    return this.postService.create(createPostDto);
-  }
+  // @Post()
+  // create(@Body() createPostDto: CreatePostDto) {
+  //   return this.postService.create(createPostDto);
+  // }
 
   @Get()
   findAll() {
@@ -19,21 +19,21 @@ export class PostController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.postService.findById(+id);
+    return this.postService.findById(id);
   }
 
-  @Get(':title')
-  findOnde(@Param('title') title: string) {
-    return this.postService.findByTitle(title);
-  }
+  // @Get(':title')
+  // findOnde(@Param('title') title: string) {
+  //   return this.postService.findByTitle(title);
+  // }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto) {
-    return this.postService.update(+id, updatePostDto);
+    return this.postService.update(id, updatePostDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.postService.delete(+id);
+    return this.postService.delete(id);
   }
 }

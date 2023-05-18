@@ -7,10 +7,16 @@ import { PrismaService } from 'src/prisma.service';
 export class PostService {
   constructor(private prisma: PrismaService) {}
 
-  async create(createPostDto: CreatePostDto) {
-    const newPost = await this.prisma.post.create({})
-
-    return newPost; 
+  async create(data: CreatePostDto) {
+    const newPost = await this.prisma.post.create({
+      data: {
+        title: "la la la",
+        description: "lalala",
+        category: "lalala",
+        createdAt: new Date(),
+        creator: "537ab60c-dd46-4080-be07-d9805330d5ba"
+      }
+    });
   }
 
   async findAll() {
@@ -19,7 +25,7 @@ export class PostService {
     return post;
   }
 
-  async findById(id: number) {
+  async findById(id: string) {
     const post = await this.prisma.post.findUnique({
       where: { id: id },
     })
@@ -27,15 +33,15 @@ export class PostService {
     return post;
   }
 
-  async findByTitle(title: string) {
-    const post = await this.prisma.post.findUnique({
-      where: { title: title },
-    })
+  // async findByTitle(title: string) {
+  //   const post = await this.prisma.post.findUnique({
+  //     where: { title: title },
+  //   })
 
-    return post;
-  }
+  //   return post;
+  // }
 
-  async update(id: number, updatePostDto: UpdatePostDto) {
+  async update(id: string, updatePostDto: UpdatePostDto) {
     const post = await this.prisma.post.update({
       where: { id: id },
       data: updatePostDto,
@@ -44,7 +50,7 @@ export class PostService {
     return post;
   }
 
-  async delete(id: number) {
+  async delete(id: string) {
     const post = await this.prisma.post.delete({
       where: { id: id },
     })
