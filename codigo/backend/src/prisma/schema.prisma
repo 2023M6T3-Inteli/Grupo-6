@@ -40,6 +40,18 @@ model Post {
   author      User     @relation(fields: [creator], references: [id])
 }
 
+// model Project {
+//   id String @id @default(uuid())
+//   title String
+//   description String
+//   start_project String
+//   end_project String
+//   start_subscription String
+//   end_subscription String
+//   area String
+//   status String
+// }
+
 model hard_skills {
   id         String @id @default(uuid())
   hard_skill String
