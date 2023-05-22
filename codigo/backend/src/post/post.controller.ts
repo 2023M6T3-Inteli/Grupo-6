@@ -7,33 +7,33 @@ import { UpdatePostDto } from './dto/update-post.dto';
 export class PostController {
   constructor(private readonly postService: PostService) {}
 
-  // @Post()
-  // create(@Body() createPostDto: CreatePostDto) {
-  //   return this.postService.create(createPostDto);
-  // }
+  @Post()
+  create(@Body() createPostDto: CreatePostDto) {
+    return this.postService.create(createPostDto);
+  }
 
   @Get()
   findAll() {
-    return this.postService.findAll();
+    return this.postService.getAllPosts();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.postService.findById(id);
+  findOneById(@Param('id') id: string) {
+    return this.postService.getPostById(id);
   }
 
-  // @Get(':title')
-  // findOnde(@Param('title') title: string) {
-  //   return this.postService.findByTitle(title);
-  // }
+  @Get(':title')
+  findOneByTitle(@Param('title') title: string, @Param('id') id: string) {
+    return this.postService.getPostByTitle(title, id);
+  }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto) {
-    return this.postService.update(id, updatePostDto);
+  update(@Param('id') id: string, @Body() data: CreatePostDto) {
+    return this.postService.updatePost(id, data);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.postService.delete(id);
+    return this.postService.deletePost(id);
   }
 }
