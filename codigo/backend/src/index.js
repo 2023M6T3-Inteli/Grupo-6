@@ -62,5 +62,19 @@ async function main5() {
     console.log(soft_skills)
 }
 
-main2()
+async function  main6(){
+    const createUser = await prisma.user.create({
+        data: {
+            name: "joao",
+            role: "dev",
+            email: "joao@gmail.com",
+            password: "123456",
+            projects: "1,2,3"
+        }
+    });
+    console.log(createUser)
+}
+
+
+main6()
 

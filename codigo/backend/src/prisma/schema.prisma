@@ -8,18 +8,19 @@ datasource db {
 }
 
 model User {
-  id          String        @id @default(uuid())
-  name        String
-  role        String
-  about_me    String?
-  email       String        @unique
-  password    String
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
-  badges      Badges[]      @relation("UserBadges")
-  posts       Post[]
-  hard_skills hard_skills[] @relation("UserHardSkills")
-  soft_skills soft_skills[] @relation("UserSoftSkills")
+  id        String   @id @default(uuid())
+  name      String
+  role      String
+  about_me  String?
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  badges    Badges[] @relation("UserBadges")
+  posts     Post[]
+  projects  String?
+  // hard_skills hard_skills[] @relation("UserHardSkills")
+  // soft_skills soft_skills[] @relation("UserSoftSkills")
 }
 
 model Badges {
@@ -52,14 +53,14 @@ model Post {
 //   status String
 // }
 
-model hard_skills {
-  id         String @id @default(uuid())
-  hard_skill String
-  user       User[] @relation("UserHardSkills")
-}
+// model hard_skills {
+//   id         String @id @default(uuid())
+//   hard_skill String
+//   user       User[] @relation("UserHardSkills")
+// }
 
-model soft_skills {
-  id         String @id @default(uuid())
-  soft_skill String
-  user       User[] @relation("UserSoftSkills")
-}
+// model soft_skills {
+//   id         String @id @default(uuid())
+//   soft_skill String
+//   user       User[] @relation("UserSoftSkills")
+// }
