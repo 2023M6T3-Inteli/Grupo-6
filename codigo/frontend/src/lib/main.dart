@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:src/navbar.dart';
+import 'package:src/widgets/navbar.dart';
 import 'package:src/screens/interest/interest.dart';
 import 'package:src/screens/home/home.dart';
 import 'package:src/screens/post_visu/post_visu.dart';

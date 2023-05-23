@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
-import 'screens/profile/profile.dart';
-import 'screens/ranking/ranking.dart';
-import 'screens/submitProject/project_info.dart';
+import '../screens/profile/profile.dart';
+import '../screens/ranking/ranking.dart';
+import '../screens/submitProject/project_info.dart';
 import "package:src/screens/home/home.dart";
 
 class NavBarRouter extends StatefulWidget {
