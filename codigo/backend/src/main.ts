@@ -7,7 +7,7 @@ async function bootstrap() {
   
   const config = new DocumentBuilder()
     .setTitle('CloudETS API Documentation')
-    .setDescription('The CloudETS API description')
+    .setDescription('Este documento possui como objetivo documentar todos os endpoints presentes na aplicação e está dividido em três módulos: Badge, User e Post.')
     .setVersion('1.0')
     .addTag('CloudETS')
     .build();
