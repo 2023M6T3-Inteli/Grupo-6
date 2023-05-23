@@ -35,14 +35,22 @@ export class UserService {
       return user
   }
   
-  // async update(id: string, updateUserDto: UpdateUserDto) {
-  //   const user = await this.prisma.user.update({
-  //     where: {id: id},
-  //     data: updateUserDto
-  //   });
+  async update(id: string, data: CreateUserDto) {
+    const user = await this.prisma.user.update({
+      where: {id: id},
+      data: {
+        name: data.name,
+        role: data.role,
+        about_me: data.about_me,
+        email: data.email,
+        password: data.password,
+        badges: data.badges,
+        projects: data.projects
+      }
+    });
     
-  //   return user
-  // }
+    return user
+  }
 
   async delete(id: string) {
     const user = await this.prisma.user.delete({
