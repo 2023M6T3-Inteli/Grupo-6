@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException, BadRequestException } from '@nestjs/common';
 import { CreateBadgeDto } from './dto/create-badge.dto';
 import { PrismaService } from 'src/prisma.service';
 
@@ -6,28 +6,66 @@ import { PrismaService } from 'src/prisma.service';
 export class BadgeService {
   constructor(private prisma: PrismaService) {}
 
-  async create(createBadgeDto: CreateBadgeDto) {
-    const newBadge = await this.prisma.badges.create({
-      data: {
-        picture: "lalala",
-        type: "lalala",
-        description: "lalala",
-      }
+  async create(data: CreateBadgeDto) {
+    const badgeExist = await this.prisma.badges.findMany({
+      where: {
+        picture: data.picture,
+        type: data.type,
+        description: data.description,
+      },
     });
+
+    if (badgeExist.length) {
+      console.log("Badge already exists");
+      throw new BadRequestException('Something bad happened: Badge already exists');
+    }
+
+    try {
+      const newBadge = await this.prisma.badges.create({
+        data: {
+          picture: data.picture,
+          type: data.type,
+          description: data.description,
+        }
+      });
+     }  
+      catch (error) {
+        console.log(error);
+        throw new InternalServerErrorException('Something bad happened: ', error);
+      }
   }
 
   async findAll() {
-    const badge = await this.prisma.badges.findMany({})
-
-    return badge;
+    try {
+      const allBadges = await this.prisma.post.findMany({})
+      return allBadges;
+    }
+    catch (error) {
+      console.log(error);
+      throw new InternalServerErrorException('Something bad happened: ', error);
+    }
   }
 
   async findOne(id: string) {
-    const badge = await this.prisma.badges.findUnique({
+    const badgeExist = await this.prisma.badges.findUnique({
       where: { id: id },
     })
 
-    return badge;
+    if (!badgeExist) {
+      console.log("Badge not found");
+      throw new BadRequestException('Something bad happened: Badge not found');
+    }
+
+    try {
+      const badge = await this.prisma.post.findUnique({
+        where: { id: id },
+      })
+      return badge;
+    }
+    catch (error) {
+      console.log(error);
+      throw new InternalServerErrorException('Something bad happened: ', error);
+    }
   }
 
   async update(id: string, data: CreateBadgeDto) {
@@ -40,10 +78,27 @@ export class BadgeService {
   }
 
   async remove(id: string) {
-    const badge = await this.prisma.badges.delete({
-      where: { id: id },
+    const badgeExist = await this.prisma.post.findUnique({
+      where: { 
+        id, 
+      },
     })
 
+    if (!badgeExist) {
+      console.log("Badge not found");
+      throw new BadRequestException('Something bad happened: Badge not found');
+    }
+
+    try {
+    const badge = await this.prisma.post.delete({
+      where: { id: id },
+    })
+    
     return badge;
+    }
+    catch (error) {
+      console.log(error);
+      throw new InternalServerErrorException('Something bad happened: ', error);
+    } 
   }
 }
