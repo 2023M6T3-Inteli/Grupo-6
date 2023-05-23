@@ -340,7 +340,7 @@ Dessa forma foi escolhido a tecnologia Kafka para a implementação do sistema d
 ## Arquitetura de mensageria
 Assim, foi constituido a arquitetura de mensageria, onde é especificado as requisições tomadas por parte do front-end e como o sistema reage a elas, ou seja, quais tipos de requisições especificamente são feitos, os dados e seus tipos que são  inseridos e as possíveis reespostas que o sistema pode dar de acorrdo ocm a requisição dada, conforme é possível verificar na figura abaixo.
 <img src="../docs/img/img_docs/arquitetura_mensageria.png" alt="Arquitetura de mensageria" border="0" width="100%" display="flex" justify-content="center">
-<center> Fonte: Elaborado pelo próprio autor (2023). </center>
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br> <br>
 Nota do grupo desenvolvedor: <br>
 <img src="../docs/img/img_docs/observações.png" alt="Observações sobre a arquitetura" border="0" width="30%" display="flex" justify-content="center">
 
@@ -374,8 +374,10 @@ O diagrama de sequência de fluxo de dados é uma ferramenta de modelagem que de
 	
 Na terceira e última versão da arquitetura, a parte de infraestrutura não foi modificada, apenas foi adicionado uma tabela que conecta os mecanismos de tal arquitetura com a aplicação em termos de observabilidade e redundâncias de processamento, de informações e de transações. De uma forma mais simples, essa tabela mostra os caminhos que um componente ou página vai percorrer na aplicação, já considerando o Kafka, e qual tabela será acionada quando certo endpoint for chamado.
 
-<img src="../docs/img/img_docs/arquitetura_v3.png" alt="ArquiteturaV3" border="0" width="100%" display="flex" justify-content="center">
-<center> Fonte: Elaborado pelo próprio autor (2023). </center>
+<img src="docs/img/img_docs/arquitetura_v3.png" alt="ArquiteturaV3" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br> <br>
+Nota do grupo desenvolvedor: <br>
+<img src="../docs/img/img_docs/observações_v3.png" alt="Observações sobre a V3 da arquitetura" border="0" width="30%" display="flex" justify-content="center">
 
 # UX e UI Design
 
