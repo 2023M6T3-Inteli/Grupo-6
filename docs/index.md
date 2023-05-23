@@ -331,8 +331,9 @@ A arquitetura de um sistema de software é a estrutura fundamental que define co
 <p>Pensando em uma melhor perormance da aplicação desenvolvida, foram feitas alterações na arquitetura principal do sistema. Sabendo a demanada de escalabilidade e seguraça, foi introdzido à arquitetura o mecanismo de mensageria. Esse consiste em um sistema distribuído que se comunica por meio de mensagens, ou seja, eventos, sendo essas mensagens gerenciadas por um Message Broker (servidor ou módulo de mensagens). O processo ocorre de forma assíncrona, não precisando assimaguarar pela resposta da primeira requisição para conttinuar a execução do sistema.</p>
 <br>
 Dessa forma foi escolhido a tecnologia Kafka para a implementação do sistema de mensageria na arquitetura. Sabendo que a tecnologiacarrega como características principais a escalabilidade, permitindo a integração de sistemas heterogêneos, tolerância a falhas, por ser um software distribuído, projetado para funcionar em um ambiente de luster com múltiplos nós, e alta performance, além de ser uma tecnologia open source, o que a torna mais acessível.
+
 ## Versão 2 - Arquitetura do sistema
-<img src="../docs/img/img_docs/arquitetura_v2.jpg" alt="ArquiteturaV1" border="0" width="100%" display="flex" justify-content="center">
+<img src="../docs/img/img_docs/arquitetura_v2.jpg" alt="ArquiteturaV2" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 <br>
 
@@ -367,6 +368,13 @@ Nota do grupo desenvolvedor: <br>
 O diagrama de sequência de fluxo de dados é uma ferramenta de modelagem que descreve a interação entre diferentes componentes de um sistema, mostrando a sequência de eventos e as informações que fluem entre eles. Ele é utilizado para ilustrar o fluxo de dados em um sistema, permitindo que os desenvolvedores entendam como o sistema funciona e identifiquem oportunidades para melhorias e otimizações.
 	
 <img src="../docs/img/img_docs/fluxodedados.png" alt="Diagrama de sequência de fluxo de dados" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
+	
+## Versão 3 - Arquitetura do sistem
+	
+Na terceira e última versão da arquitetura, a parte de infraestrutura não foi modificada, apenas foi adicionado uma tabela que conecta os mecanismos de tal arquitetura com a aplicação em termos de observabilidade e redundâncias de processamento, de informações e de transações. De uma forma mais simples, essa tabela mostra os caminhos que um componente ou página vai percorrer na aplicação, já considerando o Kafka, e qual tabela será acionada quando certo endpoint for chamado.
+
+<img src="../docs/img/img_docs/fluxodedados.png" alt="ArquiteturaV3" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 # UX e UI Design
