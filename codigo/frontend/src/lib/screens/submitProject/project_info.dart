@@ -7,8 +7,8 @@ class ProjectInfo extends StatelessWidget {
   const ProjectInfo({super.key});
   @override
   Widget build(BuildContext context) {
-    return Material(
-        child: Center(
+    return Scaffold(
+        body: Center(
             child: SizedBox(
       width: 320.0,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -56,18 +56,19 @@ class ProjectInfo extends StatelessWidget {
 //Second row
         Row(
           children: const [
-            Padding(padding: EdgeInsets.only(top: 80.0)),
             Expanded(
-                child: Text(
-              'Creation of a personal finance management program. With  this application, it is possible to record all the users income and expenses, generating graphs and reports that allow a better visualization of the budget. The development of this project requires knowledge in python, manipulation of databases and creation of graphical interfaces.',
-              textDirection: TextDirection.ltr,
-              textAlign: TextAlign.justify,
-              style: TextStyle(
-                color: Color.fromARGB(255, 99, 99, 99),
-                fontSize: 12.0,
-                fontWeight: FontWeight.w400,
-              ),
-            )),
+                child: Padding(
+                    padding: EdgeInsets.only(top: 80.0),
+                    child: Text(
+                      'Creation of a personal finance management program. With  this application, it is possible to record all the users income and expenses, generating graphs and reports that allow a better visualization of the budget. The development of this project requires knowledge in python, manipulation of databases and creation of graphical interfaces.',
+                      textDirection: TextDirection.ltr,
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 99, 99, 99),
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ))),
           ],
         ),
 //Third row
@@ -181,26 +182,27 @@ class ProjectInfo extends StatelessWidget {
           children: const [
             Padding(padding: EdgeInsets.only(top: 30.0)),
             AtributteWidget(atributte: 'Questions:'),
-            Padding(
-                padding: EdgeInsets.only(top: 5.0),
-                child: Expanded(
+            Expanded(
+                child: Padding(
+                    padding: EdgeInsets.only(top: 5.0),
                     child: Text(
-                  "Why would you like to participate in the project?",
-                  textDirection: TextDirection.ltr,
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 99, 99, 99),
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ))),
+                      "Why would you like to participate in the project?",
+                      textDirection: TextDirection.ltr,
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 99, 99, 99),
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ))),
           ], //children
         ),
 //Tenth row
         Row(
           children: const [
-            Padding(padding: EdgeInsets.only(top: 5.0)),
             Expanded(
+                child: Padding(
+              padding: EdgeInsets.only(top: 5.0),
               child: TextField(
                 maxLines: 8,
                 decoration: InputDecoration(
@@ -208,7 +210,7 @@ class ProjectInfo extends StatelessWidget {
                   hintText: 'Type your answer here',
                 ),
               ),
-            ),
+            )),
           ],
         ),
 //Eleventh row

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:src/navbar.dart';
 import 'package:src/screens/interest/interest.dart';
 import 'package:src/screens/home/home.dart';
 import 'package:src/screens/post_visu/post_visu.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/login',
         routes: {
           '/login': (context) => const Login(),
-          '/home': (context) => const Home(),
+          '/home': (context) => const NavBarRouter(),
           '/feed': (context) => const Feed(),
           '/post': (context) => const Post(),
           '/interest': (context) => Interest(),
