@@ -2,7 +2,6 @@
 import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { PrismaService } from '../prisma.service';
-import e from 'express';
 
 @Injectable()
 export class UserService {
