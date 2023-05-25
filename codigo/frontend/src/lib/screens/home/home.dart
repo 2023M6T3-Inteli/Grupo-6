@@ -124,7 +124,7 @@ class _HomeState extends State<Home> {
                       String title = post["title"];
                       String authorName = post["author"]["name"];
                       String date = post["createdAt"];
-
+  
                       posts.add(Posts(title: title, authorName: authorName, date: date));
                     }
                   }
