@@ -1,33 +1,19 @@
 import 'package:flutter/material.dart';
+import '../../services/service_post.dart';
 
-void main() {
-  runApp(const Post());
-}
 
-class Post extends StatelessWidget {
-  const Post ({Key? key}) : super(key: key);
+class Post extends StatefulWidget {
+  const Post({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
-    );
-  }
+  State<Post> createState() => _PostState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  String? dropdownValue = 'Option 1';
+class _PostState extends State<Post> {
+   String? dropdownValue = 'Option 1';
+  String title = "";
+  String description = "";
+  String tags = "";
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +44,9 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text('Title'),
             const SizedBox(height: 10),
             TextFormField(
+              onChanged: (text){
+                title = text;
+              },
               decoration: InputDecoration(
                 fillColor: Colors.grey[300],
                 filled: true,
@@ -71,6 +60,9 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text('Description'),
             const SizedBox(height: 10),
             TextFormField(
+              onChanged: (text){
+                description = text;
+              },
               maxLines: 5,
               decoration: InputDecoration(
                 fillColor: Colors.grey[300],
@@ -85,6 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text('Tags'),
             const SizedBox(height: 10),
             TextFormField(
+              onChanged: (text){
+                tags = text;
+              },
               decoration: InputDecoration(
                 fillColor: Colors.grey[300],
                 filled: true,
@@ -129,14 +124,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: MediaQuery.of(context).size.width * 0.6,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    sendPost(title, description, dropdownValue!, "675fb91e-eaf3-4611-8395-786ab81abdb0").then((data){
+                      Navigator.of(context).pushReplacementNamed("/home");
+                    }).catchError((error) {
+                      print('Erro: $error');
+                    });
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.blue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                   )),
                     child: const Text(
-                    'CREATE PROJECT',
+                    'CREATE POST',
                     style: TextStyle(
                       color: Colors.white,
                     ),
@@ -149,5 +150,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-}
-
+} 

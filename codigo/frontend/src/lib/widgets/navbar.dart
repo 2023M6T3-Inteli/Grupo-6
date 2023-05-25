@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:src/screens/post/post.dart';
 import '../screens/profile/profile.dart';
 import '../screens/ranking/ranking.dart';
 import '../screens/submitProject/project_info.dart';
@@ -37,7 +38,7 @@ class _NavBarRouterState extends State<NavBarRouter> {
     List<Widget> widgetOptions = const [
       Home(),
       Center(child: Text("404 - Not Found")),
-      ProjectInfo(),
+      Post(),
       Ranking(),
       Profile()
     ];
