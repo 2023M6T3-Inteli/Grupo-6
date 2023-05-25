@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
                             style: TextStyle(color: Colors.white, fontSize: 20),
                             textAlign: TextAlign.left,
                           ),
-                          SizedBox(width: 68),
+                          SizedBox(width: 50),
                           Icon(Icons.arrow_forward, color: Colors.white),
                         ],
                       )),
@@ -124,7 +124,7 @@ class _HomeState extends State<Home> {
                       String title = post["title"];
                       String authorName = post["author"]["name"];
                       String date = post["createdAt"];
-  
+
                       posts.add(Posts(title: title, authorName: authorName, date: date));
                     }
                   }

@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
           '/profile': (context) => const Profile(),
           '/post_view': (context) => const PostView(),
           '/ranking': (context) => const Ranking(),
+          '/PostView': (context) => const PostView(),
         });
   }
 }

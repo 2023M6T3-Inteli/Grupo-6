@@ -24,7 +24,9 @@ class _PostState extends State<Post> {
             Icons.arrow_back,
             color: Colors.grey,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushReplacementNamed("/home");
+          },
         ),
         title: const Text(
           'POST',

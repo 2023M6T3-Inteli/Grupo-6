@@ -6,10 +6,10 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Column(children: [
         
-        const Padding(
+         Padding(
           padding: EdgeInsets.only(left: 15, right: 15, top: 100, bottom: 60),
             child: Text(
               'Machine Learning for Medicine',
@@ -21,7 +21,7 @@ class Body extends StatelessWidget {
             ),
         ),
 
-        const Padding(
+         Padding(
           padding: EdgeInsets.symmetric(horizontal: 15),
           child: Text(
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
@@ -35,7 +35,7 @@ class Body extends StatelessWidget {
 
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const [
+          children:  [
             Tag(text: "Python"),
             Tag(text: "Automation"),
             Tag(text: "AI"),
@@ -116,7 +116,7 @@ class Body extends StatelessWidget {
 
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children:  [
             Padding( 
               padding: EdgeInsets.only(left: 30, top: 100),
               child: Text(
