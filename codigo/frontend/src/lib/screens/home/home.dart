@@ -1,6 +1,16 @@
 import "package:flutter/material.dart";
 import "components/circles.dart";
 import "package:src/screens/home/components/post_card.dart";
+import '../../services/service_post.dart';
+
+class Posts {
+  final String title;
+  final String authorName;
+  final String date;
+
+  Posts({required this.title, required this.authorName, required this.date});
+}
+
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -39,9 +49,9 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children:  [
                 Circle(icon: Icons.insert_drive_file_outlined),
                 // Text("Projects"),
                 Circle(icon: Icons.volume_up_outlined),
@@ -50,9 +60,9 @@ class _HomeState extends State<Home> {
                 // Text("Posts")
               ],
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children:  [
                 Circle(icon: Icons.play_circle_outline),
                 // Text("Videos"),
                 Circle(icon: Icons.folder_open_outlined),
@@ -78,8 +88,8 @@ class _HomeState extends State<Home> {
                       onPressed: () {
                         Navigator.of(context).pushReplacementNamed("/feed");
                       },
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children:  [
                           Text(
                             'Recommended for you',
                             style: TextStyle(color: Colors.white, fontSize: 20),
@@ -101,10 +111,36 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            for (int i = 0; i < 3; i++)
-              // ESSE AQUI É O CARD QUE ESTÁ SENDO PUXADO DO COMPONENTE post_card.dart
-              // PARA USÁ-LO, É SÓ IMPORTAR NA LINHA 1 O ARQUIVO post_card.dart
-              postCardBuilder(),
+            FutureBuilder(
+              future: getAllPosts(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var jsonData = snapshot.data;
+                  List<Posts> posts = [];
+
+                  for (int i = jsonData!.length - 1; i >= 0; i--) {
+                    var post = jsonData[i];
+                    if (post != null) {
+                      String title = post["title"];
+                      String authorName = post["author"]["name"];
+                      String date = post["createdAt"];
+
+                      posts.add(Posts(title: title, authorName: authorName, date: date));
+                    }
+                  }
+                  return Column(
+                    children: [
+                      for (var post in posts)
+                        postCardBuilder(post.title, post.authorName, post.date),
+                    ],
+                  );
+                } else if (snapshot.hasError) {
+                  return Text("Error: ${snapshot.error}");
+                } else {
+                  return const CircularProgressIndicator();
+                }
+              },
+            )
           ]),
         ),
       ),

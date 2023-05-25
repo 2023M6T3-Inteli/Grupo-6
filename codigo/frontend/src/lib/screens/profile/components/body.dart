@@ -206,8 +206,8 @@ class Body extends StatelessWidget {
             ),
           ],
         ),
-        postCardBuilder(),
-        postCardBuilder(),
+        // postCardBuilder(),
+        // postCardBuilder(),
       ]),
     );
   }

@@ -49,10 +49,10 @@ class _FeedState extends State<Feed> {
                       )
                     ],
                   ),
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8),
                     child: Row(
-                      children: const [
+                      children:  [
                         Icon(Icons.search, size: 16, color: Colors.black),
                         SizedBox(width: 16),
                         Expanded(
@@ -130,8 +130,8 @@ class _FeedState extends State<Feed> {
                         width: 2,
                       ),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children:  [
                         Icon(
                           Icons.close_rounded,
                           color: Colors.blue,
@@ -153,12 +153,12 @@ class _FeedState extends State<Feed> {
             const SizedBox(
               height: 40,
             ),
-            Center(
+            const Center(
                 child: Column(
               children: [
-                postCardBuilder(),
-                postCardBuilder(),
-                postCardBuilder()
+                // postCardBuilder(),
+                // postCardBuilder(),
+                // postCardBuilder()
               ],
             )),
             Expanded(child: Container()),

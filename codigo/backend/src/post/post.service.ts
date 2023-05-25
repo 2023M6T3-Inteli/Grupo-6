@@ -23,12 +23,14 @@ export class PostService {
 
     
     try {
+      var now = new Date();
+      var date = now.toLocaleDateString();
     const newPost = await this.prisma.post.create({
       data: {
         title: data.title,
         description: data.description,
         category: data.category,
-        createdAt: new Date(),
+        createdAt: date,
         creator: data.creator
       }
     });
@@ -41,7 +43,9 @@ export class PostService {
 
   async getAllPosts() {
     try {
-      const allPosts = await this.prisma.post.findMany({})
+      const allPosts = await this.prisma.post.findMany({
+        include: {author: true},
+      })
       return allPosts;
     }
     catch (error) {

@@ -36,7 +36,7 @@ model Post {
   title       String
   description String
   category    String
-  createdAt   DateTime @default(now())
+  createdAt   String 
   creator     String
   author      User     @relation(fields: [creator], references: [id])
 }

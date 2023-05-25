@@ -3,6 +3,6 @@ export class CreatePostDto {
     title: string;
     description: string;
     category: string;
-    createdAt: Date;
+    createdAt: string;
     creator: string;
 }
