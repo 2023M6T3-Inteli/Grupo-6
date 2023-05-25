@@ -11,7 +11,6 @@ class Posts {
   Posts({required this.title, required this.authorName, required this.date});
 }
 
-
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -49,9 +48,9 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children:  [
+              children: const [
                 Circle(icon: Icons.insert_drive_file_outlined),
                 // Text("Projects"),
                 Circle(icon: Icons.volume_up_outlined),
@@ -60,9 +59,9 @@ class _HomeState extends State<Home> {
                 // Text("Posts")
               ],
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children:  [
+              children: const [
                 Circle(icon: Icons.play_circle_outline),
                 // Text("Videos"),
                 Circle(icon: Icons.folder_open_outlined),
@@ -88,8 +87,8 @@ class _HomeState extends State<Home> {
                       onPressed: () {
                         Navigator.of(context).pushReplacementNamed("/feed");
                       },
-                      child: const Row(
-                        children:  [
+                      child: Row(
+                        children: const [
                           Text(
                             'Recommended for you',
                             style: TextStyle(color: Colors.white, fontSize: 20),
@@ -125,7 +124,8 @@ class _HomeState extends State<Home> {
                       String authorName = post["author"]["name"];
                       String date = post["createdAt"];
 
-                      posts.add(Posts(title: title, authorName: authorName, date: date));
+                      posts.add(Posts(
+                          title: title, authorName: authorName, date: date));
                     }
                   }
                   return Column(

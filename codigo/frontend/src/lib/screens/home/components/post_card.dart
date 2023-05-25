@@ -56,9 +56,9 @@ Padding postCardBuilder(String title, String name, String time) {
                 ),
               ],
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: SizedBox(
