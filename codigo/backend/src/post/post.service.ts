@@ -57,7 +57,7 @@ export class PostService {
 
   async getPostById(id: string) {
     const postExist = await this.prisma.post.findUnique({
-      where: {id,},
+      where: {id: id},
     })
 
     if (!postExist) {

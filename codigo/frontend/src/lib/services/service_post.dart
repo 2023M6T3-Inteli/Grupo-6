@@ -14,7 +14,7 @@ Future<List<dynamic>> getAllPosts() async {
     var response = await http.get(Uri.parse("$baseUrl/post"));
     if (response.statusCode == 200) {
       var jsonData = jsonDecode(response.body);
-      // print(jsonData);
+       //print(jsonData);
       return List<dynamic>.from(jsonData);
     } else {
       throw Exception(

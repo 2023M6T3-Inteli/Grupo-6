@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 const String baseUrl = "http://localhost:3000";
 
 void main() {
-  getUserById();
+  getUserById("d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390");
 }
 
 Future<List<dynamic>> getAllUsers() async {
@@ -15,11 +15,10 @@ Future<List<dynamic>> getAllUsers() async {
   return List<dynamic>.from(jsonData);
 }
 
-Future<dynamic> getUserById() async {
-  var response = await http
-      .get(Uri.parse("$baseUrl/user/675fb91e-eaf3-4611-8395-786ab81abdb0"));
-  var jsonData = jsonDecode(response.body);
-  print(response.body);
-  print(jsonData);
-  return jsonData;
+Future<dynamic> getUserById(String id) async {
+   var response = await http.get(Uri.parse("$baseUrl/user/$id"));
+   var jsonData = jsonDecode(response.body);
+   print(jsonData);
+   return jsonData;
+
 }

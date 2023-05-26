@@ -6,24 +6,26 @@ import "package:src/screens/profile/components/profile_tag.dart";
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-
+import '../../../services/service_login.dart';
 import "../../../services/service_user.dart";
 
-class User {
-  final String id;
-  final String name;
-  final String role;
+String userId = "";
 
-  User({required this.id, required this.name, required this.role});
+// class User {
+//   final String id;
+//   final String name;
+//   final String role;
 
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User(
-      id: json['id'],
-      name: json['name'],
-      role: json['role'],
-    );
-  }
-}
+//   User({required this.id, required this.name, required this.role});
+
+//   factory User.fromJson(Map<String, dynamic> json) {
+//     return User(
+//       id: json['id'],
+//       name: json['name'],
+//       role: json['role'],
+//     );
+//   }
+// }
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -33,15 +35,24 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  Future<dynamic> getUserById() async {
-    var response = await http
-        .get(Uri.parse("$baseUrl/user/675fb91e-eaf3-4611-8395-786ab81abdb0"));
-    var jsonData = jsonDecode(response.body);
-    var user = User.fromJson(jsonData);
-    return user;
-  }
+  // Future<dynamic> getUserById() async {
+  //   var response = await http
+  //       .get(Uri.parse("$baseUrl/user/675fb91e-eaf3-4611-8395-786ab81abdb0"));
+  //   var jsonData = jsonDecode(response.body);
+  //   var user = User.fromJson(jsonData);
+  //   return user;
+  // }
+
+
 
   @override
+  void initState() {
+    super.initState();
+    getData("userId").then((value) {
+      userId = value!;
+      print(value);
+    });
+  }
   Widget build(BuildContext context) {
     return Center(
       child: Column(children: [
@@ -75,7 +86,7 @@ class _BodyState extends State<Body> {
             ),
             Expanded(
               child: FutureBuilder(
-                future: getUserById(),
+                future: getUserById("d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390"),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     print(snapshot.hasData);
@@ -94,7 +105,7 @@ class _BodyState extends State<Body> {
                   } else if (snapshot.hasError) {
                     return Text('Erro: ${snapshot.error}');
                   } else {
-                    User user = snapshot.data;
+                    var user = snapshot.data;
 
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -103,7 +114,7 @@ class _BodyState extends State<Body> {
                           padding: EdgeInsets.only(bottom: 10, right: 20),
                           child: Text(
                             user != null
-                                ? user.name
+                                ? user["name"]
                                 : 'Nenhum usuário encontrado',
                             textAlign: TextAlign.right,
                             style: const TextStyle(
@@ -116,7 +127,7 @@ class _BodyState extends State<Body> {
                         Padding(
                           padding: EdgeInsets.only(bottom: 10, right: 20),
                           child: Text(
-                            user != null ? user.role : '',
+                            user != null ? user["role"] : 'Nenhum usuário encontrado',
                             textAlign: TextAlign.right,
                             style: const TextStyle(
                               fontFamily: "Roboto",
