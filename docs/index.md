@@ -471,7 +471,7 @@ A documentação da API é uma entrega técnica de conteúdo, contendo instruç�
 	
 Link de acesso ao Swagger: http://localhost:3000/api#/
 
-<img src="../docs/img/img_docs/Style_guide_v2.png" alt="Swagger" border="0" width="100%" display="flex" justify-content="center">
+<img src="../docs/img/img_docs/swagger.png" alt="Swagger" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 
