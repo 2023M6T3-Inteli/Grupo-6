@@ -468,6 +468,11 @@ Link ou imagem da tabela com dados organizados dos testes realizados.
 # Documentação da API
 
 A documentação da API é uma entrega técnica de conteúdo, contendo instruções sobre como usar e integrar efetivamente a solução. De forma mais simples, ela é um manual de referência resumido que contém todas as informações necessárias para trabalhar com a API, com detalhes sobre seus componentes.
+	
+Link de acesso ao Swagger: http://localhost:3000/api#/
+
+<img src="../docs/img/img_docs/Style_guide_v2.png" alt="Swagger" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 
 # Manual do Usuário
