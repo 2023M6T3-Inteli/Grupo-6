@@ -3,19 +3,53 @@ import "package:src/screens/home/components/post_card.dart";
 import "package:src/screens/recommendation/recommendation.dart";
 import "package:src/screens/profile/components/badge.dart";
 import "package:src/screens/profile/components/profile_tag.dart";
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
-class Body extends StatelessWidget {
+import "../../../services/service_user.dart";
+
+class User {
+  final String id;
+  final String name;
+  final String role;
+
+  User({required this.id, required this.name, required this.role});
+
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      id: json['id'],
+      name: json['name'],
+      role: json['role'],
+    );
+  }
+}
+
+class Body extends StatefulWidget {
   const Body({super.key});
+
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  Future<dynamic> getUserById() async {
+    var response = await http
+        .get(Uri.parse("$baseUrl/user/675fb91e-eaf3-4611-8395-786ab81abdb0"));
+    var jsonData = jsonDecode(response.body);
+    var user = User.fromJson(jsonData);
+    return user;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(children: [
-        Padding(
-          padding: const EdgeInsets.only(right: 20, top: 30),
+        const Padding(
+          padding: EdgeInsets.only(right: 20, top: 30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
+            children: [
               IconButton(
                 onPressed: null,
                 iconSize: 30,
@@ -40,39 +74,96 @@ class Body extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 10, right: 20),
-                    child: Text(
-                      'Sofia Pimazzoni',
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                          fontFamily: "Roboto",
-                          fontSize: 20,
-                          color: Color.fromARGB(255, 99, 99, 99)),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 10, right: 20),
-                    child: Text(
-                      'Developer Junior',
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                          fontFamily: "Roboto",
-                          fontSize: 14,
-                          color: Color.fromARGB(255, 126, 126, 126)),
-                    ),
-                  ),
-                ],
+              child: FutureBuilder(
+                future: getUserById(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    print(snapshot.hasData);
+                    print(snapshot.data);
+                    return const Center(
+                        child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(right: 15),
+                          child: Text("Carregando..."),
+                        ),
+                        CircularProgressIndicator()
+                      ],
+                    ));
+                  } else if (snapshot.hasError) {
+                    return Text('Erro: ${snapshot.error}');
+                  } else {
+                    User user = snapshot.data;
+
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 10, right: 20),
+                          child: Text(
+                            user != null
+                                ? user.name
+                                : 'Nenhum usuário encontrado',
+                            textAlign: TextAlign.right,
+                            style: const TextStyle(
+                              fontFamily: "Roboto",
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 1, 0, 0),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 10, right: 20),
+                          child: Text(
+                            user != null ? user.role : '',
+                            textAlign: TextAlign.right,
+                            style: const TextStyle(
+                              fontFamily: "Roboto",
+                              fontSize: 14,
+                              color: Color.fromARGB(255, 126, 126, 126),
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  }
+                },
               ),
+              // child: Column(
+              //   crossAxisAlignment: CrossAxisAlignment.end,
+              //   children: [
+              //     Padding(
+              //       padding: EdgeInsets.only(bottom: 10, right: 20),
+              //       child: Text(
+              //         // 'Sofia Pimazzoni',
+              //         user.name,
+              //         textAlign: TextAlign.right,
+              //         style: const TextStyle(
+              //             fontFamily: "Roboto",
+              //             fontSize: 20,
+              //             color: Color.fromARGB(255, 99, 99, 99)),
+              //       ),
+              //     ),
+              //     const Padding(
+              //       padding: EdgeInsets.only(bottom: 10, right: 20),
+              //       child: Text(
+              //         'Developer Junior',
+              //         textAlign: TextAlign.right,
+              //         style: TextStyle(
+              //             fontFamily: "Roboto",
+              //             fontSize: 14,
+              //             color: Color.fromARGB(255, 126, 126, 126)),
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
+          children: [
             Padding(
               padding: EdgeInsets.only(top: 25, bottom: 10, left: 20),
               child: Text(
@@ -86,9 +177,9 @@ class Body extends StatelessWidget {
             ),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const [
+          children: [
             ProfileBadge(
                 backgroundImage: AssetImage('assets/images/Badge.jpeg')),
             ProfileBadge(
@@ -99,9 +190,9 @@ class Body extends StatelessWidget {
                 backgroundImage: AssetImage('assets/images/Badge.jpeg')),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
+          children: [
             Padding(
               padding: EdgeInsets.only(top: 25, bottom: 10, left: 20),
               child: Text(
@@ -126,9 +217,9 @@ class Body extends StatelessWidget {
                 color: Color.fromARGB(255, 126, 126, 126)),
           ),
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
+          children: [
             Padding(
               padding: EdgeInsets.only(top: 25, bottom: 10, left: 20),
               child: Text(
@@ -142,25 +233,25 @@ class Body extends StatelessWidget {
             ),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children: [
             ProfileTag(text: "Communication"),
             ProfileTag(text: "Adaptability"),
             ProfileTag(text: "Team Work"),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children: [
             ProfileTag(text: "Leadership"),
             ProfileTag(text: "Colaboration"),
             ProfileTag(text: "Cooperation"),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
+          children: [
             Padding(
               padding: EdgeInsets.only(top: 25, bottom: 10, left: 20),
               child: Text(
@@ -174,25 +265,25 @@ class Body extends StatelessWidget {
             ),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children: [
             ProfileTag(text: "Python"),
             ProfileTag(text: "React"),
             ProfileTag(text: "Java Script"),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children: [
             ProfileTag(text: "Automation"),
             ProfileTag(text: "AI"),
             ProfileTag(text: "Node JS"),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
+          children: [
             Padding(
               padding: EdgeInsets.only(top: 25, bottom: 10, left: 20),
               child: Text(

@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "components/circles.dart";
 import "package:src/screens/home/components/post_card.dart";
 import '../../services/service_post.dart';
+import 'package:flutter/painting.dart';
 
 class Posts {
   final String title;
@@ -32,7 +33,7 @@ class _HomeState extends State<Home> {
                 width: 325,
                 height: 24,
                 decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 228, 225, 225),
+                    color: Color.fromARGB(255, 245, 246, 247),
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                     boxShadow: [
                       BoxShadow(
@@ -45,13 +46,14 @@ class _HomeState extends State<Home> {
                 child: const TextField(
                   style: TextStyle(fontSize: 12),
                   decoration: InputDecoration(
-                      border: InputBorder.none, prefixIcon: Icon(Icons.search)),
+                      border: InputBorder.none,
+                      suffixIcon: Icon(Icons.search, size: 18)),
                 ),
               ),
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Circle(icon: Icons.insert_drive_file_outlined),
                 // Text("Projects"),
                 Circle(icon: Icons.volume_up_outlined),
@@ -60,9 +62,9 @@ class _HomeState extends State<Home> {
                 // Text("Posts")
               ],
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Circle(icon: Icons.play_circle_outline),
                 // Text("Videos"),
                 Circle(icon: Icons.folder_open_outlined),
@@ -77,19 +79,22 @@ class _HomeState extends State<Home> {
                 height: 47,
                 child: DecoratedBox(
                   decoration: const BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.transparent,
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [Colors.blue, Color.fromARGB(255, 0, 195, 255)],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        colors: [
+                          Color.fromARGB(255, 18, 130, 214),
+                          Color.fromARGB(255, 123, 199, 255)
+                        ],
                       )),
                   child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pushReplacementNamed("/feed");
                       },
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Text(
                             'Recommended for you',
                             style: TextStyle(color: Colors.white, fontSize: 20),
@@ -102,14 +107,19 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 30),
-              child: Text(
-                "Trending Now",
-                style: TextStyle(
-                  fontSize: 24,
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 35, left: 45, bottom: 10),
+                  child: Text(
+                    "Trending Now",
+                    style: TextStyle(
+                      fontSize: 24,
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
             FutureBuilder(
               future: getAllPosts(),
