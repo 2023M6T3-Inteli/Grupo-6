@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { PostService } from './post.service';
 import { CreatePostDto } from './dto/create-post.dto';
-import { ApiOperation, ApiTags, ApiOkResponse, ApiBadRequestResponse, ApiNotFoundResponse, ApiInternalServerErrorResponse, ApiConflictResponse } from '@nestjs/swagger';
+import {ApiBody, ApiOperation, ApiTags, ApiOkResponse, ApiBadRequestResponse, ApiNotFoundResponse, ApiInternalServerErrorResponse, ApiConflictResponse } from '@nestjs/swagger';
 
 @ApiTags('Post')
 @Controller('post')
@@ -9,6 +9,7 @@ export class PostController {
   constructor(private readonly postService: PostService) {}
 
   @ApiOperation({ summary: 'Criar novo post' })
+  @ApiBody({ type: CreatePostDto })
   @ApiOkResponse({ description: 'Post criado com sucesso' })
   @ApiBadRequestResponse({ description: 'Dados inválidos' })
   @ApiConflictResponse({ description: 'Conflito ao criar o post' })
@@ -48,6 +49,7 @@ export class PostController {
   }
 
   @ApiOperation({ summary: 'Atualizar post específico' })
+  @ApiBody({ type: CreatePostDto })
   @ApiOkResponse({ description: 'Post atualizado com sucesso' })
   @ApiBadRequestResponse({ description: 'Dados inválidos' })
   @ApiNotFoundResponse({ description: 'Post não encontrado' })

@@ -1,14 +1,15 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { BadgeService } from './badge.service';
 import { CreateBadgeDto } from './dto/create-badge.dto';
-import { ApiOperation, ApiTags, ApiOkResponse, ApiNotFoundResponse, ApiBadRequestResponse, ApiInternalServerErrorResponse, ApiConflictResponse } from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiTags, ApiOkResponse, ApiNotFoundResponse, ApiBadRequestResponse, ApiInternalServerErrorResponse, ApiConflictResponse } from '@nestjs/swagger';
 
 @ApiTags('Badge')
 @Controller('badge')
 export class BadgeController {
   constructor(private readonly badgeService: BadgeService) {}
 
-  @ApiOperation({ summary: 'Criar nova badge' })
+  @ApiOperation({summary: 'Criar nova badge' })
+  @ApiBody({ type: CreateBadgeDto })
   @ApiOkResponse({ description: 'Badge criada com sucesso' })
   @ApiBadRequestResponse({ description: 'Requisição inválida' })
   @ApiConflictResponse({ description: 'Conflito ao criar a badge' })
@@ -38,6 +39,7 @@ export class BadgeController {
   }
 
   @ApiOperation({ summary: 'Atualizar badge específica' })
+  @ApiBody({ type: CreateBadgeDto })
   @ApiOkResponse({ description: 'Badge atualizada com sucesso' })
   @ApiNotFoundResponse({ description: 'Badge não encontrada' })
   @ApiBadRequestResponse({ description: 'Requisição inválida' })

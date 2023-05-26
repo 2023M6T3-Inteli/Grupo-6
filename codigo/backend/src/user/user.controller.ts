@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { ApiOperation, ApiTags, ApiOkResponse, ApiNotFoundResponse, ApiBadRequestResponse, ApiInternalServerErrorResponse, ApiConflictResponse } from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiTags, ApiOkResponse, ApiNotFoundResponse, ApiBadRequestResponse, ApiInternalServerErrorResponse, ApiConflictResponse } from '@nestjs/swagger';
 
 
 @ApiTags('User')
@@ -11,6 +11,7 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @ApiOperation({ summary: 'Criar novo usuário' })
+  @ApiBody({ type: CreateUserDto })
   @ApiOkResponse({ description: 'Usuário criado com sucesso' })
   @ApiBadRequestResponse({ description: 'Requisição inválida' })
   @ApiConflictResponse({ description: 'Conflito ao criar o usuário' })
@@ -40,6 +41,7 @@ export class UserController {
   }
 
   @ApiOperation({ summary: 'Atualizar usuário específico' })
+  @ApiBody({ type: CreateUserDto })
   @ApiOkResponse({ description: 'Usuário atualizado com sucesso' })
   @ApiNotFoundResponse({ description: 'Usuário não encontrado' })
   @ApiBadRequestResponse({ description: 'Requisição inválida' })
