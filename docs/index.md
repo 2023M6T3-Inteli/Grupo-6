@@ -467,7 +467,7 @@ Link ou imagem da tabela com dados organizados dos testes realizados.
 
 # Documentação da API
 
-Apresentar a documentação no formato Swagger ou aplicação equivalente com todas as requisições dos endpoints desenvolvidos e funcionando.
+A documentação da API é uma entrega técnica de conteúdo, contendo instruções sobre como usar e integrar efetivamente a solução. De forma mais simples, ela é um manual de referência resumido que contém todas as informações necessárias para trabalhar com a API, com detalhes sobre seus componentes.
 
 
 # Manual do Usuário
