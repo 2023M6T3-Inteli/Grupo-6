@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:src/screens/post_visu/components/tag.dart';
+import 'package:src/services/service_login.dart';
 import '../../../services/service_post.dart';
+import '../../../services/service_user.dart';
+
+bool isAuthor = false;
 
 class Body extends StatelessWidget {
   final String postId;
@@ -38,6 +42,13 @@ class Body extends StatelessWidget {
             String category = postData["category"];
             String date = postData["createdAt"];
             String author = postData["author"]["name"];
+            String userId = postData["author"]["id"];
+            
+            getData("userId").then((value){
+              if (userId == value){
+                isAuthor = true;
+              }
+            });
 
             return Center(
               child: Column(
@@ -103,6 +114,28 @@ class Body extends StatelessWidget {
                       ),
                     ],
                   ),
+                  if (isAuthor)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30),
+                      child:  SizedBox(
+                        width: 137,
+                        height: 47,
+                        child: DecoratedBox(
+                          decoration: const BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.all(Radius.circular(5))
+                          ),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          deletePost(postId).then((value) {
+                            Navigator.of(context).pushReplacementNamed("/home");
+                          });
+                        },
+                        child: const Text('Delete'),
+                      ),
+                    ),
+                  ),
+                ),
                 ],
               ),
             );

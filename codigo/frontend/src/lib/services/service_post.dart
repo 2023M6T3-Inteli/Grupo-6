@@ -63,5 +63,22 @@ Future<void> sendPost(String title, String description, String category, String 
 }
 
 
+Future<void> deletePost(String id) async {
+  try {
+    var url = Uri.parse("$baseUrl/post/$id");
+    var headers = {'Content-Type': 'application/json'};
+
+    var response = await http.delete(url, headers: headers);
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      print("Post deletado com sucesso!");
+    } else {
+      throw Exception("Failed to delete post. Status code: ${response.statusCode}");
+    }
+  } catch (e) {
+    throw Exception("Failed to delete post: $e");
+  }
+}
+
 
 
