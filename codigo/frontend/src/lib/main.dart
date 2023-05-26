@@ -37,9 +37,7 @@ class MyApp extends StatelessWidget {
           '/recommendation': (context) => Recommendation(),
           '/project_info': (context) => const ProjectInfo(),
           '/profile': (context) => const Profile(),
-          '/post_view': (context) => const PostView(),
           '/ranking': (context) => const Ranking(),
-          '/PostView': (context) => const PostView(),
         });
   }
 }

@@ -7,8 +7,9 @@ class Posts {
   final String title;
   final String authorName;
   final String date;
+  final String postId;
 
-  Posts({required this.title, required this.authorName, required this.date});
+  Posts({required this.title, required this.authorName, required this.date, required this.postId});
 }
 
 class Home extends StatefulWidget {
@@ -123,15 +124,16 @@ class _HomeState extends State<Home> {
                       String title = post["title"];
                       String authorName = post["author"]["name"];
                       String date = post["createdAt"];
+                      String id = post["id"];
 
                       posts.add(Posts(
-                          title: title, authorName: authorName, date: date));
+                          title: title, authorName: authorName, date: date, postId: id));
                     }
                   }
                   return Column(
                     children: [
                       for (var post in posts)
-                        postCardBuilder(post.title, post.authorName, post.date),
+                        postCardBuilder(post.title, post.authorName, post.date, context, post.postId),
                     ],
                   );
                 } else if (snapshot.hasError) {

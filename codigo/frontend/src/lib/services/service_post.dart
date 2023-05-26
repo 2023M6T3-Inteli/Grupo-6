@@ -23,6 +23,22 @@ Future<List<dynamic>> getAllPosts() async {
   }
 }
 
+Future<Map<String, dynamic>> getPost(String id) async {
+  try {
+    var response = await http.get(Uri.parse("$baseUrl/post/$id"));
+    if (response.statusCode == 200) {
+      var jsonData = jsonDecode(response.body);
+      return jsonData as Map<String, dynamic>;
+    } else {
+      throw Exception("Failed to load post. Status code: ${response.statusCode}");
+    }
+  } catch (e) {
+    throw Exception("Failed to load post: $e");
+  }
+}
+
+
+
 Future<void> sendPost(String title, String description, String category, String creator) async {
   try {
     var url = Uri.parse("$baseUrl/post");
