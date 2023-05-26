@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import '../../post_visu/post_visu.dart';
 
-Padding postCardBuilder(String title, String name, String time, BuildContext context, String postId) {
+Padding postCardBuilder(String title, String name, String time,
+    BuildContext context, String postId) {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 10),
     child: GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -97,6 +98,6 @@ Padding postCardBuilder(String title, String name, String time, BuildContext con
           ),
         ),
       ),
-    )
+    ),
   );
 }
