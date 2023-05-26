@@ -44,9 +44,13 @@ class _NavBarRouterState extends State<NavBarRouter> {
     ];
 
     return Scaffold(
-      body: Center(
-        child: widgetOptions.elementAt(_selectedIndex),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: widgetOptions,
       ),
+      // Center(
+      //   child: widgetOptions.elementAt(_selectedIndex),
+      // ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: items,
