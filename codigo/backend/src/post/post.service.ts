@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Injectable, BadRequestException, InternalServerErrorException } from '@nestjs/common';
 import { CreatePostDto } from './dto/create-post.dto';
 import { PrismaService } from 'src/prisma.service';
@@ -104,7 +105,12 @@ export class PostService {
   async updatePost(id: string, data: CreatePostDto) {
     const post = await this.prisma.post.update({
       where: { id: id },
-      data: data,
+      data: {
+        title: data.title,
+        description: data.description,
+        category: data.category,
+        creator: data.creator
+      },
     })
 
     return post;

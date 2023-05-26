@@ -2,7 +2,6 @@ import { ApiProperty } from "@nestjs/swagger";
 
 export class CreatePostDto {
     
-    @ApiProperty()
     id: string;
 
     @ApiProperty()
@@ -14,7 +13,6 @@ export class CreatePostDto {
     @ApiProperty()
     category: string;
 
-    @ApiProperty()
     createdAt: String;
 
     @ApiProperty()

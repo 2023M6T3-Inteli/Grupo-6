@@ -7,7 +7,7 @@ import { LoginModule } from './login/login.module';
 
 
 @Module({
-  imports: [PostModule,UserModule,BadgeModule,BadgeModule]
+  imports: [PostModule,UserModule,BadgeModule,LoginModule]
   
 })
 export class AppModule {}
