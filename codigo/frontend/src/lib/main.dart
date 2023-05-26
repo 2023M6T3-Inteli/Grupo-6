@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           primaryColorLight: Colors.white,
         ),
         // home: const Login(),
-        initialRoute: '/home',
+        initialRoute: '/login',
         routes: {
           '/login': (context) => const Login(),
           '/home': (context) => const NavBarRouter(),

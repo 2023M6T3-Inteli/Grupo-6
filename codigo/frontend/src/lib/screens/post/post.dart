@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../services/service_post.dart';
+import '../../services/service_login.dart';
 
 
 class Post extends StatefulWidget {
@@ -127,10 +128,12 @@ class _PostState extends State<Post> {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    sendPost(title, description, dropdownValue!, "675fb91e-eaf3-4611-8395-786ab81abdb0").then((data){
-                      Navigator.of(context).pushReplacementNamed("/home");
-                    }).catchError((error) {
-                      print('Erro: $error');
+                    getData("userId").then((value){
+                      sendPost(title, description, dropdownValue!, value!).then((data){
+                        Navigator.of(context).pushReplacementNamed("/home");
+                      }).catchError((error) {
+                        print('Erro: $error');
+                      });
                     });
                   },
                   style: ElevatedButton.styleFrom(

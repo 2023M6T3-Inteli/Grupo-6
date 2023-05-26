@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../services/service_login.dart';
+
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -119,15 +121,18 @@ class _BodyState extends State<Body> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        if (email == "test user" && password == "123456") {
-                          Navigator.of(context).pushReplacementNamed("/home");
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Email ou senha incorretos!'),
-                            ),
-                          );
-                        }
+                        getLogin(email, password).then((response) {
+                          if (response.statusCode == 200 || response.statusCode == 201) {
+                            Navigator.of(context).pushReplacementNamed("/home");
+                            saveData("userId", response.body);
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Email ou senha incorretos!'),
+                              ),
+                            );
+                          }
+                        });
                       },
                       child: const Text('LOGIN',
                           style: TextStyle(color: Colors.white)),
