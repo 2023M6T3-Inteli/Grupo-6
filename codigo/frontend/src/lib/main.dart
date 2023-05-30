@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
           '/post': (context) => const Post(),
           '/interest': (context) => Interest(),
           '/recommendation': (context) => Recommendation(),
-          '/project_info': (context) => const ProjectInfo(),
           '/profile': (context) => const Profile(),
           '/ranking': (context) => const Ranking(),
         });

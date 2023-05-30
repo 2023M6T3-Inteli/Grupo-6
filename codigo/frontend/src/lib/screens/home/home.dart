@@ -4,6 +4,7 @@ import "package:src/screens/home/components/post_card.dart";
 import '../../services/service_post.dart';
 import 'package:flutter/painting.dart';
 import '../../services/service_project.dart';
+import 'components/project_card.dart';
 
 class Posts {
   final String title;
@@ -187,7 +188,7 @@ class _HomeState extends State<Home> {
                   return Column(
                     children: [
                       for (var project in projects)
-                        postCardBuilder(project.title, project.authorName, project.date, context, "opa", "não tem a imagem"),
+                        projectCardBuilder(project.title, project.authorName, project.date, context, project.projectId),
                     ],
                   );
                 } else if (snapshot.hasError) {

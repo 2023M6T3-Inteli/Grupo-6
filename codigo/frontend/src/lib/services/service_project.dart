@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:src/screens/submitProject/project_info.dart';
 
 const String baseUrl = "http://localhost:3001";
 
 void main() {
-  getAllProjects();
+  // getAllProjects();
 }
 
 Future<List<dynamic>> getAllProjects() async {
@@ -20,5 +21,21 @@ Future<List<dynamic>> getAllProjects() async {
     }
   } catch (e) {
     throw Exception("Failed to load posts: $e");
+  }
+}
+
+Future<Map<String, dynamic>> getProject(int id) async {
+  try {
+    var response = await http.get(Uri.parse("$baseUrl/project/$id"));
+    if (response.statusCode == 200) {
+      var jsonData = jsonDecode(response.body);
+      print(jsonData);
+      return jsonData as Map<String, dynamic>;
+    } else {
+      throw Exception(
+          "Failed to load post. Status code: ${response.statusCode}");
+    }
+  } catch (e) {
+    throw Exception("Failed to load post: $e");
   }
 }
