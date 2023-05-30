@@ -5,6 +5,8 @@ import '../screens/ranking/ranking.dart';
 import '../screens/submitProject/project_info.dart';
 import "package:src/screens/home/home.dart";
 
+import 'add_post.dart';
+
 class NavBarRouter extends StatefulWidget {
   const NavBarRouter({Key? key}) : super(key: key);
 
@@ -19,6 +21,13 @@ class _NavBarRouterState extends State<NavBarRouter> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      if (index == 2) {
+        showModalBottomSheet(
+          context: context,
+          builder: (BuildContext context) =>
+              ModalBottomSheet(), // Substitua pelo nome da classe ou widget do Modal Bottom Sheet
+        );
+      }
     });
   }
 
@@ -38,7 +47,7 @@ class _NavBarRouterState extends State<NavBarRouter> {
     List<Widget> widgetOptions = const [
       Home(),
       Center(child: Text("404 - Not Found")),
-      Post(),
+      Home(),
       Ranking(),
       Profile()
     ];
