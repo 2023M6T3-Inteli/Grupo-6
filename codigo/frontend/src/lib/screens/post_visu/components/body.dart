@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:src/screens/post_visu/components/tag.dart';
 import 'package:src/services/service_login.dart';
 import '../../../services/service_post.dart';
-import '../../../services/service_user.dart';
 
 class Body extends StatefulWidget {
   final String postId;
@@ -64,7 +63,6 @@ class _BodyState extends State<Body> {
             String category = postData["category"];
             String date = postData["createdAt"];
             String author = postData["author"]["name"];
-            String userId = postData["author"]["id"];
 
             return Center(
               child: Column(
