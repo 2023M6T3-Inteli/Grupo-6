@@ -18,7 +18,6 @@ Future<List<dynamic>> getAllUsers() async {
 Future<dynamic> getUserById(String id) async {
    var response = await http.get(Uri.parse("$baseUrl/user/$id"));
    var jsonData = jsonDecode(response.body);
-   print(jsonData);
    return jsonData;
 
 }
