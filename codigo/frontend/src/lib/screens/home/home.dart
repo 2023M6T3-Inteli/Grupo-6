@@ -3,6 +3,7 @@ import "components/circles.dart";
 import "package:src/screens/home/components/post_card.dart";
 import '../../services/service_post.dart';
 import 'package:flutter/painting.dart';
+import '../../services/service_project.dart';
 
 class Posts {
   final String title;
@@ -12,6 +13,15 @@ class Posts {
   final String image;
 
   Posts({required this.title, required this.authorName, required this.date, required this.postId, required this.image});
+}
+
+class Projects{
+  final String title;
+  final String authorName;
+  final String date;
+  final int projectId;
+
+  Projects({required this.title, required this.authorName, required this.date, required this.projectId});
 }
 
 class Home extends StatefulWidget {
@@ -154,6 +164,38 @@ class _HomeState extends State<Home> {
                   return const CircularProgressIndicator();
                 }
               },
+            ),
+            FutureBuilder(
+              future: getAllProjects(),
+              builder: (context, snapshot){
+                if (snapshot.hasData) {
+                  var jsonData = snapshot.data;
+                  List<Projects> projects = [];
+
+                  for (int i = jsonData!.length - 1; i >= 0; i--) {
+                    var project = jsonData[i];
+                    if (project != null) {
+                      String title = project["title"];
+                      String authorName = project["creator"]["name"];
+                      String date = project["created_at"];
+                      int id = project["idProject"];
+
+                      projects.add(Projects(
+                          title: title, authorName: authorName, date: date, projectId: id));
+                    }
+                  }
+                  return Column(
+                    children: [
+                      for (var project in projects)
+                        postCardBuilder(project.title, project.authorName, project.date, context, "opa", "não tem a imagem"),
+                    ],
+                  );
+                } else if (snapshot.hasError) {
+                  return Text("Error: ${snapshot.error}");
+                } else {
+                  return const CircularProgressIndicator();
+                }
+              }
             )
           ]),
         ),
