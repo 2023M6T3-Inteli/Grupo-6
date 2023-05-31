@@ -39,7 +39,6 @@ class ProjectInfo extends StatelessWidget {
             String title = projectData["title"];
             String description = projectData["description"];
             String status = projectData["stt"];
-            String submissionDate = projectData["submission_date"];
             String dateInitial = projectData["date_initial"];
             String dateEnd = projectData["date_end"];
             String area = projectData["area"];
@@ -73,7 +72,7 @@ class ProjectInfo extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(right: 100),
+                          padding: const EdgeInsets.symmetric(horizontal: 30.0),
                         child: Card(
                           shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(
@@ -91,7 +90,7 @@ class ProjectInfo extends StatelessWidget {
                                 fontSize: 12.0,
                                 fontWeight: FontWeight.bold,
                               ),
-                            ),
+                            ),  
                           ),
                         ),
                     )],
@@ -100,7 +99,7 @@ class ProjectInfo extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsets.only(top: 80.0),
+                            padding: const EdgeInsets.only(top: 10.0, right: 10, bottom: 10),
                             child: Text(
                               description,
                               textDirection: TextDirection.ltr,
@@ -133,74 +132,74 @@ class ProjectInfo extends StatelessWidget {
                         InfoWidget(info: '$dateInitial - $dateEnd'),
                       ],
                     ),
-                    Row(
-                      children: [
-                        const AtributteWidget(atributte: 'Team: '),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 3.0, right: 5.0),
-                          child: Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              border: Border.all(color: Colors.blue, width: 2),
-                            ),
-                            child: const Text(
-                              "A",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 3.0, right: 5.0),
-                          child: Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              border: Border.all(color: Colors.blue, width: 2),
-                            ),
-                            child: const Text(
-                              "G",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 3.0, right: 5.0),
-                          child: Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              border: Border.all(color: Colors.blue, width: 2),
-                            ),
-                            child: const Text(
-                              "M",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Row(
+                    //   children: [
+                    //     const AtributteWidget(atributte: 'Team: '),
+                    //     Padding(
+                    //       padding: const EdgeInsets.only(bottom: 3.0, right: 5.0),
+                    //       child: Container(
+                    //         height: 30,
+                    //         width: 30,
+                    //         decoration: BoxDecoration(
+                    //           shape: BoxShape.circle,
+                    //           color: Colors.white,
+                    //           border: Border.all(color: Colors.blue, width: 2),
+                    //         ),
+                    //         child: const Text(
+                    //           "A",
+                    //           textAlign: TextAlign.center,
+                    //           style: TextStyle(
+                    //             color: Colors.blue,
+                    //             fontSize: 16.0,
+                    //             fontWeight: FontWeight.bold,
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     Padding(
+                    //       padding: const EdgeInsets.only(bottom: 3.0, right: 5.0),
+                    //       child: Container(
+                    //         height: 30,
+                    //         width: 30,
+                    //         decoration: BoxDecoration(
+                    //           shape: BoxShape.circle,
+                    //           color: Colors.white,
+                    //           border: Border.all(color: Colors.blue, width: 2),
+                    //         ),
+                    //         child: const Text(
+                    //           "G",
+                    //           textAlign: TextAlign.center,
+                    //           style: TextStyle(
+                    //             color: Colors.blue,
+                    //             fontSize: 16.0,
+                    //             fontWeight: FontWeight.bold,
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     Padding(
+                    //       padding: const EdgeInsets.only(bottom: 3.0, right: 5.0),
+                    //       child: Container(
+                    //         height: 30,
+                    //         width: 30,
+                    //         decoration: BoxDecoration(
+                    //           shape: BoxShape.circle,
+                    //           color: Colors.white,
+                    //           border: Border.all(color: Colors.blue, width: 2),
+                    //         ),
+                    //         child: const Text(
+                    //           "M",
+                    //           textAlign: TextAlign.center,
+                    //           style: TextStyle(
+                    //             color: Colors.blue,
+                    //             fontSize: 16.0,
+                    //             fontWeight: FontWeight.bold,
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                     const Row(
                       children: [
                         AtributteWidget(atributte: 'Attachments: '),
@@ -234,7 +233,7 @@ class ProjectInfo extends StatelessWidget {
                         AtributteWidget(atributte: 'Questions:'),
                         Expanded(
                           child: Padding(
-                            padding:  EdgeInsets.only(top: 5.0),
+                            padding:  EdgeInsets.only(top: 0),
                             child: Text(
                               "Why would you like to participate in the project?",
                               textDirection: TextDirection.ltr,
@@ -253,9 +252,9 @@ class ProjectInfo extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding:  EdgeInsets.only(top: 5.0),
+                            padding:  EdgeInsets.only(top: 5.0, right: 10.0),
                             child: TextField(
-                              maxLines: 8,
+                              maxLines: 5,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
                                 hintText: 'Type your answer here',

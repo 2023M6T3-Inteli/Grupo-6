@@ -7,7 +7,7 @@ void main() {
   getAllPosts();
 }
 
-const String baseUrl = "http://localhost:3000";
+const String baseUrl = "http://10.128.65.225:3000";
 
 Future<List<dynamic>> getAllPosts() async {
   try {
