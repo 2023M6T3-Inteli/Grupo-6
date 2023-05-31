@@ -336,7 +336,7 @@ class _BodyState extends State<Body> {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 30),
                     child: SizedBox(
-                      width: 180,
+                      width: 193,
                       height: 47,
                       child: DecoratedBox(
                         decoration: const BoxDecoration(
@@ -374,7 +374,7 @@ class _BodyState extends State<Body> {
                                       color: Colors.white, fontSize: 20),
                                   textAlign: TextAlign.left,
                                 ),
-                                SizedBox(width: 15),
+                                SizedBox(width: 10),
                                 Icon(Icons.check, color: Colors.white),
                               ],
                             )),
