@@ -9,15 +9,15 @@ class ModalBottomSheet extends StatelessWidget {
         children: <Widget>[
           ListTile(
             // leading: Icon(Icons.music_note),
-            title: Text('Add a project'),
+            title: Text('Add project'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.of(context).pushReplacementNamed("/post");
+              Navigator.of(context).pushReplacementNamed("/project");
             },
           ),
           ListTile(
             // leading: Icon(Icons.videocam),
-            title: Text('Add a post'),
+            title: Text('Add post'),
             onTap: () {
               Navigator.pop(context);
               Navigator.of(context).pushReplacementNamed("/post");

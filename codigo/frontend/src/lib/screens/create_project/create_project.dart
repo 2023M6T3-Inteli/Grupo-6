@@ -21,7 +21,9 @@ class _CreateProjectState extends State<CreateProject> {
             Icons.arrow_back,
             color: Colors.grey,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushReplacementNamed("/home");
+          },
         ),
         backgroundColor: Colors.white,
         centerTitle: true,
