@@ -1,32 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const Project ());
-}
-
-class Project extends StatelessWidget {
-  const Project ({Key? key}) : super(key: key);
+class CreateProject extends StatefulWidget {
+  const CreateProject({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
-    );
-  }
+  State<CreateProject> createState() => _CreateProjectState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _CreateProjectState extends State<CreateProject> {
   String? dropdownValue = 'Option 1';
   DateTime startDate = DateTime.now();
   DateTime endDate = DateTime.now();
@@ -47,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: SingleChildScrollView( 
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -175,7 +156,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.blue,
                     ),
-                    child: const Text('+ADD', style: TextStyle(color: Colors.white)),
+                    child: const Text('+ADD',
+                        style: TextStyle(color: Colors.white)),
                   ),
                 ],
               ),
@@ -207,7 +189,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.blue,
                     ),
-                    child: const Text('+ADD', style: TextStyle(color: Colors.white)),
+                    child: const Text('+ADD',
+                        style: TextStyle(color: Colors.white)),
                   ),
                 ],
               ),
@@ -234,7 +217,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.blue,
                     ),
-                    child: const Text('+ADD', style: TextStyle(color: Colors.white)),
+                    child: const Text('+ADD',
+                        style: TextStyle(color: Colors.white)),
                   ),
                 ],
               ),
@@ -261,7 +245,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.blue,
                     ),
-                    child: const Text('+ADD', style: TextStyle(color: Colors.white)),
+                    child: const Text('+ADD',
+                        style: TextStyle(color: Colors.white)),
                   ),
                 ],
               ),
@@ -273,11 +258,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                    )),
-                      child: const Text(
+                        primary: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        )),
+                    child: const Text(
                       'CREATE PROJECT',
                       style: TextStyle(
                         color: Colors.white,

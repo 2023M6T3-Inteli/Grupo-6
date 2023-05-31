@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:src/screens/home/components/post_tag.dart';
-import '../../submitProject/project_info.dart';
+import '../../submit_project/submit_project.dart';
 
 Padding projectCardBuilder(String title, String name, String time,
     BuildContext context, int projectId) {

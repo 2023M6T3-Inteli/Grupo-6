@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:src/screens/home/components/post_tag.dart';
-import '../../post_visu/post_visu.dart';
+import '../../view_post/view_pot.dart';
 
 Padding postCardBuilder(String title, String name, String time,
     BuildContext context, String postId, String image) {
