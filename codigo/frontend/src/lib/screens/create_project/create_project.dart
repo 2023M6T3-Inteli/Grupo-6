@@ -8,9 +8,30 @@ class CreateProject extends StatefulWidget {
 }
 
 class _CreateProjectState extends State<CreateProject> {
+  TextEditingController _startDateController = TextEditingController();
+  TextEditingController _endDateController = TextEditingController();
   String? dropdownValue = 'Option 1';
   DateTime startDate = DateTime.now();
   DateTime endDate = DateTime.now();
+
+
+  @override
+  void initState() {
+    super.initState();
+    _startDateController.text = formatDate(startDate);
+    _endDateController.text = formatDate(endDate);
+  }
+
+  @override
+  void dispose() {
+    _startDateController.dispose();
+    _endDateController.dispose();
+    super.dispose();
+  }
+
+    String formatDate(DateTime date) {
+    return '${date.day}/${date.month}/${date.year}';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +89,7 @@ class _CreateProjectState extends State<CreateProject> {
                   Expanded(
                     child: TextField(
                       readOnly: true,
+                      controller: _startDateController,
                       decoration: InputDecoration(
                         fillColor: Colors.grey[300],
                         filled: true,
@@ -87,6 +109,7 @@ class _CreateProjectState extends State<CreateProject> {
                         if (picked != null && picked != startDate) {
                           setState(() {
                             startDate = picked;
+                            _startDateController.text = formatDate(startDate);
                           });
                         }
                       },
@@ -96,6 +119,7 @@ class _CreateProjectState extends State<CreateProject> {
                   Expanded(
                     child: TextField(
                       readOnly: true,
+                      controller: _endDateController,
                       decoration: InputDecoration(
                         fillColor: Colors.grey[300],
                         filled: true,
@@ -115,6 +139,7 @@ class _CreateProjectState extends State<CreateProject> {
                         if (picked != null && picked != endDate) {
                           setState(() {
                             endDate = picked;
+                            _endDateController.text = formatDate(endDate);
                           });
                         }
                       },

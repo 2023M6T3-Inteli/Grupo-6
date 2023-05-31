@@ -29,7 +29,8 @@ export class UserService {
           password: data.password,
           badges: data.badges,
           posts: data.posts,
-          projects: data.projects
+          projects: data.projects,
+          photo_url: data.photo_url
         }
       });
     }
@@ -98,7 +99,8 @@ export class UserService {
           password: data.password,
           badges: data.badges,
           posts: data.posts,
-          projects: data.projects
+          projects: data.projects,
+          photo_url: data.photo_url
         }
       });
       
