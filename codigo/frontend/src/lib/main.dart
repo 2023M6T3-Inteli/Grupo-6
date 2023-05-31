@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:src/screens/create_project/create_project.dart';
 import 'package:src/widgets/navbar.dart';
 import 'package:src/screens/interest/interest.dart';
 import 'package:src/screens/home/home.dart';
-import 'package:src/screens/post_visu/post_visu.dart';
+import 'package:src/screens/view_post/view_pot.dart';
 import 'package:src/screens/profile/profile.dart';
 import 'package:src/screens/ranking/ranking.dart';
 import 'package:src/screens/recommendation/recommendation.dart';
 import 'package:src/screens/login/login.dart';
-import 'package:src/screens/post/post.dart';
-import 'package:src/screens/submitProject/project_info.dart';
+import 'package:src/screens/create_post/create_post.dart';
+import 'package:src/screens/submit_project/submit_project.dart';
 import 'package:src/screens/feed/feed.dart';
 
 void main() {
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
           '/recommendation': (context) => Recommendation(),
           '/profile': (context) => const Profile(),
           '/ranking': (context) => const Ranking(),
+          '/project': (context) => const CreateProject(),
         });
   }
 }

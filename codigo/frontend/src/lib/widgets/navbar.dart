@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
-import 'package:src/screens/post/post.dart';
+import 'package:src/screens/create_post/create_post.dart';
 import '../screens/profile/profile.dart';
 import '../screens/ranking/ranking.dart';
-import '../screens/submitProject/project_info.dart';
+import '../screens/submit_project/submit_project.dart';
 import "package:src/screens/home/home.dart";
 
 import 'add_post.dart';

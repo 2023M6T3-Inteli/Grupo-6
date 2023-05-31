@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:src/screens/post_visu/components/body.dart';
+import 'package:src/screens/view_post/components/body.dart';
 
 class PostView extends StatelessWidget {
   final String postId;

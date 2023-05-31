@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:src/screens/submitProject/project_info.dart';
+import 'package:src/screens/submit_project/submit_project.dart';
 
 const String baseUrl = "http://10.128.65.225:3001";
 

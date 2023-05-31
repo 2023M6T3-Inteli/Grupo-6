@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:src/screens/post_visu/components/tag.dart';
+import 'package:src/screens/view_post/components/tag.dart';
 import 'package:src/services/service_login.dart';
 import '../../../services/service_post.dart';
 
