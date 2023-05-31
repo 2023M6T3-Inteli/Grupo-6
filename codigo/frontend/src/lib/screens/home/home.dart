@@ -13,7 +13,12 @@ class Posts {
   final String postId;
   final String image;
 
-  Posts({required this.title, required this.authorName, required this.date, required this.postId, required this.image});
+  Posts(
+      {required this.title,
+      required this.authorName,
+      required this.date,
+      required this.postId,
+      required this.image});
 }
 
 class Projects{
@@ -150,13 +155,18 @@ class _HomeState extends State<Home> {
                       String image = post["author"]["photo_url"];
 
                       posts.add(Posts(
-                          title: title, authorName: authorName, date: date, postId: id, image: image));
+                          title: title,
+                          authorName: authorName,
+                          date: date,
+                          postId: id,
+                          image: image));
                     }
                   }
                   return Column(
                     children: [
                       for (var post in posts)
-                        postCardBuilder(post.title, post.authorName, post.date, context, post.postId, post.image),
+                        postCardBuilder(post.title, post.authorName, post.date,
+                            context, post.postId, post.image),
                     ],
                   );
                 } else if (snapshot.hasError) {

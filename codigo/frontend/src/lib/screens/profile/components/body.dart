@@ -35,15 +35,10 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  // Future<dynamic> getUserById() async {
-  //   var response = await http
-  //       .get(Uri.parse("$baseUrl/user/675fb91e-eaf3-4611-8395-786ab81abdb0"));
-  //   var jsonData = jsonDecode(response.body);
-  //   var user = User.fromJson(jsonData);
-  //   return user;
-  // }
-
-
+  bool _isEditing = false;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController roleController = TextEditingController();
+  TextEditingController aboutMeController = TextEditingController();
 
   @override
   void initState() {
@@ -53,6 +48,7 @@ class _BodyState extends State<Body> {
       print(value);
     });
   }
+
   Widget build(BuildContext context) {
     return Center(
       child: Column(children: [
@@ -107,68 +103,89 @@ class _BodyState extends State<Body> {
                   } else {
                     var user = snapshot.data;
 
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 10, right: 20),
-                          child: Text(
-                            user != null
-                                ? user["name"]
-                                : 'Nenhum usuário encontrado',
-                            textAlign: TextAlign.right,
-                            style: const TextStyle(
-                              fontFamily: "Roboto",
-                              fontSize: 20,
-                              color: Color.fromARGB(255, 1, 0, 0),
+                    return _isEditing
+                        ? Column(children: [
+                            Padding(
+                              padding: const EdgeInsets.all(20),
+                              child: TextField(
+                                controller: nameController,
+                                style: const TextStyle(
+                                  fontFamily: "Roboto",
+                                  fontSize: 15,
+                                  color: Color.fromARGB(255, 1, 0, 0),
+                                ),
+                                decoration: const InputDecoration(
+                                  labelText: 'Name',
+                                  labelStyle: TextStyle(fontSize: 16),
+                                  border: OutlineInputBorder(),
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 10, right: 20),
-                          child: Text(
-                            user != null ? user["role"] : 'Nenhum usuário encontrado',
-                            textAlign: TextAlign.right,
-                            style: const TextStyle(
-                              fontFamily: "Roboto",
-                              fontSize: 14,
-                              color: Color.fromARGB(255, 126, 126, 126),
+                            Padding(
+                              padding: const EdgeInsets.all(20),
+                              child: TextField(
+                                controller: roleController,
+                                style: const TextStyle(
+                                  fontFamily: "Roboto",
+                                  fontSize: 15,
+                                  color: Color.fromARGB(255, 1, 0, 0),
+                                ),
+                                decoration: const InputDecoration(
+                                  labelText: 'Role',
+                                  labelStyle: TextStyle(fontSize: 16),
+                                  border: OutlineInputBorder(),
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      ],
-                    );
+                          ])
+                        : Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    bottom: 10, right: 20),
+                                child: Text(
+                                  user != null
+                                      ? user["name"]
+                                      : 'Nenhum usuário encontrado',
+                                  textAlign: TextAlign.right,
+                                  style: const TextStyle(
+                                    fontFamily: "Roboto",
+                                    fontSize: 20,
+                                    color: Color.fromARGB(255, 1, 0, 0),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    bottom: 10, right: 20),
+                                child: Text(
+                                  user != null
+                                      ? user["role"]
+                                      : 'Nenhum usuário encontrado',
+                                  textAlign: TextAlign.right,
+                                  style: const TextStyle(
+                                    fontFamily: "Roboto",
+                                    fontSize: 14,
+                                    color: Color.fromARGB(255, 126, 126, 126),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          );
                   }
                 },
               ),
-              // child: Column(
-              //   crossAxisAlignment: CrossAxisAlignment.end,
-              //   children: [
-              //     Padding(
-              //       padding: EdgeInsets.only(bottom: 10, right: 20),
-              //       child: Text(
-              //         // 'Sofia Pimazzoni',
-              //         user.name,
-              //         textAlign: TextAlign.right,
-              //         style: const TextStyle(
-              //             fontFamily: "Roboto",
-              //             fontSize: 20,
-              //             color: Color.fromARGB(255, 99, 99, 99)),
-              //       ),
-              //     ),
-              //     const Padding(
-              //       padding: EdgeInsets.only(bottom: 10, right: 20),
-              //       child: Text(
-              //         'Developer Junior',
-              //         textAlign: TextAlign.right,
-              //         style: TextStyle(
-              //             fontFamily: "Roboto",
-              //             fontSize: 14,
-              //             color: Color.fromARGB(255, 126, 126, 126)),
-              //       ),
-              //     ),
-              //   ],
-              // ),
+            ),
+            IconButton(
+              icon: const Icon(Icons.edit),
+              onPressed: _isEditing
+                  ? null
+                  : () {
+                      setState(() {
+                        _isEditing = true;
+                      });
+                    },
             ),
           ],
         ),
@@ -201,33 +218,53 @@ class _BodyState extends State<Body> {
                 backgroundImage: AssetImage('assets/images/Badge.jpeg')),
           ],
         ),
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(top: 25, bottom: 10, left: 20),
-              child: Text(
-                'About me',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    fontFamily: "Roboto",
-                    fontSize: 14,
-                    color: Color.fromARGB(255, 99, 99, 99)),
+        _isEditing
+            ? Padding(
+                padding: const EdgeInsets.all(20),
+                child: TextField(
+                  controller: aboutMeController,
+                  style: const TextStyle(fontSize: 18),
+                  decoration: const InputDecoration(
+                    labelText: 'About Me',
+                    labelStyle: TextStyle(fontSize: 16),
+                    border: OutlineInputBorder(),
+                  ),
+                  minLines: 3,
+                  maxLines: 5,
+                ),
+              )
+            : const Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 25, bottom: 10, left: 20),
+                        child: Text(
+                          'About me',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              fontFamily: "Roboto",
+                              fontSize: 14,
+                              color: Color.fromARGB(255, 99, 99, 99)),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. ',
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                          fontFamily: "Roboto",
+                          fontSize: 12,
+                          color: Color.fromARGB(255, 126, 126, 126)),
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
-        ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. ',
-            textAlign: TextAlign.justify,
-            style: TextStyle(
-                fontFamily: "Roboto",
-                fontSize: 12,
-                color: Color.fromARGB(255, 126, 126, 126)),
-          ),
-        ),
+
         const Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -292,6 +329,64 @@ class _BodyState extends State<Body> {
             ProfileTag(text: "Node JS"),
           ],
         ),
+        _isEditing
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 30),
+                    child: SizedBox(
+                      width: 180,
+                      height: 47,
+                      child: DecoratedBox(
+                        decoration: const BoxDecoration(
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: [
+                                Color.fromARGB(255, 18, 130, 214),
+                                Color.fromARGB(255, 123, 199, 255)
+                              ],
+                            )),
+                        child: ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                _isEditing = false;
+                                String name = nameController.text;
+                                String role = roleController.text;
+                                String aboutMe = aboutMeController.text;
+
+                                updateUser(
+                                    "d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390",
+                                    "",
+                                    name,
+                                    role,
+                                    aboutMe);
+                              });
+                            },
+                            child: const Row(
+                              children: [
+                                Text(
+                                  'Save Changes',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                  textAlign: TextAlign.left,
+                                ),
+                                SizedBox(width: 15),
+                                Icon(Icons.check, color: Colors.white),
+                              ],
+                            )),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            : Container(
+                height: 5,
+                color: Colors.transparent,
+              ),
         const Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
