@@ -218,52 +218,128 @@ class _BodyState extends State<Body> {
                 backgroundImage: AssetImage('assets/images/Badge.jpeg')),
           ],
         ),
-        _isEditing
-            ? Padding(
-                padding: const EdgeInsets.all(20),
-                child: TextField(
-                  controller: aboutMeController,
-                  style: const TextStyle(fontSize: 18),
-                  decoration: const InputDecoration(
-                    labelText: 'About Me',
-                    labelStyle: TextStyle(fontSize: 16),
-                    border: OutlineInputBorder(),
-                  ),
-                  minLines: 3,
-                  maxLines: 5,
-                ),
-              )
-            : const Column(
+        Container(
+            child: FutureBuilder(
+          future: getUserById("d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390"),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              print(snapshot.hasData);
+              print(snapshot.data);
+              return const Center(
+                  child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 25, bottom: 10, left: 20),
-                        child: Text(
-                          'About me',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              fontFamily: "Roboto",
-                              fontSize: 14,
-                              color: Color.fromARGB(255, 99, 99, 99)),
-                        ),
-                      ),
-                    ],
-                  ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. ',
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                          fontFamily: "Roboto",
-                          fontSize: 12,
-                          color: Color.fromARGB(255, 126, 126, 126)),
-                    ),
+                    padding: EdgeInsets.only(right: 15),
+                    child: Text("Carregando..."),
                   ),
+                  CircularProgressIndicator()
                 ],
-              ),
+              ));
+            } else if (snapshot.hasError) {
+              return Text('Erro: ${snapshot.error}');
+            } else {
+              var user = snapshot.data;
+
+              return _isEditing
+                  ? Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: TextField(
+                        controller: aboutMeController,
+                        style: const TextStyle(fontSize: 18),
+                        decoration: const InputDecoration(
+                          labelText: 'About Me',
+                          labelStyle: TextStyle(fontSize: 16),
+                          border: OutlineInputBorder(),
+                        ),
+                        minLines: 3,
+                        maxLines: 5,
+                      ),
+                    )
+                  : Column(
+                      children: [
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  top: 25, bottom: 10, left: 20),
+                              child: Text(
+                                'About me',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    fontFamily: "Roboto",
+                                    fontSize: 14,
+                                    color: Color.fromARGB(255, 99, 99, 99)),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Text(
+                            user != null
+                                ? user["about_me"]
+                                : 'Nenhum usuário encontrado',
+                            // 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. ',
+                            textAlign: TextAlign.justify,
+                            style: const TextStyle(
+                                fontFamily: "Roboto",
+                                fontSize: 12,
+                                color: Color.fromARGB(255, 126, 126, 126)),
+                          ),
+                        ),
+                      ],
+                    );
+            }
+          },
+        )),
+        // _isEditing
+        //     ? Padding(
+        //         padding: const EdgeInsets.all(20),
+        //         child: TextField(
+        //           controller: aboutMeController,
+        //           style: const TextStyle(fontSize: 18),
+        //           decoration: const InputDecoration(
+        //             labelText: 'About Me',
+        //             labelStyle: TextStyle(fontSize: 16),
+        //             border: OutlineInputBorder(),
+        //           ),
+        //           minLines: 3,
+        //           maxLines: 5,
+        //         ),
+        //       )
+        //     : const Column(
+        //         children: [
+        //           Row(
+        //             mainAxisAlignment: MainAxisAlignment.start,
+        //             children: [
+        //               Padding(
+        //                 padding: EdgeInsets.only(top: 25, bottom: 10, left: 20),
+        //                 child: Text(
+        //                   'About me',
+        //                   textAlign: TextAlign.left,
+        //                   style: TextStyle(
+        //                       fontFamily: "Roboto",
+        //                       fontSize: 14,
+        //                       color: Color.fromARGB(255, 99, 99, 99)),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //           Padding(
+        //             padding: EdgeInsets.symmetric(horizontal: 20),
+        //             child: Text(
+        //               'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. ',
+        //               textAlign: TextAlign.justify,
+        //               style: TextStyle(
+        //                   fontFamily: "Roboto",
+        //                   fontSize: 12,
+        //                   color: Color.fromARGB(255, 126, 126, 126)),
+        //             ),
+        //           ),
+        //         ],
+        //       ),
 
         const Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -354,15 +430,15 @@ class _BodyState extends State<Body> {
                             onPressed: () {
                               setState(() {
                                 _isEditing = false;
-                                String name = nameController.text;
-                                String role = roleController.text;
+                                String name_updated = nameController.text;
+                                String role_updated = roleController.text;
                                 String aboutMe = aboutMeController.text;
 
                                 updateUser(
                                     "d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390",
                                     "",
-                                    name,
-                                    role,
+                                    name_updated,
+                                    role_updated,
                                     aboutMe);
                               });
                             },
