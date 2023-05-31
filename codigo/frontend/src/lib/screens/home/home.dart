@@ -21,13 +21,17 @@ class Posts {
       required this.image});
 }
 
-class Projects{
+class Projects {
   final String title;
   final String authorName;
   final String date;
   final int projectId;
 
-  Projects({required this.title, required this.authorName, required this.date, required this.projectId});
+  Projects(
+      {required this.title,
+      required this.authorName,
+      required this.date,
+      required this.projectId,});
 }
 
 class Home extends StatefulWidget {
@@ -152,14 +156,14 @@ class _HomeState extends State<Home> {
                       String authorName = post["author"]["name"];
                       String date = post["createdAt"];
                       String id = post["id"];
-                      String image = post["author"]["photo_url"];
+                      String imageUrl = post["author"]["photo_url"];
 
                       posts.add(Posts(
                           title: title,
                           authorName: authorName,
                           date: date,
                           postId: id,
-                          image: image));
+                          image: imageUrl));
                     }
                   }
                   return Column(
@@ -177,37 +181,45 @@ class _HomeState extends State<Home> {
               },
             ),
             FutureBuilder(
-              future: getAllProjects(),
-              builder: (context, snapshot){
-                if (snapshot.hasData) {
-                  var jsonData = snapshot.data;
-                  List<Projects> projects = [];
+                future: getAllProjects(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    var jsonData = snapshot.data;
+                    List<Projects> projects = [];
 
-                  for (int i = jsonData!.length - 1; i >= 0; i--) {
-                    var project = jsonData[i];
-                    if (project != null) {
-                      String title = project["title"];
-                      String authorName = project["creator"]["name"];
-                      String date = project["created_at"];
-                      int id = project["idProject"];
+                    for (int i = jsonData!.length - 1; i >= 0; i--) {
+                      var project = jsonData[i];
+                      if (project != null) {
+                        String title = project["title"];
+                        String authorName = project["creator"]["name"];
+                        String date = project["created_at"];
+                        int id = project["idProject"];
 
-                      projects.add(Projects(
-                          title: title, authorName: authorName, date: date, projectId: id));
+                        projects.add(Projects(
+                            title: title,
+                            authorName: authorName,
+                            date: date,
+                            projectId: id));
+                      }
                     }
+                    return Column(
+                      children: [
+                        for (var project in projects)
+                          projectCardBuilder(
+                              project.title,
+                              project.authorName,
+                              project.date,
+                              context,
+                              project.projectId
+                              ),
+                      ],
+                    );
+                  } else if (snapshot.hasError) {
+                    return Text("Error: ${snapshot.error}");
+                  } else {
+                    return const CircularProgressIndicator();
                   }
-                  return Column(
-                    children: [
-                      for (var project in projects)
-                        projectCardBuilder(project.title, project.authorName, project.date, context, project.projectId),
-                    ],
-                  );
-                } else if (snapshot.hasError) {
-                  return Text("Error: ${snapshot.error}");
-                } else {
-                  return const CircularProgressIndicator();
-                }
-              }
-            )
+                })
           ]),
         ),
       ),

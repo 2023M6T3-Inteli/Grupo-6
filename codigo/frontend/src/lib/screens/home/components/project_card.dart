@@ -27,11 +27,11 @@ Padding projectCardBuilder(String title, String name, String time,
               children: [
                 Row(
                   children: [
-                     const Padding(
-                      padding:  EdgeInsets.only(left: 12, top: 12, right: 6),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 12, top: 12, right: 6),
                       child: CircleAvatar(
                         backgroundImage:
-                             AssetImage("assets/images/Avatar.jpeg"),
+                            AssetImage("assets/images/Avatar.jpeg"),
                         radius: 25,
                       ),
                     ),

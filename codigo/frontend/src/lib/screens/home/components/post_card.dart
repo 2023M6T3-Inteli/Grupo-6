@@ -27,11 +27,13 @@ Padding postCardBuilder(String title, String name, String time,
               children: [
                 Row(
                   children: [
-                     const Padding(
-                      padding:  EdgeInsets.only(left: 12, top: 12, right: 6),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(left: 12, top: 12, right: 6),
                       child: CircleAvatar(
                         backgroundImage:
-                             AssetImage("assets/images/Avatar.jpeg"),
+                            //  AssetImage("assets/images/Avatar.jpeg"),
+                            NetworkImage(image),
                         radius: 25,
                       ),
                     ),
