@@ -3,13 +3,23 @@ import 'components/attribute.dart';
 import 'components/info_attribute.dart';
 import 'components/tags.dart';
 import '../../services/service_project.dart';
+import '../../services/service_login.dart';
 
-class ProjectInfo extends StatelessWidget {
+class ProjectInfo extends StatefulWidget {
   final int projectId;
   const ProjectInfo({required this.projectId, Key? key}) : super(key: key);
 
   @override
+  _ProjectInfoState createState() => _ProjectInfoState();
+}
+
+class _ProjectInfoState extends State<ProjectInfo> {
+  TextEditingController _answerController = TextEditingController();
+  String _answer = '';
+
+  @override
   Widget build(BuildContext context) {
+    int projectId = widget.projectId;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
@@ -43,6 +53,9 @@ class ProjectInfo extends StatelessWidget {
             String dateEnd = projectData["date_end"];
             String area = projectData["area"];
             String role = projectData["role"];
+            List<String> technologies = List<String>.from(projectData["technologies"]
+            .map((technology) => technology["technology"] as String));
+            print(technologies);
 
             return SingleChildScrollView(
               padding: const EdgeInsets.only(left: 10.0),
@@ -206,9 +219,9 @@ class ProjectInfo extends StatelessWidget {
                         InfoWidget(info: 'None'),
                       ],
                     ),
-                    const Row(
+                     Row(
                       children: [
-                        Padding(
+                        const Padding(
                           padding:  EdgeInsets.only(bottom: 5.0, right: 5.0),
                           child: Text(
                             'Tags:',
@@ -220,9 +233,8 @@ class ProjectInfo extends StatelessWidget {
                             ),
                           ),
                         ),
-                        TagsWidget(tag: 'Python'),
-                        TagsWidget(tag: 'AI'),
-                        TagsWidget(tag: 'Database'),
+                        for (var i = 0; i < technologies.length; i++)
+                          TagsWidget(tag: technologies[i]),
                       ],
                     ),
                     const Row(
@@ -248,14 +260,18 @@ class ProjectInfo extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const Row(
+                     Row(
                       children: [
                         Expanded(
                           child: Padding(
-                            padding:  EdgeInsets.only(top: 5.0, right: 10.0),
-                            child: TextField(
+                            padding:  const EdgeInsets.only(top: 5.0, right: 10.0),
+                            child: TextFormField(
+                              controller: _answerController,
+                              onChanged: (answer){
+                                _answer = answer;
+                              },
                               maxLines: 5,
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 border: OutlineInputBorder(),
                                 hintText: 'Type your answer here',
                               ),
@@ -272,7 +288,11 @@ class ProjectInfo extends StatelessWidget {
                             backgroundColor: Colors.blue,
                             elevation: 0,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            getData("userId").then((value){
+                              
+                            });
+                          },
                           child: const Text(
                             "Submit",
                             style: TextStyle(

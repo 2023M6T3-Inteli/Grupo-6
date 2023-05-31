@@ -11,7 +11,7 @@ class Post extends StatefulWidget {
 }
 
 class _PostState extends State<Post> {
-   String? dropdownValue = 'Option 1';
+  String? dropdownValue = 'Option 1';
   String title = "";
   String description = "";
   String tags = "";
