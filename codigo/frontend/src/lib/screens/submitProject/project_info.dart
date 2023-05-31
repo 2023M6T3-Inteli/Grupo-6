@@ -4,6 +4,7 @@ import 'components/info_attribute.dart';
 import 'components/tags.dart';
 import '../../services/service_project.dart';
 import '../../services/service_login.dart';
+import '../../services/service_submision.dart';
 
 class ProjectInfo extends StatefulWidget {
   final int projectId;
@@ -290,7 +291,9 @@ class _ProjectInfoState extends State<ProjectInfo> {
                           ),
                           onPressed: () {
                             getData("userId").then((value){
-                              
+                              sendSubmision(_answer, projectId, value!).then((value){
+                                Navigator.of(context).pushReplacementNamed("/home");
+                              });
                             });
                           },
                           child: const Text(
