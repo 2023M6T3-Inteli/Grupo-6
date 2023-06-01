@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../services/service_post.dart';
 import '../../services/service_login.dart';
+import '../../services/service_tags.dart';
 
+class Tags{
+  final String technologys;
+  final int id;
+
+  Tags({required this.id, required this.technologys});
+}
 
 class Post extends StatefulWidget {
   const Post({super.key});
@@ -11,13 +18,31 @@ class Post extends StatefulWidget {
 }
 
 class _PostState extends State<Post> {
-  String? dropdownValue = 'Option 1';
+  List<Tags> category = [];
+  String?  dropdownValue = '';
   String title = "";
   String description = "";
   String tags = "";
+  
 
   @override
   Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: getAllTags(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          var jsonData = snapshot.data;
+          category = [];
+
+          for (int i = jsonData!.length -1; i >= 0; i--) {
+            var json = jsonData[i];
+            if ( json != null){
+              String technology = json['technology'];
+              int id = json['id_technology'];
+              category.add(Tags(id: id, technologys: technology));
+            }
+          }
+        }
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -112,11 +137,10 @@ class _PostState extends State<Post> {
                     dropdownValue = newValue;
                   });
                 },
-                items: const <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
-                    .map<DropdownMenuItem<String>>((String value) {
+                items: category.map<DropdownMenuItem<String>>((Tags tag) {
                   return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
+                    value: tag.technologys,
+                    child: Text(tag.technologys),
                   );
                 }).toList(),
               ),
@@ -154,5 +178,5 @@ class _PostState extends State<Post> {
         ),
       ),
     );
-  }
-} 
+  });
+  }}
