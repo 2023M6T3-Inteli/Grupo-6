@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:src/screens/submit_project/submit_project.dart';
 
-const String baseUrl = "http://10.128.65.225:3001";
+const String baseUrl = "http://localhost:3001";
 
 void main() {
   // getAllProjects();

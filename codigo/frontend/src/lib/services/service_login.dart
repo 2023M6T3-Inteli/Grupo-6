@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-const String baseUrl = "http://10.128.65.225:3000";
+const String baseUrl = "http://localhost:3000";
 
 getLogin(String email, String password) async {
 

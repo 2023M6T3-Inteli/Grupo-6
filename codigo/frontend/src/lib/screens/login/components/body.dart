@@ -121,6 +121,7 @@ class _BodyState extends State<Body> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
+                        print("login");
                         getLogin(email, password).then((response) {
                           if (response.statusCode == 200 || response.statusCode == 201) {
                             Navigator.of(context).pushReplacementNamed("/home");

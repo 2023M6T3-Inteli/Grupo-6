@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:src/screens/submit_project/submit_project.dart';
+import '../../services/service_tags.dart';
+
+class Tags{
+  final String technologys;
+
+  Tags({required this.technologys});
+}
 
 class CreateProject extends StatefulWidget {
   const CreateProject({super.key});
@@ -10,9 +18,11 @@ class CreateProject extends StatefulWidget {
 class _CreateProjectState extends State<CreateProject> {
   TextEditingController _startDateController = TextEditingController();
   TextEditingController _endDateController = TextEditingController();
-  String? dropdownValue = 'Option 1';
+  String? dropdownValue = 'Aberto';
+  String? dropdownValue2 = '';
   DateTime startDate = DateTime.now();
   DateTime endDate = DateTime.now();
+  List<Tags> tags = [];
 
 
   @override
@@ -35,6 +45,24 @@ class _CreateProjectState extends State<CreateProject> {
 
   @override
   Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: getAllTags(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          var jsonData = snapshot.data;
+          tags = [];
+
+          for (int i = jsonData!.length -1; i >= 0; i--) {
+            var json = jsonData[i];
+            if ( json != null){
+              String technology = json['technology'];
+              tags.add(Tags(technologys: technology));
+              for (var i in tags) {
+                dropdownValue2 = i.technologys;
+              }
+            }
+          }
+        }
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -161,121 +189,68 @@ class _CreateProjectState extends State<CreateProject> {
                 ),
               ),
               const SizedBox(height: 20),
-              const Text('Attachments'),
+              const Text('Position'),
               const SizedBox(height: 10),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.grey[300],
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide.none,
-                        ),
-                      ),
-                    ),
+              TextFormField(  
+                decoration: InputDecoration(
+                  fillColor: Colors.grey[300],
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide.none,
                   ),
-                  const SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
-                    ),
-                    child: const Text('+ADD',
-                        style: TextStyle(color: Colors.white)),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              const Text('Members'),
-              const SizedBox(height: 10),
-              const Text(
-                'Select the amount of members per function',
-                style: TextStyle(fontSize: 12),
-              ),
-              const SizedBox(height: 10),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.grey[300],
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide.none,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
-                    ),
-                    child: const Text('+ADD',
-                        style: TextStyle(color: Colors.white)),
-                  ),
-                ],
+                ),
               ),
               const SizedBox(height: 20),
               const Text('Tags'),
               const SizedBox(height: 10),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.grey[300],
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide.none,
-                        ),
-                      ),
-                    ),
+              DropdownButtonFormField<String>(
+                decoration: InputDecoration(
+                  fillColor: Colors.grey[300],
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide.none,
                   ),
-                  const SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
-                    ),
-                    child: const Text('+ADD',
-                        style: TextStyle(color: Colors.white)),
-                  ),
-                ],
+                ),
+                value: dropdownValue2,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue2 = newValue;
+                  });
+                },
+                items: tags.map<DropdownMenuItem<String>>((Tags tag) {
+                  return DropdownMenuItem<String>(
+                    value: tag.technologys,
+                    child: Text(tag.technologys),
+                  );
+                }).toList(),
               ),
               const SizedBox(height: 20),
-              const Text('Application Questions'),
+              const Text('Status'),
               const SizedBox(height: 10),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.grey[300],
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide.none,
-                        ),
-                      ),
-                    ),
+              DropdownButtonFormField<String>(
+                decoration: InputDecoration(
+                  fillColor: Colors.grey[300],
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide.none,
                   ),
-                  const SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
-                    ),
-                    child: const Text('+ADD',
-                        style: TextStyle(color: Colors.white)),
-                  ),
-                ],
+                ),
+                value: dropdownValue,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue = newValue;
+                  });
+                },
+                items: const <String>['Aberto', 'Fechado', 'em andamento',"encerado"]
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
               ),
               const SizedBox(height: 20),
               Center(
@@ -303,5 +278,5 @@ class _CreateProjectState extends State<CreateProject> {
         ),
       ),
     );
-  }
-}
+  });
+}}
