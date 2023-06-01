@@ -309,7 +309,7 @@ Para a descrição dos casos de usos, optou-se pela construção de user stories
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 <br>
 <center> Tabela 1 - User Stories e Casos de uso.  </center>
-<img src="../docs/img/img_docs/Casos_de_uso.jpg" alt="User stories e casos de uso" border="0" width="100%" display="flex" justify-content="center">
+<img src="../docs/img/img_docs/novo_caso_de_uso.jpg" alt="User stories e casos de uso" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 <br>
 
