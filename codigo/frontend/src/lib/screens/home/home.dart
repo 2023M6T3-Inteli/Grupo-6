@@ -27,11 +27,12 @@ class Projects {
   final String date;
   final int projectId;
 
-  Projects(
-      {required this.title,
-      required this.authorName,
-      required this.date,
-      required this.projectId,});
+  Projects({
+    required this.title,
+    required this.authorName,
+    required this.date,
+    required this.projectId,
+  });
 }
 
 class Home extends StatefulWidget {
@@ -81,11 +82,7 @@ class _HomeState extends State<Home> {
                 // Text("Podcasts"),
                 Circle(icon: Icons.wifi_outlined),
                 // Text("Posts")
-              ],
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+
                 Circle(icon: Icons.play_circle_outline),
                 // Text("Videos"),
                 Circle(icon: Icons.folder_open_outlined),
@@ -93,6 +90,16 @@ class _HomeState extends State<Home> {
                 Circle(icon: Icons.add_circle_outline_outlined)
               ],
             ),
+            // const Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     Circle(icon: Icons.play_circle_outline),
+            //     // Text("Videos"),
+            //     Circle(icon: Icons.folder_open_outlined),
+            //     // Text("Repository"),
+            //     Circle(icon: Icons.add_circle_outline_outlined)
+            //   ],
+            // ),
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: SizedBox(
@@ -205,13 +212,8 @@ class _HomeState extends State<Home> {
                     return Column(
                       children: [
                         for (var project in projects)
-                          projectCardBuilder(
-                              project.title,
-                              project.authorName,
-                              project.date,
-                              context,
-                              project.projectId
-                              ),
+                          projectCardBuilder(project.title, project.authorName,
+                              project.date, context, project.projectId),
                       ],
                     );
                   } else if (snapshot.hasError) {
