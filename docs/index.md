@@ -286,22 +286,23 @@ Para a descrição dos casos de usos, optou-se pela construção de user stories
 4 - Eu, como funcionário da Dell, quero poder buscar por conteúdos específicos para além daqueles recomendados, com objetivo de encontrar materiais sobre assuntos que não necessariamente eu já demonstrei interesse anteriormente.<br>
 5 - Eu, como funcionário da Dell, quero poder denunciar conteúdos abusivos dentro da plataforma, com objetivo de ter aprovação de administradores para remover aqueles conteúdos e tornar a plataforma mais amigável.<br>
 6 - Eu, como funcionário da Dell, quero ver minha posição no "Ranking", com objetivo de ver a minha colocação diante dos outros funcionários.<br>
-7- <br>
-8 - <br>
-9 - Eu, como funcionário da Dell, quero poder avaliar e dar feedbacks sobre projetos dos quais fiz parte, a fim de evidenciar minhas considerações sobre o processo e possíveis pontos de melhoria.<br>
-10 - Eu, como funcionário da Dell, quero que a plataforma me dê match com projetos associados aos meus interesses, com o intuito de otimizar meu tempo e me ajudar na busca por oportunidades.<br>
-11 - <br>
-12-  <br>
-13 - Eu, como funcionário da Dell, quero poder aplicar para projetos, com o intuito de aprender e praticar meus conhecimentos juntamente com outros colegas.<br>
-14 - Eu, como usuário da plataforma, quero poder alternar entre modo claro e escuro, a fim de adaptar a visibildiade da plataforma às minhas condições momentâneas <br>
-15 - Eu, como moderador, posso avaliar um conteúdo caso ele seja denunciado para que não haja conflito entre os usuários da plataforma. <br>
-16 - Eu, como usuário da plataforma, posso acompanhar o andamento da minha inscrição, para saber quando vou começar a trabalhar em um projeto <br>
-17 - Eu, como usuário da plataforma, posso editar as informações do meu perfil, para mantê-lo sempre atualizado. <br>
-18 - Eu, como usuário da plataforma, quero sempre poder visualizar os posts que eu fiz e os projetos criados, para que eu tenha controle do meu engajamento na plataforma. <brc >
-19 - Eu, como usuário da plataforma, devo poder editar as informações do meu projeto, para que ele esteja sempre atualizado. <br>
-20 -  Eu, como usuário da plataforma, devo poder excluir um projeto que eu criei, caso aconteça algum imprevisto. <br>
-21 - Eu, como usuário da plataforma, posso denunciar posts de outros usuários, caso eles infrigam alguma regra/lei, para que não haja conflitos na plataforma. <br>
-22 - Eu, como usuário da plataforma, devo receber um feedback se fui aprovado ou não em um projeto, para que eu possa me preparar e me organizar com minhas outras atividades.<br>
+7- Eu, como funcionário da Dell, quero poder avaliar e dar feedbacks sobre projetos dos quais fiz parte, a fim de evidenciar minhas considerações sobre o processo e possíveis pontos de melhoria.<br>
+8 - Eu, como funcionário da Dell, quero que a plataforma me dê match com projetos associados aos meus interesses, com o intuito de otimizar meu tempo e me ajudar na busca por oportunidades.<br>
+9 - Eu, como funcionário da Dell, quero poder aplicar para projetos, com o intuito de aprender e praticar meus conhecimentos juntamente com outros colegas.<br>
+10 - Eu, como usuário da plataforma, quero poder alternar entre modo claro e escuro, a fim de adaptar a visibildiade da plataforma às minhas condições momentâneas <br>
+11 - Eu, como moderador, posso avaliar um conteúdo caso ele seja denunciado para que não haja conflito entre os usuários da plataforma. <br>
+12 - Eu, como usuário da plataforma, posso acompanhar o andamento da minha inscrição, para saber quando vou começar a trabalhar em um projeto <br>
+13 - Eu, como usuário da plataforma, posso editar as informações do meu perfil, para mantê-lo sempre atualizado. <br>
+14 - Eu, como usuário da plataforma, quero sempre poder visualizar os posts que eu fiz e os projetos criados, para que eu tenha controle do meu engajamento na plataforma. <br>
+15 - Eu, como usuário da plataforma, devo poder editar as informações do meu projeto, para que ele esteja sempre atualizado. <br>
+16 - Eu, como usuário da plataforma, devo poder excluir um projeto que eu criei, caso aconteça algum imprevisto. <br>
+17 - Eu, como usuário da plataforma, posso denunciar posts de outros usuários, caso eles infrigam alguma regra/lei, para que não haja conflitos na plataforma. <br>
+18 - Eu, como usuário da plataforma, devo receber um feedback se fui aprovado ou não em um projeto, para que eu possa me preparar e me organizar com minhas outras atividades.<br>
+19 - Eu, como funcionário da Dell, quero ser recompensado pela minha participação na plataforma, com o obejtivo de me sentir engajado e motivado a continuar usando a aplicação. <br>
+20 - Eu, como funcionário da Dell, quero poder compartilhar conteúdos (podcasts, vídeos, documentários etc) com meus colegas, a fim de propagar conhecimentos relevantes e oportunidades de projeto. <br>
+21 - Eu, como usuário da plataforma, quero poder utilizar minhas credenciais DELL para acessar a plataforma, com o objetivo de evitar a criação de uma nova conta. <br>
+22 - Eu, como funcionário da Dell, quero ter a opção de filtrar os conteúdos disponíveis na plataforma, a fim de encontrar somente aqueles associados ao meu interesse do momento <br>
+23 - Eu, como administrador da plataforma, quero poder aprovar ou rejeitar projetos, a fim de evitar conflitos ou violações de conduta <br>
 
 <center> Diagrama 6 -Casos de uso.  </center>
 <img src="../docs/img/img_docs/casos_de_uso%20(1).jpg" alt="Casos de uso" border="0" width="100%" display="flex" justify-content="center">
