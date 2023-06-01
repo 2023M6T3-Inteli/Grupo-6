@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:src/screens/submit_project/submit_project.dart';
 import '../../services/service_tags.dart';
+import '../../services/service_project.dart';
+import '../../services/service_login.dart';
 
 class Tags{
   final String technologys;
+  final int id;
 
-  Tags({required this.technologys});
+  Tags({required this.id, required this.technologys});
 }
 
 class CreateProject extends StatefulWidget {
@@ -23,7 +25,14 @@ class _CreateProjectState extends State<CreateProject> {
   DateTime startDate = DateTime.now();
   DateTime endDate = DateTime.now();
   List<Tags> tags = [];
-
+  String title = "";
+  String description = "";
+  String stt = "";
+  DateTime dateInitial = DateTime.now();
+  DateTime dateEnd  = DateTime.now();
+  String area = "";
+  String role = "";
+  int technologies = 0;
 
   @override
   void initState() {
@@ -43,6 +52,14 @@ class _CreateProjectState extends State<CreateProject> {
     return '${date.day}/${date.month}/${date.year}';
   }
 
+  void getTagId(){
+    for (var i in tags) {
+      if (i.technologys == dropdownValue2){
+        technologies = i.id;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -56,7 +73,8 @@ class _CreateProjectState extends State<CreateProject> {
             var json = jsonData[i];
             if ( json != null){
               String technology = json['technology'];
-              tags.add(Tags(technologys: technology));
+              int id = json['id_technology'];
+              tags.add(Tags(id: id, technologys: technology));
               for (var i in tags) {
                 dropdownValue2 = i.technologys;
               }
@@ -86,6 +104,9 @@ class _CreateProjectState extends State<CreateProject> {
               const Text('Title'),
               const SizedBox(height: 10),
               TextFormField(
+                onChanged: (text){
+                title = text;
+              },
                 decoration: InputDecoration(
                   fillColor: Colors.grey[300],
                   filled: true,
@@ -99,6 +120,9 @@ class _CreateProjectState extends State<CreateProject> {
               const Text('Description'),
               const SizedBox(height: 10),
               TextFormField(
+                onChanged: (text){
+                description = text;
+              },
                 maxLines: 5,
                 decoration: InputDecoration(
                   fillColor: Colors.grey[300],
@@ -137,6 +161,7 @@ class _CreateProjectState extends State<CreateProject> {
                         if (picked != null && picked != startDate) {
                           setState(() {
                             startDate = picked;
+                            dateInitial = picked;
                             _startDateController.text = formatDate(startDate);
                           });
                         }
@@ -167,6 +192,8 @@ class _CreateProjectState extends State<CreateProject> {
                         if (picked != null && picked != endDate) {
                           setState(() {
                             endDate = picked;
+                            dateEnd = picked;
+                            print(dateEnd);
                             _endDateController.text = formatDate(endDate);
                           });
                         }
@@ -179,6 +206,9 @@ class _CreateProjectState extends State<CreateProject> {
               const Text('Area'),
               const SizedBox(height: 10),
               TextFormField(
+                onChanged: (value){
+                area = value;
+                },
                 decoration: InputDecoration(
                   fillColor: Colors.grey[300],
                   filled: true,
@@ -192,6 +222,9 @@ class _CreateProjectState extends State<CreateProject> {
               const Text('Position'),
               const SizedBox(height: 10),
               TextFormField(  
+                onChanged: (value){
+                  role = value;
+                },
                 decoration: InputDecoration(
                   fillColor: Colors.grey[300],
                   filled: true,
@@ -242,6 +275,7 @@ class _CreateProjectState extends State<CreateProject> {
                 onChanged: (String? newValue) {
                   setState(() {
                     dropdownValue = newValue;
+                    stt = newValue!;
                   });
                 },
                 items: const <String>['Aberto', 'Fechado', 'em andamento',"encerado"]
@@ -258,7 +292,16 @@ class _CreateProjectState extends State<CreateProject> {
                   width: MediaQuery.of(context).size.width * 0.6,
                   height: 50,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      getTagId();
+                      getData("userId").then((creator){
+                      sendProject(title, description, stt, dateInitial, dateEnd, creator!, area, role, technologies).then((data){
+                        Navigator.of(context).pushReplacementNamed("/home");
+                      }).catchError((error) {
+                        print('Erro: $error');
+                      });
+                    });
+                    },
                     style: ElevatedButton.styleFrom(
                         primary: Colors.blue,
                         shape: RoundedRectangleBorder(
