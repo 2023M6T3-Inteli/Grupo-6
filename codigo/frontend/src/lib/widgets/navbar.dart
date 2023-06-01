@@ -1,10 +1,4 @@
 import "package:flutter/material.dart";
-import 'package:src/screens/create_post/create_post.dart';
-import '../screens/profile/profile.dart';
-import '../screens/ranking/ranking.dart';
-import '../screens/submit_project/submit_project.dart';
-import "package:src/screens/home/home.dart";
-
 import 'add_post.dart';
 
 class NavBarRouter extends StatefulWidget {
@@ -21,14 +15,27 @@ class _NavBarRouterState extends State<NavBarRouter> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      if (index == 2) {
+    });
+    switch (index) {
+      case 0:
+        Navigator.pushNamed(context, '/home');
+        break;
+      case 1:
+        Navigator.pushNamed(context, '/notifications');
+        break;
+      case 2:
         showModalBottomSheet(
           context: context,
-          builder: (BuildContext context) =>
-              ModalBottomSheet(), // Substitua pelo nome da classe ou widget do Modal Bottom Sheet
+          builder: (BuildContext context) => ModalBottomSheet(),
         );
-      }
-    });
+        break;
+      case 3:
+        Navigator.pushNamed(context, '/ranking');
+        break;
+      case 4:
+        Navigator.pushNamed(context, '/profile');
+        break;
+    }
   }
 
   @override
@@ -44,28 +51,12 @@ class _NavBarRouterState extends State<NavBarRouter> {
           icon: Icon(Icons.account_circle_outlined), label: 'User')
     ];
 
-    List<Widget> widgetOptions = const [
-      Home(),
-      Center(child: Text("404 - Not Found")),
-      Home(),
-      Ranking(),
-      Profile()
-    ];
-
-    return Scaffold(
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: widgetOptions,
-      ),
-      // Center(
-      //   child: widgetOptions.elementAt(_selectedIndex),
-      // ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: items,
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-      ),
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      items: items,
+      currentIndex: _selectedIndex,
+      selectedItemColor: Colors.blue,
+      onTap: _onItemTapped,
     );
   }
 }

@@ -3,13 +3,11 @@ import 'package:src/screens/create_project/create_project.dart';
 import 'package:src/widgets/navbar.dart';
 import 'package:src/screens/interest/interest.dart';
 import 'package:src/screens/home/home.dart';
-import 'package:src/screens/view_post/view_pot.dart';
 import 'package:src/screens/profile/profile.dart';
 import 'package:src/screens/ranking/ranking.dart';
 import 'package:src/screens/recommendation/recommendation.dart';
 import 'package:src/screens/login/login.dart';
 import 'package:src/screens/create_post/create_post.dart';
-import 'package:src/screens/submit_project/submit_project.dart';
 import 'package:src/screens/feed/feed.dart';
 
 void main() {
@@ -18,8 +16,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,18 +23,29 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColorLight: Colors.white,
         ),
-        // home: const Login(),
         initialRoute: '/login',
         routes: {
           '/login': (context) => const Login(),
-          '/home': (context) => const NavBarRouter(),
-          '/feed': (context) => const Feed(),
-          '/post': (context) => const Post(),
-          '/interest': (context) => Interest(),
-          '/recommendation': (context) => Recommendation(),
-          '/profile': (context) => const Profile(),
-          '/ranking': (context) => const Ranking(),
-          '/project': (context) => const CreateProject(),
+          '/home': (context) => buildScaffoldWithNavBar(const Home()),
+          '/feed': (context) => buildScaffoldWithNavBar(const Feed()),
+          '/post': (context) => buildScaffoldWithNavBar(const Post()),
+          '/interest': (context) => buildScaffoldWithNavBar(Interest()),
+          '/recommendation': (context) =>
+              buildScaffoldWithNavBar(Recommendation()),
+          '/profile': (context) => buildScaffoldWithNavBar(Profile()),
+          '/ranking': (context) => buildScaffoldWithNavBar(Ranking()),
+          '/project': (context) =>
+              buildScaffoldWithNavBar(const CreateProject()),
         });
+  }
+
+  buildScaffoldWithNavBar(Widget page) {
+    return Scaffold(
+      body: IndexedStack(
+        index: 0,
+        children: <Widget>[page],
+      ),
+      bottomNavigationBar: const NavBarRouter(),
+    );
   }
 }
