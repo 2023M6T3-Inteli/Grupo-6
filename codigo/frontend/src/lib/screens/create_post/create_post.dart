@@ -40,6 +40,7 @@ class _PostState extends State<Post> {
               String technology = json['technology'];
               int id = json['id_technology'];
               category.add(Tags(id: id, technologys: technology));
+              dropdownValue = category[0].technologys;
             }
           }
         }

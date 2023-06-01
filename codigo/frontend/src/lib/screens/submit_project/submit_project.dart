@@ -56,7 +56,7 @@ class _ProjectInfoState extends State<ProjectInfo> {
             String role = projectData["role"];
             List<String> technologies = List<String>.from(projectData["technologies"]
             .map((technology) => technology["technology"] as String));
-            print(technologies);
+            // print(technologies);
 
             return SingleChildScrollView(
               padding: const EdgeInsets.only(left: 10.0),

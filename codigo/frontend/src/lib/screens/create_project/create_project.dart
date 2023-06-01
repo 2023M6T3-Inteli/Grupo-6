@@ -75,9 +75,7 @@ class _CreateProjectState extends State<CreateProject> {
               String technology = json['technology'];
               int id = json['id_technology'];
               tags.add(Tags(id: id, technologys: technology));
-              for (var i in tags) {
-                dropdownValue2 = i.technologys;
-              }
+              dropdownValue2 = tags[0].technologys;
             }
           }
         }
@@ -193,7 +191,7 @@ class _CreateProjectState extends State<CreateProject> {
                           setState(() {
                             endDate = picked;
                             dateEnd = picked;
-                            print(dateEnd);
+                            // print(dateEnd);
                             _endDateController.text = formatDate(endDate);
                           });
                         }

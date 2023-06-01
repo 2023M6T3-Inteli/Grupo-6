@@ -98,7 +98,7 @@ class _BodyState extends State<Body> {
                     child: TextField(
                       onChanged: (text) {
                         password = text;
-                        print(text);
+                        // print(text);
                       },
                       obscureText: true,
                       style: const TextStyle(fontSize: 12),
@@ -121,7 +121,7 @@ class _BodyState extends State<Body> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        print("login");
+                        // print("login");
                         getLogin(email, password).then((response) {
                           if (response.statusCode == 200 || response.statusCode == 201) {
                             Navigator.of(context).pushReplacementNamed("/home");

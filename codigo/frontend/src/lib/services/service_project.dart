@@ -28,7 +28,7 @@ Future<Map<String, dynamic>> getProject(int id) async {
     var response = await http.get(Uri.parse("$baseUrl/project/$id"));
     if (response.statusCode == 200) {
       var jsonData = jsonDecode(response.body);
-      print(jsonData);
+      // print(jsonData);
       return jsonData as Map<String, dynamic>;
     } else {
       throw Exception(
