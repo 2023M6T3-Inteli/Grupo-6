@@ -107,8 +107,8 @@ class _BodyState extends State<Body> {
           String role = userData["role"];
           String photoUrl = userData["photo_url"];
           String aboutMe = userData["about_me"];
-          String softskills = userData["soft_skills"];
-          String hardskills = userData["hard_skills"];
+          String? softskills = userData["soft_skills"];
+          String? hardskills = userData["hard_skills"];
 
           return Center(
             child: Column(
@@ -294,7 +294,7 @@ class _BodyState extends State<Body> {
                     soft = [];
                     if (snapshot.hasData){
                       for (var i = 0; i < snapshot.data!.length; i++) {
-                        if (softskills.contains(snapshot.data![i]["idSkill"].toString())) {
+                        if (softskills?.contains(snapshot.data![i]["idSkill"].toString()) == true) {
                           soft.add(snapshot.data![i]["skill"]);
                         }
                       }
@@ -359,7 +359,7 @@ class _BodyState extends State<Body> {
                     hard = [];
                     if (snapshot.hasData){
                       for (var i = 0; i < snapshot.data!.length; i++) {
-                        if (hardskills.contains(snapshot.data![i]["id_technology"].toString())) {
+                        if (hardskills?.contains(snapshot.data![i]["id_technology"].toString()) == true) {
                           hard.add(snapshot.data![i]["technology"]);
                         }
                       }
