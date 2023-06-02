@@ -5,6 +5,7 @@ const String baseUrl = "http://localhost:3001";
 
 void main() {
   // getProject("projeto Priscila 2",);
+  getAllProjectsByCreator("d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390");
 }
 
 Future<List<dynamic>> getAllProjects() async {
@@ -76,5 +77,21 @@ Future<void> sendProject(
     }
   } catch (e) {
     throw Exception("Failed to send project: $e");
+  }
+}
+
+Future<List<dynamic>> getAllProjectsByCreator(String creator) async {
+  try {
+    var response = await http.get(Uri.parse("$baseUrl/project/creator/$creator"));
+    if (response.statusCode == 200) {
+      var jsonData = jsonDecode(response.body);
+      //  print(jsonData);
+      return List<dynamic>.from(jsonData);
+    } else {
+      throw Exception(
+          "Failed to load project. Status code: ${response.statusCode}");
+    }
+  } catch (e) {
+    throw Exception("Failed to load project: $e");
   }
 }

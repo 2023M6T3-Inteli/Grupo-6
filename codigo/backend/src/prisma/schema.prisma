@@ -20,8 +20,8 @@ model User {
   badges    Badges[] @relation("UserBadges")
   posts     Post[]
   projects  String?
-  // hard_skills hard_skills[] @relation("UserHardSkills")
-  // soft_skills soft_skills[] @relation("UserSoftSkills")
+  hard_skills String?
+  soft_skills String?
 }
 
 model Badges {

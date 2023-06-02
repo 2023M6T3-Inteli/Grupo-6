@@ -19,6 +19,7 @@ class Ranking extends StatelessWidget {
             children: [
               Container(
                 padding: EdgeInsets.all(8.0),
+
                 decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(8.0),

@@ -139,4 +139,18 @@ export class PostService {
       throw new InternalServerErrorException('Something bad happened: ', error);
     }
   }
+
+  async getPostByCreator(creator: string) {
+    try {
+      const post = await this.prisma.post.findMany({
+        where: { creator: creator },
+        include: {author: true},
+      })
+      return post;
+    }
+    catch (error) {
+      console.log(error);
+      throw new InternalServerErrorException('Something bad happened: ', error);
+    }
+  }
 }

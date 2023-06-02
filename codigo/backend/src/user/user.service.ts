@@ -30,7 +30,9 @@ export class UserService {
           badges: data.badges,
           posts: data.posts,
           projects: data.projects,
-          photo_url: data.photo_url
+          photo_url: data.photo_url,
+          hard_skills: data.hard_skills,
+          soft_skills: data.soft_skills
         }
       });
     }
@@ -43,7 +45,8 @@ export class UserService {
 
   async findAll() {
     try{
-      const users = await this.prisma.user.findMany({})
+      const users = await this.prisma.user.findMany({
+      })
       return users
     }
     catch(error) {
@@ -100,7 +103,9 @@ export class UserService {
           badges: data.badges,
           posts: data.posts,
           projects: data.projects,
-          photo_url: data.photo_url
+          photo_url: data.photo_url,
+          hard_skills: data.hard_skills,
+          soft_skills: data.soft_skills
         }
       });
       

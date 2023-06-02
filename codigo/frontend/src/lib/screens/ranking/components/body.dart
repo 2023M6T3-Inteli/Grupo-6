@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.only(left: 8.0),
                       child: Text(
-                        'Sofia Pimazzoni',
+                        'Mateus Neves',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16.0,
@@ -39,7 +39,7 @@ class Body extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.only(right: 8.0),
                       child: Text(
-                        '900',
+                        '1000',
                         style: TextStyle(
                           color: Colors.black54,
                           fontSize: 16.0,
@@ -71,7 +71,7 @@ class Body extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.only(left: 8.0),
                         child: Text(
-                          'Sofia Pimazzoni',
+                          'Kinho',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 16.0,

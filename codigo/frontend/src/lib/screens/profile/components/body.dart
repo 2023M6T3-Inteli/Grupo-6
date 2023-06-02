@@ -1,15 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:src/screens/home/components/post_card.dart';
-import 'package:src/screens/recommendation/recommendation.dart';
 import 'package:src/screens/profile/components/badge.dart';
 import 'package:src/screens/profile/components/profile_tag.dart';
-import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import '../../../services/service_tags.dart';
 import '../../../services/service_login.dart';
 import '../../../services/service_user.dart';
+import '../../../services/service_softSkills.dart';
+import '../../../services/service_post.dart';
+import '../../home/components/post_card.dart';
+import '../../../services/service_project.dart';
+import '../../home/components/project_card.dart';
 
 String userId = '';
+var soft = [];
+var hard = [];
+
+class Posts {
+  final String title;
+  final String authorName;
+  final String date;
+  final String postId;
+  final String image;
+
+  Posts(
+      {required this.title,
+      required this.authorName,
+      required this.date,
+      required this.postId,
+      required this.image});
+}
+
+class Projects {
+  final String title;
+  final String authorName;
+  final String date;
+  final int projectId;
+
+  Projects({
+    required this.title,
+    required this.authorName,
+    required this.date,
+    required this.projectId,
+  });
+}
+
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
@@ -68,6 +101,8 @@ class _BodyState extends State<Body> {
           String role = userData["role"];
           String photoUrl = userData["photo_url"];
           String aboutMe = userData["about_me"];
+          String softskills = userData["soft_skills"];
+          String hardskills = userData["hard_skills"];
 
           return Center(
             child: Column(
@@ -247,21 +282,49 @@ class _BodyState extends State<Body> {
                     ),
                   ],
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ProfileTag(text: "Communication"),
-                    ProfileTag(text: "Adaptability"),
-                    ProfileTag(text: "Team Work"),
-                  ],
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ProfileTag(text: "Leadership"),
-                    ProfileTag(text: "Colaboration"),
-                    ProfileTag(text: "Cooperation"),
-                  ],  
+                FutureBuilder(
+                  future: getAllSoftSkills(),
+                  builder: (context, snapshot) {
+                    soft = [];
+                    if (snapshot.hasData){
+                      for (var i = 0; i < snapshot.data!.length; i++) {
+                        if (softskills.contains(snapshot.data![i]["idSkill"].toString())) {
+                          soft.add(snapshot.data![i]["skill"]);
+                        }
+                      }
+                      print(soft);
+                      if(soft.length < 4){
+                        return  Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            for (var i = 0; i < soft.length; i++)
+                              ProfileTag(text: soft[i]),
+                          ],
+                        );
+                      }
+                      else{
+                        return  Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                for (var i = 0; i < 3; i++)
+                                  ProfileTag(text: soft[i]),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                for (var i = 3; i < soft.length; i++)
+                                  ProfileTag(text: soft[i]),
+                              ],
+                            ),
+                          ],
+                        );
+                      }
+                    } 
+                    return const CircularProgressIndicator();
+                  },
                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -284,21 +347,49 @@ class _BodyState extends State<Body> {
                     ),
                   ],
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ProfileTag(text: "Python"),
-                    ProfileTag(text: "React"),
-                    ProfileTag(text: "Java Script"),
-                  ],
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ProfileTag(text: "Automation"),
-                    ProfileTag(text: "AI"),
-                    ProfileTag(text: "Node JS"),
-                  ],
+                FutureBuilder(
+                  future: getAllTags(),
+                  builder: (context, snapshot) {
+                    hard = [];
+                    if (snapshot.hasData){
+                      for (var i = 0; i < snapshot.data!.length; i++) {
+                        if (hardskills.contains(snapshot.data![i]["id_technology"].toString())) {
+                          hard.add(snapshot.data![i]["technology"]);
+                        }
+                      }
+                      print(hard);
+                      if(hard.length < 4){
+                        return  Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            for (var i = 0; i < hard.length; i++)
+                              ProfileTag(text: hard[i]),
+                          ],
+                        );
+                      }
+                      else{
+                        return  Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                for (var i = 0; i < 3; i++)
+                                  ProfileTag(text: hard[i]),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                for (var i = 3; i < soft.length; i++)
+                                  ProfileTag(text: hard[i]),
+                              ],
+                            ),
+                          ],
+                        );
+                      }
+                    } 
+                    return const CircularProgressIndicator();
+                  },
                 ),
                 _isEditing
                     ? Row(
@@ -394,9 +485,80 @@ class _BodyState extends State<Body> {
                     ),
                   ],
                 ),
-                // postCardBuilder(),
-                // postCardBuilder(),
-              ],
+                FutureBuilder(
+              future: getAllPostByCreator(userId),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var jsonData = snapshot.data;
+                  List<Posts> posts = [];
+
+                  for (int i = jsonData!.length - 1; i >= 0; i--) {
+                    var post = jsonData[i];
+                    if (post != null) {
+                      String title = post["title"];
+                      String authorName = post["author"]["name"];
+                      String date = post["createdAt"];
+                      String id = post["id"];
+                      String imageUrl = post["author"]["photo_url"];
+
+                      posts.add(Posts(
+                          title: title,
+                          authorName: authorName,
+                          date: date,
+                          postId: id,
+                          image: imageUrl));
+                    }
+                  }
+                  return Column(
+                    children: [
+                      for (var post in posts)
+                        postCardBuilder(post.title, post.authorName, post.date,
+                            context, post.postId, post.image),
+                    ],
+                  );
+                } else if (snapshot.hasError) {
+                  return Text("Error: ${snapshot.error}");
+                } else {
+                  return const CircularProgressIndicator();
+                }
+              },
+            ),
+            FutureBuilder(
+                future: getAllProjectsByCreator(userId),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    var jsonData = snapshot.data;
+                    List<Projects> projects = [];
+
+                    for (int i = jsonData!.length - 1; i >= 0; i--) {
+                      var project = jsonData[i];
+                      if (project != null) {
+                        String title = project["title"];
+                        String authorName = project["creator"]["name"];
+                        String date = project["created_at"];
+                        int id = project["idProject"];
+
+                        projects.add(Projects(
+                            title: title,
+                            authorName: authorName,
+                            date: date,
+                            projectId: id));
+                      }
+                    }
+                    return Column(
+                      children: [
+                        for (var project in projects)
+                          projectCardBuilder(project.title, project.authorName,
+                              project.date, context, project.projectId),
+                      ],
+                    );
+                  } else if (snapshot.hasError) {
+                    return Text("Error: ${snapshot.error}");
+                  } else {
+                    return const CircularProgressIndicator();
+                  }
+                })
+            ],
             ),
           );
         }

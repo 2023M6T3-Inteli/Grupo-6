@@ -37,4 +37,7 @@ export class UpdateUserDto extends PartialType(CreateUserDto) {
 
     @ApiProperty()
     projects: string;
+
+    hard_skills: string;
+    soft_skills: string;
 }

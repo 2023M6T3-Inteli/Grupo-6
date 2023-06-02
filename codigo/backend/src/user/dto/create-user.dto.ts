@@ -35,4 +35,8 @@ export class CreateUserDto {
 
     @ApiProperty()
     projects: string;
+
+    hard_skills: string;
+    soft_skills: string;
+
 }

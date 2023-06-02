@@ -70,4 +70,9 @@ export class PostController {
   remove(@Param('id') id: string) {
     return this.postService.deletePost(id);
   }
+
+  @Get('creator/:creator')
+  findPostsByCreator(@Param('creator') creator: string) {
+    return this.postService.getPostByCreator(creator);
+  }
 }
