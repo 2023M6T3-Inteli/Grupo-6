@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:src/screens/home/components/post_tag.dart';
 import '../../submit_project/submit_project.dart';
+import '../../../services/service_user.dart';
 
 Padding projectCardBuilder(String title, String name, String time,
-    BuildContext context, int projectId, String category) {
+    BuildContext context, int projectId, String category, String creator) {
   return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: GestureDetector(
@@ -27,14 +28,33 @@ Padding projectCardBuilder(String title, String name, String time,
               children: [
                 Row(
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.only(left: 12, top: 12, right: 6),
-                      child: CircleAvatar(
-                        backgroundImage:
-                            AssetImage("assets/images/Avatar.jpeg"),
-                        radius: 25,
-                      ),
+                    FutureBuilder(
+                      future: getUserById(creator),
+                      builder: (context, snapshot){
+                        if (snapshot.hasData){
+                         var user = snapshot.data;
+                          return Padding(
+                            padding:
+                            const EdgeInsets.only(left: 12, top: 12, right: 6),
+                            child: CircleAvatar(
+                              backgroundImage:
+                              NetworkImage(user!["photo_url"]),
+                              radius: 25,
+                            ),
+                          );
+                        }
+
+                        return const CircularProgressIndicator();
+                      },
                     ),
+                    // const Padding(
+                    //   padding: EdgeInsets.only(left: 12, top: 12, right: 6),
+                    //   child: CircleAvatar(
+                    //     backgroundImage:
+                    //         AssetImage("assets/images/Avatar.jpeg"),
+                    //     radius: 25,
+                    //   ),
+                    // ),
                     Padding(
                       padding: const EdgeInsets.only(top: 12),
                       child: Column(

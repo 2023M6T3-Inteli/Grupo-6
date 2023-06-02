@@ -37,6 +37,7 @@ class Projects {
   final String date;
   final int projectId;
   final String category;
+  final String creator;
 
   Projects({
     required this.title,
@@ -44,6 +45,7 @@ class Projects {
     required this.date,
     required this.projectId,
     required this.category,
+    required this.creator,
   });
 }
 
@@ -544,20 +546,22 @@ class _BodyState extends State<Body> {
                         String date = project["created_at"];
                         int id = project["idProject"];
                         String category = project["technologies"][0]["technology"];
+                        String creator = project["creator"]["id_profile"];
 
                         projects.add(Projects(
                             title: title,
                             authorName: authorName,
                             date: date,
                             projectId: id,
-                            category: category));
+                            category: category,
+                            creator: creator));
                       }
                     }
                     return Column(
                       children: [
                         for (var project in projects)
                           projectCardBuilder(project.title, project.authorName,
-                              project.date, context, project.projectId, project.category),
+                              project.date, context, project.projectId, project.category, project.creator),
                       ],
                     );
                   } else if (snapshot.hasError) {
