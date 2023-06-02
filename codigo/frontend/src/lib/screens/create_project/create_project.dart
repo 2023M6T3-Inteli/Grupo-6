@@ -27,7 +27,7 @@ class _CreateProjectState extends State<CreateProject> {
   List<Tags> tags = [];
   String title = "";
   String description = "";
-  String stt = "";
+  String stt = "Aberto";
   DateTime dateInitial = DateTime.now();
   DateTime dateEnd  = DateTime.now();
   String area = "";
@@ -294,7 +294,7 @@ class _CreateProjectState extends State<CreateProject> {
                       }).catchError((error) {
                         print('Erro: $error');
                       });
-                    });
+                     });
                     },
                     style: ElevatedButton.styleFrom(
                         primary: Colors.blue,
