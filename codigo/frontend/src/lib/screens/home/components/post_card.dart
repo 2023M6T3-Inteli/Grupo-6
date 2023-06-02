@@ -3,7 +3,7 @@ import 'package:src/screens/home/components/post_tag.dart';
 import '../../view_post/view_pot.dart';
 
 Padding postCardBuilder(String title, String name, String time,
-    BuildContext context, String postId, String image) {
+    BuildContext context, String postId, String image, String category) {
   return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: GestureDetector(
@@ -70,12 +70,12 @@ Padding postCardBuilder(String title, String name, String time,
                     ),
                   ],
                 ),
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 5),
-                      child: PostTag(text: "Automation"),
+                      padding: const EdgeInsets.only(top: 5),
+                      child: PostTag(text: category),
                     ),
                   ],
                 ),

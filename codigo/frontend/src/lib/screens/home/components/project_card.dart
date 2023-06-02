@@ -3,7 +3,7 @@ import 'package:src/screens/home/components/post_tag.dart';
 import '../../submit_project/submit_project.dart';
 
 Padding projectCardBuilder(String title, String name, String time,
-    BuildContext context, int projectId) {
+    BuildContext context, int projectId, String category) {
   return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: GestureDetector(
@@ -68,12 +68,12 @@ Padding projectCardBuilder(String title, String name, String time,
                     ),
                   ],
                 ),
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 5),
-                      child: PostTag(text: "Automation"),
+                      padding: const EdgeInsets.only(top: 5),
+                      child: PostTag(text:category ),
                     ),
                   ],
                 ),

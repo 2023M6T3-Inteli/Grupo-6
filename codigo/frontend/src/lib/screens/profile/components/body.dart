@@ -20,13 +20,15 @@ class Posts {
   final String date;
   final String postId;
   final String image;
+  final String category;
 
   Posts(
       {required this.title,
       required this.authorName,
       required this.date,
       required this.postId,
-      required this.image});
+      required this.image,
+      required this.category});
 }
 
 class Projects {
@@ -34,12 +36,14 @@ class Projects {
   final String authorName;
   final String date;
   final int projectId;
+  final String category;
 
   Projects({
     required this.title,
     required this.authorName,
     required this.date,
     required this.projectId,
+    required this.category,
   });
 }
 
@@ -500,20 +504,22 @@ class _BodyState extends State<Body> {
                       String date = post["createdAt"];
                       String id = post["id"];
                       String imageUrl = post["author"]["photo_url"];
+                      String category = post["category"];
 
                       posts.add(Posts(
                           title: title,
                           authorName: authorName,
                           date: date,
                           postId: id,
-                          image: imageUrl));
+                          image: imageUrl,
+                          category: category));
                     }
                   }
                   return Column(
                     children: [
                       for (var post in posts)
                         postCardBuilder(post.title, post.authorName, post.date,
-                            context, post.postId, post.image),
+                            context, post.postId, post.image, post.category),
                     ],
                   );
                 } else if (snapshot.hasError) {
@@ -537,19 +543,21 @@ class _BodyState extends State<Body> {
                         String authorName = project["creator"]["name"];
                         String date = project["created_at"];
                         int id = project["idProject"];
+                        String category = project["technologies"][0]["technology"];
 
                         projects.add(Projects(
                             title: title,
                             authorName: authorName,
                             date: date,
-                            projectId: id));
+                            projectId: id,
+                            category: category));
                       }
                     }
                     return Column(
                       children: [
                         for (var project in projects)
                           projectCardBuilder(project.title, project.authorName,
-                              project.date, context, project.projectId),
+                              project.date, context, project.projectId, project.category),
                       ],
                     );
                   } else if (snapshot.hasError) {

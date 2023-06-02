@@ -134,9 +134,7 @@ class _PostState extends State<Post> {
                 ),
                 value: dropdownValue,
                 onChanged: (String? newValue) {
-                  setState(() {
-                    dropdownValue = newValue;
-                  });
+                    dropdownValue = newValue;                  
                 },
                 items: category.map<DropdownMenuItem<String>>((Tags tag) {
                   return DropdownMenuItem<String>(

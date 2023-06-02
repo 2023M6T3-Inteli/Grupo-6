@@ -246,9 +246,7 @@ class _CreateProjectState extends State<CreateProject> {
                 ),
                 value: dropdownValue2,
                 onChanged: (String? newValue) {
-                  setState(() {
                     dropdownValue2 = newValue;
-                  });
                 },
                 items: tags.map<DropdownMenuItem<String>>((Tags tag) {
                   return DropdownMenuItem<String>(
@@ -271,10 +269,8 @@ class _CreateProjectState extends State<CreateProject> {
                 ),
                 value: dropdownValue,
                 onChanged: (String? newValue) {
-                  setState(() {
                     dropdownValue = newValue;
                     stt = newValue!;
-                  });
                 },
                 items: const <String>['Aberto', 'Fechado', 'em andamento',"encerado"]
                     .map<DropdownMenuItem<String>>((String value) {

@@ -9,8 +9,9 @@ class Posts {
   final String date;
   final String postId;
   final String image;
+  final String category;
 
-  Posts({required this.title, required this.authorName, required this.date, required this.postId, required this.image});
+  Posts({required this.title, required this.authorName, required this.date, required this.postId, required this.image, required this.category});
 }
 
 class Feed extends StatefulWidget {
@@ -143,6 +144,7 @@ class _FeedState extends State<Feed> {
                           String date = post["createdAt"];
                           String id = post["id"];
                           String image = post["author"]["photo_url"];
+                          String category = post["category"];
 
                           posts.add(
                             Posts(
@@ -151,6 +153,7 @@ class _FeedState extends State<Feed> {
                               date: date,
                               postId: id,
                               image: image,
+                              category: category,
                             ),
                           );
                         }
@@ -166,6 +169,7 @@ class _FeedState extends State<Feed> {
                               context,
                               post.postId,
                               post.image,
+                              post.category,
                             ),
                         ],
                       ));
