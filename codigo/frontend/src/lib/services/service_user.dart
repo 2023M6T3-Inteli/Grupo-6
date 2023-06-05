@@ -4,15 +4,16 @@ import 'package:http/http.dart' as http;
 const String baseUrl = "http://localhost:3000";
 
 void main() {
-  getUserById("d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390").then((value){
-    print(value);
-  });
-  // updateUser(
-  //     "04db46af-6058-4d42-9aac-a0b97d0e4068",
-  //     "https://github.com/vict0rcarvalh0.png",
-  //     "vitin",
-  //     "dev",
-  //     "oi sou o vitinho");
+  // getUserById("d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390").then((value){
+  //   print(value);
+  // });
+  updateUser(
+      "d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390",
+      "mateus neves",
+      "backend",
+      "prisioneiro do flutter",
+      "1,2",
+      "1,2,3");
 }
 
 Future<List<dynamic>> getAllUsers() async {
@@ -39,13 +40,13 @@ Future<Map<String, dynamic>> getUserById(String id) async {
   }
 }
 
-Future<dynamic> updateUser(String id, String photoUrl, String name, String role,
-    String aboutMe) async {
+Future<dynamic> updateUser(String id, String name, String role, String aboutMe, String hardSkills, String softSkills) async {
   var jsonData = jsonEncode({
     "name": name,
     "role": role,
-    "photo_url": photoUrl,
     "about_me": aboutMe,
+    "hard_skills": hardSkills,
+    "soft_skills": softSkills,
   });
 
   var response = await http.patch(
@@ -55,8 +56,5 @@ Future<dynamic> updateUser(String id, String photoUrl, String name, String role,
     },
     body: jsonData,
   );
-
-  // print(jsonData);
-  // print(response.body);
   return response.body;
 }

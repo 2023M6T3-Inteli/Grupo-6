@@ -9,6 +9,7 @@ import '../../../services/service_post.dart';
 import '../../home/components/post_card.dart';
 import '../../../services/service_project.dart';
 import '../../home/components/project_card.dart';
+import '../../update_profile/update_profile.dart';
 
 String userId = '';
 var soft = [];
@@ -58,7 +59,6 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  bool _isEditing = false;
   TextEditingController nameController = TextEditingController();
   TextEditingController roleController = TextEditingController();
   TextEditingController aboutMeController = TextEditingController();
@@ -92,7 +92,6 @@ class _BodyState extends State<Body> {
     return FutureBuilder(
       future: getUserById(userId),
       builder: (context, snapshot) {
-        // print(snapshot.data);
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
             child: CircularProgressIndicator(),
@@ -180,13 +179,14 @@ class _BodyState extends State<Body> {
                     ),
                     IconButton(
                       icon: const Icon(Icons.edit),
-                      onPressed: _isEditing
-                          ? null
-                          : () {
-                              setState(() {
-                                _isEditing = true;
-                              });
-                            },
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>  UpdateProfile(userId: userId),
+                          ),
+                        );
+                      }
                     ),
                   ],
                 ),
@@ -298,7 +298,6 @@ class _BodyState extends State<Body> {
                           soft.add(snapshot.data![i]["skill"]);
                         }
                       }
-                      print(soft);
                       if(soft.length < 4){
                         return  Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -363,7 +362,6 @@ class _BodyState extends State<Body> {
                           hard.add(snapshot.data![i]["technology"]);
                         }
                       }
-                      print(hard);
                       if(hard.length < 4){
                         return  Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -397,79 +395,10 @@ class _BodyState extends State<Body> {
                     return const CircularProgressIndicator();
                   },
                 ),
-                _isEditing
-                    ? Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                              vertical: 30,
-                            ),
-                            child: SizedBox(
-                              width: 193,
-                              height: 47,
-                              child: DecoratedBox(
-                                decoration: const BoxDecoration(
-                                  color: Colors.transparent,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(10),
-                                  ),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.centerLeft,
-                                    end: Alignment.centerRight,
-                                    colors: [
-                                      Color.fromARGB(255, 18, 130, 214),
-                                      Color.fromARGB(255, 123, 199, 255),
-                                    ],
-                                  ),
-                                ),
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      _isEditing = false;
-                                      String name_updated =
-                                          nameController.text;
-                                      String role_updated =
-                                          roleController.text;
-                                      String aboutMe =
-                                          aboutMeController.text;
-
-                                      updateUser(
-                                        "d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390",
-                                        "",
-                                        name_updated,
-                                        role_updated,
-                                        aboutMe,
-                                      );
-                                    });
-                                  },
-                                  child: const Row(
-                                    children: [
-                                      Text(
-                                        'Save Changes',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                      SizedBox(width: 10),
-                                      Icon(
-                                        Icons.check,
-                                        color: Colors.white,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
-                    : Container(
-                        height: 5,
-                        color: Colors.transparent,
-                      ),
+                Container(
+                   height: 5,
+                   color: Colors.transparent,
+                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
