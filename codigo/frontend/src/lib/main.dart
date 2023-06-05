@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:src/screens/create_project/create_project.dart';
+import 'package:src/screens/faq/faq.dart';
 import 'package:src/widgets/navbar.dart';
 import 'package:src/screens/interest/interest.dart';
 import 'package:src/screens/home/home.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/login': (context) => const Login(),
           '/home': (context) => buildScaffoldWithNavBar(const Home()),
+          '/faq':(context) => buildScaffoldWithNavBar(const Faq()),
           '/feed': (context) => buildScaffoldWithNavBar(const Feed()),
           '/post': (context) => buildScaffoldWithNavBar(const Post()),
           '/interest': (context) => buildScaffoldWithNavBar(Interest()),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:src/screens/profile/components/badge.dart';
 import 'package:src/screens/profile/components/profile_tag.dart';
+import 'package:src/widgets/faq_card.dart';
 import '../../../services/service_tags.dart';
 import '../../../services/service_login.dart';
 import '../../../services/service_user.dart';
@@ -112,15 +113,20 @@ class _BodyState extends State<Body> {
           return Center(
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(right: 20, top: 30),
+                 Padding(
+                  padding: const EdgeInsets.only(right: 20, top: 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        onPressed: null,
+                        onPressed: (){
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) => FaqBottomSheet(),
+                          );
+                        },
                         iconSize: 30,
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.menu,
                         ),
                       ),

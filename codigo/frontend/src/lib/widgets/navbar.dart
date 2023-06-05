@@ -21,7 +21,7 @@ class _NavBarRouterState extends State<NavBarRouter> {
         Navigator.pushNamed(context, '/home');
         break;
       case 1:
-        Navigator.pushNamed(context, '/notifications');
+        Navigator.pushNamed(context, '/feed');
         break;
       case 2:
         showModalBottomSheet(
@@ -43,7 +43,7 @@ class _NavBarRouterState extends State<NavBarRouter> {
     List<BottomNavigationBarItem> items = const [
       BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
       BottomNavigationBarItem(
-          icon: Icon(Icons.notifications), label: 'Notification'),
+          icon: Icon(Icons.search), label: 'Feed'),
       BottomNavigationBarItem(icon: Icon(Icons.add_box_outlined), label: 'Add'),
       BottomNavigationBarItem(
           icon: Icon(Icons.workspace_premium_outlined), label: 'Ranking'),
