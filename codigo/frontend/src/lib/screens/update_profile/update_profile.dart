@@ -124,11 +124,11 @@ class _UpdateProfileState extends State<UpdateProfile> {
           );
         } else if (snapshot.hasData) {
           var userData = snapshot.data as Map<String, dynamic>;
-          name = userData["name"];
-          role = userData["role"];
-          aboutMe = userData["about_me"];
-          hardskills = userData["hard_skills"];
-          softskills = userData["soft_skills"];
+          name = userData["name"] ?? "";
+          role = userData["role"] ?? "";
+          aboutMe = userData["about_me"] ?? "";
+          hardskills = userData["hard_skills"] ?? "";
+          softskills = userData["soft_skills"] ?? "";
         }  
       
     return Scaffold(
