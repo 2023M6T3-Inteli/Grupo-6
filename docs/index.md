@@ -437,12 +437,7 @@ Dessa forma foram desenvolvidos os diagramas a seguir a fim de exemplificar como
 
 
 
-## Teste Unitário
-
-Link ou imagem da tabela com dados organizados dos testes realizados.
-
-
-## Teste de Integração
+## Teste Unitário e Teste de Integração
 
 Link ou imagem da tabela com dados organizados dos testes realizados.
 
