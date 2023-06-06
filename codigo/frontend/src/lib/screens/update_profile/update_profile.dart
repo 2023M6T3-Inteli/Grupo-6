@@ -156,7 +156,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
               TextFormField(
                 initialValue: name,
                 onChanged: (text){
-                title = text;
+                name = text;
               },
                 decoration: InputDecoration(
                   fillColor: Colors.grey[300],
@@ -173,7 +173,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
               TextFormField(
                 initialValue: role,
                 onChanged: (text){
-                name = text;
+                role = text;
               },
                 decoration: InputDecoration(
                   fillColor: Colors.grey[300],
@@ -190,6 +190,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
               TextFormField(
                 initialValue: aboutMe,
                 onChanged: (text){
+                aboutMe = text;
               },
                 maxLines: 5,
                 decoration: InputDecoration(
