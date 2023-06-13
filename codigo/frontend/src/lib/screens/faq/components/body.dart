@@ -8,34 +8,26 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
-        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.grey,
+          ),
+          onPressed: () {
+            Navigator.of(context).pushReplacementNamed("/profile");
+          },
+        ),
         backgroundColor: Colors.white,
-        title: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Icon(Icons.arrow_back, color: Colors.black),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'FAQ',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 24,
-                  ),
-                ),
-              ],
-            )
-          ],
+        centerTitle: true,
+        title: const Text(
+          'FAQ',
+          style: TextStyle(
+            color: Colors.black,
+          ),
         ),
       ),
 
-      body: Center(
+      body: const Center(
         child: Column(
           children: [
             FaqCard(

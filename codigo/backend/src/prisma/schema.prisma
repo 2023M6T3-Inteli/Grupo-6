@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  role      String
+  photo_url String
+  about_me  String?
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  badges    Badges[] @relation("UserBadges")
+  posts     Post[]
+  projects  String?
+  hard_skills String?
+  soft_skills String?
+}
+
+model Badges {
+  id          String @id @default(uuid())
+  picture     String
+  type        String
+  description String
+  users       User[] @relation("UserBadges")
+}
+
+model Post {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  category    String
+  createdAt   String 
+  creator     String
+  author      User     @relation(fields: [creator], references: [id])
+}
+
+// model Project {
+//   id String @id @default(uuid())
+//   title String
+//   description String
+//   start_project String
+//   end_project String
+//   start_subscription String
+//   end_subscription String
+//   area String
+//   status String
+// }
+
+// model hard_skills {
+//   id         String @id @default(uuid())
+//   hard_skill String
+//   user       User[] @relation("UserHardSkills")
+// }
+
+// model soft_skills {
+//   id         String @id @default(uuid())
+//   soft_skill String
+//   user       User[] @relation("UserSoftSkills")
+// }
