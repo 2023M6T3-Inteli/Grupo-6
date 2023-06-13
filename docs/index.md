@@ -68,16 +68,15 @@ Solução de otimização de corte de bobinas de papel
   - [Arquitetura de mensageria](#arquitetura-de-mensageria)
   - [Benefícios e desantagens da arquitetura](#benefícios-e-desantagens-da-arquitetura)
   - [Diagrama de sequência do fluxo de dados](#diagrama-de-sequência-do-fluxo-de-dados)
+  - [Versão 3 - Arquitetura do sistema](#versão-3---arquitetura-do-sistema)
 - [UX e UI Design](#ux-e-ui-design)
   - [Benchmarking e Revisão de Design System](#benchmarking-e-revisão-de-design-system)
   - [Wireframes](#wireframes)
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
-  - [Modelo Conceitual](#modelo-conceitual)
-  - [Modelo Lógico](#modelo-lógico)
+  - [Modelos Lógico e Conceitual](#modelos-lógico-e-conceitual)
 - [Testes de Software](#testes-de-software)
-  - [Teste Unitário](#teste-unitário)
-  - [Teste de Integração](#teste-de-integração)
+  - [Teste Unitário e Teste de Integração](#teste-unitário-e-teste-de-integração)
   - [Teste de Regressão](#teste-de-regressão)
   - [Teste de Usabilidade](#teste-de-usabilidade)
   - [Teste de Funcionalidade](#teste-de-funcionalidade)
@@ -285,29 +284,30 @@ Para a descrição dos casos de usos, optou-se pela construção de user stories
 4 - Eu, como funcionário da Dell, quero poder buscar por conteúdos específicos para além daqueles recomendados, com objetivo de encontrar materiais sobre assuntos que não necessariamente eu já demonstrei interesse anteriormente.<br>
 5 - Eu, como funcionário da Dell, quero poder denunciar conteúdos abusivos dentro da plataforma, com objetivo de ter aprovação de administradores para remover aqueles conteúdos e tornar a plataforma mais amigável.<br>
 6 - Eu, como funcionário da Dell, quero ver minha posição no "Ranking", com objetivo de ver a minha colocação diante dos outros funcionários.<br>
-7- <br>
-8 - <br>
-9 - Eu, como funcionário da Dell, quero poder avaliar e dar feedbacks sobre projetos dos quais fiz parte, a fim de evidenciar minhas considerações sobre o processo e possíveis pontos de melhoria.<br>
-10 - Eu, como funcionário da Dell, quero que a plataforma me dê match com projetos associados aos meus interesses, com o intuito de otimizar meu tempo e me ajudar na busca por oportunidades.<br>
-11 - <br>
-12-  <br>
-13 - Eu, como funcionário da Dell, quero poder aplicar para projetos, com o intuito de aprender e praticar meus conhecimentos juntamente com outros colegas.<br>
-14 - Eu, como usuário da plataforma, quero poder alternar entre modo claro e escuro, a fim de adaptar a visibildiade da plataforma às minhas condições momentâneas <br>
-15 - Eu, como moderador, posso avaliar um conteúdo caso ele seja denunciado para que não haja conflito entre os usuários da plataforma. <br>
-16 - Eu, como usuário da plataforma, posso acompanhar o andamento da minha inscrição, para saber quando vou começar a trabalhar em um projeto <br>
-17 - Eu, como usuário da plataforma, posso editar as informações do meu perfil, para mantê-lo sempre atualizado. <br>
-18 - Eu, como usuário da plataforma, quero sempre poder visualizar os posts que eu fiz e os projetos criados, para que eu tenha controle do meu engajamento na plataforma. <brc >
-19 - Eu, como usuário da plataforma, devo poder editar as informações do meu projeto, para que ele esteja sempre atualizado. <br>
-20 -  Eu, como usuário da plataforma, devo poder excluir um projeto que eu criei, caso aconteça algum imprevisto. <br>
-21 - Eu, como usuário da plataforma, posso denunciar posts de outros usuários, caso eles infrigam alguma regra/lei, para que não haja conflitos na plataforma. <br>
-22 - Eu, como usuário da plataforma, devo receber um feedback se fui aprovado ou não em um projeto, para que eu possa me preparar e me organizar com minhas outras atividades.<br>
+7- Eu, como funcionário da Dell, quero poder avaliar e dar feedbacks sobre projetos dos quais fiz parte, a fim de evidenciar minhas considerações sobre o processo e possíveis pontos de melhoria.<br>
+8 - Eu, como funcionário da Dell, quero que a plataforma me dê match com projetos associados aos meus interesses, com o intuito de otimizar meu tempo e me ajudar na busca por oportunidades.<br>
+9 - Eu, como funcionário da Dell, quero poder aplicar para projetos, com o intuito de aprender e praticar meus conhecimentos juntamente com outros colegas.<br>
+10 - Eu, como usuário da plataforma, quero poder alternar entre modo claro e escuro, a fim de adaptar a visibildiade da plataforma às minhas condições momentâneas <br>
+11 - Eu, como moderador, posso avaliar um conteúdo caso ele seja denunciado para que não haja conflito entre os usuários da plataforma. <br>
+12 - Eu, como usuário da plataforma, posso acompanhar o andamento da minha inscrição, para saber quando vou começar a trabalhar em um projeto <br>
+13 - Eu, como usuário da plataforma, posso editar as informações do meu perfil, para mantê-lo sempre atualizado. <br>
+14 - Eu, como usuário da plataforma, quero sempre poder visualizar os posts que eu fiz e os projetos criados, para que eu tenha controle do meu engajamento na plataforma. <br>
+15 - Eu, como usuário da plataforma, devo poder editar as informações do meu projeto, para que ele esteja sempre atualizado. <br>
+16 - Eu, como usuário da plataforma, devo poder excluir um projeto que eu criei, caso aconteça algum imprevisto. <br>
+17 - Eu, como usuário da plataforma, posso denunciar posts de outros usuários, caso eles infrigam alguma regra/lei, para que não haja conflitos na plataforma. <br>
+18 - Eu, como usuário da plataforma, devo receber um feedback se fui aprovado ou não em um projeto, para que eu possa me preparar e me organizar com minhas outras atividades.<br>
+19 - Eu, como funcionário da Dell, quero ser recompensado pela minha participação na plataforma, com o obejtivo de me sentir engajado e motivado a continuar usando a aplicação. <br>
+20 - Eu, como funcionário da Dell, quero poder compartilhar conteúdos (podcasts, vídeos, documentários etc) com meus colegas, a fim de propagar conhecimentos relevantes e oportunidades de projeto. <br>
+21 - Eu, como usuário da plataforma, quero poder utilizar minhas credenciais DELL para acessar a plataforma, com o objetivo de evitar a criação de uma nova conta. <br>
+22 - Eu, como funcionário da Dell, quero ter a opção de filtrar os conteúdos disponíveis na plataforma, a fim de encontrar somente aqueles associados ao meu interesse do momento <br>
+23 - Eu, como administrador da plataforma, quero poder aprovar ou rejeitar projetos, a fim de evitar conflitos ou violações de conduta <br>
 
 <center> Diagrama 6 -Casos de uso.  </center>
 <img src="../docs/img/img_docs/casos_de_uso%20(1).jpg" alt="Casos de uso" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 <br>
 <center> Tabela 1 - User Stories e Casos de uso.  </center>
-<img src="../docs/img/img_docs/Casos_de_uso.jpg" alt="User stories e casos de uso" border="0" width="100%" display="flex" justify-content="center">
+<img src="../docs/img/img_docs/novo_caso_de_uso.jpg" alt="User stories e casos de uso" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 <br>
 
@@ -331,17 +331,16 @@ A arquitetura de um sistema de software é a estrutura fundamental que define co
 <p>Pensando em uma melhor perormance da aplicação desenvolvida, foram feitas alterações na arquitetura principal do sistema. Sabendo a demanada de escalabilidade e seguraça, foi introdzido à arquitetura o mecanismo de mensageria. Esse consiste em um sistema distribuído que se comunica por meio de mensagens, ou seja, eventos, sendo essas mensagens gerenciadas por um Message Broker (servidor ou módulo de mensagens). O processo ocorre de forma assíncrona, não precisando assimaguarar pela resposta da primeira requisição para conttinuar a execução do sistema.</p>
 <br>
 Dessa forma foi escolhido a tecnologia Kafka para a implementação do sistema de mensageria na arquitetura. Sabendo que a tecnologiacarrega como características principais a escalabilidade, permitindo a integração de sistemas heterogêneos, tolerância a falhas, por ser um software distribuído, projetado para funcionar em um ambiente de luster com múltiplos nós, e alta performance, além de ser uma tecnologia open source, o que a torna mais acessível.
+
 ## Versão 2 - Arquitetura do sistema
-<img src="../docs/img/img_docs/arquitetura_v2.jpg" alt="ArquiteturaV1" border="0" width="100%" display="flex" justify-content="center">
+<img src="../docs/img/img_docs/arquitetura_v2.jpg" alt="ArquiteturaV2" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 <br>
 
 ## Arquitetura de mensageria
 Assim, foi constituido a arquitetura de mensageria, onde é especificado as requisições tomadas por parte do front-end e como o sistema reage a elas, ou seja, quais tipos de requisições especificamente são feitos, os dados e seus tipos que são  inseridos e as possíveis reespostas que o sistema pode dar de acorrdo ocm a requisição dada, conforme é possível verificar na figura abaixo.
-<img src="../docs/img/img_docs/arquitetura_mensageria.png" alt="Arquitetura de mensageria" border="0" width="100%" display="flex" justify-content="center">
-<center> Fonte: Elaborado pelo próprio autor (2023). </center>
-Nota do grupo desenvolvedor: <br>
-<img src="../docs/img/img_docs/observações.png" alt="Observações sobre a arquitetura" border="0" width="30%" display="flex" justify-content="center">
+<img src="../docs/img/img_docs/arquitetura_mensageria_v2.jpg" alt="Arquitetura de mensageria" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br> <br>
 
 ## Benefícios e desantagens da arquitetura
 <p>A aplicação dessa arquitetura traz consigo vantagens e desvantagens. Podem ser citadas como vantagens: 
@@ -368,6 +367,15 @@ O diagrama de sequência de fluxo de dados é uma ferramenta de modelagem que de
 	
 <img src="../docs/img/img_docs/fluxodedados.png" alt="Diagrama de sequência de fluxo de dados" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
+	
+## Versão 3 - Arquitetura do sistema
+	
+Na terceira e última versão da arquitetura, a parte de infraestrutura não foi modificada, apenas foi adicionado uma tabela que conecta os mecanismos de tal arquitetura com a aplicação em termos de observabilidade e redundâncias de processamento, de informações e de transações. De uma forma mais simples, essa tabela mostra os caminhos que um componente ou página vai percorrer na aplicação, já considerando o Kafka, e qual tabela será acionada quando certo endpoint for chamado.
+
+<img src="../docs/img/img_docs/arquitetura%20_v3.png" alt="ArquiteturaV3" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br> <br>
+Nota do grupo desenvolvedor: <br>
+<img src="../docs/img/img_docs/observações_v3.png" alt="Observações sobre a V3 da arquitetura" border="0" width="30%" display="flex" justify-content="center">
 
 # UX e UI Design
 
@@ -403,34 +411,23 @@ Tratando-se de um documento que conttempa as diretrizes de design de uma empresa
 Documento contendo diagrama de entidades e relacionamentos do banco de dados
 
 
-## Modelo Conceitual
+## Modelos Lógico e Conceitual 
 
-O modelo conceitual deve garantir uma conexão com a realidade. Os 4 tipos de conexões com a realidade são:
-conceitos
-atributos
-identificações
-associações
-O Modelo Entidade-Relacionamento - MER
-entidades e tipos de entidades
-atributos e tipos de atributos
-relacionamentos e tipos de relacionamentos
+O modelo lógico de banco de dados é uma representação abstrata e simplificada dos dados armazenados no sistema. É utilizado para entender como os dados são relacionados e para garantir a integridade e consistência dos dados armazenados. 
+Dessa forma foram desenvolvidos os diagramas a seguir a fim de exemplificar como ocorre a interação e armazenamento de informações no sistema, considerando a utilização do novo sistema e do sistema legado.
 
+<p>→ Sistema legado</p>
+<img src="img\img_docs\modelo_logico_legado.jpg" border="0" width="100%" display="flex" justify-content="center">
 
-## Modelo Lógico 
-
-O modelo lógico de banco de dados é uma representação abstrata e simplificada dos dados armazenados no sistema. É utilizado para entender como os dados são relacionados e para garantir a integridade e consistência dos dados armazenados. Incluir  uma descrição detalhada das tabelas, campos e relações presentes no modelo lógico de banco de dados. Também serão apresentadas as regras de negócio e as restrições aplicadas aos dados para garantir a integridade e a consistência dos dados armazenados.
+<p>→ Sistema atual</p>
+<img src="img\img_docs\modelo_logico_novo.jpg" border="0" width="100%" display="flex" justify-content="center">
 
 
 # Testes de Software
 
 
 
-## Teste Unitário
-
-Link ou imagem da tabela com dados organizados dos testes realizados.
-
-
-## Teste de Integração
+## Teste Unitário e Teste de Integração
 
 Link ou imagem da tabela com dados organizados dos testes realizados.
 
@@ -457,7 +454,12 @@ Link ou imagem da tabela com dados organizados dos testes realizados.
 
 # Documentação da API
 
-Apresentar a documentação no formato Swagger ou aplicação equivalente com todas as requisições dos endpoints desenvolvidos e funcionando.
+A documentação da API é uma entrega técnica de conteúdo, contendo instruções sobre como usar e integrar efetivamente a solução. De forma mais simples, ela é um manual de referência resumido que contém todas as informações necessárias para trabalhar com a API, com detalhes sobre seus componentes.
+	
+Link de acesso ao Swagger: http://localhost:3000/api#/
+
+<img src="../docs/img/img_docs/swagger.png" alt="Swagger" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 
 # Manual do Usuário
