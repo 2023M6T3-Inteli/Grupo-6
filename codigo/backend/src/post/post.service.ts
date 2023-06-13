@@ -7,7 +7,10 @@ import { PrismaService } from 'src/prisma.service';
 export class PostService {
   constructor(private prisma: PrismaService) {}
 
+  //Method to create a new post
   async create(data: CreatePostDto) {
+
+    //Check if a post with the same data already exists
     const postExist = await this.prisma.post.findMany({
       where: {
         title: data.title,
@@ -17,6 +20,7 @@ export class PostService {
       },
     });
 
+    //If a post with the same data already exists, throw a BadRequestException
     if (postExist.length) {
       console.log("Post already exists");
       throw new BadRequestException('Something bad happened: Post already exists');
@@ -26,6 +30,8 @@ export class PostService {
     try {
       var now = new Date();
       var date = now.toLocaleDateString();
+
+      //Create a new post
     const newPost = await this.prisma.post.create({
       data: {
         title: data.title,
@@ -42,6 +48,7 @@ export class PostService {
     }
   }
 
+  //Method to get all posts
   async getAllPosts() {
     try {
       const allPosts = await this.prisma.post.findMany({
@@ -55,17 +62,21 @@ export class PostService {
     }
   }
 
+  //Method to get a specific post from a given ID
   async getPostById(id: string) {
     const postExist = await this.prisma.post.findUnique({
       where: {id: id},
     })
 
+    //If a post with given ID does not exist, throw a BadRequestException
     if (!postExist) {
       console.log("Post not found");
       throw new BadRequestException('Something bad happened: Post not found');
     }
 
     try {
+
+      //Find a specific post from a given ID
       const post = await this.prisma.post.findUnique({
         where: { id: id },
         include: {author: true},
@@ -78,6 +89,7 @@ export class PostService {
     }
   }
 
+  //Method to get a specific post from a given title
   async getPostByTitle(title: string, id: string) {
     const postExist = await this.prisma.post.findUnique({
       where: { 
@@ -85,12 +97,14 @@ export class PostService {
       },
     })
 
+    //If a post with a given title does not exist, throw a BadRequestException
     if (!postExist) {
       console.log("Post not found");
       throw new BadRequestException('Something bad happened: Post not found');
     }
 
     try {
+      //Find posts with given title
       const post = await this.prisma.post.findMany({
         where: { title: title },
       })
@@ -102,7 +116,10 @@ export class PostService {
     }
   }
 
+  //Method to update a post from given ID
   async updatePost(id: string, data: CreatePostDto) {
+
+    //Update a post from a given ID
     const post = await this.prisma.post.update({
       where: { id: id },
       data: {
@@ -116,6 +133,7 @@ export class PostService {
     return post;
   }
 
+  //Method to delete a post from given ID
   async deletePost(id: string) {
     const postExist = await this.prisma.post.findUnique({
       where: { 
@@ -123,12 +141,15 @@ export class PostService {
       },
     })
 
+    //If a post with given ID does not exist, throw a BadRequestException
     if (!postExist) {
       console.log("Post not found");
       throw new BadRequestException('Something bad happened: Post not found');
     }
 
     try {
+
+    // Delete a specific post from given ID
     const post = await this.prisma.post.delete({
       where: { id: id },
     })
@@ -140,6 +161,8 @@ export class PostService {
     }
   }
 
+
+  //Method to get all posts from a specific creator
   async getPostByCreator(creator: string) {
     try {
       const post = await this.prisma.post.findMany({

@@ -8,6 +8,7 @@ import { ApiBody, ApiOperation, ApiTags, ApiOkResponse, ApiNotFoundResponse, Api
 export class BadgeController {
   constructor(private readonly badgeService: BadgeService) {}
 
+  // API to create a badge
   @ApiOperation({summary: 'Criar nova badge' })
   @ApiBody({ type: CreateBadgeDto })
   @ApiOkResponse({ description: 'Badge criada com sucesso' })
@@ -19,6 +20,7 @@ export class BadgeController {
     return this.badgeService.create(createBadgeDto);
   }
 
+// API to list all badges
   @ApiOperation({ summary: 'Listar todas as badges' })
   @ApiOkResponse({ description: 'Lista de badges retornada com sucesso' })
   @ApiInternalServerErrorResponse({ description: 'Erro interno do servidor' })
@@ -28,6 +30,7 @@ export class BadgeController {
     return this.badgeService.findAll();
   }
 
+// API to filter a badge by id
   @ApiOperation({ summary: 'Filtrar badge por id' })
   @ApiOkResponse({ description: 'Badge encontrada com sucesso' })
   @ApiNotFoundResponse({ description: 'Badge não encontrada' })
@@ -38,6 +41,7 @@ export class BadgeController {
     return this.badgeService.findOne(id);
   }
 
+  // API to update a badge'
   @ApiOperation({ summary: 'Atualizar badge específica' })
   @ApiBody({ type: CreateBadgeDto })
   @ApiOkResponse({ description: 'Badge atualizada com sucesso' })
@@ -50,6 +54,7 @@ export class BadgeController {
     return this.badgeService.update(id, data);
   }
 
+  // API to delete a badge
   @ApiOperation({ summary: 'Deletar badge específica' })
   @ApiOkResponse({ description: 'Badge deletada com sucesso' })
   @ApiNotFoundResponse({ description: 'Badge não encontrada' })

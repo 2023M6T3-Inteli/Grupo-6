@@ -10,6 +10,7 @@ import { ApiBody, ApiOperation, ApiTags, ApiOkResponse, ApiNotFoundResponse, Api
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
+  // API to create a new user
   @ApiOperation({ summary: 'Criar novo usuário' })
   @ApiBody({ type: CreateUserDto })
   @ApiOkResponse({ description: 'Usuário criado com sucesso' })
@@ -21,6 +22,7 @@ export class UserController {
     return this.userService.create(createUserDto);
   }
 
+  // API to list all users
   @ApiOperation({ summary: 'Listar todas os usuários' })
   @ApiOkResponse({ description: 'Lista de usuários retornada com sucesso' })
   @ApiBadRequestResponse({ description: 'Requisição inválida' })
@@ -30,6 +32,7 @@ export class UserController {
     return this.userService.findAll();
   }
 
+  // API to find a user by id
   @ApiOperation({ summary: 'Filtrar usuário por id' })
   @ApiOkResponse({ description: 'Usuário encontrado com sucesso' })
   @ApiNotFoundResponse({ description: 'Usuário não encontrada' })
@@ -40,6 +43,7 @@ export class UserController {
     return this.userService.findOne(id);
   }
 
+  // API to update a user by id
   @ApiOperation({ summary: 'Atualizar usuário específico' })
   @ApiBody({ type: CreateUserDto })
   @ApiOkResponse({ description: 'Usuário atualizado com sucesso' })
@@ -52,6 +56,7 @@ export class UserController {
     return this.userService.update(id, updateUserDto);
   }
 
+  // API to delete a user by id
   @ApiOperation({ summary: 'Deletar usuário específico' })
   @ApiOkResponse({ description: 'Usuário deletado com sucesso' })
   @ApiNotFoundResponse({ description: 'Usuário não encontrado' })
