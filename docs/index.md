@@ -74,11 +74,9 @@ Solução de otimização de corte de bobinas de papel
   - [Wireframes](#wireframes)
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
-  - [Modelo Conceitual](#modelo-conceitual)
-  - [Modelo Lógico](#modelo-lógico)
+  - [Modelos Lógico e Conceitual](#modelos-lógico-e-conceitual)
 - [Testes de Software](#testes-de-software)
-  - [Teste Unitário](#teste-unitário)
-  - [Teste de Integração](#teste-de-integração)
+  - [Teste Unitário e Teste de Integração](#teste-unitário-e-teste-de-integração)
   - [Teste de Regressão](#teste-de-regressão)
   - [Teste de Usabilidade](#teste-de-usabilidade)
   - [Teste de Funcionalidade](#teste-de-funcionalidade)
@@ -413,24 +411,16 @@ Tratando-se de um documento que conttempa as diretrizes de design de uma empresa
 Documento contendo diagrama de entidades e relacionamentos do banco de dados
 
 
-## Modelo Conceitual
-
-O modelo conceitual deve garantir uma conexão com a realidade. Os 4 tipos de conexões com a realidade são:
-conceitos
-atributos
-identificações
-associações
-O Modelo Entidade-Relacionamento - MER
-entidades e tipos de entidades
-atributos e tipos de atributos
-relacionamentos e tipos de relacionamentos
-
-
-## Modelo Lógico 
+## Modelos Lógico e Conceitual 
 
 O modelo lógico de banco de dados é uma representação abstrata e simplificada dos dados armazenados no sistema. É utilizado para entender como os dados são relacionados e para garantir a integridade e consistência dos dados armazenados. 
-Dessa forma foram desenvolvidos os diagramas a seguir a fim de exemplificar como ocorre a interação e aramazenamento de informações no sistem
+Dessa forma foram desenvolvidos os diagramas a seguir a fim de exemplificar como ocorre a interação e armazenamento de informações no sistema, considerando a utilização do novo sistema e do sistema legado.
 
+<p>→ Sistema legado</p>
+<img src="img\img_docs\modelo_logico_legado.jpg" border="0" width="100%" display="flex" justify-content="center">
+
+<p>→ Sistema atual</p>
+<img src="img\img_docs\modelo_logico_novo.jpg" border="0" width="100%" display="flex" justify-content="center">
 
 
 # Testes de Software
