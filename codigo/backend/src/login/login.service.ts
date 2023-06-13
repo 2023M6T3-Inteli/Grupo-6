@@ -8,12 +8,13 @@ import { FindLoginDto } from './dto/find-login.dto';
 export class LoginService {
   constructor(private prisma: PrismaService) {}
 
+  // API to find a login
   async findlogin(FindLoginDto: FindLoginDto) {
     const login = await this.prisma.user.findFirst({
       where: { email: FindLoginDto.email, password: FindLoginDto.password }
     });
 
-    
+    // Return page with login data
     try {
       const response = await axios({
         method: 'get',
@@ -37,7 +38,8 @@ export class LoginService {
           },
           data : data
         };
-        
+
+        // Create profile
         const creatUser = await axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data));

@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 
+// Create Post body definition
 export class CreatePostDto {
     
     id: string;

@@ -5,6 +5,8 @@ const prisma = new PrismaService();
 
 async function main() {
 
+    // Function to Create new users - necessary to run before creating posts
+    // ==================================================
     // await prisma.user.create({
     //     data: {
     //         name: 'Victor Carvalho',
@@ -60,6 +62,12 @@ async function main() {
     //     },
     // });
 
+
+// ======================================================***************==============================================================
+
+
+    // Function to Create new posts - necessary to run after creating users
+    // ==================================================
     var now = new Date();
     var date = now.toLocaleDateString();
     await prisma.post.create({

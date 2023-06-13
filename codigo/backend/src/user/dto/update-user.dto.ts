@@ -4,6 +4,7 @@ import { CreatePostDto } from 'src/post/dto/create-post.dto';
 import { CreateUserDto } from './create-user.dto';
 import { ApiProperty } from '@nestjs/swagger';
 
+// Update User body definition
 export class UpdateUserDto extends PartialType(CreateUserDto) {
     @ApiProperty()
     id: string;

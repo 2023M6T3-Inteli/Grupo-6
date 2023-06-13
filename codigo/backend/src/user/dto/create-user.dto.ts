@@ -2,6 +2,7 @@ import {CreateBadgeDto} from '../../badge/dto/create-badge.dto'
 import {CreatePostDto} from '../../post/dto/create-post.dto'
 import { ApiProperty } from '@nestjs/swagger';
 
+// Create User body definition
 export class CreateUserDto {    
     @ApiProperty()
     id: string;
