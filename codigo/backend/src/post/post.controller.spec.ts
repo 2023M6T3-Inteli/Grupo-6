@@ -2,15 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { PostController } from './post.controller';
 import { PostService } from './post.service';
 import { CreatePostDto } from './dto/create-post.dto';
-
-// class Post {
-//   id: string;
-//   title: string;
-//   description: string;
-//   category: string;
-//   createdAt: String;
-//   creator: string;
-// }
+import { Post } from './entities/post.entity';
 
 const postList = [
   new Post({
