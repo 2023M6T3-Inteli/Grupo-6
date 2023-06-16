@@ -377,6 +377,13 @@ Na terceira e última versão da arquitetura, a parte de infraestrutura não foi
 Nota do grupo desenvolvedor: <br>
 <img src="../docs/img/img_docs/observações_v3.png" alt="Observações sobre a V3 da arquitetura" border="0" width="30%" display="flex" justify-content="center">
 
+## ETL (Extração, Transformação e Carregamento)
+
+O ETL é um processo que envolve a coleta de dados brutos de diferentes fontes, a transformação desses dados em um formato adequado e sua carga em um local de destino, como um data warehouse. O objetivo do ETL é tornar os dados prontos para análise e tomada de decisões, garantindo sua integridade, consistência e acessibilidade.
+
+<img src="../docs/img/img_docs/tabela_ETL.jpg" alt="Diagrama de sequência de fluxo de dados" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
+
 # UX e UI Design
 
 ## Benchmarking e Revisão de Design System
