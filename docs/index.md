@@ -429,7 +429,14 @@ Dessa forma foram desenvolvidos os diagramas a seguir a fim de exemplificar como
 
 ## Teste Unitário e Teste de Integração
 
-Link ou imagem da tabela com dados organizados dos testes realizados.
+Testes unitários são testes focados em apenas uma unidade do código, enquanto testes de integração focam em testar se a integração do front-end com o back-end estão funcionando da maneira correta e englobando todos os erros possíveis. No caso desse projeto, como está sendo desenvolvido em microserviços, ambos testes acabam tendo propósitos muito parecidos, portanto não há problemas em pensar e desenvolver eles juntos.
+
+<img src="img\img_docs\tabela_testes.jpg" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br> <br>
+Legenda: <br>
+<img src="../docs/img/img_docs/legenda_testes.png" alt="legenda da tabela de testes" border="0" width="30%" display="flex" justify-content="center"> <br>
+Nota do grupo desenvolvedor: <br>
+<img src="../docs/img/img_docs/observações_testes.png" alt="Observações sobre os testes" border="0" width="30%" display="flex" justify-content="center">
 
 
 ## Teste de Regressão
