@@ -493,4 +493,4 @@ https://antlia.com.br/artigos/servicos-de-mensageria/#:~:text=Mensageria%20%C3%A
 
 # Apêndice 
 
-Os apêndices representam informações adicionais que não caberiam no documento exposto acima, mas que são importantes por alguma razão específica do projeto. 
+Um dos principais objetivos do projeto era desenvolver um modelo de recomendação. Para isso, foi utilizado uma tabela da plataforma "Kaggle". Primeiro foi feito um tratameto nos dados desse dataset, depois o modelo foi treinado utilizando o knn, e por último ele foi transformado em serviço utilizando o "MQTT". Todas essas informaçõe podem ser encontradas de forma mais detalhada na pasta "AI", que está localizada dentro da pasta códigos. 
