@@ -434,7 +434,7 @@ Testes unitários são testes focados em apenas uma unidade do código, enquanto
 <img src="img\img_docs\tabela_testes.jpg" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center> <br> <br>
 Legenda: <br>
-<img src="../docs/img/img_docs/legenda_testes.png" alt="legenda da tabela de testes" border="0" width="30%" display="flex" justify-content="center">
+<img src="../docs/img/img_docs/legenda_testes.png" alt="legenda da tabela de testes" border="0" width="30%" display="flex" justify-content="center"> <br>
 Nota do grupo desenvolvedor: <br>
 <img src="../docs/img/img_docs/observações_testes.png" alt="Observações sobre os testes" border="0" width="30%" display="flex" justify-content="center">
 
