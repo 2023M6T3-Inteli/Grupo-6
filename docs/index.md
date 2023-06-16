@@ -377,6 +377,13 @@ Na terceira e última versão da arquitetura, a parte de infraestrutura não foi
 Nota do grupo desenvolvedor: <br>
 <img src="../docs/img/img_docs/observações_v3.png" alt="Observações sobre a V3 da arquitetura" border="0" width="30%" display="flex" justify-content="center">
 
+## ETL (Extração, Transformação e Carregamento)
+
+O ETL é um processo que envolve a coleta de dados brutos de diferentes fontes, a transformação desses dados em um formato adequado e sua carga em um local de destino, como um data warehouse. O objetivo do ETL é tornar os dados prontos para análise e tomada de decisões, garantindo sua integridade, consistência e acessibilidade.
+
+<img src="../docs/img/img_docs/tabela_ETL.jpg" alt="Diagrama de sequência de fluxo de dados" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center>
+
 # UX e UI Design
 
 ## Benchmarking e Revisão de Design System
@@ -429,7 +436,14 @@ Dessa forma foram desenvolvidos os diagramas a seguir a fim de exemplificar como
 
 ## Teste Unitário e Teste de Integração
 
-Link ou imagem da tabela com dados organizados dos testes realizados.
+Testes unitários são testes focados em apenas uma unidade do código, enquanto testes de integração focam em testar se a integração do front-end com o back-end estão funcionando da maneira correta e englobando todos os erros possíveis. No caso desse projeto, como está sendo desenvolvido em microserviços, ambos testes acabam tendo propósitos muito parecidos, portanto não há problemas em pensar e desenvolver eles juntos.
+
+<img src="img\img_docs\tabela_testes.jpg" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br> <br>
+Legenda: <br>
+<img src="img/img_docs/legenda_testes.png" alt="legenda da tabela de testes" border="0" width="30%" display="flex" justify-content="center"> <br> <br>
+Nota do grupo desenvolvedor: <br>
+<img src="img/img_docs/observações_testes.png" alt="Observações sobre os testes" border="0" width="30%" display="flex" justify-content="center">
 
 
 ## Teste de Regressão
@@ -479,4 +493,4 @@ https://antlia.com.br/artigos/servicos-de-mensageria/#:~:text=Mensageria%20%C3%A
 
 # Apêndice 
 
-Os apêndices representam informações adicionais que não caberiam no documento exposto acima, mas que são importantes por alguma razão específica do projeto. 
+Um dos principais objetivos do projeto era desenvolver um modelo de recomendação. Para isso, foi utilizado uma tabela da plataforma "Kaggle". Primeiro foi feito um tratameto nos dados desse dataset, depois o modelo foi treinado utilizando o knn, e por último ele foi transformado em serviço utilizando o "MQTT". Todas essas informaçõe podem ser encontradas de forma mais detalhada na pasta "AI", que está localizada dentro da pasta códigos. 
