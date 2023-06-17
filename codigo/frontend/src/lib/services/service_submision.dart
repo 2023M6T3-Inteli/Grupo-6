@@ -6,7 +6,7 @@ void main() {
   sendSubmision("sei la sei la sei la",2,"d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390");
 }
 
-const String baseUrl = "http://localhost:3001";
+const String baseUrl = "http://load-legado-289789458.us-east-1.elb.amazonaws.com";
 
 Future<void> sendSubmision(
     String reason, int idProject, String idProfile) async {

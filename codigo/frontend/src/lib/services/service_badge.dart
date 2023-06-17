@@ -33,7 +33,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Future<List<dynamic>> fetchData() async {
-    var url = Uri.parse('http://localhost:3000/user');
+    var url = Uri.parse('http://load-novo-336193150.us-east-1.elb.amazonaws.com/user');
 
     try {
       var response = await http.get(url);

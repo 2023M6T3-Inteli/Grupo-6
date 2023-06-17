@@ -6,7 +6,7 @@ void main() {
   getAllSoftSkills();
 }
 
-const String baseUrl = "http://localhost:3001";
+const String baseUrl = "http://load-legado-289789458.us-east-1.elb.amazonaws.com";
 
 Future<List<dynamic>> getAllSoftSkills() async {
   try {

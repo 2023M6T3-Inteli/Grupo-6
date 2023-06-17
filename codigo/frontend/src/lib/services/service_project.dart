@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-const String baseUrl = "http://localhost:3001";
+const String baseUrl = "http://load-legado-289789458.us-east-1.elb.amazonaws.com";
 
 void main() {
   // getProject("projeto Priscila 2",);
