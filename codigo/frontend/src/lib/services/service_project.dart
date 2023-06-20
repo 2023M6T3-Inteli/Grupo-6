@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 const String baseUrl = "http://load-legado-289789458.us-east-1.elb.amazonaws.com";
-const String newUrl = "http://localhost:3000";
+const String newUrl = "http://load-novo-336193150.us-east-1.elb.amazonaws.com";
 
 void main() {
   // getProject("projeto Priscila 2",);
@@ -98,11 +98,25 @@ Future<List<dynamic>> getAllProjectsByCreator(String creator) async {
   }
 }
 
-void updateScore(String creator) async {
+void updateScore(String? creator) async {
   try{
-    var response = await http.get(Uri.parse("$newUrl/user/$creator"));
-      Map<String, dynamic> jsonData = jsonDecode(response.body);
-    print(jsonData['score']);
+    var getUserScore = await http.get(Uri.parse("$newUrl/user/$creator"));
+      Map<String, dynamic> jsonData = jsonDecode(getUserScore.body);
+      var userScore = jsonData['score'];
+    
+    var url = Uri.parse("$newUrl/user/score/$creator");
+    var headers = {'Content-Type': 'application/json'};
+    var body = jsonEncode({
+      "score": userScore + 20
+    });
+    var response = await http.patch(url, headers: headers, body: body);
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+    } else {
+      throw Exception(
+          "Failed to update score. Status code: ${response.statusCode}");
+    }
+
   } catch (e){
     throw Exception("Failed to find user: $e");
   }

@@ -291,6 +291,7 @@ class _CreateProjectState extends State<CreateProject> {
                       getData("userId").then((creator){
                       sendProject(title, description, stt, dateInitial, dateEnd, creator!, area, role, technologies).then((data){
                         Navigator.of(context).pushReplacementNamed("/home");
+                        updateScore(creator);
                       }).catchError((error) {
                         print('Erro: $error');
                       });

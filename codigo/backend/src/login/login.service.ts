@@ -18,7 +18,7 @@ export class LoginService {
     try {
       const response = await axios({
         method: 'get',
-        url: 'http://localhost:3001/profile/'+ login.id,
+        url: 'http://load-legado-289789458.us-east-1.elb.amazonaws.com/profile/'+ login.id,
       });
 
 
@@ -32,7 +32,7 @@ export class LoginService {
         
         var config = {
           method: 'post',
-          url: 'http://localhost:3001/profile',
+          url: 'http://load-legado-289789458.us-east-1.elb.amazonaws.com/profile',
           headers: { 
             'Content-Type': 'application/json'
           },
