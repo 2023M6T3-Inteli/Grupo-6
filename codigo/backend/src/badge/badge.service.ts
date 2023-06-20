@@ -1,6 +1,6 @@
 import { Injectable, InternalServerErrorException, BadRequestException } from '@nestjs/common';
 import { CreateBadgeDto } from './dto/create-badge.dto';
-import { PrismaService } from 'src/prisma.service';
+import { PrismaService } from '../prisma.service';
 
 @Injectable()
 export class BadgeService {

@@ -1,7 +1,7 @@
 // @ts-ignore
 import { Injectable, BadRequestException, InternalServerErrorException } from '@nestjs/common';
 import { CreatePostDto } from './dto/create-post.dto';
-import { PrismaService } from 'src/prisma.service';
+import { PrismaService } from '../prisma.service';
 
 @Injectable()
 export class PostService {
