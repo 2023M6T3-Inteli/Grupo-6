@@ -32,16 +32,27 @@ export class PostService {
       var date = now.toLocaleDateString();
 
       //Create a new post
-    const newPost = await this.prisma.post.create({
-      data: {
-        title: data.title,
-        description: data.description,
-        category: data.category,
-        createdAt: date,
-        creator: data.creator
-      }
-    });
-   }  
+      const newPost = await this.prisma.post.create({
+        data: {
+          title: data.title,
+          description: data.description,
+          category: data.category,
+          createdAt: date,
+          creator: data.creator
+        }
+      });
+
+      const getScore = await this.prisma.user.findMany({
+        where: {id: data.creator} 
+      })
+      const updateScore = await this.prisma.user.update({
+        where: {id: data.creator},
+        data: {
+          score: getScore[0].score+10
+        }
+      })
+    }  
+
     catch (error) {
       console.log(error);
       throw new InternalServerErrorException('Something bad happened: ', error);

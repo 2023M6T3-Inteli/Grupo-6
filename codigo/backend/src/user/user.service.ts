@@ -166,4 +166,37 @@ export class UserService {
       throw new InternalServerErrorException('Something bad happened: ', error)
     }
   }
+
+  async updateScore(id: String, score: number){
+    //Check if user with given ID exists
+    const userExist = await this.prisma.user.findUnique({
+      where: {
+        id: id
+      }
+    })
+    
+    //If user with given ID does not exist, throw a BadRequestException
+    if (!userExist){
+      console.log("User not found")
+      throw new BadRequestException('Something bad happened: User not found')
+    }
+
+    try{
+
+      //Update specific user score
+      const user = await this.prisma.user.update({
+        where: {id: id},
+        data: {
+          score: score.score
+        }
+      });
+      
+      return user
+    }
+    catch(error) {
+      console.log(error)
+      throw new InternalServerErrorException('Something bad happened: ', error)
+    }
+  }
+
 }
