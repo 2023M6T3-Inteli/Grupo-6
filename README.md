@@ -47,7 +47,6 @@ Pensado para o engajamento dos colaboradores da Dell em compartilhamento de info
  &emsp; &emsp; &emsp;|📂[prisma](/codigo/backend/src/prisma)<br>
  &emsp; &emsp; &emsp;|📂[project](/codigo/backend/src/project)<br>
  &emsp; &emsp; &emsp;|📂[user](/codigo/backend/src/user)<br>
-<br>
   &emsp;|📂 [frontend](/codigo/frontend)<br>
   &emsp; &emsp;|📂[src](/codigo/frontend/src)<br>
 <br>
