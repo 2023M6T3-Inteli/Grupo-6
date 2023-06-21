@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:src/constants.dart';
 import 'package:src/screens/profile/components/badge.dart';
 import 'package:src/screens/profile/components/profile_tag.dart';
 import 'package:src/widgets/faq_card.dart';
-import 'package:web3dart/web3dart.dart';
-import '../../../services/service_blockchain.dart';
 import '../../../services/service_tags.dart';
 import '../../../services/service_login.dart';
 import '../../../services/service_user.dart';
@@ -66,16 +62,6 @@ class _BodyState extends State<Body> {
   TextEditingController nameController = TextEditingController();
   TextEditingController roleController = TextEditingController();
   TextEditingController aboutMeController = TextEditingController();
-  Client? httpClient;
-  Web3Client? ethClient;
-  // final myContractAddress = '0x123456789';
-
-  @override
-  void initState() {
-    httpClient = Client();
-    ethClient = Web3Client(infuraApiKey, httpClient!);
-    super.initState();
-  }
 
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -266,9 +252,7 @@ class _BodyState extends State<Body> {
                             )),
                         child: ElevatedButton(
                             onPressed: () {
-                              mintAchievement(
-                                  "https://ipfs.io/ipfs/QmNzEAMzJfk63bMUseoN4RZZfkrA3iARN3mre3WTqWgVuK",
-                                  ethClient!);
+                            
                             },
                             child: const Row(
                               children: [
