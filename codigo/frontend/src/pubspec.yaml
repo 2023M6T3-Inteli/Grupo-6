@@ -35,6 +35,7 @@ dependencies:
   cupertino_icons: ^1.0.2 
   http: ^0.13.6
   web3dart: ^2.3.3
+  flutter_web3: ^0.3.0
   shared_preferences: ^2.0.10
   intl: ^0.17.0
   multi_select_flutter: ^4.0.0
@@ -68,6 +69,7 @@ flutter:
     - assets/images/Avatar.jpeg
     - assets/images/Badge.jpeg
     - assets/images/Avatar2.png
+    - assets/blockchain/abi.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -266,7 +266,9 @@ class _BodyState extends State<Body> {
                             )),
                         child: ElevatedButton(
                             onPressed: () {
-                              mintAchievement(privateKey, ethClient!);
+                              mintAchievement(
+                                  "https://ipfs.io/ipfs/QmNzEAMzJfk63bMUseoN4RZZfkrA3iARN3mre3WTqWgVuK",
+                                  ethClient!);
                             },
                             child: const Row(
                               children: [
