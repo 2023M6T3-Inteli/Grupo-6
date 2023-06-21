@@ -18,13 +18,13 @@ class Ranking extends StatelessWidget {
                 MainAxisAlignment.end, // alinha no final da linha
             children: [
               Container(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
 
                 decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: Text(
+                child: const Text(
                   'Ranking',
                   textAlign: TextAlign.right,
                 ),
@@ -33,7 +33,7 @@ class Ranking extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(child: Body()),
+      body: const SingleChildScrollView(child: Body()),
     );
   }
 }
