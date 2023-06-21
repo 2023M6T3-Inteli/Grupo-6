@@ -4,7 +4,7 @@ import '../../view_post/view_pot.dart';
 
 Padding postCardBuilder(String title, String name, String time,
     BuildContext context, String postId, String image, String category) {
-  return Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: GestureDetector(
         onTap: () {
