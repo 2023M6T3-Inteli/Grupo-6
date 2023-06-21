@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:src/constants.dart';
 import 'package:src/screens/profile/components/badge.dart';
 import 'package:src/screens/profile/components/profile_tag.dart';
 import 'package:src/widgets/faq_card.dart';
+import 'package:web3dart/web3dart.dart';
+import '../../../services/service_blockchain.dart';
 import '../../../services/service_tags.dart';
 import '../../../services/service_login.dart';
 import '../../../services/service_user.dart';
@@ -51,7 +55,6 @@ class Projects {
   });
 }
 
-
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -63,6 +66,16 @@ class _BodyState extends State<Body> {
   TextEditingController nameController = TextEditingController();
   TextEditingController roleController = TextEditingController();
   TextEditingController aboutMeController = TextEditingController();
+  Client? httpClient;
+  Web3Client? ethClient;
+  // final myContractAddress = '0x123456789';
+
+  @override
+  void initState() {
+    httpClient = Client();
+    ethClient = Web3Client(infuraApiKey, httpClient!);
+    super.initState();
+  }
 
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -113,13 +126,13 @@ class _BodyState extends State<Body> {
           return Center(
             child: Column(
               children: [
-                 Padding(
+                Padding(
                   padding: const EdgeInsets.only(right: 20, top: 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        onPressed: (){
+                        onPressed: () {
                           showModalBottomSheet(
                             context: context,
                             builder: (BuildContext context) => FaqBottomSheet(),
@@ -184,16 +197,16 @@ class _BodyState extends State<Body> {
                       ),
                     ),
                     IconButton(
-                      icon: const Icon(Icons.edit),
-                      onPressed: (){
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>  UpdateProfile(userId: userId),
-                          ),
-                        );
-                      }
-                    ),
+                        icon: const Icon(Icons.edit),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  UpdateProfile(userId: userId),
+                            ),
+                          );
+                        }),
                   ],
                 ),
                 const Row(
@@ -231,6 +244,49 @@ class _BodyState extends State<Body> {
                     ),
                     ProfileBadge(
                       backgroundImage: AssetImage('assets/images/Badge.jpeg'),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 12.0),
+                      child: DecoratedBox(
+                        decoration: const BoxDecoration(
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: [
+                                Color.fromARGB(255, 18, 130, 214),
+                                Color.fromARGB(255, 123, 199, 255)
+                              ],
+                            )),
+                        child: ElevatedButton(
+                            onPressed: () {
+                              mintAchievement(
+                                  "https://ipfs.io/ipfs/QmNzEAMzJfk63bMUseoN4RZZfkrA3iARN3mre3WTqWgVuK",
+                                  ethClient!);
+                            },
+                            child: const Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'Mynt Badges',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 20),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ),
+                                SizedBox(width: 20),
+                                Icon(Icons.workspace_premium_outlined,
+                                    color: Colors.white),
+                              ],
+                            )),
+                      ),
                     ),
                   ],
                 ),
@@ -298,23 +354,24 @@ class _BodyState extends State<Body> {
                   future: getAllSoftSkills(),
                   builder: (context, snapshot) {
                     soft = [];
-                    if (snapshot.hasData){
+                    if (snapshot.hasData) {
                       for (var i = 0; i < snapshot.data!.length; i++) {
-                        if (softskills?.contains(snapshot.data![i]["idSkill"].toString()) == true) {
+                        if (softskills?.contains(
+                                snapshot.data![i]["idSkill"].toString()) ==
+                            true) {
                           soft.add(snapshot.data![i]["skill"]);
                         }
                       }
-                      if(soft.length < 4){
-                        return  Row(
+                      if (soft.length < 4) {
+                        return Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             for (var i = 0; i < soft.length; i++)
                               ProfileTag(text: soft[i]),
                           ],
                         );
-                      }
-                      else{
-                        return  Column(
+                      } else {
+                        return Column(
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -333,7 +390,7 @@ class _BodyState extends State<Body> {
                           ],
                         );
                       }
-                    } 
+                    }
                     return const CircularProgressIndicator();
                   },
                 ),
@@ -362,23 +419,25 @@ class _BodyState extends State<Body> {
                   future: getAllTags(),
                   builder: (context, snapshot) {
                     hard = [];
-                    if (snapshot.hasData){
+                    if (snapshot.hasData) {
                       for (var i = 0; i < snapshot.data!.length; i++) {
-                        if (hardskills?.contains(snapshot.data![i]["id_technology"].toString()) == true) {
+                        if (hardskills?.contains(snapshot.data![i]
+                                    ["id_technology"]
+                                .toString()) ==
+                            true) {
                           hard.add(snapshot.data![i]["technology"]);
                         }
                       }
-                      if(hard.length < 4){
-                        return  Row(
+                      if (hard.length < 4) {
+                        return Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             for (var i = 0; i < hard.length; i++)
                               ProfileTag(text: hard[i]),
                           ],
                         );
-                      }
-                      else{
-                        return  Column(
+                      } else {
+                        return Column(
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -397,14 +456,14 @@ class _BodyState extends State<Body> {
                           ],
                         );
                       }
-                    } 
+                    }
                     return const CircularProgressIndicator();
                   },
                 ),
                 Container(
-                   height: 5,
-                   color: Colors.transparent,
-                 ),
+                  height: 5,
+                  color: Colors.transparent,
+                ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -427,85 +486,98 @@ class _BodyState extends State<Body> {
                   ],
                 ),
                 FutureBuilder(
-              future: getAllPostByCreator(userId),
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  var jsonData = snapshot.data;
-                  List<Posts> posts = [];
+                  future: getAllPostByCreator(userId),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      var jsonData = snapshot.data;
+                      List<Posts> posts = [];
 
-                  for (int i = jsonData!.length - 1; i >= 0; i--) {
-                    var post = jsonData[i];
-                    if (post != null) {
-                      String title = post["title"];
-                      String authorName = post["author"]["name"];
-                      String date = post["createdAt"];
-                      String id = post["id"];
-                      String imageUrl = post["author"]["photo_url"];
-                      String category = post["category"];
+                      for (int i = jsonData!.length - 1; i >= 0; i--) {
+                        var post = jsonData[i];
+                        if (post != null) {
+                          String title = post["title"];
+                          String authorName = post["author"]["name"];
+                          String date = post["createdAt"];
+                          String id = post["id"];
+                          String imageUrl = post["author"]["photo_url"];
+                          String category = post["category"];
 
-                      posts.add(Posts(
-                          title: title,
-                          authorName: authorName,
-                          date: date,
-                          postId: id,
-                          image: imageUrl,
-                          category: category));
-                    }
-                  }
-                  return Column(
-                    children: [
-                      for (var post in posts)
-                        postCardBuilder(post.title, post.authorName, post.date,
-                            context, post.postId, post.image, post.category),
-                    ],
-                  );
-                } else if (snapshot.hasError) {
-                  return Text("Error: ${snapshot.error}");
-                } else {
-                  return const CircularProgressIndicator();
-                }
-              },
-            ),
-            FutureBuilder(
-                future: getAllProjectsByCreator(userId),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    var jsonData = snapshot.data;
-                    List<Projects> projects = [];
-
-                    for (int i = jsonData!.length - 1; i >= 0; i--) {
-                      var project = jsonData[i];
-                      if (project != null) {
-                        String title = project["title"];
-                        String authorName = project["creator"]["name"];
-                        String date = project["created_at"];
-                        int id = project["idProject"];
-                        String category = project["technologies"][0]["technology"];
-                        String creator = project["creator"]["id_profile"];
-
-                        projects.add(Projects(
-                            title: title,
-                            authorName: authorName,
-                            date: date,
-                            projectId: id,
-                            category: category,
-                            creator: creator));
+                          posts.add(Posts(
+                              title: title,
+                              authorName: authorName,
+                              date: date,
+                              postId: id,
+                              image: imageUrl,
+                              category: category));
+                        }
                       }
+                      return Column(
+                        children: [
+                          for (var post in posts)
+                            postCardBuilder(
+                                post.title,
+                                post.authorName,
+                                post.date,
+                                context,
+                                post.postId,
+                                post.image,
+                                post.category),
+                        ],
+                      );
+                    } else if (snapshot.hasError) {
+                      return Text("Error: ${snapshot.error}");
+                    } else {
+                      return const CircularProgressIndicator();
                     }
-                    return Column(
-                      children: [
-                        for (var project in projects)
-                          projectCardBuilder(project.title, project.authorName,
-                              project.date, context, project.projectId, project.category, project.creator),
-                      ],
-                    );
-                  } else if (snapshot.hasError) {
-                    return Text("Error: ${snapshot.error}");
-                  } else {
-                    return const CircularProgressIndicator();
-                  }
-                })
-            ],
+                  },
+                ),
+                FutureBuilder(
+                    future: getAllProjectsByCreator(userId),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        var jsonData = snapshot.data;
+                        List<Projects> projects = [];
+
+                        for (int i = jsonData!.length - 1; i >= 0; i--) {
+                          var project = jsonData[i];
+                          if (project != null) {
+                            String title = project["title"];
+                            String authorName = project["creator"]["name"];
+                            String date = project["created_at"];
+                            int id = project["idProject"];
+                            String category =
+                                project["technologies"][0]["technology"];
+                            String creator = project["creator"]["id_profile"];
+
+                            projects.add(Projects(
+                                title: title,
+                                authorName: authorName,
+                                date: date,
+                                projectId: id,
+                                category: category,
+                                creator: creator));
+                          }
+                        }
+                        return Column(
+                          children: [
+                            for (var project in projects)
+                              projectCardBuilder(
+                                  project.title,
+                                  project.authorName,
+                                  project.date,
+                                  context,
+                                  project.projectId,
+                                  project.category,
+                                  project.creator),
+                          ],
+                        );
+                      } else if (snapshot.hasError) {
+                        return Text("Error: ${snapshot.error}");
+                      } else {
+                        return const CircularProgressIndicator();
+                      }
+                    })
+              ],
             ),
           );
         }

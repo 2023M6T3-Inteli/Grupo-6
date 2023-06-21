@@ -5,3 +5,4 @@ codigo/backend/package-lock.json
 codigo/backend/node_modules/.package-lock.json
 codigo/backend/package-lock.json
 codigo/backend/node_modules/.package-lock.json
+codigo/frontend/src/lib/constants.dart
