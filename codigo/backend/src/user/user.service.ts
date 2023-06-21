@@ -16,9 +16,9 @@ export class UserService {
         email: data.email
       }
     })
-  
+
     //If a user with the exact same data already exists, throw a BadRequestException
-    if (userExist[0].email == data.email){
+    if (userExist.length > 0){
       throw new BadRequestException('Usuário com esse e-mail já existe no banco de dados.')
       
     };
