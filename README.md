@@ -1,7 +1,7 @@
 <table>
 <tr>
 <td>
-<a href= "https://www.dell.com/pt-br"><img src="https://pt.wikipedia.org/wiki/Ficheiro:Dell_logo_2016.svg" alt="Dell" border="0" width="100%"></a>
+<a href= "https://www.dell.com/pt-br"><img src="docs/img/img_docs/Dell_Logo.svg.png" alt="Dell" border="0" width="20%"></a>
 </td>
 <td><a href= "https://www.inteli.edu.br/"><img src="https://github.com/2023M6T3-Inteli/Grupo-6/blob/main/docs/img/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
 </td>
@@ -29,48 +29,31 @@ O projeto trata-se de uma aplicação mobile, desenvolvida para sistema embarcad
 Pensado para o engajamento dos colaboradores da Dell em compartilhamento de informações e conhecimento, além da participação de projetos internos na empresa.
 <br><br>
 <p align="center">
-<img src="docs/img/img_docs/cloudets.png" alt="Cumulonimbus" border="0" style="max-width: 50px">
+<img src="docs/img/img_docs/cloudets.png" alt="Cumulonimbus" border="0" width="50%">
 <br>
 <br>
 </p>
 
 ## 💾 Estrutura de pastas
-|📂[imagens](/imagens)<br>
-|📂[src](/src)<br>
-  &emsp;|📂[Back-end](/src/backend)<br>
-      &emsp; &emsp;|📂[src](/src/backend/src)<br>
-      &emsp; &emsp; &emsp;|📂[auth](/src/backend/src/auth)<br>
-      &emsp; &emsp; &emsp;|📂[controller](/src/backend/src/controller)<br>
-      &emsp; &emsp; &emsp;|📂[module](/src/backend/src/module)<br>
-      &emsp; &emsp; &emsp; &emsp;|📂[dto](/src/backend/src/module/dto)<br>
-      &emsp; &emsp; &emsp; &emsp;|📂[entity](/src/backend/src/module/entity)<br>
-      &emsp; &emsp; &emsp;|📂[services](/src/backend/src/services)<br>
-  &emsp;|📂 [Front-end](/src/frontend)<br>
-  &emsp; &emsp;|📂[build](/src/frontend/build)<br>
-  &emsp; &emsp; &emsp;|📂[static](/src/frontend/build/static)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[css](/src/frontend/build/static/css)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[js](/src/frontend/build/static/js)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[media](/src/frontend/build/static/media)<br>
-  &emsp; &emsp;|📂[public](/src/frontend/public)<br>
-  &emsp; &emsp;|📂[src](/src/frontend/src)<br>
-  &emsp; &emsp; &emsp;|📂[assets](/src/frontend/src/assets)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[images](/src/frontend/src/assets/images)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[svg/DellLogo](/src/frontend/src/assets/svg/DellLogo)<br>
-  &emsp; &emsp; &emsp;|📂[components](/src/frontend/src/components)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[Modal](/src/frontend/src/components/Modal)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[Ranking](/src/frontend/src/components/Ranking)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[components_css](/src/frontend/src/components/components_css)<br>
-  &emsp; &emsp; &emsp;|📂[pages](/src/frontend/src/pages)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[addProject](/src/frontend/src/pages/addProject)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[home](/src/frontend/src/pages/home)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[login](/src/frontend/src/pages/login)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[profile](/src/frontend/src/pages/profile)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[projects](/src/frontend/src/pages/projects)<br>
-  &emsp; &emsp; &emsp; &emsp;|📂[submit](/src/frontend/src/pages/submit)<br>
-  &emsp; &emsp; &emsp;|📂[routes](/src/frontend/src/routes)<br>
-  &emsp; &emsp; &emsp;|📂[scripts](/src/frontend/src/scripts)<br>
-  &emsp; &emsp; &emsp;|📂[styles](/src/frontend/src/styles)<br>
-  &emsp; &emsp; &emsp;|📂[themes](/src/frontend/src/themes)<br>
+|📂[codigo](/codigo)<br>
+&emsp;|📂[AI](/codigo/AI)<br>
+      &emsp; &emsp;|📂[projeto](/codigo/AI/projeto)<br>
+      &emsp; &emsp; &emsp;|📂[movie-lens-small-latest-dataset](codigo/AI/projeto/movie-lens-small-latest-dataset)<br>
+&emsp;|📂[backend](/codigo/backend)<br>
+ &emsp; &emsp;|📂[src](/codigo/backend/src)<br>
+ &emsp; &emsp; &emsp;|📂[badge](/codigo/backend/src/badge)<br>
+ &emsp; &emsp; &emsp;|📂[login](/codigo/backend/src/login)<br>
+ &emsp; &emsp; &emsp;|📂[post](/codigo/backend/src/post)<br>
+ &emsp; &emsp; &emsp;|📂[prisma](/codigo/backend/src/prisma)<br>
+ &emsp; &emsp; &emsp;|📂[project](/codigo/backend/src/project)<br>
+ &emsp; &emsp; &emsp;|📂[user](/codigo/backend/src/user)<br>
+<br>
+  &emsp;|📂 [frontend](/codigo/frontend)<br>
+  &emsp; &emsp;|📂[src](/codigo/frontend/src)<br>
+<br>
+|📂 [docs](/docs)<br>
+  &emsp;|📂[img](/docs/img)<br>
+  &emsp; &emsp;|📂[src](/docs/img/img_docs)<br>
 |📄[readme.md](/README.md)<br>
 
 
