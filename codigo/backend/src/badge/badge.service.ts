@@ -40,7 +40,7 @@ export class BadgeService {
   // API to list all badges
   async findAll() {
     try {
-      const allBadges = await this.prisma.post.findMany({})
+      const allBadges = await this.prisma.badges.findMany({})
       return allBadges;
     }
     catch (error) {
@@ -61,7 +61,7 @@ export class BadgeService {
     }
 
     try {
-      const badge = await this.prisma.post.findUnique({
+      const badge = await this.prisma.badges.findUnique({
         where: { id: id },
       })
       return badge;
@@ -84,7 +84,7 @@ export class BadgeService {
 
   // API to delete a badge
   async remove(id: string) {
-    const badgeExist = await this.prisma.post.findUnique({
+    const badgeExist = await this.prisma.badges.findUnique({
       where: { 
         id, 
       },
@@ -96,7 +96,7 @@ export class BadgeService {
     }
 
     try {
-    const badge = await this.prisma.post.delete({
+    const badge = await this.prisma.badges.delete({
       where: { id: id },
     })
     
