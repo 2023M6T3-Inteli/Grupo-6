@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:src/screens/profile/components/badge.dart';
 import 'package:src/screens/profile/components/profile_tag.dart';
+import 'package:src/services/service_badge.dart';
 import 'package:src/widgets/faq_card.dart';
 import '../../../services/service_tags.dart';
 import '../../../services/service_login.dart';
@@ -108,6 +109,17 @@ class _BodyState extends State<Body> {
           String aboutMe = userData["about_me"];
           String? softskills = userData["soft_skills"];
           String? hardskills = userData["hard_skills"];
+          List<dynamic>? badges = userData["badges"];
+          List<dynamic>? posts = userData["posts"];
+
+                   
+          if (posts!.isNotEmpty && badges!.isEmpty){
+            badgeToUserById("da385511-2eb7-4358-9e60-edf2a89a23c8", userId);
+          }
+
+          if (posts.length >= 10 && badges!.length == 1){
+            badgeToUserById("77ea6424-8ab9-4e5e-b45a-774f736eede9", userId);
+          }
 
           return Center(
             child: Column(
@@ -216,63 +228,35 @@ class _BodyState extends State<Body> {
                     ),
                   ],
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    ProfileBadge(
-                      backgroundImage: AssetImage('assets/images/Badge.jpeg'),
-                    ),
-                    ProfileBadge(
-                      backgroundImage: AssetImage('assets/images/Badge.jpeg'),
-                    ),
-                    ProfileBadge(
-                      backgroundImage: AssetImage('assets/images/Badge.jpeg'),
-                    ),
-                    ProfileBadge(
-                      backgroundImage: AssetImage('assets/images/Badge.jpeg'),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 12.0),
-                      child: DecoratedBox(
-                        decoration: const BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            gradient: LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [
-                                Color.fromARGB(255, 18, 130, 214),
-                                Color.fromARGB(255, 123, 199, 255)
-                              ],
-                            )),
-                        child: ElevatedButton(
-                            onPressed: () {
-                            
-                            },
-                            child: const Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'Mynt Badges',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 20),
-                                    textAlign: TextAlign.left,
-                                  ),
-                                ),
-                                SizedBox(width: 20),
-                                Icon(Icons.workspace_premium_outlined,
-                                    color: Colors.white),
-                              ],
-                            )),
-                      ),
-                    ),
-                  ],
+                FutureBuilder(
+                  future: getUserById(userId),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      var userData = snapshot.data as Map<String, dynamic>;
+                      List<dynamic>? badges = userData["badges"];
+                      List<String> pictureUrls = [];
+
+                      if (badges != null) {
+                        for (var badge in badges) {
+                          if (badge is Map<String, dynamic> && badge.containsKey("picture")) {
+                            String pictureUrl = badge["picture"];
+                            pictureUrls.add(pictureUrl);
+                          }
+                        }
+                      }
+
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          for (var pictureUrl in pictureUrls)
+                            ProfileBadge(
+                            backgroundImage: NetworkImage(pictureUrl),
+                          ),
+                        ],
+                      );
+                    }
+                    return const CircularProgressIndicator();
+                  },
                 ),
                 Column(
                   children: [

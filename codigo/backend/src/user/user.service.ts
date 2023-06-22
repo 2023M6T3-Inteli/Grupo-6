@@ -68,7 +68,7 @@ export class UserService {
     const userExist = await this.prisma.user.findUnique({
       where: {
         id: id
-      }
+      },
     })
 
     //If an user with given ID does not exist, throw a BadRequestException
@@ -81,7 +81,8 @@ export class UserService {
       
       //Get a specific user with given ID
       const user = await this.prisma.user.findUnique({
-        where: { id: id}
+        where: { id: id},
+        include: {badges: true, posts: true}
       });
         return user
     }
