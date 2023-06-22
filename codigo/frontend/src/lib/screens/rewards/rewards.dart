@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: ProfilePage(),
-  ));
-}
-
-class ProfilePage extends StatelessWidget {
+class Rewards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> giftCardImages = [
@@ -89,22 +83,6 @@ class ProfilePage extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Text(
-              'Badges',
-              style: TextStyle(fontSize: 24),
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                for (var i = 0; i < 4; i++)
-                  CircleAvatar(
-                    radius: 20,
-                    backgroundColor: Colors.grey,
-                  ),
-              ],
-            ),
-            SizedBox(height: 30),
-            Text(
               'Giftcard',
               style: TextStyle(fontSize: 24),
             ),
@@ -117,7 +95,7 @@ class ProfilePage extends StatelessWidget {
                 ),
                 child: ListTile(
                   contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-                  leading: Image.network(giftCardImages[i], height: 80),
+                  leading: Image.asset(giftCardImages[i], height: 80),
                   title: Text(giftCardTitles[i], style: TextStyle(fontSize: 20)),
                   subtitle: Text(giftCardPoints[i], style: TextStyle(fontSize: 18)),
                   trailing: OutlinedButton(

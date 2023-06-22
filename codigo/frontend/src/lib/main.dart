@@ -38,9 +38,9 @@ class MyApp extends StatelessWidget {
           
           '/profile': (context) => buildScaffoldWithNavBar(Profile()),
 
-          '/ranking': (context) => buildScaffoldWithNavBar(Ranking())
+          '/ranking': (context) => buildScaffoldWithNavBar(Ranking()),
 
-          'rewards' : (context) => buildScaffoldWithNavBar(rewards()),
+          '/rewards' : (context) => buildScaffoldWithNavBar(Rewards()),
 
           '/project': (context) =>
               buildScaffoldWithNavBar(const CreateProject()),
@@ -57,3 +57,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+  
