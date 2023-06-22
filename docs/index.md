@@ -453,7 +453,111 @@ Link ou imagem da tabela com dados organizados dos testes realizados.
 
 ## Teste de Usabilidade 
 
-Link ou imagem da tabela com dados organizados dos testes realizados.
+Registro de Teste de Usabilidade - Dell Link Data: 21/06/2023
+
+1. Acesso e Login
+   <ul>
+	<li> Os usuários conseguiram acessar a aplicação e realizar o login com sucesso.</li>
+	<li> O processo de autenticação é rápido.</li>
+   </ul>
+
+2. Home
+   <ul>
+	<li> A interface é bem intuitiva.</li>
+	<li> Ele consegue ter acesso a todas as páginas da aplicação em poucos cliques.</li>
+	<li> Possui destaques das informações e sessões mais importantes.</li>
+   </ul>
+
+3. Recomendações
+   <ul>
+	<li> O usuário consegue acessar com apenas um clique a página de recomendação.</li>
+	<li> Essa página é dividia por tema dos conteúdos recomendados.</li>
+	<li> O usuário consegue acessar o conteúdo completo com apenas um clique.</li>
+   </ul>
+
+4. Feed
+   <ul>
+	<li> O usuário consegue acessar com apenas um clique a página de feed.</li>
+	<li> É uma página bem intuitiva, pois o usuário consegue filtrar para achar mais facilmente os conteúdos desejados.</li>
+	<li> Caso o usuário não consiga encontrar o que ele deseja, ele pode utilizar a barra de pesquisa.</li>
+   </ul>
+
+5. Criação de projetos
+   <ul>
+	<li> A interface de criação de projetos é intuitiva e fácil de usar.</li>
+	<li> Ela pode ser acessada com apenas dois cliques, iniciando pela NavBar.</li>
+	<li> Os usuários conseguiram adicionar detalhes do projeto, como título, descrição, prazo e recursos necessários de forma clara e objetiva.</li>
+   </ul>
+
+6. Visualização de projetos
+   <ul>
+	<li> O usuário pode ter dificuldade de identificar quais cards se referem a projetos, uma vez que eles possuem o mesmo design que os cards de postagem.</li>
+	<li> Fora isso, para visualizar um projeto, basta apenas o usuário clicar em cima de seu card que terá acesso a todas as suas informações.</li>
+	<li> A visualização dos projetos é organizada e apresenta informações relevantes, como status, membros envolvidos e prazos.</li>
+	<li> Antes de clicar no card, o usuário também consegue visualizar quem criou o projeto e quais pessoas já fazem parte do time.</li>
+   </ul>
+
+7. Inscrever-se em projetos
+   <ul>
+	<li> O usuário se inscreve no projeto na mesma página que ele viasualiza as informações do projeto, o que ajuda ele a não ter que sair e voltar várias vezes caro queira checar uma informação novamente antes de se inscrever.</li>
+	<li> O usuário tem acesso as informações específicas do projeto, que são importantes para ele decidir se vai ou não querer se aplicar no projeto, considerando seu tema, data de início e término, entre outros.</li>
+	<li> O processo de inscrição é simples e rápido, o que não cansa o usuário.</li>
+   </ul>
+
+8. Criação de postagens
+   <ul>
+	<li> A interface de criação de postagens é intuitiva e fácil de usar, pois possui poucos campos.</li>
+	<li> Ela pode ser acessada com apenas dois cliques, iniciando pela NavBar.</li>
+	<li> Os usuários conseguem adicionar um título, uma descrição, tags relacionadas e uma categoria que ele se encaixa.</li>
+   </ul>
+
+9. Visualização de postagens
+   <ul>
+	<li> Como foi descrito no item 6, o usuário pode ter dificuldade de identificar quais cards se referem a postagens, uma vez que eles possuem o mesmo design que os cards de projeto.</li>
+	<li> Fora isso, para visualizar uma postagem, basta apenas o usuário clicar em cima de seu card que terá acesso a todas as suas informações.</li>
+	<li> Além disso, é possível ver quem criou a postagem e quando ela foi criada.</li>
+   </ul>
+
+10. Perfil do usuário
+   <ul>
+	<li> É possível acessar o perfil com apenas um clique por meio da NavBar.</li>
+	<li> Os usuários podem editar suas informações pessoais clicando apenas em um único botão que está bem posicionado na tela.</li>
+	<li> A seção de atividades no perfil do usuário é clara e útil para o mesmo e outros membros da plataforma acompanharem como tal usuário contribui para a aplicação.</li>
+   </ul>
+
+11. Ranking
+   <ul>
+	<li> O ranking é atualizado em tempo real e exibe a posição dos usuários em relação aos colegas.</li>
+	<li> O sistema de ranking incentiva a colaboração e a competição saudável entre os membros da equipe.</li>
+	<li> É possível ganhar pontos de duas maneiras, a primeira é ao concluir um projeto, e a outra é com algumas atividades determinadas pela empresa.</li>
+   </ul>
+
+12. Pontuação por atividades na plataforma
+   <ul>
+	<li> O sistema de pontuação pode não ficar claro para o usuário, pois não tem nenhum lugar na plataforma que explica ele.</li>
+	<li> Existem duas maneiras de pontuar, uma é pela conclusão de projetos, e a outra é por meio de atividades dentro da plataforma.</li>
+	<li> Os pontos são atualizados em tempo real após a conclusão de projetos ou tarefas escolhidas pela empresa, como por exemplo, o usuário ganha 10 pontos quando fizer sua primeira postagem.</li>
+	<li> Além de pontos por conclusão de tarefas, os usuários também ganham badges por essas tarefas.</li>
+   </ul>
+
+13. FAQ
+   <ul>
+	<li> A sessão de FAQ pode parecer escondida e de difícil acesso para os usuários, uma vez que fica localizada no menu do perfil. Por outro lado, uma vez acessada, o usuário não parece ter dificuldade para acessá-la novamente.</li>
+	<li> O usuário consegue de maneira fácil e intuitiva encontrar as respostas das suas perguntas. Porém, se existirem muitas perguntas, não existe um lugar para pesquisar por temas, o que compromete a experiência do usuário, já que ele vai ter que procurar pergunta por pergunta até encontrar a que deseja, o que pode até levar a desistência.</li>
+   </ul>
+
+14. Desempenho geral e usabilidade
+   <ul>
+	<li> A aplicação apresenta um design moderno e responsivo, que segue o Design System da empresa, feito para ser usado como um aplicativo mobile.</li>
+	<li> Os usuários relataram satisfação com a experiência geral do site e muita facilidade de uso.</li>
+	<li> Por outro lado, a aplicação ainda apresenta pontos de melhoria que atualmente estão comprometendo a experiência do usuário na aplicação.</li>
+   </ul>
+
+15. Conclusão
+   <ul>
+	<li> O teste de usabilidade da aplicação mostrou resultado positivos, mas com alguns pontos de atenção, uma vez que os usuários tiveram facilidade ao utilizar a aplicação e completar tarefas, mas em alguns momentos específicos ficaram um pouco perdidos. Além disso, as atividades puderam ser concluídas de forma eficiente e intuitiva, com poucos cliques.</li>
+	<li> A aplicação contribui para o engajamento e a colaboração entre os membros da empresa, motivando-os a constantemente aprender a novos conteúdos e compartilhar seus conhecimentos com seus colegas.</li>
+   </ul>
 
 
 ## Teste de Funcionalidade 
@@ -479,6 +583,8 @@ Link de acesso ao Swagger: http://localhost:3000/api#/
 # Manual do Usuário
 
 Fornecer instruções detalhadas sobre como usar o software corretamente. É uma ferramenta valiosa para ajudar os usuários a compreender as funções do software, instalar o software, configurar as preferências do usuário, entre outras tarefas. O manual do usuário geralmente inclui screenshots, animações e outros recursos visuais para tornar a experiência do usuário mais clara e intuitiva. Além disso, ele também pode incluir informações sobre solução de problemas, dicas e truques, bem como informações de contato para suporte técnico. É importante que a seção de manual do usuário seja atualizada frequentemente para garantir que os usuários tenham acesso à informação mais recente e precisa sobre o software.
+
+O manual do usuário está disponível em: (não vou colocar ainda o link pq tenho que mudar o acesso)
 
 
 # Referências
