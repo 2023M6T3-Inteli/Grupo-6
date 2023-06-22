@@ -6,9 +6,22 @@ class Rewards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.grey,
+          ),
+          onPressed: () {
+            Navigator.of(context).pushReplacementNamed("/ranking");
+          },
+        ),
+        backgroundColor: Colors.white,
+        centerTitle: true,
+      ),
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Body(),
       ),
     );

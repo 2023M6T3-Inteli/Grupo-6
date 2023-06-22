@@ -101,6 +101,7 @@ class _BodyState extends State<Body> {
           String photoUrl = userData["photo_url"];
           List<dynamic>? badges = userData["badges"];
           List<dynamic>? posts = userData["posts"];
+          String? score = userData["score"].toString();
 
           if (posts!.isNotEmpty && badges!.isEmpty) {
             badgeToUserById("da385511-2eb7-4358-9e60-edf2a89a23c8", userId);
@@ -111,73 +112,106 @@ class _BodyState extends State<Body> {
           }
 
           return Center(
-              child: Column(children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 20, top: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (BuildContext context) => FaqBottomSheet(),
-                      );
-                    },
-                    iconSize: 30,
-                    icon: const Icon(
-                      Icons.menu,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Row(
+            child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, bottom: 10),
-                  child: CircleAvatar(
-                    backgroundColor: const Color.fromARGB(255, 0, 42, 88),
-                    radius: 53,
-                    child: CircleAvatar(
-                      backgroundImage: NetworkImage(photoUrl),
-                      radius: 50,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 10,
-                          right: 20,
-                        ),
-                        child: Text(
-                          name,
-                          textAlign: TextAlign.right,
-                          style: const TextStyle(
-                            fontFamily: "Roboto",
-                            fontSize: 20,
-                            color: Color.fromARGB(255, 1, 0, 0),
-                          ),
+                // Padding(
+                //   padding: const EdgeInsets.only(right: 20, top: 10),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.end,
+                //     children: [
+                //       IconButton(
+                //         onPressed: () {
+                //           showModalBottomSheet(
+                //             context: context,
+                //             builder: (BuildContext context) => FaqBottomSheet(),
+                //           );
+                //         },
+                //         iconSize: 30,
+                //         icon: const Icon(
+                //           Icons.menu,
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, bottom: 10, top: 20),
+                      child: CircleAvatar(
+                        backgroundColor: const Color.fromARGB(255, 0, 42, 88),
+                        radius: 53,
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(photoUrl),
+                          radius: 50,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 10,
-                          right: 20,
-                        ),
-                        child: Text(
-                          role,
-                          textAlign: TextAlign.right,
-                          style: const TextStyle(
-                            fontFamily: "Roboto",
-                            fontSize: 14,
-                            color: Color.fromARGB(255, 126, 126, 126),
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 10,
+                              right: 20,
+                            ),
+                            child: Text(
+                              name,
+                              textAlign: TextAlign.right,
+                              style: const TextStyle(
+                                fontFamily: "Roboto",
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 21, 96, 119),
+                              ),
+                            ),
                           ),
-                        ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 10,
+                              right: 20,
+                            ),
+                            child: Text(
+                              role,
+                              textAlign: TextAlign.right,
+                              style: const TextStyle(
+                                fontFamily: "Roboto",
+                                fontSize: 14,
+                                color: Color.fromARGB(255, 126, 126, 126),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 10,
+                              right: 20,
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Container(
+                                width: 80,
+                                height: 20,
+                                decoration:  BoxDecoration(
+                                  borderRadius: const BorderRadius.all(Radius.circular(20)),
+                                  border: Border.all(
+                                    color: const  Color.fromARGB(255, 88, 88, 88),
+                                    width: 1.0,
+                                    
+                                  ),
+                                ),
+                                child: Text(
+                              '$score  points',
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                fontFamily: "Roboto",
+                                fontSize: 14,
+                                color: Color.fromARGB(255, 92, 193, 238),
+                              ),
+                                ),
+                              )
+                            )
+                          ),
+                        ],
                       ),
                     ],
                   ),
