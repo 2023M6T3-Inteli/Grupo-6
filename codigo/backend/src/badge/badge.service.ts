@@ -41,7 +41,7 @@ export class BadgeService {
   async findAll() {
     try {
       const allBadges = await this.prisma.badges.findMany({})
-      return allBadges;
+      return allBadges; 
     }
     catch (error) {
       console.log(error);

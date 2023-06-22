@@ -67,6 +67,13 @@ flutter:
     - assets/images/Avatar.jpeg
     - assets/images/Badge.jpeg
     - assets/images/Avatar2.png
+    - assets/images/Americanas.png
+    - assets/images/Steam.png
+    - assets/images/Estapar.png
+    - assets/images/BK.png
+    - assets/images/iFood.png
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
