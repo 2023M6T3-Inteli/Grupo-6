@@ -84,40 +84,43 @@ Pensado para o engajamento dos colaboradores da Dell em compartilhamento de info
 
 A cada atualização os detalhes devem ser lançados aqui.
 
-* Sprint 1 - 10/02/2023
-    * Wireframe
-    * Arquitetura do sistema V1
-    * Matriz SWOT
-    * Value Proposition Canvas 
-    * Diagrama de sequência do fluxo de dados
-    * 5 Forças de Potter
-    * Matriz de risco
+* Sprint 1 - 12/05/2023
+    * Entrega da análise de negócios
+    * A primeira versão do Wireframe
+    * A primeira versão do Mockup
+    * A primeira versão da arquitetura
+    * Requisitos funcionais
+    * Requisitos não funcionais
+    * Benchmarking
+    * Desing System
     * Casos de uso
-    * Especificação dos requisitos
 * Sprint 2 - 24/02/2023
-    * Desenvolvimento GitFlow
-    * Definição da arquitetura de pastas
-    * Produção de VPCs e subredes
-    * Produção de instâncias na EC2
-    * Produção de buckets no S3
-    * Modelo lógico de dados
-    * Modelo conceitual de dados
-    * Endpoints TDD
-    * Arquitetura da solução V2
-    * Adaptação do wireframe para os requistos do cliente
-* Sprint 3 - 10/03/2023
-    * Back-end com enpoints funcionais
-    * Documentação API
-    * Front-end em React
-    * Arquitetura da solução V3
-    * Produção de banco de dados no RDS
-* Sprint 4 - 24/03/2023
-    * Mudança de ORM (TypeORM)
-    * Parte da integração
-* Sprint 5 - 07/04/2023
+    * Segunda versão do Mockup
+    * Segunda versão da arquitetura
+    * Arquitetura de mensageria
+    * Algumas páginas desenvolvidas em Flutter
+    * Diagrama de sequência
+    * Definição de endpoints
+* Sprint 3 - 26/05/2023
+    * Páginas a mais de Flutter
+    * Terceira versão da arquitetura
+    * Pipeline de dados - ETL
+    * Construção da base dados
+    * Finalização da criação do banco de dados
+    * Finalização dos endpoints
+    * Documentação da API
+    * Início da integração do back-end e front-end
+* Sprint 4 - 09/06/2023
+    * Implementação do Kafka - produção de mensagem e tópico
+    * Implementação do modelo de recomendação
     * Finalização da integração
-    * Ajuste de erros
-    * Manual do usuário
+    * Implementação do MQTT - produção e consumo de mensagem
+* Sprint 5 - 23/06/2023
+    * Finalização do front-end
+    * Finalização da integração
+    * Finalização do modelo de recomendação
+    * Finalização da documentação
+    * Testes do sistema
 
 ## 🎓 Referências
 
