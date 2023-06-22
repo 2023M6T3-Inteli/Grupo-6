@@ -111,137 +111,168 @@ class _BodyState extends State<Body> {
           }
 
           return Center(
-            child: Column(
+              child: Column(children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20, top: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) => FaqBottomSheet(),
+                      );
+                    },
+                    iconSize: 30,
+                    icon: const Icon(
+                      Icons.menu,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(right: 20, top: 30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                  padding: const EdgeInsets.only(left: 20, bottom: 10),
+                  child: CircleAvatar(
+                    backgroundColor: const Color.fromARGB(255, 0, 42, 88),
+                    radius: 53,
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(photoUrl),
+                      radius: 50,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      IconButton(
-                        onPressed: () {
-                          showModalBottomSheet(
-                            context: context,
-                            builder: (BuildContext context) => FaqBottomSheet(),
-                          );
-                        },
-                        iconSize: 30,
-                        icon: const Icon(
-                          Icons.menu,
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          bottom: 10,
+                          right: 20,
+                        ),
+                        child: Text(
+                          name,
+                          textAlign: TextAlign.right,
+                          style: const TextStyle(
+                            fontFamily: "Roboto",
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 1, 0, 0),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          bottom: 10,
+                          right: 20,
+                        ),
+                        child: Text(
+                          role,
+                          textAlign: TextAlign.right,
+                          style: const TextStyle(
+                            fontFamily: "Roboto",
+                            fontSize: 14,
+                            color: Color.fromARGB(255, 126, 126, 126),
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, bottom: 10),
-                      child: CircleAvatar(
-                        backgroundColor: const Color.fromARGB(255, 0, 42, 88),
-                        radius: 53,
-                        child: CircleAvatar(
-                          backgroundImage: NetworkImage(photoUrl),
-                          radius: 50,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              bottom: 10,
-                              right: 20,
-                            ),
-                            child: Text(
-                              name,
-                              textAlign: TextAlign.right,
-                              style: const TextStyle(
-                                fontFamily: "Roboto",
-                                fontSize: 20,
-                                color: Color.fromARGB(255, 1, 0, 0),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              bottom: 10,
-                              right: 20,
-                            ),
-                            child: Text(
-                              role,
-                              textAlign: TextAlign.right,
-                              style: const TextStyle(
-                                fontFamily: "Roboto",
-                                fontSize: 14,
-                                color: Color.fromARGB(255, 126, 126, 126),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: 25,
-                        bottom: 10,
-                        left: 20,
-                      ),
-                      child: Text(
-                        'Badges',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontFamily: "Roboto",
-                          fontSize: 14,
-                          color: Color.fromARGB(255, 99, 99, 99),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                FutureBuilder(
-                  future: getUserById(userId),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      var userData = snapshot.data as Map<String, dynamic>;
-                      List<dynamic>? badges = userData["badges"];
-                      List<String> pictureUrls = [];
-
-                      if (badges != null) {
-                        for (var badge in badges) {
-                          if (badge is Map<String, dynamic> &&
-                              badge.containsKey("picture")) {
-                            String pictureUrl = badge["picture"];
-                            pictureUrls.add(pictureUrl);
-                          }
-                        }
-                      }
-
-                      return Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          for (var pictureUrl in pictureUrls)
-                            ProfileBadge(
-                              backgroundImage: NetworkImage(pictureUrl),
-                            ),
-                        ],
-                      );
-                    }
-                    return const CircularProgressIndicator();
-                  },
-                ),
-                const SizedBox(height: 20),
-                GiftCard(),
               ],
             ),
-          );
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 25,
+                    bottom: 10,
+                    left: 20,
+                  ),
+                  child: Text(
+                    'Badges',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontFamily: "Roboto",
+                      fontSize: 14,
+                      color: Color.fromARGB(255, 99, 99, 99),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            FutureBuilder(
+              future: getUserById(userId),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var userData = snapshot.data as Map<String, dynamic>;
+                  List<dynamic>? badges = userData["badges"];
+                  List<String> pictureUrls = [];
+
+                  if (badges != null) {
+                    for (var badge in badges) {
+                      if (badge is Map<String, dynamic> &&
+                          badge.containsKey("picture")) {
+                        String pictureUrl = badge["picture"];
+                        pictureUrls.add(pictureUrl);
+                      }
+                    }
+                  }
+
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      for (var pictureUrl in pictureUrls)
+                        ProfileBadge(
+                          backgroundImage: NetworkImage(pictureUrl),
+                        ),
+                    ],
+                  );
+                }
+                return const CircularProgressIndicator();
+              },
+            ),
+            const SizedBox(height: 20),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 15),
+                const Padding(
+                  padding: EdgeInsets.only(left: 70.0),
+                  child: Text(
+                    'Giftcard',
+                    style: TextStyle(
+                        fontSize: 16, color: Color.fromARGB(255, 68, 68, 68)),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                GiftCard(
+                    image: 'assets/images/iFood.png',
+                    title: 'Ifood - RS 50,00      ',
+                    points: '200 points'),
+                GiftCard(
+                    image: 'assets/images/BK.png',
+                    title: 'BK - RS 100,00        ',
+                    points: '200 points'),
+                GiftCard(
+                    image: 'assets/images/Americanas.png',
+                    title: 'Americanas - 50,00',
+                    points: '200 points'),
+                GiftCard(
+                    image: 'assets/images/Steam.png',
+                    title: 'Steam - RS 30,00    ',
+                    points: '100 points'),
+                GiftCard(
+                    image: 'assets/images/Estapar.png',
+                    title: 'Estapar - RS 200,00',
+                    points: '500 points'),
+              ],
+            ),
+          ]));
         }
         return const CircularProgressIndicator();
       },
