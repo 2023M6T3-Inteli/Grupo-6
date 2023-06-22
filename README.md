@@ -61,8 +61,10 @@ Pensado para o engajamento dos colaboradores da Dell em compartilhamento de info
 1 - Clone do GitHub atual
 <br>
 2 - Para rodar localmente o projeto, é necessário:
-&emsp 2.1 - Rodar no prompt de comando dentro da pasta ```backend/src o comando``` ```npm run start:dev``` ;
-&emsp 2.2 - Fazer dowload do arquivo .apk dentro da pasta ```codigo```;
+<br>
+&emsp; 2.1 - Rodar no prompt de comando dentro da pasta ```backend/src o comando``` ```npm run start:dev``` ;
+<br>
+&emsp; 2.2 - Fazer dowload do arquivo .apk dentro da pasta ```codigo```;
 <br>
 3 - O projeto já está pronto para teste local.
 <br>
