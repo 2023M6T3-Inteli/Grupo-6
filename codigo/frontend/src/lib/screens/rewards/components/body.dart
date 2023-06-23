@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:src/screens/rewards/components/gift_cards.dart';
-import 'package:src/services/service_badge.dart';
 import '../../../services/service_login.dart';
 import '../../../services/service_user.dart';
 
@@ -100,18 +99,16 @@ class _BodyState extends State<Body> {
           String photoUrl = userData["photo_url"];
           String? score = userData["score"].toString();
 
-
           return Center(
             child: Column(
               children: [
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, bottom: 10, top: 20),
+                      padding:
+                          const EdgeInsets.only(left: 20, bottom: 10, top: 20),
                       child: CircleAvatar(
-                        backgroundColor:
-                            const Color.fromARGB(255, 0, 42, 88),
+                        backgroundColor: const Color.fromARGB(255, 0, 42, 88),
                         radius: 53,
                         child: CircleAvatar(
                           backgroundImage: NetworkImage(photoUrl),
@@ -164,10 +161,11 @@ class _BodyState extends State<Body> {
                                 width: 80,
                                 height: 20,
                                 decoration: BoxDecoration(
-                                  borderRadius:
-                                      const BorderRadius.all(Radius.circular(20)),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(20)),
                                   border: Border.all(
-                                    color: const Color.fromARGB(255, 88, 88, 88),
+                                    color:
+                                        const Color.fromARGB(255, 88, 88, 88),
                                     width: 1.0,
                                   ),
                                 ),
@@ -198,7 +196,8 @@ class _BodyState extends State<Body> {
                       child: Text(
                         'Giftcard',
                         style: TextStyle(
-                            fontSize: 16, color: Color.fromARGB(255, 68, 68, 68)),
+                            fontSize: 16,
+                            color: Color.fromARGB(255, 68, 68, 68)),
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -209,12 +208,7 @@ class _BodyState extends State<Body> {
                     ),
                     GiftCard(
                       image: 'assets/images/BK.png',
-                      title: 'BK - RS 100,00        ',
-                      points: '200 points',
-                    ),
-                    GiftCard(
-                      image: 'assets/images/Americanas.png',
-                      title: 'Americanas - 50,00',
+                      title: 'BK - RS 100,00         ',
                       points: '200 points',
                     ),
                     GiftCard(
@@ -224,7 +218,7 @@ class _BodyState extends State<Body> {
                     ),
                     GiftCard(
                       image: 'assets/images/Estapar.png',
-                      title: 'Estapar - RS 200,00',
+                      title: 'Estapar - 200,00     ',
                       points: '500 points',
                     ),
                   ],
