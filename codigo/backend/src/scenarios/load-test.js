@@ -17,11 +17,11 @@ export default function post() {
     const url = `${BASE_URL}${endpoint}`;
 
     const payload = JSON.stringify({
-        title: "Testes de carga com K6",
-        description: "Testando a ferramenta K6 para testes de carga",
+        title: "Teste de carga K6",
+        description: "É uma ferramenta muito interessante para testar a performance de uma API ou mais APIs",
         category: "Teste",
         createdAt: "2021-08-31T00:00:00.000Z",
-        creator: "John Doe"
+        creator: "0050c9d7-9afc-4a78-b22f-3c691062de72"
     });
     
     const params = {
