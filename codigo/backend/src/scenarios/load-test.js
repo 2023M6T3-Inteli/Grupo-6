@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { sleep } from 'k6';
 
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = 'http://localhost:3000';
 
 
 // export default function get() {
@@ -13,12 +13,12 @@ const BASE_URL = 'http://localhost:3001';
 // }
 
 export default function post() {
-    const endpoint = '/posts';
+    const endpoint = '/post';
     const url = `${BASE_URL}${endpoint}`;
 
     const payload = JSON.stringify({
-        title: "Meu novo post",
-        description: "Descrição do meu novo post",
+        title: "Testes de carga com K6",
+        description: "Testando a ferramenta K6 para testes de carga",
         category: "Teste",
         createdAt: "2021-08-31T00:00:00.000Z",
         creator: "John Doe"
