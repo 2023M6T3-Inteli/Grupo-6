@@ -44,8 +44,11 @@ class _UpdateProfileState extends State<UpdateProfile> {
   List<String> selectedSfotSkills = [];
   List<int> hardSkillIds = [];
   List<int> softSkillIds = [];
-
-
+  int count = 0;
+  String newName = "";
+  String newRole = "";
+  String newAboutMe = "";
+  
   @override
   void initState() {
     super.initState();
@@ -130,7 +133,12 @@ class _UpdateProfileState extends State<UpdateProfile> {
           hardskills = userData["hard_skills"] ?? "";
           softskills = userData["soft_skills"] ?? "";
         }  
-      
+      if (count == 0){
+        newName = name;
+        newRole = role;
+        newAboutMe = aboutMe;
+        count++;
+      }
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -156,7 +164,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
               TextFormField(
                 initialValue: name,
                 onChanged: (text){
-                name = text;
+                newName = text;
               },
                 decoration: InputDecoration(
                   fillColor: Colors.grey[300],
@@ -173,7 +181,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
               TextFormField(
                 initialValue: role,
                 onChanged: (text){
-                role = text;
+                newRole = text;
               },
                 decoration: InputDecoration(
                   fillColor: Colors.grey[300],
@@ -190,7 +198,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
               TextFormField(
                 initialValue: aboutMe,
                 onChanged: (text){
-                aboutMe = text;
+                newAboutMe = text;
               },
                 maxLines: 5,
                 decoration: InputDecoration(
@@ -296,7 +304,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                     onPressed: () {
                       hardSkillsId();
                       softSkillsId();
-                      updateUser(userId, name, role, aboutMe, hardskills, softskills).then((data){
+                      updateUser(userId, newName, newRole, newAboutMe, hardskills, softskills).then((data){
                         Navigator.of(context).pushReplacementNamed("/profile");
                     });
                     },

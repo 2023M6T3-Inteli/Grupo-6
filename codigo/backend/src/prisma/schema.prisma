@@ -8,20 +8,21 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  name      String
-  role      String
-  photo_url String
-  about_me  String?
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  badges    Badges[] @relation("UserBadges")
-  posts     Post[]
-  projects  String?
+  id          String   @id @default(uuid())
+  name        String
+  role        String
+  photo_url   String
+  about_me    String?
+  email       String   @unique
+  password    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  badges      Badges[] @relation("UserBadges")
+  posts       Post[]
+  projects    String?
   hard_skills String?
   soft_skills String?
+  score       Int?
 }
 
 model Badges {
@@ -33,13 +34,13 @@ model Badges {
 }
 
 model Post {
-  id          String   @id @default(uuid())
+  id          String @id @default(uuid())
   title       String
   description String
   category    String
-  createdAt   String 
+  createdAt   String
   creator     String
-  author      User     @relation(fields: [creator], references: [id])
+  author      User   @relation(fields: [creator], references: [id])
 }
 
 // model Project {

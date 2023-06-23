@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-const String baseUrl = "http://localhost:3000";
+const String baseUrl = "http://load-novo-336193150.us-east-1.elb.amazonaws.com";
 
 void main() {
   // getUserById("d56f9ba4-a2fd-4be7-8a9a-22ee7b89c390").then((value){

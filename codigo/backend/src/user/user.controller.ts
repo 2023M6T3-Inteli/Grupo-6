@@ -67,4 +67,10 @@ export class UserController {
   remove(@Param('id') id: string) {
     return this.userService.delete(id);
   }
+
+  // API yo update user score by id
+  @Patch('/score/:id')
+  updateScore(@Param('id') id: string, @Body() score: number){
+    return this.userService.updateScore(id,score)
+  }
 }

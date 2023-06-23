@@ -10,6 +10,7 @@ import 'package:src/screens/recommendation/recommendation.dart';
 import 'package:src/screens/login/login.dart';
 import 'package:src/screens/create_post/create_post.dart';
 import 'package:src/screens/feed/feed.dart';
+import 'package:src/screens/rewards/rewards.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,8 +35,13 @@ class MyApp extends StatelessWidget {
           '/interest': (context) => buildScaffoldWithNavBar(Interest()),
           '/recommendation': (context) =>
               buildScaffoldWithNavBar(Recommendation()),
+          
           '/profile': (context) => buildScaffoldWithNavBar(Profile()),
+
           '/ranking': (context) => buildScaffoldWithNavBar(Ranking()),
+
+          '/rewards' : (context) => buildScaffoldWithNavBar(Rewards()),
+
           '/project': (context) =>
               buildScaffoldWithNavBar(const CreateProject()),
         });
@@ -51,3 +57,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+  

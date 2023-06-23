@@ -1,436 +1,81 @@
 import 'package:flutter/material.dart';
+import 'package:src/services/service_user.dart';
+import './score_card.dart';
+
+
+class Score{
+  final String name;
+  final int? score;
+
+  Score(
+    {
+      required this.name,
+      required this.score
+    }
+  );
+}
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text("1º"),
-              SizedBox(width: 10),
-              Container(
-                width: 300,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(left: 8.0),
-                      child: Text(
-                        'Mateus Neves',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(right: 8.0),
-                      child: Text(
-                        '1000',
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 16.0,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ]),
-          ),
-          SizedBox(height: 20),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+    return FutureBuilder(
+      future: getAllUsers(),
+      builder: (context, snapshot){
+        if (snapshot.hasData){
+          var jsonData = snapshot.data;
+          List<Score> scores = [];
+
+          for (int i = jsonData!.length - 1; i >= 0; i--){
+            var score = jsonData[i];
+            if (score != null){
+              String name = score["name"];
+              int? currentscore = score["score"];
+
+              scores.add(Score(
+                name: name,
+                score: currentscore
+              ));
+            }
+            scores.removeWhere((score) => score.score == null);
+          }
+          for (int i = 0; i < scores.length - 1; i++) {
+            for (int j = 0; j < scores.length - i - 1; j++) {
+              if (scores[j].score != null && scores[j + 1].score != null) {
+                if (scores[j].score! < scores[j + 1].score!) {
+                  Score temp = scores[j];
+                  scores[j] = scores[j + 1];
+                  scores[j + 1] = temp;
+                }
+              }
+            }
+          }
+          List<String> items = [
+            '1º',
+            '2º',
+            '3º',
+            '4º',
+            '5º',
+            '6º',
+            '7º',
+            '8º',
+            '9º',
+            '10º',
+          ];
+          return Padding(
+            padding: const EdgeInsets.all(8.0), 
+            child: Column(
               children: [
-                Text("2º"),
-                SizedBox(width: 10),
-                Container(
-                  width: 300,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: Colors.blue.shade300,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Text(
-                          'Kinho',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(right: 8.0),
-                        child: Text(
-                          '900',
-                          style: TextStyle(
-                            color: Colors.black54,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                const Text("Ranking", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)), 
+                for(int i = 0; i < scores.length && i < 10; i++)
+                  scoreCardBuilder(items[i], scores[i].name, scores[i].score)
               ],
             ),
-          ),
-          SizedBox(height: 20),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("3º"),
-                SizedBox(width: 10),
-                Container(
-                  width: 300,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: Colors.blue.shade200,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Text(
-                          'Sofia Pimazzoni',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(right: 8.0),
-                        child: Text(
-                          '900',
-                          style: TextStyle(
-                            color: Colors.black54,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("4º"),
-                SizedBox(width: 10),
-                Container(
-                  width: 300,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Text(
-                          'Sofia Pimazzoni',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(right: 8.0),
-                        child: Text(
-                          '900',
-                          style: TextStyle(
-                            color: Colors.black54,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20),
-          Container(
-              child:
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text("5º"),
-            SizedBox(width: 10),
-            Container(
-              width: 300,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Colors.grey.shade300,
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(left: 8.0),
-                    child: Text(
-                      'Sofia Pimazzoni',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16.0,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      '900',
-                      style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 16.0,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ])),
-          SizedBox(height: 20),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("6º"),
-                SizedBox(width: 10),
-                Container(
-                  width: 300,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Text(
-                          'Sofia Pimazzoni',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(right: 8.0),
-                        child: Text(
-                          '900',
-                          style: TextStyle(
-                            color: Colors.black54,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("7º"),
-                SizedBox(width: 10),
-                Container(
-                  width: 300,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Text(
-                          'Sofia Pimazzoni',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(right: 8.0),
-                        child: Text(
-                          '900',
-                          style: TextStyle(
-                            color: Colors.black54,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("8º"),
-                SizedBox(width: 10),
-                Container(
-                  width: 300,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Text(
-                          'Sofia Pimazzoni',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(right: 8.0),
-                        child: Text(
-                          '900',
-                          style: TextStyle(
-                            color: Colors.black54,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20),
-          Container(
-            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text("9º"),
-              SizedBox(width: 10),
-              Container(
-                width: 300,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(left: 8.0),
-                      child: Text(
-                        'Sofia Pimazzoni',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16.0,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(right: 8.0),
-                      child: Text(
-                        '900',
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 16.0,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ]),
-          ),
-          SizedBox(height: 20),
-          Container(
-            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text("10º"),
-              SizedBox(width: 10),
-              Container(
-                width: 300,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(left: 8.0),
-                      child: Text(
-                        'Sofia Pimazzoni',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16.0,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(right: 8.0),
-                      child: Text(
-                        '900',
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 16.0,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ]),
-          ),
-        ],
-      ),
-    ));
+          );
+        }
+        return const CircularProgressIndicator();
+      }
+    );
   }
 }

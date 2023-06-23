@@ -16,9 +16,9 @@ export class UserService {
         email: data.email
       }
     })
-
+  
     //If a user with the exact same data already exists, throw a BadRequestException
-    if (userExist){
+    if (userExist.length > 0){
       throw new BadRequestException('Usuário com esse e-mail já existe no banco de dados.')
       
     };
@@ -68,7 +68,7 @@ export class UserService {
     const userExist = await this.prisma.user.findUnique({
       where: {
         id: id
-      }
+      },
     })
 
     //If an user with given ID does not exist, throw a BadRequestException
@@ -81,7 +81,8 @@ export class UserService {
       
       //Get a specific user with given ID
       const user = await this.prisma.user.findUnique({
-        where: { id: id}
+        where: { id: id},
+        include: {badges: true, posts: true}
       });
         return user
     }
@@ -166,4 +167,37 @@ export class UserService {
       throw new InternalServerErrorException('Something bad happened: ', error)
     }
   }
+
+  async updateScore(id: String, score: number){
+    //Check if user with given ID exists
+    const userExist = await this.prisma.user.findUnique({
+      where: {
+        id: id
+      }
+    })
+    
+    //If user with given ID does not exist, throw a BadRequestException
+    if (!userExist){
+      console.log("User not found")
+      throw new BadRequestException('Something bad happened: User not found')
+    }
+
+    try{
+
+      //Update specific user score
+      const user = await this.prisma.user.update({
+        where: {id: id},
+        data: {
+          score: score.score
+        }
+      });
+      
+      return user
+    }
+    catch(error) {
+      console.log(error)
+      throw new InternalServerErrorException('Something bad happened: ', error)
+    }
+  }
+
 }
