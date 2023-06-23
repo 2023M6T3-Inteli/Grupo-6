@@ -30,7 +30,7 @@ class Ranking extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: const Text(
-                  'Ranking',
+                  'Rewards',
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     color: Colors.white,

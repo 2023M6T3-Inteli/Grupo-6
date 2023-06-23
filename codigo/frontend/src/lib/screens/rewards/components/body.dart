@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:src/screens/profile/components/badge.dart';
 import 'package:src/screens/rewards/components/gift_cards.dart';
 import 'package:src/services/service_badge.dart';
-import 'package:src/widgets/faq_card.dart';
 import '../../../services/service_login.dart';
 import '../../../services/service_user.dart';
 
@@ -57,6 +55,7 @@ class _BodyState extends State<Body> {
   TextEditingController roleController = TextEditingController();
   TextEditingController aboutMeController = TextEditingController();
 
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder(
       future: getData("userId"),
@@ -99,180 +98,140 @@ class _BodyState extends State<Body> {
           String name = userData["name"];
           String role = userData["role"];
           String photoUrl = userData["photo_url"];
-          List<dynamic>? badges = userData["badges"];
-          List<dynamic>? posts = userData["posts"];
+          String? score = userData["score"].toString();
 
-          if (posts!.isNotEmpty && badges!.isEmpty) {
-            badgeToUserById("da385511-2eb7-4358-9e60-edf2a89a23c8", userId);
-          }
-
-          if (posts.length >= 10 && badges!.length == 1) {
-            badgeToUserById("77ea6424-8ab9-4e5e-b45a-774f736eede9", userId);
-          }
 
           return Center(
-              child: Column(children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 20, top: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (BuildContext context) => FaqBottomSheet(),
-                      );
-                    },
-                    iconSize: 30,
-                    icon: const Icon(
-                      Icons.menu,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Row(
+            child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, bottom: 10),
-                  child: CircleAvatar(
-                    backgroundColor: const Color.fromARGB(255, 0, 42, 88),
-                    radius: 53,
-                    child: CircleAvatar(
-                      backgroundImage: NetworkImage(photoUrl),
-                      radius: 50,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 10,
-                          right: 20,
-                        ),
-                        child: Text(
-                          name,
-                          textAlign: TextAlign.right,
-                          style: const TextStyle(
-                            fontFamily: "Roboto",
-                            fontSize: 20,
-                            color: Color.fromARGB(255, 1, 0, 0),
-                          ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 20, bottom: 10, top: 20),
+                      child: CircleAvatar(
+                        backgroundColor:
+                            const Color.fromARGB(255, 0, 42, 88),
+                        radius: 53,
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(photoUrl),
+                          radius: 50,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 10,
-                          right: 20,
-                        ),
-                        child: Text(
-                          role,
-                          textAlign: TextAlign.right,
-                          style: const TextStyle(
-                            fontFamily: "Roboto",
-                            fontSize: 14,
-                            color: Color.fromARGB(255, 126, 126, 126),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 25,
-                    bottom: 10,
-                    left: 20,
-                  ),
-                  child: Text(
-                    'Badges',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontFamily: "Roboto",
-                      fontSize: 14,
-                      color: Color.fromARGB(255, 99, 99, 99),
                     ),
-                  ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 10,
+                              right: 20,
+                            ),
+                            child: Text(
+                              name,
+                              textAlign: TextAlign.right,
+                              style: const TextStyle(
+                                fontFamily: "Roboto",
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 21, 96, 119),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 10,
+                              right: 20,
+                            ),
+                            child: Text(
+                              role,
+                              textAlign: TextAlign.right,
+                              style: const TextStyle(
+                                fontFamily: "Roboto",
+                                fontSize: 14,
+                                color: Color.fromARGB(255, 126, 126, 126),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 10,
+                              right: 20,
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Container(
+                                width: 80,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      const BorderRadius.all(Radius.circular(20)),
+                                  border: Border.all(
+                                    color: const Color.fromARGB(255, 88, 88, 88),
+                                    width: 1.0,
+                                  ),
+                                ),
+                                child: Text(
+                                  '$score  points',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontFamily: "Roboto",
+                                    fontSize: 14,
+                                    color: Color.fromARGB(255, 92, 193, 238),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 15),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 70.0),
+                      child: Text(
+                        'Giftcard',
+                        style: TextStyle(
+                            fontSize: 16, color: Color.fromARGB(255, 68, 68, 68)),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    GiftCard(
+                      image: 'assets/images/iFood.png',
+                      title: 'Ifood - RS 50,00      ',
+                      points: '200 points',
+                    ),
+                    GiftCard(
+                      image: 'assets/images/BK.png',
+                      title: 'BK - RS 100,00        ',
+                      points: '200 points',
+                    ),
+                    GiftCard(
+                      image: 'assets/images/Americanas.png',
+                      title: 'Americanas - 50,00',
+                      points: '200 points',
+                    ),
+                    GiftCard(
+                      image: 'assets/images/Steam.png',
+                      title: 'Steam - RS 30,00    ',
+                      points: '100 points',
+                    ),
+                    GiftCard(
+                      image: 'assets/images/Estapar.png',
+                      title: 'Estapar - RS 200,00',
+                      points: '500 points',
+                    ),
+                  ],
                 ),
               ],
             ),
-            FutureBuilder(
-              future: getUserById(userId),
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  var userData = snapshot.data as Map<String, dynamic>;
-                  List<dynamic>? badges = userData["badges"];
-                  List<String> pictureUrls = [];
-
-                  if (badges != null) {
-                    for (var badge in badges) {
-                      if (badge is Map<String, dynamic> &&
-                          badge.containsKey("picture")) {
-                        String pictureUrl = badge["picture"];
-                        pictureUrls.add(pictureUrl);
-                      }
-                    }
-                  }
-
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      for (var pictureUrl in pictureUrls)
-                        ProfileBadge(
-                          backgroundImage: NetworkImage(pictureUrl),
-                        ),
-                    ],
-                  );
-                }
-                return const CircularProgressIndicator();
-              },
-            ),
-            const SizedBox(height: 20),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 15),
-                const Padding(
-                  padding: EdgeInsets.only(left: 70.0),
-                  child: Text(
-                    'Giftcard',
-                    style: TextStyle(
-                        fontSize: 16, color: Color.fromARGB(255, 68, 68, 68)),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                GiftCard(
-                    image: 'assets/images/iFood.png',
-                    title: 'Ifood - RS 50,00      ',
-                    points: '200 points'),
-                GiftCard(
-                    image: 'assets/images/BK.png',
-                    title: 'BK - RS 100,00        ',
-                    points: '200 points'),
-                GiftCard(
-                    image: 'assets/images/Americanas.png',
-                    title: 'Americanas - 50,00',
-                    points: '200 points'),
-                GiftCard(
-                    image: 'assets/images/Steam.png',
-                    title: 'Steam - RS 30,00    ',
-                    points: '100 points'),
-                GiftCard(
-                    image: 'assets/images/Estapar.png',
-                    title: 'Estapar - RS 200,00',
-                    points: '500 points'),
-              ],
-            ),
-          ]));
+          );
         }
         return const CircularProgressIndicator();
       },

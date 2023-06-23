@@ -63,12 +63,16 @@ class Body extends StatelessWidget {
             '9º',
             '10º',
           ];
-          return Column(
-          children: [
-              for(int i = 0; i < scores.length && i < 10; i++)
-              scoreCardBuilder(items[i], scores[i].name, scores[i].score)
-          ],
-        );
+          return Padding(
+            padding: const EdgeInsets.all(8.0), 
+            child: Column(
+              children: [
+                const Text("Ranking", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)), 
+                for(int i = 0; i < scores.length && i < 10; i++)
+                  scoreCardBuilder(items[i], scores[i].name, scores[i].score)
+              ],
+            ),
+          );
         }
         return const CircularProgressIndicator();
       }
