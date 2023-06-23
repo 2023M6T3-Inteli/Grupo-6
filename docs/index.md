@@ -65,10 +65,11 @@ Solução de otimização de corte de bobinas de papel
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
   - [Versão 1 - Arquitetura do sistema](#versão-1---arquitetura-do-sistema)
   - [Versão 2 - Arquitetura do sistema](#versão-2---arquitetura-do-sistema)
-  - [Arquitetura de mensageria](#arquitetura-de-mensageria)
-  - [Benefícios e desantagens da arquitetura](#benefícios-e-desantagens-da-arquitetura)
+  - [Arquitetura de mensageiria](#arquitetura-de-mensageiria)
+  - [Benefícios e desvantagens da arquitetura](#benefícios-e-desvantagens-da-arquitetura)
   - [Diagrama de sequência do fluxo de dados](#diagrama-de-sequência-do-fluxo-de-dados)
   - [Versão 3 - Arquitetura do sistema](#versão-3---arquitetura-do-sistema)
+  - [ETL (Extração, Transformação e Carregamento)](#etl-extração-transformação-e-carregamento)
 - [UX e UI Design](#ux-e-ui-design)
   - [Benchmarking e Revisão de Design System](#benchmarking-e-revisão-de-design-system)
   - [Wireframes](#wireframes)
@@ -169,7 +170,7 @@ Também chamada de matriz de probabilidade e impacto, a matriz mapeia os riscos 
 
 ## Mapeamento do processo
 
-O mapeamento do processo envolve práticas envolvidas no entendimento, análise e melhoria desses, de forma a estruturar a organizção com base em processos ponta a ponta. Tem-se como objetivos princiais documentar os processos, avaliar padrões e confrmidade, treinar colaboradores,discutir e planejar mudanças e comunicar de forma padronizada. Dessa forma, viu-se a necessidade de criação do mapeamento do mesmo, conforme as figuras a seguir.
+O mapeamento do processo envolve práticas envolvidas no entendimento, análise e melhoria desses, de forma a estruturar a organização com base em processos ponta a ponta. Tem-se como objetivos principais documentar os processos, avaliar padrões e conformidade, treinar colaboradores,discutir e planejar mudanças e comunicar de forma padronizada. Dessa forma, viu-se a necessidade de criação do mapeamento do mesmo, conforme as figuras a seguir.
 
 <center> <h3> Diagrama 1 - Processo 1: Criar publicação.</h3>  </center> 
 <img src="../docs/img/img_docs/criar_pub.png" alt="Criar publicação" border="0" width="100%" display="flex" justify-content="center">
@@ -187,8 +188,8 @@ O mapeamento do processo envolve práticas envolvidas no entendimento, análise 
 <img src="../docs/img/img_docs/inscrever_projeto.png" alt="Inscrição em um projeto" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 <br>
-<center> <h3> Diagrama 5 - Processo 5: Gameficação</h3>  </center> 
-<img src="../docs/img/img_docs/gameficacao.png" alt="Gameficação" border="0" width="100%" display="flex" justify-content="center">
+<center> <h3> Diagrama 5 - Processo 5: Gamificação</h3>  </center> 
+<img src="../docs/img/img_docs/gamificacao.png" alt="Gamificação" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 
 ## Descritivo da Solução
@@ -212,15 +213,15 @@ Com uma análise mais detalhada, a solução proposta tem como objetivo específ
 
 ## Partes Interessadas 
 
-Dell Technologies: gerar entreteinimento fora do trabalho para seus funcionários a partir do MVP entregue. A empresa deve fornecer suporte por meio de materiais e documentos que explicitem os problemas, as necessidades e as expectativas da interessada com o projeto. Além disso, é esperado que a Dell consiga acompanhar as entregas do projeto a cada sprint, para que possa dar feedbacks aos alunos com relação ao desenvolvimento que está sendo feito, para que os alunos sempre tenham a oportunidade de melhorar a entrega.
+Dell Technologies: gerar entretenimento fora do trabalho para seus funcionários a partir do MVP entregue. A empresa deve fornecer suporte por meio de materiais e documentos que explicitem os problemas, as necessidades e as expectativas da interessada com o projeto. Além disso, é esperado que a Dell consiga acompanhar as entregas do projeto a cada sprint, para que possa dar feedbacks aos alunos com relação ao desenvolvimento que está sendo feito, para que os alunos sempre tenham a oportunidade de melhorar a entrega.
 	
-Instituto de Tecnologia e Liderança (INTELI): ter a primeira experiência de continuar um projeto real com a mesma empresa parceira e ver como seus alunos vão ter evoluido. Além disso, espera-se que o orientador possa mediar o contato com a empresa, para que os alunos estejam sempre atualizados sobre as expectativas do projeto, já que isso contriubi para uma entrega de melhor qualidade.
+Instituto de Tecnologia e Liderança (INTELI): ter a primeira experiência de continuar um projeto real com a mesma empresa parceira e ver como seus alunos vão ter evoluído. Além disso, espera-se que o orientador possa mediar o contato com a empresa, para que os alunos estejam sempre atualizados sobre as expectativas do projeto, já que isso contribui para uma entrega de melhor qualidade.
 	
-Alunos responsáveis pelo projeto: interesse em aprender novos conteúdos focados em mobile, que é muito pensado atualmente ao desenvolver uma aplicação, além de se aprofundar mais em Cloud Computing, tópico que está bem requisitado ultimamente. Ademais, os alunos terão a experiência de continuar um projeto passado feito com uma empresa parceira, situação que muitas vezes acontece no mundo coorporativo.
+Alunos responsáveis pelo projeto: interesse em aprender novos conteúdos focados em mobile, que é muito pensado atualmente ao desenvolver uma aplicação, além de se aprofundar mais em Cloud Computing, tópico que está bem requisitado ultimamente. Ademais, os alunos terão a experiência de continuar um projeto passado feito com uma empresa parceira, situação que muitas vezes acontece no mundo corporativos.
 
 
 # Requisitos
-A fim de garantir que todas as necessidades do parceirro fossem atendidas, a equipe desenvolvedora listou os requisitos identificados que a plataforma deveria conter.
+A fim de garantir que todas as necessidades do parceiro fossem atendidas, a equipe desenvolvedora listou os requisitos identificados que a plataforma deveria conter.
 
 ## Requisitos Funcionais
 Sabendo que se define por “Requisitos Funcionais“ aqueles que incluem informações sobre as funcionalidades esperadas do software, além de as restrições e limitações do sistema. São compostos por duas partes: função (que se refere ao que o sistema faz) e comportamento (que refere-se como o sistema faz isso) (VISURE, 2023). Dessa forma, viu-se a necessidade de elencar esses, de acordo com a solução.
@@ -237,7 +238,7 @@ Sabendo que se define por “Requisitos Funcionais“ aqueles que incluem inform
 10 - Notificações: A plataforma deve mandar notificações para os usuários sobre novos conteúdos, projetos e interações relevantes.<br>
 11 - Ter réplicas em diversas AZ's em cloud: a fim de garantir a disponibilidade da aplicação, essa deve estar alocada em diferentes zonas da AWS.<br>
 12 - Feedbacks instantâneos: para cada interação do usuário com a plataforma, essa deverá conter um feedback durante o uso. <br>
-13 - Os conteúdos devem conter tags: os conteúdo publicados na plataforma devem ser separados pr tags de acordo com o tema abordado, de forma que seja possíel linkar esses com os projetos de mesmo tema.<br>
+13 - Os conteúdos devem conter tags: os conteúdo publicados na plataforma devem ser separados pr tags de acordo com o tema abordado, de forma que seja possível linkar esses com os projetos de mesmo tema.<br>
 14 - Sistema de match: a plataforma deve conter inteligência artificial embutida para que ocorra "match" entre um usuário e um projeto, baseado nos conteúdos consumidos por este usuário.<br>
 15 - Perfil: a aplicação deverá ter a opção de acessar o perfil do usuário, onde será possível visualizar suas soft e hard skills, além de projetos que esse colaborador já tenha participado.<br>
 16 - Barra de pesquisa: a aplicação deve conter uma barra de pesquisa para que seja possível pesquisar por conteúdos específicos, para além dos que foram recomendados.<br>
@@ -254,10 +255,10 @@ Descreve os recursos necessários para sua execução, os requisitos de seguran�
 01 - Escalabilidade : A aplicação deve ser capaz de lidar com muitos usuários simultâneos sem afetar o seu desempenho.<br>
 02 - Segurança : A plataforma deve garantir a segurança das informações dos usuários e dos conteúdos armazenados, conforme as práticas de segurança e privacidade.<br>
 03 - Disponibilidade : A plataforma deve estar disponível e acessível aos usuários em qualquer momento, garantindo um tempo mínimo de inatividade.<br>
-04 - Integraçao : A plataforma deve ser capaz de se integrar com outros sistemas internos da empresa, como sistemas de gerenciamento de projetos, intranets e aplicativos de comunicação, garantindo assim uma infraestrutura melhor.<br>
-05 - Usabilidade : A interface da plataforma deve ser intuitiva, facil de usar e acessível em dispositivos móveis, como smartphones e tablets, de diversos formatos, garantindo que qualquer usuario consiga utilizar a plataforma.<br>
+04 - Integração : A plataforma deve ser capaz de se integrar com outros sistemas internos da empresa, como sistemas de gerenciamento de projetos, intranets e aplicativos de comunicação, garantindo assim uma infraestrutura melhor.<br>
+05 - Usabilidade : A interface da plataforma deve ser intuitiva, fácil de usar e acessível em dispositivos móveis, como smartphones e tablets, de diversos formatos, garantindo que qualquer usuário consiga utilizar a plataforma.<br>
 06 - Desempenho : A plataforma deve ter um tempo de resposta rápida e com baixa latência para proporcionar uma experiência de usuário agradável.<br>
-07 - Facil manutenção: A plataforma deve ser projetada seguindo boas práticas de desenvolvimento de software, facilitando a manutenção e possíveis futuras atualizações.<br>
+07 - Fácil manutenção: A plataforma deve ser projetada seguindo boas práticas de desenvolvimento de software, facilitando a manutenção e possíveis futuras atualizações.<br>
 08 - Compatibilidade: A plataforma deve ser compatível com os principais sistemas operacionais móveis, como Android e iOS, e funcionar corretamente em todos os tipos de navegadores web.<br>
 09 - Localização: A plataforma deve oferecer suporte ao inglês e múltiplos idiomas, atendendo as necessidades de uma audiência global.<br>
 10 - Sustentabilidade: A plataforma deve completar todas as tarefas para qual foi proposta, de forma  correta e consistente com o contexto em que foi solicitado.
@@ -269,8 +270,8 @@ A aplicação desenvolvida atende a um grande público, englobando certos perfis
 <lu>
 <li>Funcionário: qualquer colaborador que trabalha dentro da empresa Dell, independente seu cargo ou posição dentro da empresa, que possua interesse em participar de algum dos processos divulgados e se desafiar a novas tecnologias e competências, ou ainda consumir e publicar conteúdos, como vídeos, podcasts ou até posts.
 <li> Moderador: possui todas as características de um usuário definido como funcionário, mas tem a funcionalidade adicional de aprovar ou não os projetos criados pelos colaboradores e ainda avaliar as denúncias feitas em certos conteúdos.
-<li>Gerente: pessoas quais terão de aprovar a criação de um projeto criado por um colaborador abaixo desse gerente. Além disso, possui outros poeres administrativos, como o encerramento de projetos, auxiliar na seleçãode componentes para um projeto, entre outras funcionalidades. 
-<li>Equipe de manutenção: serão os profissionais irecionados para a manutenção da plataforma, cujo verificarão a saúde da aplicação, correção de possíveis bugs e adição de novas implementações. </li>
+<li>Gerente: pessoas quais terão de aprovar a criação de um projeto criado por um colaborador abaixo desse gerente. Além disso, possui outros poderes administrativos, como o encerramento de projetos, auxiliar na seleção de componentes para um projeto, entre outras funcionalidades. 
+<li>Equipe de manutenção: serão os profissionais direcionados para a manutenção da plataforma, cujo verificarão a saúde da aplicação, correção de possíveis bugs e adição de novas implementações. </li>
 </lu>
 <br>
 
@@ -287,16 +288,16 @@ Para a descrição dos casos de usos, optou-se pela construção de user stories
 7- Eu, como funcionário da Dell, quero poder avaliar e dar feedbacks sobre projetos dos quais fiz parte, a fim de evidenciar minhas considerações sobre o processo e possíveis pontos de melhoria.<br>
 8 - Eu, como funcionário da Dell, quero que a plataforma me dê match com projetos associados aos meus interesses, com o intuito de otimizar meu tempo e me ajudar na busca por oportunidades.<br>
 9 - Eu, como funcionário da Dell, quero poder aplicar para projetos, com o intuito de aprender e praticar meus conhecimentos juntamente com outros colegas.<br>
-10 - Eu, como usuário da plataforma, quero poder alternar entre modo claro e escuro, a fim de adaptar a visibildiade da plataforma às minhas condições momentâneas <br>
+10 - Eu, como usuário da plataforma, quero poder alternar entre modo claro e escuro, a fim de adaptar a visibilidade da plataforma às minhas condições momentâneas <br>
 11 - Eu, como moderador, posso avaliar um conteúdo caso ele seja denunciado para que não haja conflito entre os usuários da plataforma. <br>
 12 - Eu, como usuário da plataforma, posso acompanhar o andamento da minha inscrição, para saber quando vou começar a trabalhar em um projeto <br>
 13 - Eu, como usuário da plataforma, posso editar as informações do meu perfil, para mantê-lo sempre atualizado. <br>
 14 - Eu, como usuário da plataforma, quero sempre poder visualizar os posts que eu fiz e os projetos criados, para que eu tenha controle do meu engajamento na plataforma. <br>
 15 - Eu, como usuário da plataforma, devo poder editar as informações do meu projeto, para que ele esteja sempre atualizado. <br>
 16 - Eu, como usuário da plataforma, devo poder excluir um projeto que eu criei, caso aconteça algum imprevisto. <br>
-17 - Eu, como usuário da plataforma, posso denunciar posts de outros usuários, caso eles infrigam alguma regra/lei, para que não haja conflitos na plataforma. <br>
+17 - Eu, como usuário da plataforma, posso denunciar posts de outros usuários, caso eles infrinjam alguma regra/lei, para que não haja conflitos na plataforma. <br>
 18 - Eu, como usuário da plataforma, devo receber um feedback se fui aprovado ou não em um projeto, para que eu possa me preparar e me organizar com minhas outras atividades.<br>
-19 - Eu, como funcionário da Dell, quero ser recompensado pela minha participação na plataforma, com o obejtivo de me sentir engajado e motivado a continuar usando a aplicação. <br>
+19 - Eu, como funcionário da Dell, quero ser recompensado pela minha participação na plataforma, com o objetivo de me sentir engajado e motivado a continuar usando a aplicação. <br>
 20 - Eu, como funcionário da Dell, quero poder compartilhar conteúdos (podcasts, vídeos, documentários etc) com meus colegas, a fim de propagar conhecimentos relevantes e oportunidades de projeto. <br>
 21 - Eu, como usuário da plataforma, quero poder utilizar minhas credenciais DELL para acessar a plataforma, com o objetivo de evitar a criação de uma nova conta. <br>
 22 - Eu, como funcionário da Dell, quero ter a opção de filtrar os conteúdos disponíveis na plataforma, a fim de encontrar somente aqueles associados ao meu interesse do momento <br>
@@ -312,7 +313,7 @@ Para a descrição dos casos de usos, optou-se pela construção de user stories
 <br>
 
 ## Matriz de rastreabilidade
-Sabendo que o conceito de Matriz de rastreabilidade de requisitos pode ser definido por uma ferramenta que explicita a relação direta dos requisitos entre si ou com os outros componentes do projeto (ARTIA, 2020), e ainda auxilia para identificar alterações no projeto e o que elas afetam, viu-se a necessidade de criação de uma para a corrente solução, conforme taabela 2.
+Sabendo que o conceito de Matriz de rastreabilidade de requisitos pode ser definido por uma ferramenta que explicita a relação direta dos requisitos entre si ou com os outros componentes do projeto (ARTIA, 2020), e ainda auxilia para identificar alterações no projeto e o que elas afetam, viu-se a necessidade de criação de uma para a corrente solução, conforme tabela 2.
 <br>
 <center> Tabela 2 - Matriz de rastreabilidade.  </center>
 <img src="../docs/img/img_docs/matriz_de_rastreabilidade.png" alt="Matriz de rastreabilidade" border="0" width="100%" display="flex" justify-content="center">
@@ -328,35 +329,35 @@ A arquitetura de um sistema de software é a estrutura fundamental que define co
 <img src="../docs/img/arquitetura-v11.jpg" alt="ArquiteturaV1" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 <br>
-<p>Pensando em uma melhor perormance da aplicação desenvolvida, foram feitas alterações na arquitetura principal do sistema. Sabendo a demanada de escalabilidade e seguraça, foi introdzido à arquitetura o mecanismo de mensageria. Esse consiste em um sistema distribuído que se comunica por meio de mensagens, ou seja, eventos, sendo essas mensagens gerenciadas por um Message Broker (servidor ou módulo de mensagens). O processo ocorre de forma assíncrona, não precisando assimaguarar pela resposta da primeira requisição para conttinuar a execução do sistema.</p>
+<p>Pensando em uma melhor performance da aplicação desenvolvida, foram feitas alterações na arquitetura principal do sistema. Sabendo a demanda de escalabilidade e segurança, foi introduzido à arquitetura o mecanismo de mensageiria. Esse consiste em um sistema distribuído que se comunica por meio de mensagens, ou seja, eventos, sendo essas mensagens gerenciadas por um Message Broker (servidor ou módulo de mensagens). O processo ocorre de forma assíncrona, não precisando assim aguardar pela resposta da primeira requisição para continuar a execução do sistema.</p>
 <br>
-Dessa forma foi escolhido a tecnologia Kafka para a implementação do sistema de mensageria na arquitetura. Sabendo que a tecnologiacarrega como características principais a escalabilidade, permitindo a integração de sistemas heterogêneos, tolerância a falhas, por ser um software distribuído, projetado para funcionar em um ambiente de luster com múltiplos nós, e alta performance, além de ser uma tecnologia open source, o que a torna mais acessível.
+Dessa forma foi escolhido a tecnologia Kafka para a implementação do sistema de mensageiria na arquitetura. Sabendo que a tecnologia carrega como características principais a escalabilidade, permitindo a integração de sistemas heterogêneos, tolerância a falhas, por ser um software distribuído, projetado para funcionar em um ambiente de luster com múltiplos nós, e alta performance, além de ser uma tecnologia open source, o que a torna mais acessível.
 
 ## Versão 2 - Arquitetura do sistema
 <img src="../docs/img/img_docs/arquitetura_v2.jpg" alt="ArquiteturaV2" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center>
 <br>
 
-## Arquitetura de mensageria
-Assim, foi constituido a arquitetura de mensageria, onde é especificado as requisições tomadas por parte do front-end e como o sistema reage a elas, ou seja, quais tipos de requisições especificamente são feitos, os dados e seus tipos que são  inseridos e as possíveis reespostas que o sistema pode dar de acorrdo ocm a requisição dada, conforme é possível verificar na figura abaixo.
-<img src="../docs/img/img_docs/arquitetura_mensageria_v2.jpg" alt="Arquitetura de mensageria" border="0" width="100%" display="flex" justify-content="center">
+## Arquitetura de mensageiria
+Assim, foi constituído a arquitetura de mensageiria, onde é especificado as requisições tomadas por parte do front-end e como o sistema reage a elas, ou seja, quais tipos de requisições especificamente são feitos, os dados e seus tipos que são  inseridos e as possíveis respostas que o sistema pode dar de acordo ocm a requisição dada, conforme é possível verificar na figura abaixo.
+<img src="../docs/img/img_docs/arquitetura_mensageria_v2.jpg" alt="Arquitetura de mensageiria" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center> <br> <br>
 
-## Benefícios e desantagens da arquitetura
+## Benefícios e desvantagens da arquitetura
 <p>A aplicação dessa arquitetura traz consigo vantagens e desvantagens. Podem ser citadas como vantagens: 
 <lu>
-<li> Escalabilidade: a arquitetura possui um desacoplamento de aplicação, que facilita o processo de escalabilidade, principalmente na modalidade horizontal, uma vez que permite o acréscimo de recursos em funcionalidades específicas. Além disso, com o sistema de mensageria, a multi clusterzação do sistema não seria um problema, ima vez que teria um único ponto de contato entre o frontend e o backend.
+<li> Escalabilidade: a arquitetura possui um desacoplamento de aplicação, que facilita o processo de escalabilidade, principalmente na modalidade horizontal, uma vez que permite o acréscimo de recursos em funcionalidades específicas. Além disso, com o sistema de mensageiria, a multi clusterização do sistema não seria um problema, ima vez que teria um único ponto de contato entre o frontend e o backend.
 <li> Tolerância a falhas: também com desacoplamento de aplicação seria proporcionado proteção e segurança, uma vez que a falha em um componente não afetaria o funcionamento dos demais, em efeito cascata.
 <li> Alta performance: outro fator afetado pelo desacoplamento da aplicação e o banco de dados é a redução da carga de conexão, melhorando a performance do sistema.
-<li> Integração de sistemas heterogêneos: a arquitetura usada permite que a solução desenvolvida seja integrada a diversos outros sistemas, como o próprio sistema coorporativo da empresa parceira, por exemplo.
-<li> Tecnologia open source: as tecnologias usadas para o sistema de mensageria proposto na xarquitetura são open source, o que reduz os custos de implementação e manutenção do sistema.
+<li> Integração de sistemas heterogêneos: a arquitetura usada permite que a solução desenvolvida seja integrada a diversos outros sistemas, como o próprio sistema corporativo da empresa parceira, por exemplo.
+<li> Tecnologia open source: as tecnologias usadas para o sistema de mensageiria proposto na arquitetura são open source, o que reduz os custos de implementação e manutenção do sistema.
 </lu></p>
 <p>Em contraposição, também são vistos alguns dificultadores na aplicação dessa arquitetura. São eles: </p>
 <lu> 
 <li> Complexidade de implementação: a arquitetura proposta pode se tornar complexa, dependendo da dimensão que esta ganhar, o que dificulta a implementação e manutenção do sistema.
 <li> Aumento da auditoria da aplicação: por se tratar de componentes altamente distribuídos e heterogêneos, a auditoria pode gerar um grande volume de dados, que precisam ser armazenados e processados, aumentando assim a complexidade da arquitetura e os custos operacionais.
 <li> Necessidade de uma reestruturação da experiência do usuário: por se tratar de um sistema assíncrono, as respostas as requisições não serão imediatas. Dessa forma, será necessário reestruturação da experiência do usuário, para que este não se sinta prejudicado com a demora nas respostas.
-<li> Aumento do número de componentes: a arquitetura ganha maior quantidade de componentes, uma vez que há a necessidade de um servidor de mensageria.
+<li> Aumento do número de componentes: a arquitetura ganha maior quantidade de componentes, uma vez que há a necessidade de um servidor de mensageiria.
 </lu>
 
 <br>
@@ -436,7 +437,7 @@ Dessa forma foram desenvolvidos os diagramas a seguir a fim de exemplificar como
 
 ## Teste Unitário e Teste de Integração
 
-Testes unitários são testes focados em apenas uma unidade do código, enquanto testes de integração focam em testar se a integração do front-end com o back-end estão funcionando da maneira correta e englobando todos os erros possíveis. No caso desse projeto, como está sendo desenvolvido em microserviços, ambos testes acabam tendo propósitos muito parecidos, portanto não há problemas em pensar e desenvolver eles juntos.
+Testes unitários são testes focados em apenas uma unidade do código, enquanto testes de integração focam em testar se a integração do front-end com o back-end estão funcionando da maneira correta e englobando todos os erros possíveis. No caso desse projeto, como está sendo desenvolvido em microsserviços, ambos testes acabam tendo propósitos muito parecidos, portanto não há problemas em pensar e desenvolver eles juntos.
 
 <img src="img\img_docs\tabela_testes.jpg" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center> <br> <br>
@@ -518,19 +519,19 @@ Registro de Teste de Usabilidade - Dell Link Data: 21/06/2023
 	<li> Além disso, é possível ver quem criou a postagem e quando ela foi criada.</li>
    </ul>
 
-10. Perfil do usuário
+10. Perfil do usuário 
    <ul>
 	<li> É possível acessar o perfil com apenas um clique por meio da NavBar.</li>
 	<li> Os usuários podem editar suas informações pessoais clicando apenas em um único botão que está bem posicionado na tela.</li>
 	<li> A seção de atividades no perfil do usuário é clara e útil para o mesmo e outros membros da plataforma acompanharem como tal usuário contribui para a aplicação.</li>
    </ul>
-
 11. Ranking
    <ul>
 	<li> O ranking é atualizado em tempo real e exibe a posição dos usuários em relação aos colegas.</li>
 	<li> O sistema de ranking incentiva a colaboração e a competição saudável entre os membros da equipe.</li>
 	<li> É possível ganhar pontos de duas maneiras, a primeira é ao concluir um projeto, e a outra é com algumas atividades determinadas pela empresa.</li>
    </ul>
+
 
 12. Pontuação por atividades na plataforma
    <ul>
@@ -562,13 +563,106 @@ Registro de Teste de Usabilidade - Dell Link Data: 21/06/2023
 
 ## Teste de Funcionalidade 
 
-Link ou imagem da tabela com dados organizados dos testes realizados.
+Os testes de funcionalidade são executados para garantir que a aplicação realize as tarefas para as quais foi projetada. Eles são conduzidos em um nível mais alto, concentrando-se nas funcionalidades visíveis e perceptíveis para os usuários. Esses testes avaliam se a aplicação está fornecendo os resultados esperados, interagindo corretamente com os usuários e cumprindo suas funções.
 
+<img src="img/img_docs/testefuncionalidades.png" alt="Testes de funcionalidade" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br> <br>
 
 ## Teste de API 
 
-Link ou imagem da tabela com dados organizados dos testes realizados.
+Para a testagem das APIs da aplicação, foi usado a documentação do Swagger, que é uma ferramenta de código aberto usada para testar e documentar APIs da Web. A partir da interface foram realizados testes de requisições, validando os dados de entrada e saída, além de verificar se os endpoints estão funcionando corretamente.
 
+→ Teste de requisição DELETE de Badges
+<img src="img/img_docs/testes_api/badges/test_delete_badges.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET de Badges
+<img src="img/img_docs/testes_api/badges/test_get_badges.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET by Id de Badges
+<img src="img/img_docs/testes_api/badges/test_get_badgesbyId.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição PATCH de Badges
+<img src="img/img_docs/testes_api/badges/test_patch_badges.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição POST de Badges
+<img src="img/img_docs/testes_api/badges/test_post_badges.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição DELETE de Posts
+<img src="img/img_docs/testes_api/post/test_delete_post.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET by Title de Posts
+<img src="img/img_docs/testes_api/post/test_error_postTitle.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET de Posts
+<img src="img/img_docs/testes_api/post/test_get_post.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET by Creator de Posts
+<img src="img/img_docs/testes_api/post/test_get_post_byCreator.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET by Id de Posts
+<img src="img/img_docs/testes_api/post/test_get_post_byId.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição PATCH de Posts
+<img src="img/img_docs/testes_api/post/test_patch_post.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição DELETE de Projects
+<img src="img/img_docs/testes_api/project/test_delete_project.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET de Projects
+<img src="img/img_docs/testes_api/project/test_get_project.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET by Creator de Projects
+<img src="img/img_docs/testes_api/project/test_get_projectbyCreator.pngg" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET by Id de Projects
+<img src="img/img_docs/testes_api/project/test_get_projectbyId.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição PATCH de Projects
+<img src="img/img_docs/testes_api/project/test_patch_project.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição POST de Projects
+<img src="img/img_docs/testes_api/project/test_post_project.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição DELETE de User
+<img src="img/img_docs/testes_api/user/test_delete_user.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET de User
+<img src="img/img_docs/testes_api/user/test_get_user.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET by Id de User
+<img src="img/img_docs/testes_api/user/test_get_userbyId.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição PATCH score de User
+<img src="img/img_docs/testes_api/user/test_patch_score.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição PATCH   de User
+<img src="img/img_docs/testes_api/user/test_patch_user.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+
+→ Teste de requisição GET by Id de User
+<img src="img/img_docs/testes_api/user/test_get_userbyId.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
 
 # Documentação da API
 
