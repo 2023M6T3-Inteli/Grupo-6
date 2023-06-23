@@ -78,7 +78,7 @@ Solução de otimização de corte de bobinas de papel
   - [Modelos Lógico e Conceitual](#modelos-lógico-e-conceitual)
 - [Testes de Software](#testes-de-software)
   - [Teste Unitário e Teste de Integração](#teste-unitário-e-teste-de-integração)
-  - [Teste de Regressão](#teste-de-regressão)
+  - [Teste de Carga](#teste-de-carga)
   - [Teste de Usabilidade](#teste-de-usabilidade)
   - [Teste de Funcionalidade](#teste-de-funcionalidade)
   - [Teste de API](#teste-de-api)
@@ -446,10 +446,29 @@ Legenda: <br>
 Nota do grupo desenvolvedor: <br>
 <img src="img/img_docs/observações_testes.png" alt="Observações sobre os testes" border="0" width="30%" display="flex" justify-content="center">
 
+<br>
+Assim, foram desenvolvidos arquivos .spec para o teste de cada entidade do sistema, sendo eles: <br>
 
-## Teste de Regressão
+→ Posts:
+<img src="img/img_docs/testes_api/teste_unitarios/test_post.png" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+→ User:
+<img src="img/img_docs/testes_api/teste_unitarios/test_user.png" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+→ Badges:
+<img src="img/img_docs/testes_api/teste_unitarios/test_badge.png" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
+Os testes não passaram, uma vez que há conflito na relação das tabelas com o teste desenvolvido. <br>
 
-Link ou imagem da tabela com dados organizados dos testes realizados.
+## Teste de Carga
+
+O teste de carga é um teste de software que avalia o comportamento de um sistema sob condições de carga crescentes. O teste de carga é realizado para determinar um sistema de software existente ou aplicativo sob uma carga específica. <br>
+Dessa forma, foi desenvolvido pela equipe um teste de carga com 3 usuários virtuais efetuando requisições simultâneas ao sistema, com o intervalo de 1 segundo e duração de 3 segundos.
+<br>
+O resultado obtido é de erro, uma vez que existe um tratamento no backend para posts que já existem no banco, conforme é possível ver na imagem de abaixo.
+
+<img src="img/img_docs/testes_api/teste_unitarios/teste_de_carga.png" border="0" width="100%" display="flex" justify-content="center">
+<center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
 
 
 ## Teste de Usabilidade 
@@ -656,7 +675,7 @@ Para a testagem das APIs da aplicação, foi usado a documentação do Swagger, 
 <img src="img/img_docs/testes_api/user/test_patch_score.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
 
-→ Teste de requisição PATCH   de User
+→ Teste de requisição PATCH de User
 <img src="img/img_docs/testes_api/user/test_patch_user.png" alt="Testes" border="0" width="100%" display="flex" justify-content="center">
 <center> Fonte: Elaborado pelo próprio autor (2023). </center> <br>
 
