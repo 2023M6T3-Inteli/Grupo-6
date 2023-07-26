@@ -10,7 +10,7 @@
 
 # Desenvolvimento de serviços em cloud computing
 
-## Cumulonimbus
+## CloudETS - Cloud Engineering Technologies System
 
 ### Integrantes: 
 <lu>
